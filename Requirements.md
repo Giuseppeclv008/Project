@@ -53,29 +53,63 @@ Consider that the document should be delivered to another team (unknown to you)
  which will be in charge of designing and implementing the system. The design team should be able to proceed only with the information in the document.
 
 # Business Model
+- Customer segment
+    * Shop manager / owner
+- Value proposition
+    * Statistics reports
+    * Accounting (revenue, costs, debts, ...)
+    * Decision support
+    * Assistance with logistics
+    * Order management to suppliers
+- Revenue Stream
+    * Yearly fee
+    * Privately founded
+
+
 
 # Stakeholders
 
 | Stakeholder name | Description |
 | :--------------: | :---------: |
-| Stakeholder x..  |             |
+| Shop owner | Reviews accounting information and initiates orders to suppliers |
+| Cashier | Handles transactions and enters sales info through the cash register |
+| Cash register | Feeds data to the application |
+| Desktop OS| The device where the application resides |
+| Product suppliers | Business who supply the shop with items |
+| Shipping company | Company who delivers the items to the shop|
+| DB service supplier | Stores data |
+| Development team | Team responsible for the development of the application |
+| Maintenance team | Team responsible for the long term support of the application |
+| Competitors | Other companies that sell a similar product |
 
 # Context Diagram and interfaces
 
 ## Context Diagram
+```plantuml
+!theme blueprint
+skinparam backgroundColor transparent
 
-\<Define here Context diagram using UML use case diagram>
+skinparam actorStyle hollow
+rectangle "EzShop" as system
+actor "Shop Owner" as shopManager
+actor "Cash register" as register
+actor "Data base supplier " as db
+actor "Shipping company" as shipping
 
-\<actors are a subset of stakeholders>
+shopManager <--> system
+register --> system
+system <--> db
+system <-- shipping
+```
 
 ## Interfaces
 
-\<describe here each interface in the context diagram>
-
-
 |   Actor   | Logical Interface | Physical Interface |
 | :-------: | :---------------: | :----------------: |
-| Actor x.. |                   |                    |
+| Shop manager | GUI | Desktop computer |
+| Data base | API | Internet connection |
+| Cash register | API | Internet connection |
+| Shipping company | API | Internet connection |
 
 
 # Functional and non functional requirements
@@ -88,9 +122,45 @@ Consider that the document should be delivered to another team (unknown to you)
 
 |  ID   | Description |
 | :---: | :---------: |
-|  FR1  |             |
-|  FR2  |             |
-| FRx.. |             |
+|  FR1  | Manage sales |
+|  FR2  | Manage inventory |
+|  FR3  | Manage orders |
+|  FR4  | Manage accounting |
+
+
+- Manage sales
+    * Handle transaction
+        + Get item code
+        + Look for item code
+        + Add item to transaction
+        + Add item cost to total cost
+        + Repeat until transaction ended
+    * Wait for payment confirmation (given by the cash register)
+    * Add transaction to database 
+- Manage inventory
+    * Decrease item count for items in the transaction
+    * When item-count too low issue new order
+- Manage orders
+    * Create table with `itemCode`, `amt` 
+    * Get supplier associated with `itemCode` 
+    * generate and send the necessary emails
+    * Support `newOderAmt` variable; the shop manager can specify how many new items to order when a new order needs to be issued
+    * Manager needs to be able to update the order status (pending, confirmed, shipped, delivered, unloaded)
+    * Generate order report
+- Manage accounting
+    * Query and display database for a number of predefined functions
+    * order status
+    * Track Invoices
+    * Track Incomes
+    * Track expenses
+- Authenticate owner
+    * 
+
+Definetely in the glossary:
+- transaction
+- inventory
+- order
+
 
 ## Non Functional Requirements
 
@@ -183,3 +253,5 @@ Steps
 # Hardware Software architecture
 
 \<describe here the hardware software architecture using UML deployment diagram >
+
+
