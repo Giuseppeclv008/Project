@@ -127,36 +127,55 @@ system <-- shipping
 |  FR3  | Manage orders |
 |  FR4  | Manage accounting |
 
-
 - Manage sales
-    * Handle transaction
-        + Get item code
-        + Look for item code
-        + Add item to transaction
-        + Add item cost to total cost
-        + Repeat until transaction ended
-    * Wait for payment confirmation (given by the cash register)
-    * Add transaction to database 
+    * Read transaction
+    * Update item count
 - Manage inventory
-    * Decrease item count for items in the transaction
-    * When item-count too low issue new order
+    * Manage items
+        + Unregister item
+        + Register new item
+        + Edit item characteristics
+    + View items
+        + Display list of registered items
+        + sort, group, and filter these items by:
+            + code
+            + quantity left
+            + category
+            + price
+            + sale start date (would it be possible to plan multiple sales periods?)
+            + sale end date
+            + sale amount
+            + minimum amount threshold (fixed or variable with time? e.g., higher threshold during Halloween for sweets compared to the middle of summer) 
+            + expiration date
+    + Export list as .csv
 - Manage orders
-    * Create table with `itemCode`, `amt` 
-    * Get supplier associated with `itemCode` 
-    * generate and send the necessary emails
-    * Support `newOderAmt` variable; the shop manager can specify how many new items to order when a new order needs to be issued
-    * Manager needs to be able to update the order status (pending, confirmed, shipped, delivered, unloaded)
-    * Generate order report
+    * Register new order
+    * Remove order
+    * Edit order
+    * Automatically track order status for supported suppliers
+    * Suggest order when valid (not expired) quantity of certain item is below threshold
+        + Accept, delete, edit suggested order
+    * Display list of orders
+        + Sort, group, and filter these items by:
+            + code 
+            + issued date 
+            + delivery date 
+            + status (pending, ordered, shipped, delivered, unloaded, damaged)
+            + Supplier
+            + Shipping company
+            + price 
+            + number of items ordered
+    * Export list as .csv
 - Manage accounting
-    * Query and display database for a number of predefined functions
-    * order status
     * Track Invoices
     * Track Incomes
     * Track expenses
+    * Track taxes
+    * Verify recorded income = expected income
 - Authenticate owner
-    * 
+    * Verify username and password
 
-Definetely in the glossary:
+Definitely in the glossary:
 - transaction
 - inventory
 - order
