@@ -127,33 +127,12 @@ system <-- shipping
 |  FR3  | Manage orders |
 |  FR4  | Manage accounting |
 
-> [!NOTE]
-> Transactions will be unpacked, we will keep track of the date, the items (their price and quantity), and which items are currently on sale.
-
-- Manage sales
-    * Read sale 
-    * Save sale
-    * Update inventory with sale information
-    * Calculate stats on sale
-        + Given a category, the top 10 items sold in a certain time frame
-    * Display stats on sale
-- *Other option manage sale stats*
-    * Stats based on sales
-- Manage inventory
-    * Stats based on sales 
-    * Track item stock quantities 
-    * Add/remove item
-    * Display info on items  
-- Manage orders
-    * 
-- Manage accounting
-    * 
-
 - Manage sales
     * Read sale form cash register 
     * Save last sale  
     * Update inventory (with contents of the sale)
     * Export list as .csv
+    * Display sale stats 
 - Manage inventory
     * Manage items
         + Delete item from inventory
@@ -165,6 +144,7 @@ system <-- shipping
         + Sort items by selected fields
         + Group items by selected fields
         + Filter items by selected fields
+    + Display inventory stats
     + Change item status when expiration date is passed
     + Notify user when items are past the expiration date
     + Export list as .csv
@@ -175,18 +155,27 @@ system <-- shipping
     * Automatically *track order* status for supported suppliers
     * Suggest order when quantity of certain item is below threshold
         + Accept, delete, edit suggested order
-    * Display list of orders
-        + search, Sort, group, and filter these items by:
-                * Export list as .csv
+    * View orders
+        * Display list of orders
+        + search orders by selected fields 
+        + sort orders by selected fields
+        + group orders by selected fields
+        + filter orders by selected fields
+    + Display order stats
+    * Export list as .csv
 - Manage accounting
     * Track Invoices
     * Track Incomes
     * Track expenses
     * Track taxes
+    * Display accounting stats
 - Authenticate owner
     * Set password
     * Change password
     * Verify password
+
+> [!NOTE]
+> Transactions will be unpacked, we will keep track of the date, the items (their price and quantity), and which items are currently on sale.
 
 Definitely in the glossary:
 - transaction
