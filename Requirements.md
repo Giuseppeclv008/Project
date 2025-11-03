@@ -127,59 +127,90 @@ system <-- shipping
 |  FR3  | Manage orders |
 |  FR4  | Manage accounting |
 
+> [!NOTE]
+> Transactions will be unpacked, we will keep track of the date, the items (their price and quantity), and which items are currently on sale.
+
 - Manage sales
-    * Read transaction
-    * Update item count
+    * Read sale 
+    * Save sale
+    * Update inventory with sale information
+    * Calculate stats on sale
+        + Given a category, the top 10 items sold in a certain time frame
+    * Display stats on sale
+- *Other option manage sale stats*
+    * Stats based on sales
+- Manage inventory
+    * Stats based on sales 
+    * Track item stock quantities 
+    * Add/remove item
+    * Display info on items  
+- Manage orders
+    * 
+- Manage accounting
+    * 
+
+- Manage sales
+    * Read sale form cash register 
+    * Save last sale  
+    * Update inventory (with contents of the sale)
+    * Export list as .csv
 - Manage inventory
     * Manage items
-        + Unregister item
-        + Register new item
+        + Delete item from inventory
+        + Add new item to inventory
         + Edit item characteristics
     + View items
-        + Display list of registered items
-        + sort, group, and filter these items by:
-            + code
-            + quantity left
-            + category
-            + price
-            + sale start date (would it be possible to plan multiple sales periods?)
-            + sale end date
-            + sale amount
-            + minimum amount threshold (fixed or variable with time? e.g., higher threshold during Halloween for sweets compared to the middle of summer) 
-            + expiration date
+        + Display list of available items
+        + Search items by selected fields
+        + Sort items by selected fields
+        + Group items by selected fields
+        + Filter items by selected fields
+    + Change item status when expiration date is passed
+    + Notify user when items are past the expiration date
     + Export list as .csv
 - Manage orders
-    * Register new order
-    * Remove order
+    * Add new order
+    * Delete order
     * Edit order
-    * Automatically track order status for supported suppliers
-    * Suggest order when valid (not expired) quantity of certain item is below threshold
+    * Automatically *track order* status for supported suppliers
+    * Suggest order when quantity of certain item is below threshold
         + Accept, delete, edit suggested order
     * Display list of orders
-        + Sort, group, and filter these items by:
-            + code 
-            + issued date 
-            + delivery date 
-            + status (pending, ordered, shipped, delivered, unloaded, damaged)
-            + Supplier
-            + Shipping company
-            + price 
-            + number of items ordered
-    * Export list as .csv
+        + search, Sort, group, and filter these items by:
+                * Export list as .csv
 - Manage accounting
     * Track Invoices
     * Track Incomes
     * Track expenses
     * Track taxes
-    * Verify recorded income = expected income
 - Authenticate owner
-    * Verify username and password
+    * Set password
+    * Change password
+    * Verify password
 
 Definitely in the glossary:
 - transaction
 - inventory
 - order
 
+
+**Usecase**:
+- item fields
+    + code 
+    + issued date 
+    + delivery date 
+    + status (pending, ordered, shipped, delivered, unloaded, damaged, expired)
+    + Supplier
+    + Shipping company
+    + price 
+    + number of items ordered
+- orders fields
+    * code
+    * supplier name
+    * date
+    * status
+    * quantity
+    * items
 
 ## Non Functional Requirements
 
