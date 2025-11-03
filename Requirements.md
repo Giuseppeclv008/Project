@@ -166,7 +166,7 @@ system <-- shipping
 - Manage accounting
     * Track Invoices
     * Track Incomes
-    * Track expenses
+    * Track balance
     * Track taxes
     * Display accounting stats
 - Authenticate owner
@@ -174,20 +174,14 @@ system <-- shipping
     * Change password
     * Verify password
 
-> [!NOTE]
-> Transactions will be unpacked, we will keep track of the date, the items (their price and quantity), and which items are currently on sale.
-
-Definitely in the glossary:
-- transaction
-- inventory
-- order
-
-
 **Usecase**:
 - item fields
     + code 
     + issued date 
     + delivery date 
+    + name
+    + category
+    + brand
     + status (pending, ordered, shipped, delivered, unloaded, damaged, expired)
     + Supplier
     + Shipping company
@@ -271,13 +265,30 @@ Steps
 
 ### Use case 2, UC2
 
-..
-
 ### Use case x, UCx
 
-..
 
 # Glossary
+- **Sale** 
+    * Event, identified by a code, that happens every time a customer completes the purchase of one or more items. This records the code, the quantity, the discount value, date, and the price of each item.
+- **Order** 
+    * The purchase of a collection of items from a supplier.
+- **Item** 
+    * The distinct products identified by a code. (e.g. 1l bottle of "goodMilk!", 1l bottle of "calciumJuice")
+- **Inventory** 
+    * The collection of all items (identified by code) and their quantities in the shop's stock.
+- **Stats** 
+    * A collection of inferred information from the available data on a specific subject.
+- **Fields** 
+    * The recorded properties of an item, a sale, or an order
+- **Owner** 
+- **Status** 
+- **Shipping company** 
+- **Date**
+    * A timestamp in the format: `YYYY-MM-DD-hh:mm:ss` 
+- **Income** 
+- **Invoice** 
+- **Balance** 
 
 \<use UML class diagram to define important terms, or concepts in the domain of the application, and their relationships>
 
