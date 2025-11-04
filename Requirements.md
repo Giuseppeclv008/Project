@@ -134,32 +134,35 @@ system <-- shipping
     * Export list as .csv
     * Display sale stats 
 - Manage inventory
-    * Manage batches of products
-        +  The system shall store for each batch at least:
-            + one and only one product name
-            + one and only one category
-            + one and only batch number
+    * Manage batches of products 
+        + The system shall store for each (ex acqua lete 0.5L):
+            + product name
+            + category
+            + unit price
+         +  The system shall store for each batch at least:
+            + the product type 
             + quantity in stock
-            + unit price 
-        + The system shall store optional information:
+        + The system shall store optional information for a batch:
             + description
             + expiration date 
+        + add a new product to inventory
+        + remove a product from inventory
+        + update a product 
         + Add new batch to inventory
         + Delete a batch from inventory 
-        + modify a batch 
-    * Display batch info
-        + for each batch display product name, category, and batch number 
+        + update a batch 
+    * Display batch information including product details  
     * Display products stats
-        + Display quantity of products per product name 
-        + Display quantity of products per category 
+        + Display quantity of products stored ( sum of the quantity on each batch with the selected product)
+        + Display quantity of products stored per category 
     * Display batch stats
-        + Display number of batches per  product name
-        + Display number of batches per category
+        + Display number of batches per product 
+        + Display number of batches per product category
     * Display inventory values
         + Display for each product the total value : ProductTotalValue = quantity*unitPrice
         + Display for each category the total value : $$ \sum_{Product \in category} ProductTotalValue $$ 
         + Display the total value of the inventory :  $$ \sum_{Product \in inventory} ProductTotalValue $$  
-    * If a product has an expiration date, notify the user when it is expired 
+    * If a batch has an expiration date, notify the user when it is expired 
     *  Export products list as .csv
 - Manage orders
     * Add new order
