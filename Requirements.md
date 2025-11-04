@@ -139,23 +139,19 @@ system <-- shipping
             + product name
             + category
             + unit price
-         +  The system shall associate for each batch at least:
-            + the product contained
-            + quantity in stock
-        + The system shall store optional information for a batch:
+            + the batch that contains the product 
+         +  The system shall store for each batch of products:
             + description
             + expiration date 
-        + add a new product to inventory
-        + remove a product from inventory
-        + update a product 
+            + quantity in stock 
         + Add new batch to inventory
         + Delete a batch from inventory 
         + update a batch 
-    * Display batch information including product details  
+    * Display batch information 
     * Display products stats
         + Display quantity of products stored ( sum of the quantity on each batch with the selected product)
         + Display quantity of products stored per category 
-    * Display batch stats
+    * Display batches stats
         + Display number of batches per product 
         + Display number of batches per product category
     * Display inventory values
