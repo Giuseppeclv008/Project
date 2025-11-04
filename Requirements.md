@@ -290,11 +290,11 @@ Steps
 - **Supplier**
     * A business entity providing goods to the shop. Each supplier may have identifying details such as name and P.IVA.
 - **Status** 
-    * A descriptor indicating the current contion of an order or item. (e.g. pending, shipped, expired)
+    * A descriptor indicating the current contion of an order or item. (e.g. pending, shipped, expired).
 - **Shipping company** 
     * A third-party service that delivers items from suppliers to the shop. Some shipping company offer APIs to track delivery and shipment status.
 - **Date**
-    * A timestamp in the format: `YYYY-MM-DD-hh:mm:ss` 
+    * A timestamp in the format: `YYYY-MM-DD-hh:mm:ss`. 
 - **Income**
     * The ammount of money earned from completed sales.
 - **Invoice**
