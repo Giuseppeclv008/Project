@@ -134,13 +134,9 @@ system <-- shipping
     * Export list as .csv
     * Display sale stats 
 - Manage inventory
-    * Manage batches and products 
-        + The system shall store for each product(ex acqua lete 0.5L):
-            + product name
-            + category
-            + unit price
-            + the batch that contains the product 
-         +  The system shall store for each batch of products:
+    * Manage products 
+        +  The system shall store for each batch of products:
+            + product name(ex acqua lete 0.5L) including its category and unit price 
             + description
             + expiration date 
             + quantity in stock 
@@ -148,7 +144,7 @@ system <-- shipping
         + Delete a batch from inventory 
         + update a batch 
     * Display batch information 
-    * Display products stats
+    * Display product stats
         + Display quantity of products stored ( sum of the quantity on each batch with the selected product)
         + Display quantity of products stored per category 
     * Display batches stats
