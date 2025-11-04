@@ -147,10 +147,15 @@ system <-- shipping
         + Add new batch to inventory
         + Delete a batch from inventory 
         + modify a batch 
-    * Display products
-        + Display list of available products
-        + Search and display products by name, category, batch number
-    * Display inventory value
+    * Display batch info
+        + for each batch display product name, category, and batch number 
+    * Display products stats
+        + Display quantity of products per product name 
+        + Display quantity of products per category 
+    * Display batch stats
+        + Display number of batches per  product name
+        + Display number of batches per category
+    * Display inventory values
         + Display for each product the total value : ProductTotalValue = quantity*unitPrice
         + Display for each category the total value : $$ \sum_{Product \in category} ProductTotalValue $$ 
         + Display the total value of the inventory :  $$ \sum_{Product \in inventory} ProductTotalValue $$  
