@@ -134,20 +134,28 @@ system <-- shipping
     * Export list as .csv
     * Display sale stats 
 - Manage inventory
-    * Manage items
-        + Delete item from inventory
-        + Add new item to inventory
-        + Edit item characteristics
-    + View items
-        + Display list of available items
-        + Search items by selected fields
-        + Sort items by selected fields
-        + Group items by selected fields
-        + Filter items by selected fields
-    + Display inventory stats
-    + Change item status when expiration date is passed
-    + Notify user when items are past the expiration date
-    + Export list as .csv
+    * Manage batches of products
+        +  The system shall store for each batch at least:
+            + one and only one product name
+            + one and only one category
+            + one and only batch number
+            + quantity in stock
+            + unit price 
+        + The system shall store optional information:
+            + description
+            + expiration date 
+        + Add new batch to inventory
+        + Delete a batch from inventory 
+        + modify a batch 
+    * Display products
+        + Display list of available products
+        + Search and display products by name, category, batch number
+    * Display inventory value
+        + Display for each product the total value : ProductTotalValue = quantity*unitPrice
+        + Display for each category the total value : $$ \sum_{Product \in category} ProductTotalValue $$ 
+        + Display the total value of the inventory :  $$ \sum_{Product \in inventory} ProductTotalValue $$  
+    * If a product has an expiration date, notify the user when it is expired 
+    *  Export products list as .csv
 - Manage orders
     * Add new order
     * Delete order
