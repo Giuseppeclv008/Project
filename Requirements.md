@@ -127,50 +127,70 @@ system <-- shipping
 |  FR3  | Manage orders |
 |  FR4  | Manage accounting |
 
-- Manage sales
-    * Read sale form cash register 
-    * Save last sale  
-    * Update inventory (with contents of the sale)
-    * Export list as .csv
-    * Display sale stats 
-- Manage inventory
-    * Manage products 
-        +  The system shall store for each batch of products:
-            + product name(ex acqua lete 0.5L) including its category and unit price 
-            + description
-            + expiration date 
-            + quantity in stock 
-        + Add new batch to inventory
-        + Delete a batch from inventory 
-        + update a batch 
-    * Display batch information 
+- Manage Catalogue 
+    * The system shall stores for each product :
+        + the product name
+        + the category
+        + unit price
+        + brand
+    * Add new product to the catalogue
+    * remove a prodcut from the catalogue
+    * update a product in the catalogue 
+    * Display product information
     * Display product stats
-        + Display quantity of products stored ( sum of the quantity on each batch with the selected product)
-        + Display quantity of products stored per category 
-    * Display batches stats
-        + Display number of batches per product 
-        + Display number of batches per product category
-    * Display inventory values
-        + Display for each product the total value : ProductTotalValue = quantity*unitPrice
-        + Display for each category the total value : $$ \sum_{Product \in category} ProductTotalValue $$ 
-        + Display the total value of the inventory :  $$ \sum_{Product \in inventory} ProductTotalValue $$  
-    * If a batch has an expiration date, notify the user when it is expired 
-    *  Export products list as .csv
+        + Display quantity of items stored referred to a product in the catalogue ( sum of the quantity on each batch with the selected product)
+        + Display quantity of items stored  referred to one or more  product attributes  
+- Manage inventory
+    *  The system shall stores for each batch of products:
+         + information the product contained  
+         + description
+         + expiration date 
+         + quantity in stock 
+    *  Add new batch to inventory
+    *  Delete a batch from inventory 
+    *  Update a batch 
+    *  Display batch information 
+    *  Display batches stats
+         + Display number of batches per product 
+         + Display number of batches per one or more product attributes
+    *  Display batches' supplier price
+         + Display supplier price for batches  per one or more product attributes 
+    *  If a batch has an expiration date, notify the user when it is expired 
+    *  If a product is about to expire, notify the user
+    *  Import batches list as .csv 
+    *  Export batches list as .csv
 - Manage orders
+    * The system shall stores for each order :
+        + the supplier 
+        + the product that is ordered
+        + number of batches ordered 
+        + delivered or not
+        + order and delivery date
+        + supplier unit price 
+        + number of items for each batch
     * Add new order
     * Delete order
     * Edit order
-    * Automatically *track order* status for supported suppliers
-    * Suggest order when quantity of certain item is below threshold
-        + Accept, delete, edit suggested order
-    * View orders
-        * Display list of orders
-        + search orders by selected fields 
-        + sort orders by selected fields
-        + group orders by selected fields
-        + filter orders by selected fields
-    + Display order stats
+    * Automatically track order for supported suppliers
+        + Display order status 
+        + when a order is delivered update order information 
+    * Notify the user when the quantity of a certain product is below a threshold 
+        + Let user set warning threshold  
+    * Display orders: 
+        + Display list of orders filtered by order attributes   
     * Export list as .csv
+- Manage sales
+    * Read sale from cash register
+    * The system shall stores for each sale :
+        + list of products with associated quantities
+        + the date  
+        + the total amount spent 
+    * Update inventory (with contents of the sale)
+    * Export list as .csv
+    * Display sale stats
+        + Display sales volume per products
+        + Display sales volume per one or more product attributes  
+        + rank products by number of items sold 
 - Manage accounting
     * Track Invoices
     * Track Incomes
