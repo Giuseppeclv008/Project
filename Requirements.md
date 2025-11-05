@@ -131,7 +131,8 @@ system <-- shipping
         * Update inventory (with contents of the sale)
     * Display sale view
         + Display sales grouped by one or more product
-        + Display sales grouped by one or more product's attributes  
+        + Display sales sorted by one or more product's attributes  
+        + Display sales ranked by one or more product's attributes  
         + Display sales ranked by number of items sold
     - Manage `.csv` 
         * Import sales list from `.csv`
