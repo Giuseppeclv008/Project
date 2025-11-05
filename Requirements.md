@@ -127,44 +127,57 @@ system <-- shipping
 |  FR3  | Manage orders |
 |  FR4  | Manage accounting |
 
+- Manage sales
+    * Read sale from cash register
+    * The system shall store for each sale:
+        + list of products with associated quantities
+        + the date  
+        + the total amount spent 
+    * Update inventory (with contents of the sale)
+    * Export list as .csv
+    * Display sale's stats
+        + Display sales grouped by one or more product
+        + Display sales grouped by one or more product's attributes  
+        + Display sales ranked by number of items sold
 - Manage Catalogue 
-    * The system shall stores for each product :
-        + the product name
-        + the category
+    * The system shall store for each product:
+        + product name
+        + category
         + unit price
         + brand
     * Add new product to the catalogue
-    * remove a prodcut from the catalogue
-    * update a product in the catalogue 
-    * Display product information
-        + Display list of products filter by product attributes 
-        +  Display list of products sorted by products attributes
-    * Display product stats
-        + Display quantity of items stored referred to a product in the catalogue ( sum of the quantity on each batch with the selected product)
-        + Display quantity of items stored  grouped by one or more  product attributes  
+    * remove product from the catalogue
+    * update product in the catalogue 
+    * Display product 
+        + Display list of products filtered by one or more of their attributes
+        + Display list of products sorted by one or more of their attributes
+        + Display list of products ranked by one or more of their attributes
+    * Display product's stats
+        + Display item quantity for the selected product (sum of the quantity on each batch with the selected product)
+        + Display item quantity grouped by one or more of the product's attributes 
 - Manage inventory
-    *  The system shall stores for each batch of products:
+    *  The system shall store for each batch of products:
          + information the product contained  
          + description
          + expiration date 
          + quantity in stock 
     *  Add new batch to inventory
-    *  Delete a batch from inventory 
-    *  Update a batch 
-    *  Display batch information 
+    *  Delete batch from inventory 
+    *  Update batch 
+    *  Display batch 
         + Display batches information sorted by one or more product/batch attributes
         + Display batches information filtered by one or more product/batch attributes
-    *  Display batches stats
+    *  Display batch stats
          + Display number of batches per product 
          + Display number of batches grouped by one or more product attributes
     *  Display batches' supplier price
-         + Display supplier price for batches  per one or more product attributes 
+         + Display supplier price for batches per one or more product attributes 
     *  If a batch has an expiration date, notify the user when it is expired 
     *  If a product is about to expire, notify the user
     *  Import batches list as .csv 
     *  Export batches list as .csv
 - Manage orders
-    * The system shall stores for each order :
+    * The system shall store for each order :
         + the supplier 
         + the product that is ordered
         + number of batches ordered 
@@ -177,7 +190,7 @@ system <-- shipping
     * Edit order
     * Automatically track order for supported suppliers
         + Display order status 
-        + when a order is delivered update order information 
+        + when an order is delivered update order information 
     * Notify the user when the quantity of a certain product is below a threshold 
         + Let user set warning threshold  
     * Display orders
@@ -186,18 +199,6 @@ system <-- shipping
     * Display order stats
         + Display quantities of product ordered grouped by order attributes   
     * Export list as .csv
-- Manage sales
-    * Read sale from cash register
-    * The system shall stores for each sale :
-        + list of products with associated quantities
-        + the date  
-        + the total amount spent 
-    * Update inventory (with contents of the sale)
-    * Export list as .csv
-    * Display sale stats
-        + Display sales volume per products
-        + Display sales volume per one or more product attributes  
-        + rank products by number of items sold 
 - Manage accounting
     * Track Invoices
     * Track Incomes
@@ -208,6 +209,8 @@ system <-- shipping
     * Set password
     * Change password
     * Verify password
+
+**Design cues** 
 
 **Usecase**:
 - item fields
