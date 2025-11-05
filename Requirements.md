@@ -129,7 +129,7 @@ system <-- shipping
 - Manage sales
     * Read sale from cash register
         * Update inventory (with contents of the sale)
-    * Display sale's stats
+    * Display sale view
         + Display sales grouped by one or more product
         + Display sales grouped by one or more product's attributes  
         + Display sales ranked by number of items sold
@@ -141,11 +141,10 @@ system <-- shipping
         * Create new product in the catalogue
         * Update product from the catalogue
         * Delete product from the catalogue
-    * Display product 
-        + Display list of products filtered by one or more of their attributes
+    * Display product view
+        + Display list of products grouped by one or more of their attributes
         + Display list of products sorted by one or more of their attributes
         + Display list of products ranked by one or more of their attributes
-    * Display product's stats
         + Display item quantity for the selected product (sum of the quantity on each batch with the selected product)
         + Display item quantity grouped by one or more of the product's attributes 
     * Manage `.csv` 
@@ -154,18 +153,16 @@ system <-- shipping
 - Manage inventory
     - Manage CRUD operations
         * Create new batch in the inventory
-        - Update batch from the inventory
-        * Delete batch from inventory 
-    * Display batch 
-        + Display batches information sorted by one or more product/batch attributes
-        + Display batches information filtered by one or more product/batch attributes
-    * Display batch stats
-         + Display number of batches per product 
-         + Display number of batches grouped by one or more product attributes
-    * Display batches' supplier price
-         + Display supplier price for batches per one or more product attributes 
-    * If a batch has an expiration date, notify the user when it is expired 
-    * If a product is about to expire, notify the user
+        * Update batch from the inventory
+        * Delete batch from the inventory 
+    * Display batch view
+        + Display batches grouped by one or more product/batch attributes
+        + Display batches sorted by one or more product/batch attributes
+        + Display batches ranked by one or more product/batch attributes
+        + Display supplier price for batches per one or more product attributes 
+    + Notify user
+        + Notify user when batch is about to expire 
+        + Notify user when batch is expired
     * Manage `.csv` 
         * Import batches list from `.csv`
         * Export list of batches as `.csv`
@@ -175,15 +172,17 @@ system <-- shipping
         + Update order from the list of orders
         + Delete order from the list of orders
     * Automatically track order for supported suppliers
-        + Display order status 
-        + when an order is delivered update order information 
-    * Notify the user when the quantity of a certain product is below a threshold 
-        + Let user set warning threshold  
+        + Retrieve current order's status
+        + Update current order's status
+        + Display new order status 
+    * Notify user
+        + Notify user of order's status change
+        + Notify user when the quantity of a certain product is below a user set threshold 
+    * Set product item quantity warning threshold
     * Display orders
-        + Display list of orders sorted by order attributes
-        + Display list of orders filtered by order attributes
-    * Display order stats
-        + Display quantities of product ordered grouped by order attributes   
+        + Display list of orders grouped by one or more of their attributes
+        + Display list of orders sorted by one or more of their attributes
+        + Display list of orders ranked by one or more of their attributes
     * Manage `.csv` 
         * Import orders list from `.csv`
         * Export list of orders as `.csv`
