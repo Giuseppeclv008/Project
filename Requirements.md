@@ -272,27 +272,29 @@ Steps
 - **Shop**
     * The small business entity that uses the EzShop software to manage its operations, including sales, inventory, orders, and accounting. A shop typically has one owner, two or more cash registers, and several suppliers. In the current scope, EZShop menages a single shop.
 - **Sale** 
-    * An Event, identified by a unique code, that occurs every time a customer completes the purchase of one or more items. A sale records the code, the quantity, the discount value, date, and the price of each item.
+    * An Event, identified by a unique code, that occurs every time a customer completes the purchase of one or more items. A sale records the name, the quantity, the discount value, date, the batch code, and the price of each item.
 - **Order** 
-    * The purchase of a collection of items from a supplier. Orders have a defined structure and status, typically one of: processing, shipped, in transit, out of delivery, delivered and cancelled.
-- **Item** 
-    * An ideal entity representing a type of product sold or stocked by the shop; not a single physical object. Each item describes the characteristics shared by all physical units of that product (e.g., 1L bottle of "GoodMilk!"). The item quantity indicates how many physical units of this item are available.
+    * The purchase of a collection of batches from a supplier. Orders have a defined structure and status, typically one of: processing, shipped, in transit, out of delivery, delivered and cancelled.
+- **Product** 
+    * An ideal entity representing a type of product sold or stocked by the shop; not a single physical object. Each product describes the characteristics shared by all physical units of that product (e.g., 1L bottle of "GoodMilk!").
+- **Batch**
+    * A batch represents a specific group of items associated with a product in the inventory. Multiple batches can exist for the same product, each identified by its own quantity and expiration date.
+- **Item**
+    * An item represents a single physical unit of a product that exists in the shop’s inventory. Each item belongs to a specific batch.
 - **Inventory** 
-    * The collection of all items (identified by code) and their quantities. It represents the shop's overall product availability and supports search, filtering, expiration tracking and quantity monitoring.
+    * The collection of all batches (identified by code) and the name of the product they belong to. It represents the shop's overall product availability and supports search, filtering, expiration tracking and quantity monitoring.
+- **Catalogue**
+    * The catalog is the complete collection of all product available in the shop’s system. The catalog serves as a reference for managing inventory, creating orders, and displaying available products to the user.
 - **Stats** 
     * Aggregated or derived data generated from sales, orders, or accounting records, used to support decision-making. (e.g., Sales trends, revenue summary or supplier performance indicators)
-- **Fields** 
-    * The recorded properties of an item, a sale, or an order. (e.g., name, code, price, quantity…)
 - **Owner**
     * The shop holder or manager who uses the EzShop software to control sales, inventory, orders, and accounting. The real end user of the software.
 - **Cash Register**
     * A physical or digital terminal that records sales data and transmits it to the EzShop application via API.
 - **Supplier**
-    * A business entity providing goods to the shop. Each supplier may have identifying details such as name and P.IVA.
-- **Status** 
-    * A descriptor indicating the current condition of an order or item. (e.g., pending, shipped, expired).
+    * A business entity providing batches to the shop. Each supplier may have identifying details such as name and P.IVA.
 - **Shipping company** 
-    * A third-party service that delivers items from suppliers to the shop. Some shipping company offer APIs to track delivery and shipment status.
+    * A third-party service that delivers batches from suppliers to the shop. Some shipping company offer APIs to track delivery and shipment status.
 - **Date**
     * A timestamp in the format: `YYYY-MM-DD-hh:mm:ss`. 
 - **Income**
