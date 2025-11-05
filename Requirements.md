@@ -129,11 +129,13 @@ system <-- shipping
 - Manage sales
     * Read sale from cash register
         * Update inventory (with contents of the sale)
-    * Export list as .csv
     * Display sale's stats
         + Display sales grouped by one or more product
         + Display sales grouped by one or more product's attributes  
         + Display sales ranked by number of items sold
+    - Manage `.csv` 
+        * Import sales list from `.csv`
+        * Export list of sales as `.csv`
 - Manage Catalogue 
     * Add new product to the catalogue
     * remove product from the catalogue
@@ -145,6 +147,9 @@ system <-- shipping
     * Display product's stats
         + Display item quantity for the selected product (sum of the quantity on each batch with the selected product)
         + Display item quantity grouped by one or more of the product's attributes 
+    * Manage `.csv` 
+        * Import product list from `.csv`
+        * Export list of products as `.csv`
 - Manage inventory
     * Add new batch to inventory
     * Delete batch from inventory 
@@ -159,8 +164,11 @@ system <-- shipping
          + Display supplier price for batches per one or more product attributes 
     * If a batch has an expiration date, notify the user when it is expired 
     * If a product is about to expire, notify the user
-    * Import batches list as .csv 
-    * Export batches list as .csv
+    * Import batches list as `.csv` 
+    * Export batches list as `.csv`
+    * Manage `.csv` 
+        * Import batches list from `.csv`
+        * Export list of batches as `.csv`
 - Manage orders
     * Add new order
     * Delete order
@@ -175,7 +183,10 @@ system <-- shipping
         + Display list of orders filtered by order attributes
     * Display order stats
         + Display quantities of product ordered grouped by order attributes   
-    * Export list as .csv
+    * Export list as `.csv`
+    * Manage `.csv` 
+        * Import orders list from `.csv`
+        * Export list of orders as `.csv`
 - Manage accounting
     * Track Invoices
     * Track Incomes
