@@ -137,6 +137,8 @@ system <-- shipping
     * remove a prodcut from the catalogue
     * update a product in the catalogue 
     * Display product information
+        + Display list of products filter by product attributes 
+        +  Display list of products sorted by products attributes
     * Display product stats
         + Display quantity of items stored referred to a product in the catalogue ( sum of the quantity on each batch with the selected product)
         + Display quantity of items stored  grouped by one or more  product attributes  
@@ -150,8 +152,8 @@ system <-- shipping
     *  Delete a batch from inventory 
     *  Update a batch 
     *  Display batch information 
-        + Display batches information sorted by one or more product attributes
-        + Display batches information filtered by one or more product attributes
+        + Display batches information sorted by one or more product/batch attributes
+        + Display batches information filtered by one or more product/batch attributes
     *  Display batches stats
          + Display number of batches per product 
          + Display number of batches grouped by one or more product attributes
