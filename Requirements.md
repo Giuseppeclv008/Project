@@ -180,7 +180,7 @@ system <-- shipping
         + Notify user of order's status change
         + Notify user when the quantity of a certain product is below a user set threshold 
     * Set product item quantity warning threshold
-    * Display orders
+    * Display orders view
         + Display list of orders grouped by one or more of their attributes
         + Display list of orders sorted by one or more of their attributes
         + Display list of orders ranked by one or more of their attributes
