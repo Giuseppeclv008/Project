@@ -200,7 +200,7 @@ system <-- shipping
 
 **Design cues** 
 * The system shall store for each sale:
-        + list of products with associated quantities
+        + list of items with associated quantities
         + the date  
         + the total amount spent 
  * The system shall store for each order :
