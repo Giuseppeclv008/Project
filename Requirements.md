@@ -272,7 +272,7 @@ Steps
 - **Shop**
     * The small business entity that uses the EzShop software to manage its operations, including sales, inventory, orders, and accounting. A shop typically has one owner, two or more cash registers, and several suppliers. In the current scope, EZShop menages a single shop.
 - **Sale** 
-    * An Event, identified by a unique code, that occurs every time a customer completes the purchase of one or more items. A sale records the name, the quantity, the discount value, date, the batch code, and the price of each item.
+    * An Event, identified by a unique code, that occurs every time a customer completes the purchase of one or more items. A sale record the list of items with associated quantities, the date and the total amount spent.
 - **Order** 
     * The purchase of a collection of batches from a supplier. Orders have a defined structure and status, typically one of: processing, shipped, in transit, out of delivery, delivered and cancelled.
 - **Product** 
@@ -305,6 +305,8 @@ Steps
     * A formal document that records a financial transaction between the shop and a supplier or customer, serving as proof of purchase or sale.
 - **Balance**
     * The overall financial position of the shop, calculated as the difference between total incomes and total expenses within a given period.
+- **View**
+    * Visual and interactive representation of the data stored in the system. It displays information from one or more entities (such as sales, products, or orders) in a user-friendly format. A view does not directly modify the underlying data; instead, it provides a projection or summary that helps users perform operational and decision-making tasks.
 
 \<use UML class diagram to define important terms, or concepts in the domain of the application, and their relationships>
 
