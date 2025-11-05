@@ -137,9 +137,10 @@ system <-- shipping
         * Import sales list from `.csv`
         * Export list of sales as `.csv`
 - Manage Catalogue 
-    * Add new product to the catalogue
-    * remove product from the catalogue
-    * update product in the catalogue 
+    - Manage CRUD operations
+        * Create new product in the catalogue
+        * Update product from the catalogue
+        * Delete product from the catalogue
     * Display product 
         + Display list of products filtered by one or more of their attributes
         + Display list of products sorted by one or more of their attributes
@@ -151,9 +152,10 @@ system <-- shipping
         * Import product list from `.csv`
         * Export list of products as `.csv`
 - Manage inventory
-    * Add new batch to inventory
-    * Delete batch from inventory 
-    * Update batch 
+    - Manage CRUD operations
+        * Create new batch in the inventory
+        - Update batch from the inventory
+        * Delete batch from inventory 
     * Display batch 
         + Display batches information sorted by one or more product/batch attributes
         + Display batches information filtered by one or more product/batch attributes
@@ -164,15 +166,14 @@ system <-- shipping
          + Display supplier price for batches per one or more product attributes 
     * If a batch has an expiration date, notify the user when it is expired 
     * If a product is about to expire, notify the user
-    * Import batches list as `.csv` 
-    * Export batches list as `.csv`
     * Manage `.csv` 
         * Import batches list from `.csv`
         * Export list of batches as `.csv`
 - Manage orders
-    * Add new order
-    * Delete order
-    * Edit order
+    * Manage CRUD operations
+        + Create new order in the list of orders
+        + Update order from the list of orders
+        + Delete order from the list of orders
     * Automatically track order for supported suppliers
         + Display order status 
         + when an order is delivered update order information 
@@ -183,7 +184,6 @@ system <-- shipping
         + Display list of orders filtered by order attributes
     * Display order stats
         + Display quantities of product ordered grouped by order attributes   
-    * Export list as `.csv`
     * Manage `.csv` 
         * Import orders list from `.csv`
         * Export list of orders as `.csv`
