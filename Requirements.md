@@ -139,7 +139,7 @@ system <-- shipping
     * Display product information
     * Display product stats
         + Display quantity of items stored referred to a product in the catalogue ( sum of the quantity on each batch with the selected product)
-        + Display quantity of items stored  referred to one or more  product attributes  
+        + Display quantity of items stored  grouped by one or more  product attributes  
 - Manage inventory
     *  The system shall stores for each batch of products:
          + information the product contained  
@@ -150,9 +150,11 @@ system <-- shipping
     *  Delete a batch from inventory 
     *  Update a batch 
     *  Display batch information 
+        + Display batches information sorted by one or more product attributes
+        + Display batches information filtered by one or more product attributes
     *  Display batches stats
          + Display number of batches per product 
-         + Display number of batches per one or more product attributes
+         + Display number of batches grouped by one or more product attributes
     *  Display batches' supplier price
          + Display supplier price for batches  per one or more product attributes 
     *  If a batch has an expiration date, notify the user when it is expired 
@@ -176,8 +178,11 @@ system <-- shipping
         + when a order is delivered update order information 
     * Notify the user when the quantity of a certain product is below a threshold 
         + Let user set warning threshold  
-    * Display orders: 
-        + Display list of orders filtered by order attributes   
+    * Display orders
+        + Display list of orders sorted by order attributes
+        + Display list of orders filtered by order attributes
+    * Display order stats
+        + Display quantities of product ordered grouped by order attributes   
     * Export list as .csv
 - Manage sales
     * Read sale from cash register
