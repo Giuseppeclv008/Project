@@ -3,7 +3,6 @@
 # Requirements Document - EZShop
 
 Date: 24/10/2025
-
 Version: 1.0.0
 
 | Version number | Change |
@@ -129,22 +128,13 @@ system <-- shipping
 
 - Manage sales
     * Read sale from cash register
-    * The system shall store for each sale:
-        + list of products with associated quantities
-        + the date  
-        + the total amount spent 
-    * Update inventory (with contents of the sale)
+        * Update inventory (with contents of the sale)
     * Export list as .csv
     * Display sale's stats
         + Display sales grouped by one or more product
         + Display sales grouped by one or more product's attributes  
         + Display sales ranked by number of items sold
 - Manage Catalogue 
-    * The system shall store for each product:
-        + product name
-        + category
-        + unit price
-        + brand
     * Add new product to the catalogue
     * remove product from the catalogue
     * update product in the catalogue 
@@ -156,35 +146,22 @@ system <-- shipping
         + Display item quantity for the selected product (sum of the quantity on each batch with the selected product)
         + Display item quantity grouped by one or more of the product's attributes 
 - Manage inventory
-    *  The system shall store for each batch of products:
-         + information the product contained  
-         + description
-         + expiration date 
-         + quantity in stock 
-    *  Add new batch to inventory
-    *  Delete batch from inventory 
-    *  Update batch 
-    *  Display batch 
+    * Add new batch to inventory
+    * Delete batch from inventory 
+    * Update batch 
+    * Display batch 
         + Display batches information sorted by one or more product/batch attributes
         + Display batches information filtered by one or more product/batch attributes
-    *  Display batch stats
+    * Display batch stats
          + Display number of batches per product 
          + Display number of batches grouped by one or more product attributes
-    *  Display batches' supplier price
+    * Display batches' supplier price
          + Display supplier price for batches per one or more product attributes 
-    *  If a batch has an expiration date, notify the user when it is expired 
-    *  If a product is about to expire, notify the user
-    *  Import batches list as .csv 
-    *  Export batches list as .csv
+    * If a batch has an expiration date, notify the user when it is expired 
+    * If a product is about to expire, notify the user
+    * Import batches list as .csv 
+    * Export batches list as .csv
 - Manage orders
-    * The system shall store for each order :
-        + the supplier 
-        + the product that is ordered
-        + number of batches ordered 
-        + delivered or not
-        + order and delivery date
-        + supplier unit price 
-        + number of items for each batch
     * Add new order
     * Delete order
     * Edit order
@@ -211,6 +188,28 @@ system <-- shipping
     * Verify password
 
 **Design cues** 
+* The system shall store for each sale:
+        + list of products with associated quantities
+        + the date  
+        + the total amount spent 
+ * The system shall store for each order :
+        + the supplier 
+        + the product that is ordered
+        + number of batches ordered 
+        + delivered or not
+        + order and delivery date
+        + supplier unit price 
+        + number of items for each batch
+* The system shall store for each product:
+        + product name
+        + category
+        + unit price
+        + brand
+*  The system shall store for each batch of products:
+         + information the product contained  
+         + description
+         + expiration date 
+         + quantity in stock 
 
 **Usecase**:
 - item fields
