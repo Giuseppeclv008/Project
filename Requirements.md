@@ -142,6 +142,7 @@ system <-- shipping
         + Create new product in the catalogue
         + Update product from the catalogue
         + Delete product from the catalogue
+    * Set product item quantity warning threshold
     * Create user-defined product list
         + Retrieve list of products grouped by one or more of their attributes
         + Retrieve list of products sorted by one or more of their attributes
@@ -178,7 +179,6 @@ system <-- shipping
     * Notify user
         + Notify user of order's status change
         + Notify user when the quantity of a certain product is below a user set threshold 
-    * Set product item quantity warning threshold
     * Create user-defined orders list
         + Retrieve list of orders grouped by one or more of their attributes
         + Retrieve list of orders sorted by one or more of their attributes
@@ -191,7 +191,6 @@ system <-- shipping
     * Track Incomes
     * Track balance
     * Track taxes
-    * Retrieve accounting stats
 - Authenticate owner
     * Set password
     * Change password
