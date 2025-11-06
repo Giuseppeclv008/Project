@@ -142,8 +142,9 @@ system <-- shipping
 | FR2.3.1 | Retrieve list of products grouped by one or more of their attributes |
 | FR2.3.2 | Retrieve list of products sorted by one or more of their attributes |
 | FR2.3.3 | Retrieve list of products ranked by one or more of their attributes |
-| FR2.3.4 | Retrieve item quantity for the selected product (sum of the quantity on each batch with the selected product) |
-| FR2.3.5 | Retrieve item quantity grouped by one or more of the product's attributes |
+| FR2.3.4 | Retrieve list of products filtered by one or more of their attributes |
+| FR2.3.5 | Retrieve item quantity for the selected product (sum of the quantity on each batch with the selected product) |
+| FR2.3.6 | Retrieve item quantity grouped by one or more of the product's attributes |
 | FR2.4 | Manage `.csv` |
 | FR2.4.1 | Import product list from `.csv` |
 | FR2.4.2 | Export list of products as `.csv` |
@@ -156,7 +157,7 @@ system <-- shipping
 | FR3.2.1 | Retrieve batches grouped by one or more product/batch attributes |
 | FR3.2.2 | Retrieve batches sorted by one or more product/batch attributes |
 | FR3.2.3 | Retrieve batches ranked by one or more product/batch attributes |
-| FR3.2.4 | Retrieve supplier price for batches per one or more product attributes |
+| FR3.2.4 | Retrieve batches filtered by one or more product/batch attributes |
 | FR3.3 | Notify user |
 | FR3.3.1 | Notify user when batch is within x days from expiration date |
 | FR3.3.2 | Notify user when batch past the expiration date |
@@ -178,6 +179,7 @@ system <-- shipping
 | FR4.4.1 | Retrieve list of orders grouped by one or more of their attributes |
 | FR4.4.2 | Retrieve list of orders sorted by one or more of their attributes |
 | FR4.4.3 | Retrieve list of orders ranked by one or more of their attributes |
+| FR4.4.4 | Retrieve list of orders filtered by one or more of their attributes |
 | FR4.5 | Manage `.csv` |
 | FR4.5.1 | Import orders list from `.csv` |
 | FR4.5.2 | Export list of orders as `.csv` |
@@ -185,7 +187,7 @@ system <-- shipping
 | FR5.1 | Track invoices |
 | FR5.1.1 | Track Invoices for orders made |
 | FR5.1.2 | Create user-defined invoice list |
-| FR5.1.2.1 | Retrieve list of invoices grouped by one or more of their attributes |
+| FR5.1.2.1 | Retrieve list of invoices filtered by one or more of their attributes |
 | FR5.2 | Track incomes |
 | FR5.2.1 | Track incoming cash flow |
 | FR5.2.3 | retrieve income history at different time granularities (day, month, year etc..) |
