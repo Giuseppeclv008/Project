@@ -189,7 +189,9 @@ system <-- shipping
 - Manage accounting
     * Track Invoices
     * Track Incomes
-    * Track balance
+        + track incoming cash flow
+        + track outgoing cash flow 
+        + retrieve revenue history at different time granularities (day, month, year etc..)
     * Track taxes
 - Authenticate owner
     * Set password
@@ -254,9 +256,9 @@ system <-- shipping
 
 # Table of rights
 
-|  Actor   | FR1         | FRx |
-| :---:    | :---------: | :---: |
-|          |             |       |
+|  Actor   | FR1                                   | FR2 | FR3 | FR4                                 | FR5 | FR6                                                           |FR7|
+| :-:      |:-------------------------------------:| :-: | :-: |:-----------------------------------:|:--------------------------:|:-------------------------------------------------------------:|:-:|
+| user     |- FR1.1 N <br> - FR1.2 Y <br> - FR1.3 Y|  Y  |  Y  |- FR4.1 Y <br> - FR4.2.1 Y -FR4.2.2 N| - FR5.2.1 N <br> - FR52.2 Y <br> - FR52.2 Y <br> - FR5.3.1 N <br> - FR5.3.2 Y <br> - FR5.4.1 N <br> - FR5.4.2 Y|- FR6.1 Y <br> - FR6.2 Y <br> - FR6.3 N| N |
 
 # Use case diagram and use cases
 
