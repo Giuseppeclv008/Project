@@ -128,20 +128,20 @@ system <-- shipping
 
 - Manage sales
     * Read sale from cash register
-        * Update inventory (with contents of the sale)
+        + Update inventory (with contents of the sale)
     * Display sale view
         + Display sales grouped by one or more product
         + Display sales sorted by one or more product's attributes  
         + Display sales ranked by one or more product's attributes  
         + Display sales ranked by number of items sold
-    - Manage `.csv` 
-        * Import sales list from `.csv`
-        * Export list of sales as `.csv`
+    * Manage `.csv` 
+        + Import sales list from `.csv`
+        + Export list of sales as `.csv`
 - Manage Catalogue 
-    - Manage CRUD operations
-        * Create new product in the catalogue
-        * Update product from the catalogue
-        * Delete product from the catalogue
+    * Manage CRUD operations
+        + Create new product in the catalogue
+        + Update product from the catalogue
+        + Delete product from the catalogue
     * Display product view
         + Display list of products grouped by one or more of their attributes
         + Display list of products sorted by one or more of their attributes
@@ -149,24 +149,24 @@ system <-- shipping
         + Display item quantity for the selected product (sum of the quantity on each batch with the selected product)
         + Display item quantity grouped by one or more of the product's attributes 
     * Manage `.csv` 
-        * Import product list from `.csv`
-        * Export list of products as `.csv`
+        + Import product list from `.csv`
+        + Export list of products as `.csv`
 - Manage inventory
-    - Manage CRUD operations
-        * Create new batch in the inventory
-        * Update batch from the inventory
-        * Delete batch from the inventory 
+    * Manage CRUD operations
+        + Create new batch in the inventory
+        + Update batch from the inventory
+        + Delete batch from the inventory 
     * Display batch view
         + Display batches grouped by one or more product/batch attributes
         + Display batches sorted by one or more product/batch attributes
         + Display batches ranked by one or more product/batch attributes
         + Display supplier price for batches per one or more product attributes 
-    + Notify user
+    * Notify user
         + Notify user when batch is about to expire 
         + Notify user when batch is expired
     * Manage `.csv` 
-        * Import batches list from `.csv`
-        * Export list of batches as `.csv`
+        + Import batches list from `.csv`
+        + Export list of batches as `.csv`
 - Manage orders
     * Manage CRUD operations
         + Create new order in the list of orders
@@ -185,8 +185,8 @@ system <-- shipping
         + Display list of orders sorted by one or more of their attributes
         + Display list of orders ranked by one or more of their attributes
     * Manage `.csv` 
-        * Import orders list from `.csv`
-        * Export list of orders as `.csv`
+        + Import orders list from `.csv`
+        + Export list of orders as `.csv`
 - Manage accounting
     * Track Invoices
     * Track Incomes
