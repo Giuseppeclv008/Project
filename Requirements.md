@@ -201,10 +201,23 @@ system <-- shipping
 
 |   ID    | Type (efficiency, reliability, ..) | Description | Refers to |
 | :-----: | :--------------------------------: | :---------: | :-------: |
-|  NFR1   |                                    |             |           |
-|  NFR2   |                                    |             |           |
-|  NFR3   |                                    |             |           |
-| NFRx .. |                                    |             |           |
+|  NFR1  |Efficiency| All CRUD operations should be in the range $[0.100, 0.500] \, ms$||
+|  NFR2  |Efficiency| The creation of user-defined lists should be in the range $[1000, 5000] \, ms$||
+|  NFR3  |Efficiency| The desktop application should occupy no more than $500 \, MB$ of space||
+|  NFR5  |Efficiency| The import/export of `.csv` files with $500$ rows should take $[1000, 10'000] \, ms$||
+|  NFR6  |Efficiency| The import/export of `.csv` files with $500$ rows should take $[1000, 10'000] \, ms$||
+| NFR4   |Usability| The application should be accessible to people with low to moderate skill with smartphone devices, web services and apps. All usability NFR are defined with this target demographic in mind.||
+| NFR4.1 |Usability| Setting and updating the owner's password should take no more than $5 \, min$ ||
+| NFR4.2 |Usability| Defining a custom list should take less than $1 \, min$||
+| NFR4.3 |Usability| All CRUD operations should take less than $1 \, min$ for element||
+| NFR4.4 |Usability| Importing/exporting a correctly formatted `.csv` file should take less than $1 \, min$ ||
+| NFR4.5 |Usability| Reviewing application notifications should take less than $1 \, min$ ||
+| NFR5 |Reliability| $99.9999 \%$ of all sales should be correctly recorded||
+| NFR6 |Reliability| Imported/exported `.csv` files should less than $1$ wrong records every $1'000'000$ rows ||
+| NFR7 |Reliability| CRUD operations should have less than $1$ error every $100'000$ operations||
+| NFR8 |Reliability| Notification should fail to notify the user less than $1$ every $100'000$ notifications||
+| NFR9 |Reliability| Order status for supported suppliers, should be updated no less than $1$ time every $6 \, h$||
+
 
 # Table of rights
 
