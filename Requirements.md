@@ -121,84 +121,84 @@ system <-- shipping
 
 | ID | Description |
 |:--:|:-------------|
-| FR1 | Manage sales |
-| FR1.1 | Read sale from cash register |
+| **FR1** | **Manage sales** |
+| *FR1.1* | *Read sale from cash register* |
 | FR1.1.1 | Update inventory (with contents of the sale) |
-| FR1.2 | Create user-defined sale list |
+| *FR1.2* | *Create user-defined sale list* |
 | FR1.2.1 | Retrieve sales grouped by one or more product |
 | FR1.2.2 | Retrieve sales sorted by one or more product's attributes |
 | FR1.2.3 | Retrieve sales ranked by one or more product's attributes |
 | FR1.2.4 | Retrieve sales ranked by number of items sold |
-| FR1.3 | Manage `.csv` |
+| *FR1.3* | *Manage `.csv`* |
 | FR1.3.1 | Import sales list from `.csv` |
 | FR1.3.2 | Export list of sales as `.csv` |
-| FR2 | Manage catalogue |
-| FR2.1 | Manage CRUD operations |
+| **FR2** | **Manage catalogue** |
+| *FR2.1* | *Manage CRUD operations* |
 | FR2.1.1 | Create new product in the catalogue |
 | FR2.1.2 | Update product from the catalogue |
 | FR2.1.3 | Delete product from the catalogue |
-| FR2.2 | Set product item quantity warning threshold |
-| FR2.3 | Create user-defined product list |
+| *FR2.2* | *Set product item quantity warning threshold* |
+| *FR2.3* | *Create user-defined product list* |
 | FR2.3.1 | Retrieve list of products grouped by one or more of their attributes |
 | FR2.3.2 | Retrieve list of products sorted by one or more of their attributes |
 | FR2.3.3 | Retrieve list of products ranked by one or more of their attributes |
 | FR2.3.4 | Retrieve list of products filtered by one or more of their attributes |
 | FR2.3.5 | Retrieve item quantity for the selected product (sum of the quantity on each batch with the selected product) |
 | FR2.3.6 | Retrieve item quantity grouped by one or more of the product's attributes |
-| FR2.4 | Manage `.csv` |
+| *FR2.4* | *Manage `.csv`* |
 | FR2.4.1 | Import product list from `.csv` |
 | FR2.4.2 | Export list of products as `.csv` |
-| FR3 | Manage inventory |
-| FR3.1 | Manage CRUD operations |
+| **FR3** | **Manage inventory** |
+| *FR3.1* | *Manage CRUD operations* |
 | FR3.1.1 | Create new batch in the inventory |
 | FR3.1.2 | Update batch from the inventory |
 | FR3.1.3 | Delete batch from the inventory |
-| FR3.2 | Create user-defined batch list |
+| *FR3.2* | *Create user-defined batch list* |
 | FR3.2.1 | Retrieve batches grouped by one or more product/batch attributes |
 | FR3.2.2 | Retrieve batches sorted by one or more product/batch attributes |
 | FR3.2.3 | Retrieve batches ranked by one or more product/batch attributes |
 | FR3.2.4 | Retrieve batches filtered by one or more product/batch attributes |
-| FR3.3 | Notify user |
+| *FR3.3* | *Notify user* |
 | FR3.3.1 | Notify user when batch is within x days from expiration date |
 | FR3.3.2 | Notify user when batch past the expiration date |
-| FR3.4 | Manage `.csv` |
+| *FR3.4* | *Manage `.csv`* |
 | FR3.4.1 | Import batches list from `.csv` |
 | FR3.4.2 | Export list of batches as `.csv` |
-| FR4 | Manage orders |
-| FR4.1 | Manage CRUD operations |
+| **FR4** | **Manage orders** |
+| *FR4.1* | *Manage CRUD operations* |
 | FR4.1.1 | Create new order in the list of orders |
 | FR4.1.2 | Update order from the list of orders |
 | FR4.1.3 | Delete order from the list of orders |
-| FR4.2 | Automatically track order for supported suppliers |
+| *FR4.2* | *Automatically track order for supported suppliers* |
 | FR4.2.1 | Retrieve current order's status |
 | FR4.2.2 | Update current order's status |
-| FR4.3 | Notify user |
+| *FR4.3* | *Notify user* |
 | FR4.3.1 | Notify user of order's status change |
 | FR4.3.2 | Notify user when the quantity of a certain product is below a user set threshold |
-| FR4.4 | Create user-defined orders list |
+| *FR4.4* | *Create user-defined orders list* |
 | FR4.4.1 | Retrieve list of orders grouped by one or more of their attributes |
 | FR4.4.2 | Retrieve list of orders sorted by one or more of their attributes |
 | FR4.4.3 | Retrieve list of orders ranked by one or more of their attributes |
 | FR4.4.4 | Retrieve list of orders filtered by one or more of their attributes |
-| FR4.5 | Manage `.csv` |
+| *FR4.5* | *Manage `.csv`* |
 | FR4.5.1 | Import orders list from `.csv` |
 | FR4.5.2 | Export list of orders as `.csv` |
-| FR5 | Manage accounting |
-| FR5.1 | Track invoices |
+| **FR5** | **Manage accounting** |
+| *FR5.1* | *Track invoices* |
 | FR5.1.1 | Track Invoices for orders made |
 | FR5.1.2 | Create user-defined invoice list |
 | FR5.1.2.1 | Retrieve list of invoices filtered by one or more of their attributes |
-| FR5.2 | Track incomes |
+| *FR5.2* | *Track incomes* |
 | FR5.2.1 | Track incoming cash flow |
 | FR5.2.3 | retrieve income history at different time granularities (day, month, year etc..) |
-| FR5.3 | Track expense |
+| *FR5.3* | *Track expense* |
 | FR5.3.1 | Track outgoing cash flow |
 | FR5.3.2 | retrieve outgoing history at different time granularities (day, month, year etc..) |
-| FR5.4 | Track balance |
+| *FR5.4* | *Track balance* |
 | FR5.4.1 | Compute the total balance based on incomes and expense with respect to day, week, month, quarter, semester and year|
 | FR5.4.2 | Retrieve current balance with respect to the current day, week, month, quarter, semester and year|
 | FR5.4.3 | Retrieve balance history |
-| FR6 | Authenticate owner |
+| **FR6** | **Authenticate owner** |
 | FR6.1 | Set password |
 | FR6.2 | Change password |
 | FR6.3 | Verify password |
