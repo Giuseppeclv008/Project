@@ -129,11 +129,11 @@ system <-- shipping
 - Manage sales
     * Read sale from cash register
         + Update inventory (with contents of the sale)
-    * Display sale view
-        + Display sales grouped by one or more product
-        + Display sales sorted by one or more product's attributes  
-        + Display sales ranked by one or more product's attributes  
-        + Display sales ranked by number of items sold
+    * Crate user-defined sale list
+        + Retrieve sales grouped by one or more product
+        + Retrieve sales sorted by one or more product's attributes  
+        + Retrieve sales ranked by one or more product's attributes  
+        + Retrieve sales ranked by number of items sold
     * Manage `.csv` 
         + Import sales list from `.csv`
         + Export list of sales as `.csv`
@@ -142,12 +142,12 @@ system <-- shipping
         + Create new product in the catalogue
         + Update product from the catalogue
         + Delete product from the catalogue
-    * Display product view
-        + Display list of products grouped by one or more of their attributes
-        + Display list of products sorted by one or more of their attributes
-        + Display list of products ranked by one or more of their attributes
-        + Display item quantity for the selected product (sum of the quantity on each batch with the selected product)
-        + Display item quantity grouped by one or more of the product's attributes 
+    * Create user-defined product list
+        + Retrieve list of products grouped by one or more of their attributes
+        + Retrieve list of products sorted by one or more of their attributes
+        + Retrieve list of products ranked by one or more of their attributes
+        + Retrieve item quantity for the selected product (sum of the quantity on each batch with the selected product)
+        + Retrieve item quantity grouped by one or more of the product's attributes 
     * Manage `.csv` 
         + Import product list from `.csv`
         + Export list of products as `.csv`
@@ -156,14 +156,14 @@ system <-- shipping
         + Create new batch in the inventory
         + Update batch from the inventory
         + Delete batch from the inventory 
-    * Display batch view
-        + Display batches grouped by one or more product/batch attributes
-        + Display batches sorted by one or more product/batch attributes
-        + Display batches ranked by one or more product/batch attributes
-        + Display supplier price for batches per one or more product attributes 
+    * Create user-defined batch list
+        + Retrieve batches grouped by one or more product/batch attributes
+        + Retrieve batches sorted by one or more product/batch attributes
+        + Retrieve batches ranked by one or more product/batch attributes
+        + Retrieve supplier price for batches per one or more product attributes 
     * Notify user
-        + Notify user when batch is about to expire 
-        + Notify user when batch is expired
+        + Notify user when batch is within x days from expiration date 
+        + Notify user when batch past the expiration date
     * Manage `.csv` 
         + Import batches list from `.csv`
         + Export list of batches as `.csv`
@@ -175,15 +175,14 @@ system <-- shipping
     * Automatically track order for supported suppliers
         + Retrieve current order's status
         + Update current order's status
-        + Display new order status 
     * Notify user
         + Notify user of order's status change
         + Notify user when the quantity of a certain product is below a user set threshold 
     * Set product item quantity warning threshold
-    * Display orders view
-        + Display list of orders grouped by one or more of their attributes
-        + Display list of orders sorted by one or more of their attributes
-        + Display list of orders ranked by one or more of their attributes
+    * Create user-defined orders list
+        + Retrieve list of orders grouped by one or more of their attributes
+        + Retrieve list of orders sorted by one or more of their attributes
+        + Retrieve list of orders ranked by one or more of their attributes
     * Manage `.csv` 
         + Import orders list from `.csv`
         + Export list of orders as `.csv`
@@ -192,7 +191,7 @@ system <-- shipping
     * Track Incomes
     * Track balance
     * Track taxes
-    * Display accounting stats
+    * Retrieve accounting stats
 - Authenticate owner
     * Set password
     * Change password
