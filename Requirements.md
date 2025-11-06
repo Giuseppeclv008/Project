@@ -185,9 +185,14 @@ system <-- shipping
 | FR5.1 | Track invoices |
 | FR5.2 | Track incomes |
 | FR5.2.1 | track incoming cash flow |
-| FR5.2.2 | track outgoing cash flow |
-| FR5.2.3 | retrieve revenue history at different time granularities (day, month, year etc..) |
-| FR5.3 | Track taxes |
+| FR5.2.3 | retrieve income history at different time granularities (day, month, year etc..) |
+| FR5.3 | Track expense |
+| FR5.3.1 | Track outgoing cash flow |
+| FR5.3.2 | retrieve outgoing history at different time granularities (day, month, year etc..) |
+| FR5.4 | Track balance |
+| FR5.4.1 | Compute the total balance based on incomes and expense with respect to quarter, semester and year|
+| FR5.4.2 | Retrieve current balance with respect to the current quarter, semester and year|
+| FR5.4.3 | Retrieve balance history |
 | FR6 | Authenticate owner |
 | FR6.1 | Set password |
 | FR6.2 | Change password |
