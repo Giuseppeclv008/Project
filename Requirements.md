@@ -177,6 +177,10 @@ system <-- shipping
 | *FR4.4* | *Manage `.csv`* |
 | FR4.4.1 | Import orders list from `.csv` |
 | FR4.4.2 | Export list of orders as `.csv` |
+| FR4.5   | *Suggest order* |
+| FR4.5.1 | Retrieve products with item count below threshold |
+| FR4.5.2 | Retrieve possible supplier for products with item count below threshold|
+| FR4.5.3 | Generate order suggestion |
 | **FR5** | **Manage accounting** |
 | *FR5.1* | *Track invoices* |
 | FR5.1.1 | Track Invoices for orders made |
