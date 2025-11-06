@@ -250,10 +250,15 @@ system <-- shipping
 # Use case diagram and use cases
 
 ## Use case brief
-|  UC name   | Goal         | Description |
-| :---:    | :---------: | :---: |
-|          |             |       |
-
+| **UC Name**                        | **Goal**                                   | **Description**                                                                                                                                                                                                                       |
+| ---------------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **UC1 – Manage Sales**             | Record and manage sales                    | The system allows reading sales data from the cash register, updating the inventory, creating and viewing customized sales lists, and importing/exporting data in `.csv` format.                                                      |
+| **UC2 – Manage Inventory**         | Track products and  item quantity            | User can create, update and delete product batches, generate customized lists, monitor expiration dates, and he will be automatically notificated when products quantities fall below defined thresholds.                  |
+| **UC3 – Manage Orders**            | Manage supplier orders                     | The system allows creating, updating, and deleting orders, automatically tracking their status for supported suppliers, and generating notifications when statuses change or quantities fall below set thresholds.                     |
+| **UC4 – Manage Accounting**        | Manage accounting and balance sheets        | The application keeps track of invoices, revenues, balances, and taxes, providing statistics and accounting reports for the shop owner.                                                                                               |
+| **UC5 – Authenticate Owner**       | Ensure secure access                        | The system allows the shop owner to authenticate through a password and manage it (creation, modification, and verification).                                                                                                |
+| **UC6 – Manage Product Catalogue** | Manage the product catalog                  | Allows creating, updating, or deleting products, displaying customized lists (by category, brand, price, etc.), and importing/exporting data to/from `.csv` files.                                                                    |
+| **UC7 – Receive Notifications**    | Notify the user of relevant events          | The system sends notifications related to product expirations, ongoing orders, status changes, or quantity reached thresholds.                                                                                                        |
 
 
 ## Use case diagram
