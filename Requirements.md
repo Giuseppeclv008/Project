@@ -183,8 +183,11 @@ system <-- shipping
 | FR4.5.2 | Export list of orders as `.csv` |
 | FR5 | Manage accounting |
 | FR5.1 | Track invoices |
+| FR5.1.1 | Track Invoices for orders made |
+| FR5.1.2 | Create user-defined invoice list |
+| FR5.1.2.1 | Retrieve list of invoices grouped by one or more of their attributes |
 | FR5.2 | Track incomes |
-| FR5.2.1 | track incoming cash flow |
+| FR5.2.1 | Track incoming cash flow |
 | FR5.2.3 | retrieve income history at different time granularities (day, month, year etc..) |
 | FR5.3 | Track expense |
 | FR5.3.1 | Track outgoing cash flow |
