@@ -184,8 +184,10 @@ system <-- shipping
 | FR5 | Manage accounting |
 | FR5.1 | Track invoices |
 | FR5.2 | Track incomes |
-| FR5.3 | Track balance |
-| FR5.4 | Track taxes |
+| FR5.2.1 | track incoming cash flow |
+| FR5.2.2 | track outgoing cash flow |
+| FR5.2.3 | retrieve revenue history at different time granularities (day, month, year etc..) |
+| FR5.3 | Track taxes |
 | FR6 | Authenticate owner |
 | FR6.1 | Set password |
 | FR6.2 | Change password |
