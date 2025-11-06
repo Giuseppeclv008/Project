@@ -158,12 +158,9 @@ system <-- shipping
 | FR3.2.2 | Retrieve batches sorted by one or more product/batch attributes |
 | FR3.2.3 | Retrieve batches ranked by one or more product/batch attributes |
 | FR3.2.4 | Retrieve batches filtered by one or more product/batch attributes |
-| *FR3.3* | *Notify user* |
-| FR3.3.1 | Notify user when batch is within x days from expiration date |
-| FR3.3.2 | Notify user when batch past the expiration date |
-| *FR3.4* | *Manage `.csv`* |
-| FR3.4.1 | Import batches list from `.csv` |
-| FR3.4.2 | Export list of batches as `.csv` |
+| *FR3.3* | *Manage `.csv`* |
+| FR3.3.1 | Import batches list from `.csv` |
+| FR3.3.2 | Export list of batches as `.csv` |
 | **FR4** | **Manage orders** |
 | *FR4.1* | *Manage CRUD operations* |
 | FR4.1.1 | Create new order in the list of orders |
@@ -172,17 +169,14 @@ system <-- shipping
 | *FR4.2* | *Automatically track order for supported suppliers* |
 | FR4.2.1 | Retrieve current order's status |
 | FR4.2.2 | Update current order's status |
-| *FR4.3* | *Notify user* |
-| FR4.3.1 | Notify user of order's status change |
-| FR4.3.2 | Notify user when the quantity of a certain product is below a user set threshold |
-| *FR4.4* | *Create user-defined orders list* |
-| FR4.4.1 | Retrieve list of orders grouped by one or more of their attributes |
-| FR4.4.2 | Retrieve list of orders sorted by one or more of their attributes |
-| FR4.4.3 | Retrieve list of orders ranked by one or more of their attributes |
-| FR4.4.4 | Retrieve list of orders filtered by one or more of their attributes |
-| *FR4.5* | *Manage `.csv`* |
-| FR4.5.1 | Import orders list from `.csv` |
-| FR4.5.2 | Export list of orders as `.csv` |
+| *FR4.3* | *Create user-defined orders list* |
+| FR4.3.1 | Retrieve list of orders grouped by one or more of their attributes |
+| FR4.3.2 | Retrieve list of orders sorted by one or more of their attributes |
+| FR4.3.3 | Retrieve list of orders ranked by one or more of their attributes |
+| FR4.3.4 | Retrieve list of orders filtered by one or more of their attributes |
+| *FR4.4* | *Manage `.csv`* |
+| FR4.4.1 | Import orders list from `.csv` |
+| FR4.4.2 | Export list of orders as `.csv` |
 | **FR5** | **Manage accounting** |
 | *FR5.1* | *Track invoices* |
 | FR5.1.1 | Track Invoices for orders made |
@@ -202,6 +196,12 @@ system <-- shipping
 | FR6.1 | Set password |
 | FR6.2 | Change password |
 | FR6.3 | Verify password |
+|**FR7** | **Manage notifications** |
+| FR7.1 | Notify user of order's status change |
+| FR7.2 | Notify user when quantity of a certain product is below a user set threshold |
+| FR7.3 | Notify user when batch is within x days from expiration date |
+| FR7.4 | Notify user when batch is past the expiration date |
+| FR7.5 | Delete notification |
 
 **Design cues** 
 - The system shall store for each sale:
