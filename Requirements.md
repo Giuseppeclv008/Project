@@ -125,9 +125,9 @@ system <-- shipping
 | *FR1.1* | *Read sale from cash register* |
 | FR1.1.1 | Update inventory (with contents of the sale) |
 | *FR1.2* | *Create user-defined sale list* |
-| FR1.2.1 | Retrieve sales grouped by one or more product |
-| FR1.2.2 | Retrieve sales sorted by one or more product's attributes |
-| FR1.2.3 | Retrieve sales ranked by one or more product's attributes |
+| FR1.2.1 | All sales list has to filtered with respect to a time window |
+| FR1.2.2 | Retrieve sales filtered by type of products sold |
+| FR1.2.3 | Retrieve sales ranked by number of items sold  with respect to a certain product |
 | FR1.2.4 | Retrieve sales ranked by number of items sold |
 | *FR1.3* | *Manage `.csv`* |
 | FR1.3.1 | Import sales list from `.csv` |
@@ -139,12 +139,9 @@ system <-- shipping
 | FR2.1.3 | Delete product from the catalogue |
 | *FR2.2* | *Set product item quantity warning threshold* |
 | *FR2.3* | *Create user-defined product list* |
-| FR2.3.1 | Retrieve list of products grouped by one or more of their attributes |
-| FR2.3.2 | Retrieve list of products sorted by one or more of their attributes |
-| FR2.3.3 | Retrieve list of products ranked by one or more of their attributes |
 | FR2.3.4 | Retrieve list of products filtered by one or more of their attributes |
-| FR2.3.5 | Retrieve item quantity for the selected product (sum of the quantity on each batch with the selected product) |
-| FR2.3.6 | Retrieve item quantity grouped by one or more of the product's attributes |
+| FR2.3.5 | Retrieve number of item for the selected product (sum of the quantity on each batch with the selected product) |
+| FR2.3.6 | Retrieve number of item grouped by one or more of the product's attributes |
 | *FR2.4* | *Manage `.csv`* |
 | FR2.4.1 | Import product list from `.csv` |
 | FR2.4.2 | Export list of products as `.csv` |
@@ -154,10 +151,7 @@ system <-- shipping
 | FR3.1.2 | Update batch from the inventory |
 | FR3.1.3 | Delete batch from the inventory |
 | *FR3.2* | *Create user-defined batch list* |
-| FR3.2.1 | Retrieve batches grouped by one or more product/batch attributes |
-| FR3.2.2 | Retrieve batches sorted by one or more product/batch attributes |
-| FR3.2.3 | Retrieve batches ranked by one or more product/batch attributes |
-| FR3.2.4 | Retrieve batches filtered by one or more product/batch attributes |
+ FR3.2.1 | Retrieve batches filtered by one or more product/batch attributes |
 | *FR3.3* | *Manage `.csv`* |
 | FR3.3.1 | Import batches list from `.csv` |
 | FR3.3.2 | Export list of batches as `.csv` |
@@ -170,17 +164,14 @@ system <-- shipping
 | FR4.2.1 | Retrieve current order's status |
 | FR4.2.2 | Update current order's status |
 | *FR4.3* | *Create user-defined orders list* |
-| FR4.3.1 | Retrieve list of orders grouped by one or more of their attributes |
-| FR4.3.2 | Retrieve list of orders sorted by one or more of their attributes |
-| FR4.3.3 | Retrieve list of orders ranked by one or more of their attributes |
-| FR4.3.4 | Retrieve list of orders filtered by one or more of their attributes |
+| FR4.3.1 | Retrieve list of orders filtered by one or more of their attributes |
 | *FR4.4* | *Manage `.csv`* |
 | FR4.4.1 | Import orders list from `.csv` |
 | FR4.4.2 | Export list of orders as `.csv` |
 | FR4.5   | *Suggest order* |
 | FR4.5.1 | Retrieve products with item count below threshold |
 | FR4.5.2 | Retrieve possible supplier for products with item count below threshold|
-| FR4.5.3 | Generate order suggestion |
+| FR4.5.3 | Generate order suggestion (without specifying the number of item) |
 | **FR5** | **Manage accounting** |
 | *FR5.1* | *Track invoices* |
 | FR5.1.1 | Track Invoices for orders made |
