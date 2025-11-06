@@ -258,7 +258,7 @@ system <-- shipping
 
 |  Actor   | FR1                                   | FR2 | FR3 | FR4                                 | FR5 | FR6                                                           |FR7|
 | :-:      |:-------------------------------------:| :-: | :-: |:-----------------------------------:|:--------------------------:|:-------------------------------------------------------------:|:-:|
-  user     | FR1.1 N <br> FR1.2 Y <br> FR1.3 Y|  Y  |  Y  |FR4.1 Y <br> FR4.2.1 Y <br> FR4.2.2 N|FR5.2.1 N <br> FR52.2 Y <br> FR5.3.1 N <br> FR5.3.2 Y <br> FR5.4.1 N <br> FR5.4.2 Y <br> FR5.4.3 Y|FR6.1 Y <br>   FR6.2 Y <br> FR6.3 N| N |
+|user     | FR1.1 N <br> FR1.2 Y <br> FR1.3 Y|  Y  |  Y  |FR4.1 Y <br> FR4.2.1 Y <br> FR4.2.2 N|FR5.1.1 n <BR> FR5.1.2 Y <br> FR5.2.1 N <br> FR52.2 Y <br> FR5.3.1 N <br> FR5.3.2 Y <br> FR5.4.1 N <br> FR5.4.2 Y <br> FR5.4.3 Y|FR6.1 Y <br>   FR6.2 Y <br> FR6.3 N| N |
 
 # Use case diagram and use cases
 
