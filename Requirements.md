@@ -199,28 +199,28 @@ system <-- shipping
     * Verify password
 
 **Design cues** 
-* The system shall store for each sale:
-        + list of items with associated quantities
-        + the date  
-        + the total amount spent 
- * The system shall store for each order :
-        + the supplier 
-        + the product that is ordered
-        + number of batches ordered 
-        + delivered or not
-        + order and delivery date
-        + supplier unit price 
-        + number of items for each batch
-* The system shall store for each product:
-        + product name
-        + category
-        + unit price
-        + brand
-*  The system shall store for each batch of products:
-         + information the product contained  
-         + description
-         + expiration date 
-         + quantity in stock 
+- The system shall store for each sale:
+    * list of items with associated quantities
+    * the date  
+    * the total amount spent 
+- The system shall store for each order :
+    * the supplier 
+    * the product that is ordered
+    * number of batches ordered 
+    * delivered or not
+    * order and delivery date
+    * supplier unit price 
+    * number of items for each batch
+- The system shall store for each product:
+    * product name
+    * category
+    * unit price
+    * brand
+- The system shall store for each batch of products:
+    * information the product contained  
+    * description
+    * expiration date 
+    * quantity in stock 
 
 **Usecase**:
 - item fields
