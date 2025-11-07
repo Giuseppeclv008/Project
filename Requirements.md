@@ -125,10 +125,10 @@ system <-- shipping
 | *FR1.1* | *Read sale from cash register* |
 | FR1.1.1 | Update inventory (with contents of the sale) |
 | *FR1.2* | *Create user-defined sale list* |
-| FR1.2.1 | Retrieve sales filtered by type of products sold |
-| FR1.2.2 | Retrieve sales ranked by number of items sold  with respect to a certain product |
-| FR1.2.3 | Retrieve sales ranked by total spent |
-| FR1.2.4 | Require filtering by a specified date or time window for every retrieval operations |
+| FR1.2.1 | Retrieve sales filtered by a specified date or time window |
+| FR1.2.2 | Retrieve sales filtered by products sold |
+| FR1.2.3 | Retrieve sales ranked by number of items sold per specific product |
+| FR1.2.4 | Retrieve sales ranked by the sum of its item's prices |
 | *FR1.3* | *Manage `.csv`* |
 | FR1.3.1 | Import sales list from `.csv` |
 | FR1.3.2 | Export list of sales as `.csv` |
@@ -141,7 +141,6 @@ system <-- shipping
 | *FR2.3* | *Create user-defined product list* |
 | FR2.3.4 | Retrieve list of products filtered by one or more of their attributes |
 | FR2.3.5 | Retrieve number of items available for the selected product (sum of the quantity on each batch with the selected product) |
-| FR2.3.6 | Retrieve number of items available grouped by one or more of the product's attributes |
 | *FR2.4* | *Manage `.csv`* |
 | FR2.4.1 | Import product list from `.csv` |
 | FR2.4.2 | Export list of products as `.csv` |
@@ -166,6 +165,7 @@ system <-- shipping
 | FR4.2.2 | Update current order's status |
 | *FR4.3* | *Create user-defined orders list* |
 | FR4.3.1 | Retrieve list of orders filtered by one or more of their attributes |
+| FR4.3.2 | Retrieve list of orders filtered by a specific date or time window |
 | *FR4.4* | *Manage `.csv`* |
 | FR4.4.1 | Import orders list from `.csv` |
 | FR4.4.2 | Export list of orders as `.csv` |
@@ -173,6 +173,7 @@ system <-- shipping
 | FR4.5.1 | Retrieve products with item count below threshold |
 | FR4.5.2 | Retrieve possible supplier for products with item count below threshold|
 | FR4.5.3 | Generate order suggestion (without specifying the number of item) |
+| FR4.5.4 | Add suggested order to list of orders|
 | **FR5** | **Manage accounting** |
 | *FR5.1* | *Track invoices* |
 | FR5.1.1 | Track Invoices for orders made |
@@ -187,7 +188,7 @@ system <-- shipping
 | *FR5.4* | *Track balance* |
 | FR5.4.1 | Compute total balance based on incomes and expense with respect to day, week, month, quarter, semester, and year|
 | FR5.4.2 | Retrieve current balance with respect to the current day, week, month, quarter, semester, and year|
-| FR5.4.3 | Retrieve balance history |
+| FR5.4.3 | Retrieve balance history  |
 | **FR6** | **Authenticate owner** |
 | FR6.1 | Set password |
 | FR6.2 | Change password |
