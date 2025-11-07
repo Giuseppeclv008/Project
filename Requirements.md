@@ -161,8 +161,9 @@ system <-- shipping
 | FR4.1.2 | Update order from the list of orders |
 | FR4.1.3 | Delete order from the list of orders |
 | *FR4.2* | *Automatically track order for supported suppliers* |
-| FR4.2.1 | Retrieve current order's status |
-| FR4.2.2 | Update current order's status |
+| FR4.2.1 | Check internet connection |
+| FR4.2.2 | Retrieve current order's status |
+| FR4.2.3 | Update current order's status |
 | *FR4.3* | *Create user-defined orders list* |
 | FR4.3.1 | Retrieve list of orders filtered by one or more of their attributes |
 | FR4.3.2 | Retrieve list of orders filtered by a specific date or time window |
@@ -193,12 +194,23 @@ system <-- shipping
 | FR6.1 | Set password |
 | FR6.2 | Change password |
 | FR6.3 | Verify password |
+| FR6.4 | Encrypt password |
+| FR6.5 | Decrypt password |
 |**FR7** | **Manage notifications** |
 | FR7.1 | Notify user of order's status change |
-| FR7.2 | Notify user when quantity of a certain product is below a user set threshold |
-| FR7.3 | Notify user when batch is within x days from expiration date |
-| FR7.4 | Notify user when batch is past the expiration date |
-| FR7.5 | Delete notification |
+| FR7.2 | Notify user of when order status cannot be changed automatically (API not responding)|
+| FR7.3 | Notify user when quantity of a certain product is below a user set threshold |
+| FR7.4 | Notify user when batch is within x days from expiration date |
+| FR7.5 | Notify user when batch is past the expiration date |
+| FR7.6 | Notify user when there is no internet connection |
+| FR7.7 | Notify user when cash register is not responding |
+| FR7.8 | Delete notification |
+**FR8**| **Manage Cash registers**|
+| *FR8.1* | *Manage CRUD operations* |
+| FR8.1.1 | Create new cash register in the list of cash registers |
+| FR8.1.2 | Update cash register from the list of cash registers |
+| FR8.1.3 | Delete cash register from the list of cash registers |
+
 
 **Design cues** 
 - The system shall store for each sale:
