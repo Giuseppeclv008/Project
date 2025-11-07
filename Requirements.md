@@ -125,10 +125,10 @@ system <-- shipping
 | *FR1.1* | *Read sale from cash register* |
 | FR1.1.1 | Update inventory (with contents of the sale) |
 | *FR1.2* | *Create user-defined sale list* |
-| FR1.2.1 | All sales list has to filtered with respect to a time window |
-| FR1.2.2 | Retrieve sales filtered by type of products sold |
-| FR1.2.3 | Retrieve sales ranked by number of items sold  with respect to a certain product |
-| FR1.2.4 | Retrieve sales ranked by number of items sold |
+| FR1.2.1 | Retrieve sales filtered by type of products sold |
+| FR1.2.2 | Retrieve sales ranked by number of items sold  with respect to a certain product |
+| FR1.2.3 | Retrieve sales ranked by total spent |
+| FR1.2.4 | Require filtering by a specified date or time window for every retrieval operations |
 | *FR1.3* | *Manage `.csv`* |
 | FR1.3.1 | Import sales list from `.csv` |
 | FR1.3.2 | Export list of sales as `.csv` |
@@ -140,8 +140,8 @@ system <-- shipping
 | *FR2.2* | *Set product item quantity warning threshold* |
 | *FR2.3* | *Create user-defined product list* |
 | FR2.3.4 | Retrieve list of products filtered by one or more of their attributes |
-| FR2.3.5 | Retrieve number of item for the selected product (sum of the quantity on each batch with the selected product) |
-| FR2.3.6 | Retrieve number of item grouped by one or more of the product's attributes |
+| FR2.3.5 | Retrieve number of items available for the selected product (sum of the quantity on each batch with the selected product) |
+| FR2.3.6 | Retrieve number of items available grouped by one or more of the product's attributes |
 | *FR2.4* | *Manage `.csv`* |
 | FR2.4.1 | Import product list from `.csv` |
 | FR2.4.2 | Export list of products as `.csv` |
@@ -149,9 +149,10 @@ system <-- shipping
 | *FR3.1* | *Manage CRUD operations* |
 | FR3.1.1 | Create new batch in the inventory |
 | FR3.1.2 | Update batch from the inventory |
-| FR3.1.3 | Delete batch from the inventory |
+| FR3.1.3 | Manually delete batch from the inventory |
+| FR3.1.4 | Automatically delete a batch from inventory when there are no more items | 
 | *FR3.2* | *Create user-defined batch list* |
- FR3.2.1 | Retrieve batches filtered by one or more product/batch attributes |
+| FR3.2.1 | Retrieve batches filtered by one or more product/batch attributes |
 | *FR3.3* | *Manage `.csv`* |
 | FR3.3.1 | Import batches list from `.csv` |
 | FR3.3.2 | Export list of batches as `.csv` |
