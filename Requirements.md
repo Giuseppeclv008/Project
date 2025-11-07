@@ -202,19 +202,91 @@ system <-- shipping
 |   ID    | Type (efficiency, reliability, ..) | Description | Refers to |
 | :-----: | :--------------------------------: | :--------- | :-------: |
 |  NFR1  |Efficiency| - All CRUD operations should be in the range $[100, 500] \, ms$ <br>- The creation of user-defined lists should be in the range $[1000, 5000] \, ms$<br>- The desktop application should occupy no more than $500 \, MB$ of space<br>- The import/export of `.csv` files with $500$ rows should take $[1000, 10'000] \, ms$<br>- Order status for supported suppliers should be updated at least $1$ time every $6 \, h$<br>
-| NFR2   |Usability| - The application should be accessible to people with low to moderate skill with smartphone devices, web services and apps. All usability NFR are defined with this target demographic in mind.<br> - Setting and updating the owner's password should take no more than $5 \, min$ <br> - Defining a custom list should take less than $1 \, min$<br> - All CRUD operations should take less than $1 \, min$ for element<br> - Importing/exporting a correctly formatted `.csv` file should take less than $1 \, min$<br> - Reviewing application notifications should take less than $1 \, min$ ||
+| NFR2   |Usability| - The application should be accessible to people with low to moderate skill with smartphone devices, web services and apps. All usability NFR are defined with this target demographic in mind.<br>-- Setting and updating the owner's password should take no more than $5 \, min$ <br>-- Defining a custom list should take less than $1 \, min$<br>-- All CRUD operations should take less than $1 \, min$ for element<br>-- Importing/exporting a correctly formatted `.csv` file should take less than $1 \, min$<br>-- Reviewing application notifications should take less than $1 \, min$ ||
 | NFR3 |Reliability| - $99.999$ % of all sales should be correctly recorded<br>- Exported `.csv` files should have less than $1$ mistaken row every $100'000$ <br>- Importing `.csv` files should generate less than $1$ mistaken row every $100'000$<br> - CRUD operations should have less than $1$ error every $100'000$ operations<br>- Notification should fail to trigger less than $1$ every $100'000$ notifications<br>- Order status should fail to update properly less than $1$ every $100'000$ updates<br>
 | NFR4 |Portability| The application should work on Windows operating system from the first version of Windows 10 up to the latest version of Windows 11||
 | NFR5 |Security| - All passwords should be stored using some type of encryption<br>- The application must pass common static application security testing||
-| NFR6 |Maintainability | - Static analysis of the code should yield the following results:<br>--|
+| NFR6 |Maintainability | - Static analysis of the code should yield the following results:<br>-- $95$ % of all the code base should be documented<br>-- New functionality should be documented within $1$ week from being deployed<br>-- Unit tests should cover $90$ % of the project's LOCs<br>-- The cyclomatic complexity of the codebase should be $\lt 15$|
 
+- **Functionality**
+  - **Suitability**
+    - All user needs identified in the use cases should map to at least one functional requirement
+  - **Accuracy**
+      * $99.999$ % of all sales should be correctly recorded
+      * Exported `.csv` files should have less than $1$ mistaken row every $100'000$
+      * Importing `.csv` files should generate less than $1$ mistaken row every $100'000$
+      * CRUD operations should have less than $1$ error every $100'000$ operations
+      * Notification should fail to trigger less than $1$ every $100'000$ expected notifications
+      * Order status should fail to update properly less than $1$ time every $100'000$ updates
+  - **Interoperability**
+      * The application should use the Square API to extract sale information form cash registers
+      * The application should use the ?supplier? API to interact with shipping companies
+  - **Security**
+      * Passwords must be encrypted using AES-256 
+      * The application must pass Gitlab SATS without high severity issues (CSVV $\gt 7$) being highlighted
+- **Reliability**
+  - **Maturity**
+      * The application should crash less than $1$ time every $200$ hours of operation
+      * The application should suffer less than $1$ minor visual glitch (solved by changing/refreshing the current tab) every $50$ hours of operation
+  - **Fault Tolerance**
+      * The application should not crash when Importing `.csv` files without the right format 
+      * The application should be able to display the data gathered and provide basic functionality even without an internet connection
+      * The application should be able to work without crashing even when data read from the cash registers is corrupted
+      * The application should be able to work without crashing even when data read from the shipping companies' APIs is corrupted 
+  - **Recoverability**
+      * ? 
+- **Usability**
+  - **Understandability**
+      * The application should display tooltips when hovering over buttons which can be pressed
+      * The application should use consistent design elements and language
+      * The application should follow industry standard practices and conventions
+      * All GUI elements should have a contrast rating greater than $4.5$
+  - **Learnability**
+      * A user with low to moderate digital literacy should be able to learn how to:
+          + navigate the main interface within $5$ minutes
+          + to correctly import a `.csv` file within $10$ minutes
+          + to modify how the data is displayed within $10$ minutes
+          + to add a new product, batch, order, or cash register within $30$ minutes
+  - **Operability**
+      * All CRUD operations should be accessible within $2$ clicks
+      * The GUI should be able to respond to user input within $500$ ms
+  - **Usability compliance** 
+      * The application should follow WCAG guidelines
+- **Efficiency**
+  - **Time Behavior**
+      * All CRUD operations should be completed within $500$ ms 
+      * The creation of user-defined lists should be completed within $5000$ ms
+      * Importing and exporting `.csv` files should take within $10'000$ ms every $1000$ rows 
+      * Order status for supported suppliers should be updated within $3$ h from the actual reported change
+  - **Resource Utilization**
+      * The application should use no more than $500$ MB of disk storage space
+      * The application should use no more than $2$ GB of RAM memory
+      * The application should use no more than $50$ % of the available CPU resources under normal load on average user hardware
+- **Maintainability**
+  - **Analyzability**
+      * $95$ % of code functions should be documented
+      * New functions should be documented within $1$ week
+      * Mean time to diagnose a defect should be within $1$ day
+  - **Changeability**
+      * Mean time to implement a minor feature should be within $1$ working week
+      * Mean time to implement major features should be within $1$ months
+      * The cyclomatic complexity of the codebase should be less than $15$
+  - **Stability**
+      * A new release should introduce less than $1$ regression defect
+  - **Testability**
+      * Unit tests should cover $90$ % of the codebase
+      * Integration tests should cover $80$ % of the codebase
+- **Portability**
+  - **Adaptability**
+      * The application should run on Windows 10 and 11 without code modification
+  - **Installability**
+      * The application should complete installation within $10$ minutes on tested hardware
+      * The application should complete installation with a success rate greater than $95$ % on tested hardware
+  - **Co-existence**
+      * The application should be able to run alongside the common antivirus applications (such as: tested with Windows Defender, Avast, McAfee, Norton, BitDefender, Kaspersky, AVG, ESET, Trend Micro, Sophos) without conficts
+      * The application should be able to perform its functionalities without requiring exclusive system resources access
+      * The application should be able to work alongside firewalls
 
-- Usability
-- Efficiency
-- Reliability
-- Maintainability
-- Portability
-- Security
 
 
 # Table of rights
