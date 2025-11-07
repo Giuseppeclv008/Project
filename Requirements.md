@@ -283,7 +283,7 @@ system <-- shipping
       * The application should complete installation within $10$ minutes on tested hardware
       * The application should complete installation with a success rate greater than $95$ % on tested hardware
   - **Co-existence**
-      * The application should be able to run alongside the common antivirus applications (such as: tested with Windows Defender, Avast, McAfee, Norton, BitDefender, Kaspersky, AVG, ESET, Trend Micro, Sophos) without conficts
+      * The application should be able to run alongside the common antivirus applications (such as: Windows Defender, Avast, McAfee, Norton, BitDefender, Kaspersky, AVG, ESET, Trend Micro, Sophos) without conficts
       * The application should be able to perform its functionalities without requiring exclusive system resources access
       * The application should be able to work alongside firewalls
 
