@@ -205,7 +205,7 @@ system <-- shipping
 | FR7.6 | Notify user when there is no internet connection |
 | FR7.7 | Notify user when cash register is not responding |
 | FR7.8 | Delete notification |
-**FR8**| **Manage Cash registers**|
+|**FR8**| **Manage Cash registers**|
 | *FR8.1* | *Manage CRUD operations* |
 | FR8.1.1 | Create new cash register in the list of cash registers |
 | FR8.1.2 | Update cash register from the list of cash registers |
