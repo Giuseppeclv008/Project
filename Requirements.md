@@ -123,7 +123,6 @@ system <-- shipping
 |:--:|:-------------|
 | **FR1** | **Manage sales** |
 | *FR1.1* | *Read sale from cash register* |
-| FR1.1.1 | Update inventory (with contents of the sale) |
 | *FR1.2* | *Create owner-defined sale list* |
 | FR1.2.1 | for each owner-defined list filter sales a specified date or time window |
 | FR1.2.2 | Retrieve sales filtered by products sold |
@@ -150,11 +149,12 @@ system <-- shipping
 | FR3.1.2 | Update batch from the inventory |
 | FR3.1.3 | Manually delete batch from the inventory |
 | FR3.1.4 | Automatically delete a batch from inventory when there are no more items | 
-| *FR3.2* | *Create owner-defined batch list* |
-| FR3.2.1 | Retrieve batches filtered by one or more product/batch attributes |
-| *FR3.3* | *Manage `.csv`* |
-| FR3.3.1 | Import batches list from `.csv` |
-| FR3.3.2 | Export list of batches as `.csv` |
+| *FR3.2*   | Update the inventory when there is a variation in the items' quantity of a certain product |
+| *FR3.3* | *Create owner-defined batch list* |
+| FR3.3.1 | Retrieve batches filtered by one or more product/batch attributes |
+| *FR3.4* | *Manage `.csv`* |
+| FR3.4.1 | Import batches list from `.csv` |
+| FR3.4.2 | Export list of batches as `.csv` |
 | **FR4** | **Manage orders** |
 | *FR4.1* | *Manage CRUD operations* |
 | FR4.1.1 | Create new order in the list of orders |
