@@ -286,6 +286,8 @@ system <-- shipping
       * The application should be able to run alongside the common antivirus applications (such as: Windows Defender, Avast, McAfee, Norton, BitDefender, Kaspersky, AVG, ESET, Trend Micro, Sophos) without conficts
       * The application should be able to perform its functionalities without requiring exclusive system resources access
       * The application should be able to work alongside firewalls
+  - **Interoperability**
+      * Future version of the ExShop application should be able to import data in `.csv` format exported from previous version of the application 
 
 
 
