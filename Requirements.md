@@ -124,8 +124,8 @@ system <-- shipping
 | **FR1** | **Manage sales** |
 | *FR1.1* | *Read sale from cash register* |
 | FR1.1.1 | Update inventory (with contents of the sale) |
-| *FR1.2* | *Create user-defined sale list* |
-| FR1.2.1 | for each user-defined list filter sales a specified date or time window |
+| *FR1.2* | *Create owner-defined sale list* |
+| FR1.2.1 | for each owner-defined list filter sales a specified date or time window |
 | FR1.2.2 | Retrieve sales filtered by products sold |
 | FR1.2.3 | Retrieve sales ranked by number of items sold per specific product |
 | FR1.2.4 | Retrieve sales ranked by the sum of its item's prices |
@@ -138,7 +138,7 @@ system <-- shipping
 | FR2.1.2 | Update product from the catalogue |
 | FR2.1.3 | Delete product from the catalogue |
 | *FR2.2* | *Set product item quantity warning threshold* |
-| *FR2.3* | *Create user-defined product list* |
+| *FR2.3* | *Create owner-defined product list* |
 | FR2.3.4 | Retrieve list of products filtered by one or more of their attributes |
 | FR2.3.5 | Retrieve number of items available for the selected product (sum of the quantity on each batch with the selected product) |
 | *FR2.4* | *Manage `.csv`* |
@@ -150,7 +150,7 @@ system <-- shipping
 | FR3.1.2 | Update batch from the inventory |
 | FR3.1.3 | Manually delete batch from the inventory |
 | FR3.1.4 | Automatically delete a batch from inventory when there are no more items | 
-| *FR3.2* | *Create user-defined batch list* |
+| *FR3.2* | *Create owner-defined batch list* |
 | FR3.2.1 | Retrieve batches filtered by one or more product/batch attributes |
 | *FR3.3* | *Manage `.csv`* |
 | FR3.3.1 | Import batches list from `.csv` |
@@ -164,7 +164,7 @@ system <-- shipping
 | FR4.2.1 | Check internet connection |
 | FR4.2.2 | Retrieve current order's status |
 | FR4.2.3 | Update current order's status |
-| *FR4.3* | *Create user-defined orders list* |
+| *FR4.3* | *Create owner-defined orders list* |
 | FR4.3.1 | Retrieve list of orders filtered by one or more of their attributes |
 | FR4.3.2 | Retrieve list of orders filtered by a specific date or time window |
 | *FR4.4* | *Manage `.csv`* |
@@ -178,7 +178,7 @@ system <-- shipping
 | **FR5** | **Manage accounting** |
 | *FR5.1* | *Track invoices* |
 | FR5.1.1 | Track Invoices for orders made |
-| FR5.1.2 | Create user-defined invoice list |
+| FR5.1.2 | Create owner-defined invoice list |
 | FR5.1.2.1 | Retrieve list of invoices filtered by one or more of their attributes |
 | *FR5.2* | *Track incomes* |
 | FR5.2.1 | Track incoming cash flow |
@@ -197,13 +197,13 @@ system <-- shipping
 | FR6.4 | Encrypt password |
 | FR6.5 | Decrypt password |
 |**FR7** | **Manage notifications** |
-| FR7.1 | Notify user of order's status change |
-| FR7.2 | Notify user of when order status cannot be changed automatically (API not responding)|
-| FR7.3 | Notify user when quantity of a certain product is below a user set threshold |
-| FR7.4 | Notify user when batch is within x days from expiration date |
-| FR7.5 | Notify user when batch is past the expiration date |
-| FR7.6 | Notify user when there is no internet connection |
-| FR7.7 | Notify user when cash register is not responding |
+| FR7.1 | Notify owner of order's status change |
+| FR7.2 | Notify owner of when order status cannot be changed automatically (API not responding)|
+| FR7.3 | Notify owner when quantity of a certain product is below a owner set threshold |
+| FR7.4 | Notify owner when batch is within x days from expiration date |
+| FR7.5 | Notify owner when batch is past the expiration date |
+| FR7.6 | Notify owner when there is no internet connection |
+| FR7.7 | Notify owner when cash register is not responding |
 | FR7.8 | Delete notification |
 |**FR8**| **Manage Cash registers**|
 | *FR8.1* | *Manage CRUD operations* |
