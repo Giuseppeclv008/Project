@@ -125,7 +125,7 @@ system <-- shipping
 | *FR1.1* | *Read sale from cash register* |
 | FR1.1.1 | Update inventory (with contents of the sale) |
 | *FR1.2* | *Create user-defined sale list* |
-| FR1.2.1 | Retrieve sales filtered by a specified date or time window |
+| FR1.2.1 | for each user-defined list filter sales a specified date or time window |
 | FR1.2.2 | Retrieve sales filtered by products sold |
 | FR1.2.3 | Retrieve sales ranked by number of items sold per specific product |
 | FR1.2.4 | Retrieve sales ranked by the sum of its item's prices |
@@ -211,9 +211,9 @@ system <-- shipping
 | FR8.1.2 | Update cash register from the list of cash registers |
 | FR8.1.3 | Delete cash register from the list of cash registers |
 
-
 **Design cues** 
 - The system shall store for each sale:
+    * the cash that sales products
     * list of items with associated quantities
     * the date  
     * the total amount spent 
