@@ -166,7 +166,6 @@ system <-- shipping
 | FR4.2.3 | Update current order's status |
 | *FR4.3* | *Create owner-defined orders list* |
 | FR4.3.1 | Retrieve list of orders filtered by one or more of their attributes |
-| FR4.3.2 | Retrieve list of orders filtered by a specific date or time window |
 | *FR4.4* | *Manage `.csv`* |
 | FR4.4.1 | Import orders list from `.csv` |
 | FR4.4.2 | Export list of orders as `.csv` |
