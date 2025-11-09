@@ -307,6 +307,9 @@ Steps
     * The overall financial position of the shop, calculated as the difference between total incomes and total expenses within a given period.
 - **View**
     * Visual and interactive representation of the data stored in the system. It displays information from one or more entities (such as sales, products, or orders) in a user-friendly format. A view does not directly modify the underlying data; instead, it provides a projection or summary that helps users perform operational and decision-making tasks.
+- **Notification**
+    *A system-generated message or alert that informs the shop owner about important events or conditions, such as changes in order status, low product quantity, batch expiration, or connectivity issues.
+
 
 \<use UML class diagram to define important terms, or concepts in the domain of the application, and their relationships>
 
