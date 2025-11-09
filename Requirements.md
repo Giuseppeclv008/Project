@@ -252,33 +252,33 @@ system <-- shipping
 ## Use case brief
 | **UC Name**                        | **Goal**                                  | **Description**|
 | ---------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| **UC1 – retrieve sales**           | Load and record new sales                 | DB loads a new sale from the cash register and update the inventory                               |
-| **UC2 - create sales list**        | Create owner-defined sales list           | Retrieve sales lists filtered by sales attributes, requiring the user to specify a time window    |
-| **UC3 - export sales list**        | Export sales list as `.csv`               | Retrieve sales list and export as `.csv`                                                            |
-| **UC4 - import sales list**        | Import sales list as `.csv`               | Read `.csv` file and update the inventory                                                           |
+| **UC1 – retrieve sales**           | Load and record new sales                 | DB loads a new sale from the cash register and updates the inventory                              |
+| **UC2 - create sales list**        | Create owner-defined sales list           | Retrieve sales list filtered by sales' attributes, requiring the user to specify a time frame    |
+| **UC3 - export sales list**        | Export sales list as `.csv`               | Retrieve sales list and export it as `.csv`                                                       |  |
+| **UC4 - import sales list**        | Import sales list as `.csv`               | Read `.csv` file and update the inventory                                                         |
 | **UC5 - create batch**             | Create new batch                          | Create a new batch and add it to the inventory                                                    |
 | **UC6 - delete batch**             | Delete batch                              | Delete a batch from the inventory                                                                 |
-| **UC7 - update batch**             | Update batch                              | Update information of a batch stored in the inventory                                             |
-| **UC8 - retrieves batch**          | Retrieve batch                            | Retrieve batch information from the inventory                                                     |
-| **UC9 - create batches list**      | Create owner-defined batch list           | Retrieve batches list filtered by batches attributes                                              |
-| **UC10 - import batches list**     | Import batches list as `.csv`             | Read `.csv` file and create new batches in the inventory                                            |
-| **UC11 - export batches list**     | Export batches list as `.csv`             | Retrieve batches list and export as `.csv`                                                          |
-| **UC12 - create order**            | Create new order                          | Add a new order to the list of orders                                                             |
-| **UC13 - delete order**            | Delete order                              | Delete an order to the list of orders                                                             |
-| **UC14 - update order**            | Update order                              | Update order information from the list of orders                                                  |
-| **UC15 - track order**             | Track orders                              | Track orders for supported suppliers                                                              |
-| **UC16 - export orders list**      | Export orders list as `.csv`              | Retrieve orders list and export as `.csv`                                                           |
-| **UC17 - import orders list**      | Import orders list as `.csv`              | Read `.csv` file and add new orders                                                                 |
-| **UC18 - suggest new order**       | Suggest new order                         | Suggest a new order when a product is about to run out                                            |
-| **UC19 - create invoice list**     | Create owner-defined invoice list         | Retrieve invoices filtered by one or more invoice attributes                                      |
-| **UC20 - retrieve incomes**        | Retrieve shop incomes                     | Retrieve shop incomes at different time granularity                                               |
-| **UC21 - retrieve outgoings**      | Retrieve shop outogoings                  | Retrieve shop outogings at different time granularity                                             |
-| **UC22 - retrieve balance**        | Retrieve balance                          | Retrieve current balance and balance history ad different time granularity                        |
-| **UC23 - set password**            | Set user password                         | Let user set a new password                                                                       |
-| **UC24 - authenticate**            | Authenticate owner                        | Check if password insert is correct then authenticate the owner                                   |
-| **UC25 - create cash register**    | Create new batch                          | Create a new batch and add it to the inventory                                                    |
-| **UC26 - delete cash register**    | Delete cash register                      | Delete a cash register from the system                                                            |
-| **UC27 - update cash register**    | Update cash register                      | Update information of a cash register                                                             |
+| **UC7 - update batch**             | Update batch                              | Update information of a batch stored in the inventory
+| **UC8 - retrieve batch**           | Retrieve batch                            | Retrieve batch's information from the inventory                                                  |
+| **UC9 - create batches list**      | Create owner-defined batches list         | Retrieve batches list filtered by batches' attributes                                            |
+| **UC10 - import batches list**     | Import batches list as `.csv`             | Read `.csv` file and create new batches in the inventory                                         |
+| **UC11 - export batches list**     | Export batches list as `.csv`             | Retrieve batches list and export it as `.csv`                                                       |
+| **UC12 - create order**            | Create new order                          | Add a new order to the list of orders                                                            |
+| **UC13 - delete order**            | Delete order                              | Delete an order from the list of orders                                                          |
+| **UC14 - update order**            | Update order                              | Update order's information from the list of orders                                               |
+| **UC15 - track order**             | Track orders                              | Automatically change order status for supported suppliers                                 |                             |
+| **UC16 - export orders list**      | Export orders list as `.csv`              | Retrieve orders list and export it as `.csv`                                                        |
+| **UC17 - import orders list**      | Import orders list as `.csv`              | Read `.csv` file and add new orders                                                              |
+| **UC18 - suggest new order**       | Suggest new order                         | Suggest a new order when a product is about to run out                                           |
+| **UC19 - create invoice list**     | Create owner-defined invoice list         | Retrieve invoices filtered by one or more invoice's attributes                                   |
+| **UC20 - retrieve incomes**        | Retrieve shop incomes                     | Retrieve shop's income at different time granularity                                              |
+| **UC21 - retrieve expenses**       | Retrieve shop expenses                    | Retrieve shop's expenses at different time granularity                                             |
+| **UC22 - retrieve balance**        | Retrieve balance                          | Retrieve current balance and balance history at different time granularity                       |
+| **UC23 - set password**            | Set owner password                        | Let owner set a new password                                                                     |
+| **UC24 - authenticate**            | Authenticate owner                        | Authenticate the owner if the password provided is correct                                       |
+| **UC25 - create cash register**    | Create new cash register                  | Create a new cash register and add it to the list of cash registers                                                   |
+| **UC26 - delete cash register**    | Delete cash register                      | Delete a cash register from the list of cash registers                                           |                 |
+| **UC27 - update cash register**    | Update cash register                      | Update a cash register's information                                                               |
 
 ## Use case diagram
 
