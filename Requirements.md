@@ -161,8 +161,8 @@ system <-- shipping
          + Display supplier price for batches  per one or more product attributes 
     *  If a batch has an expiration date, notify the user when it is expired 
     *  If a product is about to expire, notify the user
-    *  Import batches list as .csv 
-    *  Export batches list as .csv
+    *  Import batches list as `.csv` 
+    *  Export batches list as `.csv`
 - Manage orders
     * The system shall stores for each order :
         + the supplier 
@@ -185,7 +185,7 @@ system <-- shipping
         + Display list of orders filtered by order attributes
     * Display order stats
         + Display quantities of product ordered grouped by order attributes   
-    * Export list as .csv
+    * Export list as `.csv`
 - Manage sales
     * Read sale from cash register
     * The system shall stores for each sale :
@@ -193,7 +193,7 @@ system <-- shipping
         + the date  
         + the total amount spent 
     * Update inventory (with contents of the sale)
-    * Export list as .csv
+    * Export list as `.csv`
     * Display sale stats
         + Display sales volume per products
         + Display sales volume per one or more product attributes  
@@ -254,21 +254,21 @@ system <-- shipping
 | ---------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------- |
 | **UC1 – retrieve sales**           | Load and record new sales                 | DB loads a new sale from the cash register and update the inventory                               |
 | **UC2 - create sales list**        | Create owner-defined sales list           | Retrieve sales lists filtered by sales attributes, requiring the user to specify a time window    |
-| **UC3 - export sales list**        | Export sales list as .csv                 | Retrieve sales list and export as .csv                                                            |
-| **UC4 - import sales list**        | Import sales list as .csv                 | Read .csv file and update the inventory                                                           |
+| **UC3 - export sales list**        | Export sales list as `.csv`               | Retrieve sales list and export as `.csv`                                                            |
+| **UC4 - import sales list**        | Import sales list as `.csv`               | Read `.csv` file and update the inventory                                                           |
 | **UC5 - create batch**             | Create new batch                          | Create a new batch and add it to the inventory                                                    |
 | **UC6 - delete batch**             | Delete batch                              | Delete a batch from the inventory                                                                 |
 | **UC7 - update batch**             | Update batch                              | Update information of a batch stored in the inventory                                             |
 | **UC8 - retrieves batch**          | Retrieve batch                            | Retrieve batch information from the inventory                                                     |
 | **UC9 - create batches list**      | Create owner-defined batch list           | Retrieve batches list filtered by batches attributes                                              |
-| **UC10 - import batches list**     | Import batches list as .csv               | Read .csv file and create new batches in the inventory                                            |
-| **UC11 - export batches list**     | Export batches list as .csv               | Retrieve batches list and export as .csv                                                          |
+| **UC10 - import batches list**     | Import batches list as `.csv`             | Read `.csv` file and create new batches in the inventory                                            |
+| **UC11 - export batches list**     | Export batches list as `.csv`             | Retrieve batches list and export as `.csv`                                                          |
 | **UC12 - create order**            | Create new order                          | Add a new order to the list of orders                                                             |
 | **UC13 - delete order**            | Delete order                              | Delete an order to the list of orders                                                             |
 | **UC14 - update order**            | Update order                              | Update order information from the list of orders                                                  |
 | **UC15 - track order**             | Track orders                              | Track orders for supported suppliers                                                              |
-| **UC16 - export orders list**      | Export orders list as .csv                | Retrieve orders list and export as .csv                                                           |
-| **UC17 - import orders list**      | Import orders list as .csv                | Read .csv file and add new orders                                                                 |
+| **UC16 - export orders list**      | Export orders list as `.csv`              | Retrieve orders list and export as `.csv`                                                           |
+| **UC17 - import orders list**      | Import orders list as `.csv`              | Read `.csv` file and add new orders                                                                 |
 | **UC18 - suggest new order**       | Suggest new order                         | Suggest a new order when a product is about to run out                                            |
 | **UC19 - create invoice list**     | Create owner-defined invoice list         | Retrieve invoices filtered by one or more invoice attributes                                      |
 | **UC20 - retrieve incomes**        | Retrieve shop incomes                     | Retrieve shop incomes at different time granularity                                               |
