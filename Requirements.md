@@ -124,7 +124,7 @@ system <-- shipping
 | **FR1** | **Manage sales** |
 | *FR1.1* | *Read sale from cash register* |
 | *FR1.2* | *Create owner-defined sale list* |
-| FR1.2.1 | for each owner-defined list filter sales a specified date or time window |
+| FR1.2.1 | for each owner-defined list filter sales a specified date (ISO 8601) or time window |
 | FR1.2.2 | Retrieve sales filtered by products sold |
 | FR1.2.3 | Retrieve sales ranked by number of items sold per specific product |
 | FR1.2.4 | Retrieve sales ranked by the sum of its item's prices |
@@ -197,8 +197,8 @@ system <-- shipping
 | FR7.1 | Notify owner of order's status change |
 | FR7.2 | Notify owner of when order status cannot be changed automatically (API not responding)|
 | FR7.3 | Notify owner when quantity of a certain product is below a owner set threshold |
-| FR7.4 | Notify owner when batch is within x days from expiration date |
-| FR7.5 | Notify owner when batch is past the expiration date |
+| FR7.4 | Notify owner when batch is within x days from expiration date (ISO 8601)|
+| FR7.5 | Notify owner when batch is past the expiration date (ISO 8601)|
 | FR7.6 | Notify owner when there is no internet connection |
 | FR7.7 | Notify owner when cash register is not responding |
 | FR7.8 | Delete notification |
