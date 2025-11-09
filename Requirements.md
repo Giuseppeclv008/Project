@@ -203,10 +203,8 @@ system <-- shipping
 | FR7.7 | Notify owner when cash register is not responding |
 | FR7.8 | Delete notification |
 |**FR8**| **Manage Cash registers**|
-| *FR8.1* | *Manage CRUD operations* |
-| FR8.1.1 | Create new cash register in the list of cash registers |
-| FR8.1.2 | Update cash register from the list of cash registers |
-| FR8.1.3 | Delete cash register from the list of cash registers |
+| FR8.1 | Add new cash register to the list of cash registers |
+| FR8.2 | Delete cash register from the list of cash registers |
 
 **Design cues** 
 - The system shall store for each sale:
