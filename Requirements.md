@@ -3,7 +3,6 @@
 # Requirements Document - EZShop
 
 Date: 24/10/2025
-
 Version: 1.0.0
 
 | Version number | Change |
@@ -120,59 +119,117 @@ system <-- shipping
 
 \<they match to high level use cases>
 
-|  ID   | Description |
-| :---: | :---------: |
-|  FR1  | Manage sales |
-|  FR2  | Manage inventory |
-|  FR3  | Manage orders |
-|  FR4  | Manage accounting |
+| ID | Description |
+|:--:|:-------------|
+| **FR1** | **Manage sales** |
+| *FR1.1* | *Read sale from cash register* |
+| *FR1.2* | *Create owner-defined sale list* |
+| FR1.2.1 | for each owner-defined list filter sales a specified date (ISO 8601) or time window |
+| FR1.2.2 | Retrieve sales filtered by products sold |
+| FR1.2.3 | Retrieve sales ranked by number of items sold per specific product |
+| FR1.2.4 | Retrieve sales ranked by the sum of its item's prices |
+| *FR1.3* | *Manage `.csv`* |
+| FR1.3.1 | Import sales list from `.csv` |
+| FR1.3.2 | Export list of sales as `.csv` |
+| **FR2** | **Manage catalogue** |
+| *FR2.1* | *Manage CRUD operations* |
+| FR2.1.1 | Create new product in the catalogue |
+| FR2.1.2 | Update product from the catalogue |
+| FR2.1.3 | Delete product from the catalogue |
+| *FR2.2* | *Set product item quantity warning threshold* |
+| *FR2.3* | *Create owner-defined product list* |
+| FR2.3.4 | Retrieve list of products filtered by one or more of their attributes |
+| FR2.3.5 | Retrieve number of items available for the selected product (sum of the quantity on each batch with the selected product) |
+| *FR2.4* | *Manage `.csv`* |
+| FR2.4.1 | Import product list from `.csv` |
+| FR2.4.2 | Export list of products as `.csv` |
+| **FR3** | **Manage inventory** |
+| *FR3.1* | *Manage CRUD operations* |
+| FR3.1.1 | Create new batch in the inventory |
+| FR3.1.2 | Update batch from the inventory |
+| FR3.1.3 | Delete batch from the inventory |
+| *FR3.2* | *Create owner-defined batch list* |
+| FR3.2.1 | Retrieve batches filtered by one or more product/batch attributes |
+| *FR3.3* | *Manage `.csv`* |
+| FR3.3.1 | Import batches list from `.csv` |
+| FR3.3.2 | Export list of batches as `.csv` |
+| **FR4** | **Manage orders** |
+| *FR4.1* | *Manage CRUD operations* |
+| FR4.1.1 | Create new order in the list of orders |
+| FR4.1.2 | Update order from the list of orders |
+| FR4.1.3 | Delete order from the list of orders |
+| *FR4.2* | *Automatically track order for supported suppliers* |
+| FR4.2.1 | Check internet connection |
+| FR4.2.2 | Retrieve current order's status |
+| FR4.2.3 | Update current order's status |
+| *FR4.3* | *Create owner-defined orders list* |
+| FR4.3.1 | Retrieve list of orders filtered by one or more of their attributes |
+| *FR4.4* | *Manage `.csv`* |
+| FR4.4.1 | Import orders list from `.csv` |
+| FR4.4.2 | Export list of orders as `.csv` |
+| FR4.5   | *Suggest order* |
+| FR4.5.1 | Retrieve products with item count below threshold |
+| FR4.5.2 | Retrieve possible supplier for products with item count below threshold|
+| FR4.5.3 | Generate order suggestion (without specifying the number of item) |
+| FR4.5.4 | Add suggested order to list of orders|
+| **FR5** | **Manage accounting** |
+| *FR5.1* | *Track invoices* |
+| FR5.1.1 | Track Invoices for orders made |
+| FR5.1.2 | Create owner-defined invoice list |
+| FR5.1.2.1 | Retrieve list of invoices filtered by one or more of their attributes |
+| *FR5.2* | *Track incomes* |
+| FR5.2.1 | Track incoming cash flow |
+| FR5.2.3 | Retrieve income history at different time granularities (day, month, year etc…) |
+| *FR5.3* | *Track expense* |
+| FR5.3.1 | Track outgoing cash flow |
+| FR5.3.2 | Retrieve outgoing history at different time granularities (day, month, year etc…) |
+| *FR5.4* | *Track balance* |
+| FR5.4.1 | Compute total balance based on incomes and expense with respect to day, week, month, quarter, semester, and year|
+| FR5.4.2 | Retrieve current balance with respect to the current day, week, month, quarter, semester, and year|
+| FR5.4.3 | Retrieve balance history  |
+| **FR6** | **Authenticate owner** |
+| FR6.1 | Set password |
+| FR6.2 | Change password |
+| FR6.3 | Verify password |
+| FR6.4 | Encrypt password |
+| FR6.5 | Decrypt password |
+|**FR7** | **Manage notifications** |
+| FR7.1 | Notify owner of order's status change |
+| FR7.2 | Notify owner of when order status cannot be changed automatically (API not responding)|
+| FR7.3 | Notify owner when quantity of a certain product is below a owner set threshold |
+| FR7.4 | Notify owner when batch is within x days from expiration date (ISO 8601)|
+| FR7.5 | Notify owner when batch is past the expiration date (ISO 8601)|
+| FR7.6 | Notify owner when there is no internet connection |
+| FR7.7 | Notify owner when cash register is not responding |
+| FR7.8 | Delete notification |
+|**FR8**| **Manage Cash registers**|
+| FR8.1 | Add new cash register to the list of cash registers |
+| FR8.2 | Delete cash register from the list of cash registers |
 
-- Manage sales
-    * Read sale form cash register 
-    * Save last sale  
-    * Update inventory (with contents of the sale)
-    * Export list as .csv
-    * Display sale stats 
-- Manage inventory
-    * Manage items
-        + Delete item from inventory
-        + Add new item to inventory
-        + Edit item characteristics
-    + View items
-        + Display list of available items
-        + Search items by selected fields
-        + Sort items by selected fields
-        + Group items by selected fields
-        + Filter items by selected fields
-    + Display inventory stats
-    + Change item status when expiration date is passed
-    + Notify user when items are past the expiration date
-    + Export list as .csv
-- Manage orders
-    * Add new order
-    * Delete order
-    * Edit order
-    * Automatically *track order* status for supported suppliers
-    * Suggest order when quantity of certain item is below threshold
-        + Accept, delete, edit suggested order
-    * View orders
-        * Display list of orders
-        + search orders by selected fields 
-        + sort orders by selected fields
-        + group orders by selected fields
-        + filter orders by selected fields
-    + Display order stats
-    * Export list as .csv
-- Manage accounting
-    * Track Invoices
-    * Track Incomes
-    * Track balance
-    * Track taxes
-    * Display accounting stats
-- Authenticate owner
-    * Set password
-    * Change password
-    * Verify password
+**Design cues** 
+- The system shall store for each sale:
+    * the cash that sales products
+    * list of items with associated quantities
+    * the date  
+    * the total amount spent 
+- The system shall store for each order :
+    * the supplier 
+    * the product that is ordered
+    * number of batches ordered 
+    * delivered or not
+    * order and delivery date
+    * supplier unit price 
+    * number of items for each batch
+- The system shall store for each product:
+    * product name
+    * category
+    * unit price
+    * brand
+- The system shall store for each batch of products:
+    * information the product contained  
+    * description
+    * expiration date 
+    * quantity in stock 
 
 **Usecase**:
 - item fields
@@ -209,7 +266,7 @@ system <-- shipping
 # Table of rights
 
 |  Actor   | FR1         | FRx |
-| :---:    | :---------: | :---: |
+| user     |             | :---: |
 |          |             |       |
 
 # Use case diagram and use cases
