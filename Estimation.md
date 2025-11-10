@@ -49,41 +49,64 @@ Consider the EZShop project as described in your requirements document, assume t
 
 ###
 
-| component name       | Estimated effort (person hours) |
-| -------------------- | ------------------------------- |
-| requirement document |                                 |
-| Desktop front-end                 |                                 |
-| &nbsp;&nbsp;UI Login-page |                        |
-| &nbsp;&nbsp; Dashboard page     |                         |
-| &nbsp;&nbsp; Catalogue page      |                      |
-| &nbsp;&nbsp; Inventory page      |                      |
-| &nbsp;&nbsp; Sales page      |                      |
-| &nbsp;&nbsp; Orders page      |                      |
-| &nbsp;&nbsp; Accounting page      |                      |
-| &nbsp;&nbsp; Profile page      |                      |
-| &nbsp;&nbsp; Notification page      |                      |
-| Backend                       |                                 |
-| &nbsp;&nbsp; Authentication      |                      |
-| &nbsp;&nbsp;&nbsp; set username-password                   |                                 |
-| &nbsp;&nbsp;&nbsp; change username-password                   |                                 |
-| &nbsp;&nbsp;&nbsp; verification                  |                                 |
-| &nbsp;&nbsp;&nbsp; encryption                   |                                 |
-| &nbsp;&nbsp; Csv management                     |                                 |
-| &nbsp;&nbsp; API for tracking orders                       |                                 |
-| &nbsp;&nbsp; Orders suggestion |                      |
-| &nbsp;&nbsp;&nbsp; retrieve low-stock products                   |                            
-| &nbsp;&nbsp;&nbsp; retrieve suppliers                   |                                   |
-| &nbsp;&nbsp;&nbsp; suggest order                   |                                   |
-| &nbsp;&nbsp;&nbsp; add order to suggested ones                   |                                   |
-| &nbsp;&nbsp; Accounting management                       |                                 |
-| &nbsp;&nbsp; Software management                      |                                 |
-| &nbsp;&nbsp;&nbsp; Check internet connection                    |                                 |
-| &nbsp;&nbsp; Manage Notifications                    |                                 |
-| &nbsp;&nbsp;&nbsp; generate notification                   |                                   |
-| &nbsp;&nbsp;&nbsp; manage user interaction with notification                   |                                   |
+| component name                                                | Estimated effort (person hours) |
+| ------------------------------------------------------------  | ------------------------------- |
+| requirement document                                          |               50                |
+| design document                                               |                                 |
+| Desktop front-end                                             |               42                |
+| &nbsp;&nbsp;  UI Login-page                                   |               3                 |
+| &nbsp;&nbsp;  Dashboard page                                  |               8                 |
+| &nbsp;&nbsp;  Catalogue page                                  |               6                 |
+| &nbsp;&nbsp;  Inventory page                                  |               6                 |
+| &nbsp;&nbsp;  Sales page                                      |               5                 |
+| &nbsp;&nbsp;  Orders page                                     |               4                 |
+| &nbsp;&nbsp;  Accounting page                                 |               4                 |
+| &nbsp;&nbsp;  Profile page                                    |               3                 |
+| &nbsp;&nbsp;  Notification page                               |               3                 |
+| Backend                                                       |                                 |
+| &nbsp;&nbsp;  Authentication                                  |               15                |
+| &nbsp;&nbsp;&nbsp;  set username-password                     |               3                 |
+| &nbsp;&nbsp;&nbsp;  change username-password                  |               4                 |
+| &nbsp;&nbsp;&nbsp;  verification                              |               4                 |
+| &nbsp;&nbsp;&nbsp;  encryption                                |               4                 |
+| &nbsp;&nbsp;  Csv management                                  |               7                 |
+| &nbsp;&nbsp;&nbsp;  csv read                                  |               2                 |
+| &nbsp;&nbsp;&nbsp;  csv write                                 |               2                 |
+| &nbsp;&nbsp;&nbsp;  csv download                              |               3                 |
+| &nbsp;&nbsp;  Order management                                |               14                |
+| &nbsp;&nbsp;&nbsp;  CRUD operations over orders               |               10                |
+| &nbsp;&nbsp;&nbsp;  send order request                        |               4                 |
+| &nbsp;&nbsp;&nbsp;  update order status                       |               4                 |
+| &nbsp;&nbsp;  API design                                      |               10                |
+| &nbsp;&nbsp;  Orders suggestion                               |               9                 |
+| &nbsp;&nbsp;&nbsp;  retrieve low-stock products               |               2                 |
+| &nbsp;&nbsp;&nbsp;  retrieve suppliers                        |               3                 |
+| &nbsp;&nbsp;&nbsp;  suggest order                             |               2                 |
+| &nbsp;&nbsp;&nbsp;  add order to suggested ones               |               2                 |
+| &nbsp;&nbsp;  Accounting management                           |               4                 |
+| &nbsp;&nbsp;&nbsp;  manage invoices                           |               2                 |
+| &nbsp;&nbsp;&nbsp;  perform analysis balance-expences         |               2                 |
+| &nbsp;&nbsp;  Check internet connection                       |               2                 |
+| &nbsp;&nbsp; Manage  Notifications                            |                                 |
+| &nbsp;&nbsp;&nbsp;  generate notification                     |                                 |
+| &nbsp;&nbsp;&nbsp;  manage user interaction with notifications|                                 |                                   
+| &nbsp;&nbsp;  Sales management                                |                                 |
+| &nbsp;&nbsp;&nbsp;  read barcode                              |                                 |
+| &nbsp;&nbsp;&nbsp;  find products                             |                                 |
+| &nbsp;&nbsp;&nbsp;  compute discount (from 0% to 90%)         |                                 |
+| &nbsp;&nbsp;&nbsp;  generate receipt                          |                                 |
+| &nbsp;&nbsp;&nbsp;  save sale                                 |                                 |
+| &nbsp;&nbsp;  Inventory management                            |                                 |
+| &nbsp;&nbsp;&nbsp;  CRUD operations over batches              |               5                 |
+| &nbsp;&nbsp;&nbsp;  find batches near expiring date           |                                 |
+| &nbsp;&nbsp;&nbsp;  find expired batches                      |                                 |
+| &nbsp;&nbsp;  Catalogue management                            |                                 |
+| &nbsp;&nbsp;&nbsp;  CRUD operations over catalogue            |               5                 |
+| &nbsp;&nbsp;&nbsp;  set threshold                             |                                 |
+| Database                                                      |                                 |
 
-| &nbsp;&nbsp; Cash register management                   |                                 |
-| Database                      |                                 |
+
+_since CRUD operations may be modulated, only the first time higher person hours count is considered_
 
 Estimated duration: (calendar time)
 
