@@ -52,11 +52,38 @@ Consider the EZShop project as described in your requirements document, assume t
 | component name       | Estimated effort (person hours) |
 | -------------------- | ------------------------------- |
 | requirement document |                                 |
-| ....                 |                                 |
-|                      |                                 |
-|                      |                                 |
-|                      |                                 |
-|                      |                                 |
+| Desktop front-end                 |                                 |
+| &nbsp;&nbsp;UI Login-page |                        |
+| &nbsp;&nbsp; Dashboard page     |                         |
+| &nbsp;&nbsp; Catalogue page      |                      |
+| &nbsp;&nbsp; Inventory page      |                      |
+| &nbsp;&nbsp; Sales page      |                      |
+| &nbsp;&nbsp; Orders page      |                      |
+| &nbsp;&nbsp; Accounting page      |                      |
+| &nbsp;&nbsp; Profile page      |                      |
+| &nbsp;&nbsp; Notification page      |                      |
+| Backend                       |                                 |
+| &nbsp;&nbsp; Authentication      |                      |
+| &nbsp;&nbsp;&nbsp; set username-password                   |                                 |
+| &nbsp;&nbsp;&nbsp; change username-password                   |                                 |
+| &nbsp;&nbsp;&nbsp; verification                  |                                 |
+| &nbsp;&nbsp;&nbsp; encryption                   |                                 |
+| &nbsp;&nbsp; Csv management                     |                                 |
+| &nbsp;&nbsp; API for tracking orders                       |                                 |
+| &nbsp;&nbsp; Orders suggestion |                      |
+| &nbsp;&nbsp;&nbsp; retrieve low-stock products                   |                            
+| &nbsp;&nbsp;&nbsp; retrieve suppliers                   |                                   |
+| &nbsp;&nbsp;&nbsp; suggest order                   |                                   |
+| &nbsp;&nbsp;&nbsp; add order to suggested ones                   |                                   |
+| &nbsp;&nbsp; Accounting management                       |                                 |
+| &nbsp;&nbsp; Software management                      |                                 |
+| &nbsp;&nbsp;&nbsp; Check internet connection                    |                                 |
+| &nbsp;&nbsp; Manage Notifications                    |                                 |
+| &nbsp;&nbsp;&nbsp; generate notification                   |                                   |
+| &nbsp;&nbsp;&nbsp; manage user interaction with notification                   |                                   |
+
+| &nbsp;&nbsp; Cash register management                   |                                 |
+| Database                      |                                 |
 
 Estimated duration: (calendar time)
 
