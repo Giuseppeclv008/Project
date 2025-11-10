@@ -327,37 +327,42 @@ Steps
 
 # Glossary
 - **Shop**
-    * The small business entity that uses the EzShop software to menage its operations, including sales, inventory, orders, and accounting. A shop tipically has one owner, two or more cash registers, and several suppliers. In the current scope, EZShop menages a single shop.
+    * The small business entity that uses the EzShop software to manage its operations, including sales, inventory, orders, and accounting. A shop typically has one owner, two or more cash registers, and several suppliers. In the current scope, EZShop menages a single shop.
 - **Sale** 
-    * An Event, identified by a unique code, that occurs every time a customer completes the purchase of one or more items. A sale records the code, the quantity, the discount value, date, and the price of each item.
+    * An Event, identified by a unique code, that occurs every time a customer completes the purchase of one or more items. A sale record the list of items with associated quantities, the date and the total amount spent.
 - **Order** 
-    * The purchase of a collection of items from a supplier. Orders have a defined structure and status, typically one of: processing, shipped, in transit, out of delivery, delivered and cancelled.
-- **Item** 
-    * An ideal entity representing a type of product sold or stocked by the shop - not a single physical object. Each item describes the characteristics shared by all physical units of that product (e.g., 1L bottle of "GoodMilk!"). The item quantity indicates how many physical units of this item are available.
+    * The purchase of a collection of batches from a supplier. Orders have a defined structure and status, typically one of: processing, shipped, in transit, out of delivery, delivered and cancelled.
+- **Product** 
+    * An ideal entity representing a type of product sold or stocked by the shop; not a single physical object. Each product describes the characteristics shared by all physical units of that product (e.g., 1L bottle of "GoodMilk!").
+- **Batch**
+    * A batch represents a specific group of items associated with a product in the inventory. Multiple batches can exist for the same product, each identified by its own quantity and expiration date.
+- **Item**
+    * An item represents a single physical unit of a product that exists in the shop’s inventory. Each item belongs to a specific batch.
 - **Inventory** 
-    * The collection of all items (identified by code) and their quantities. It represents the shop's overall product availability and supports search, filtering, expiration tracking and quantity monitoring.
+    * The collection of all batches (identified by code) and the name of the product they belong to. It represents the shop's overall product availability and supports search, filtering, expiration tracking and quantity monitoring.
+- **Catalogue**
+    * The catalog is the complete collection of all product available in the shop’s system. The catalog serves as a reference for managing inventory, creating orders, and displaying available products to the user.
 - **Stats** 
-    * Aggregated or derived data generated from sales, orders, or accounting records, used to support decision-making. (e.g. Sales trends, revenue summarie or supplier performance indicators)
-- **Fields** 
-    * The recorded properties of an item, a sale, or an order. (e.g. name, code, price, quantity...)
+    * Aggregated or derived data generated from sales, orders, or accounting records, used to support decision-making. (e.g., Sales trends, revenue summary or supplier performance indicators)
 - **Owner**
-    * The shop holder or mananger who uses the EzShop software to control sales, invetory, orders, and accounting. The real end user of the software.
+    * The shop holder or manager who uses the EzShop software to control sales, inventory, orders, and accounting. The real end user of the software.
 - **Cash Register**
-    * A physical or digital terminal that records sales data and trasmits it to the EzShop application via API.
+    * A physical or digital terminal that records sales data and transmits it to the EzShop application via API.
 - **Supplier**
-    * A business entity providing goods to the shop. Each supplier may have identifying details such as name and P.IVA.
-- **Status** 
-    * A descriptor indicating the current contion of an order or item. (e.g. pending, shipped, expired)
+    * A business entity providing batches to the shop. Each supplier may have identifying details such as name and P.IVA.
 - **Shipping company** 
-    * A third-party service that delivers items from suppliers to the shop. Some shipping company offer APIs to track delivery and shipment status.
-- **Date**
-    * A timestamp in the format: `YYYY-MM-DD-hh:mm:ss` 
+    * A third-party service that delivers batches from suppliers to the shop. Some shipping company offer APIs to track delivery and shipment status.
 - **Income**
-    * The ammount of money earned from completed sales.
+    * The amount of money earned from completed sales.
+- **Expenses** 
+    * The amount of money spent by the shop to maintain it operation such as electrical bills, renting fees, and products purchases.
 - **Invoice**
     * A formal document that records a financial transaction between the shop and a supplier or customer, serving as proof of purchase or sale.
 - **Balance**
     * The overall financial position of the shop, calculated as the difference between total incomes and total expenses within a given period.
+- **Notification**
+    * A system-generated message or alert that informs the shop owner about important events or conditions, such as changes in order status, low product quantity, batch expiration, or connectivity issues.
+
 
 \<use UML class diagram to define important terms, or concepts in the domain of the application, and their relationships>
 
