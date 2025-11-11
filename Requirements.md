@@ -252,33 +252,55 @@ system <-- shipping
 ## Use case brief
 | **UC Name**                        | **Goal**                                  | **Description**|
 | ---------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| **UC1 – retrieve sales**           | Load and record new sales                 | EzShop loads a new sale from the cash register and updates the inventory                              |
-| **UC2 - create sales list**        | Create owner-defined sales list           | Retrieve sales list filtered by a set of sales' attributes, requiring the user to specify a time frame    |
-| **UC3 - export sales list**        | Export sales list as `.csv`               | Retrieve sales list and export it as `.csv`                                                       |  |
-| **UC4 - import sales list**        | Import sales list as `.csv`               | Read `.csv` file and update the sales list                                                        |
-| **UC5 - create batch**             | Add new batch                          | Add a new batch to the inventory                                                    |
-| **UC6 - delete batch**             | Delete batch                              | Delete a batch from the inventory                                                                 |
-| **UC7 - update batch**             | Update batch                              | Update information of a batch stored in the inventory
-| **UC8 - retrieve batch**           | Retrieve batch                            | Retrieve batch's information from the inventory                                                  |
-| **UC9 - create batches list**      | Create owner-defined batches list         | Retrieve batches list filtered by a set of batches' attributes                                            |
-| **UC10 - import batches list**     | Import batches list as `.csv`             | Read `.csv` file and create new batches in the inventory                                         |
-| **UC11 - export batches list**     | Export batches list as `.csv`             | Retrieve batches list and export it as `.csv`                                                       |
-| **UC12 - create order**            | Add new order                          | Add a new order to the list of orders                                                            |
-| **UC13 - delete order**            | Delete order                              | Delete an order from the list of orders                                                          |
-| **UC14 - update order**            | Update order                              | Update order's information from the list of orders                                               |
-| **UC15 - track order**             | Track orders                              | Automatically change order status for supported suppliers                                 |
-| **UC16 -create sales list** |  Create owner-defined orders list | Retrieve batches list filtered by a set of orders' attributes |
-| **UC17 - export orders list**      | Export orders list as `.csv`              | Retrieve orders list and export it as `.csv`                                                        |
-| **UC18 - import orders list**      | Import orders list as `.csv`              | Read `.csv` file and add new orders                                                              |
-| **UC19 - suggest new order**       | Suggest new order                         | Suggest a new order when a product is about to run out                                           |
-| **UC20 - create invoice list**     | Create owner-defined invoice list         | Retrieve invoices filtered by one or more invoice's attributes                                   |
-| **UC21 - retrieve incomes**        | Retrieve shop incomes                     | Retrieve shop's income at different time granularity                                              |
-| **UC22 - retrieve expenses**       | Retrieve shop expenses                    | Retrieve shop's expenses at different time granularity                                             |
-| **UC23 - retrieve balance**        | Retrieve balance                          | Retrieve current balance and balance history at different time granularity                       |
-| **UC24 - set password**            | Set owner password                        | Let owner set a new password                                                                     |
-| **UC25 - authenticate**            | Authenticate owner                        | Authenticate the owner if the password provided is correct                                       |
-| **UC26 - add cash register**    | Add new cash register                  | Add a new cash register it to the list of cash registers                                                   |
-| **UC27 - delete cash register**    | Delete cash register                      | Delete a cash register from the list of cash registers                                           |
+| **UC1 - create batch**             | Add new batch                             | Add a new batch to the inventory                                                    |
+| **UC2 - delete batch**             | Delete batch                              | Delete a batch from the inventory                                                                 |
+| **UC3 - update batch**             | Update batch                              | Update information of a batch stored in the inventory
+| **UC4 - create product**          | Add new product                           | Add a new product to the list of products                                                            |
+| **UC5 - delete product**          | Delete product                            | Delete an product from the list of products                                                          |
+| **UC6 - update product**          | Update product                            | Update product's information from the list of products                                               |
+| **UC7 - create order**            | Add new order                             | Add a new order to the list of orders                                                            |
+| **UC8 - delete order**            | Delete order                              | Delete an order from the list of orders                                                          |
+| **UC9 - update order**            | Update order                              | Update order's information from the list of orders                                               |
+| **UC10 - add cash register**       | Add new cash register                     | Add a new cash register it to the list of cash registers                                                   |
+| **UC11 - delete cash register**    | Delete cash register                      | Delete a cash register from the list of cash registers                                           |
+| **variantUC18 - retrieve batch**           | Retrieve batch                            | Retrieve batch's information from the inventory                                                  |
+| **variantUC17 - retrieve product**         | Retrieve product                          | Retrieve product's information from the inventory                                                  |
+| **UC12 - retrieve incomes**        | Retrieve shop incomes                     | Retrieve shop's income at different time granularity                                              |
+| **UC13 - retrieve expenses**       | Retrieve shop expenses                    | Retrieve shop's expenses at different time granularity                                             |
+| **UC14 - retrieve balance**        | Retrieve balance                          | Retrieve current balance and balance history at different time granularity                       |
+| **UC15 - create sales list**       | Create owner-defined orders list          | Retrieve batches list filtered by a set of orders' attributes |
+| **UC16 - create invoice list**     | Create owner-defined invoice list         | Retrieve invoices filtered by one or more invoice's attributes                                   |
+| **UC17 - create product list**     | Create owner-defined product list         | Retrieve products filtered by one or more product's attributes                                   |
+| **UC18 - create batches list**      | Create owner-defined batches list         | Retrieve batches list filtered by a set of batches' attributes                                            |
+| **UC19 - set password**            | Set owner password                        | Let owner set a new password                                                                     |
+| **UC20 - authenticate**            | Authenticate owner                        | Authenticate the owner if the password provided is correct                                       |
+|**UC21 - set threshold**            | set item quantity threshold               | set for a product a threshold value for item quantity                                               |
+| **UC22 - suggest new order**       | Suggest new order                         | Suggest a new order when a product is about to run out                                           |
+| **UC23 - import products list**    | Import orders list as `.csv`              | Read `.csv` file and add new orders                                                              |
+| **UC24 - import batches list**      | Import batches list as `.csv`             | Read `.csv` file and create new batches in the inventory                                         |
+| **UC25 - import sales list**        | Import sales list as `.csv`               | Read `.csv` file and update the sales list                                                        |
+| **UC26 - import orders list**      | Import orders list as `.csv`              | Read `.csv` file and add new orders                                                              |
+| **UC27 - export sales list**       | export a sales list as '.csv'             | return '.csv' file with a list of sales                                                         | 
+| **UC28 - export orders list**       | export a orders list as '.csv'             | return '.csv' file with a list of orders                                                         | 
+| **UC29 - export batches list**       | export a batches list as '.csv'             | return '.csv' file with a list of batches                                                         | 
+| **UC30 - export products list**       | export a products list as '.csv'             | return '.csv' file with a list of products                                                         | 
+
+
+
+| **UC Name**                        | **Goal**                                   | **Description**|
+| ---------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| **UC1 – Manage Inventory**         | Track products                              | Owner creates, updates and deletes batches of products|
+| **UC2 – Manage Orders**            | Manage supplier orders                      | Owner creates, updates and deletes orders |
+| **UC3 - Suggest Orders**           | Suggest orders to a user                    | When a product quantity is behind a defined threshold the system suggest an order to the owner |
+| **UC4 – Manage Invoices**          | Record and manage invoices                  | Owner creates, updates and deletes invoices |
+| **UC5 – Authenticate Owner**       | Ensure secure access                        | Owner authenticates through a password and manage it (creation, modification)|
+| **UC6 – Manage Product Catalogue** | Manage the product catalogue                | Owner creates, updates, and deletes products of the catalogue |
+| **UC7 – Receive Notifications**    | Notify the user of relevant events          | The system sends notifications related to product expirations, ongoing orders, status changes, or quantity reached thresholds|
+| **UC8 - Import Data**              | Import data as .csv                         | Owner imports products, sales, batches or order lists as .csv | 
+| **UC9 - Export Data**              | Export data as .csv                         | Owner exports products, sales, batches or order lists as .csv |
+| **UC10 - Retrieve Data**           | Retrieve data required  by the owner        | Owner retrieves list of products, sales, orders, batches and invoices filtered by one or more fo their attributes |
+| **UC11 - Manage cash flow**        | Retrieve incomes, outgoings and balance     | Owner retrieves incomes, outogings and balance tracked and computed by the system 3|     
+| **UC12 – Manage Sales**            | Record and manage sales                     | To do... |
 
 ## Use case diagram
 
@@ -286,15 +308,15 @@ system <-- shipping
 
 \<next describe here each use case in the UCD>
 
-### Use case 1, UC1
+### Use case 10, UC10
 
-| Actors Involved  |                                                                      |
+| Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------: |
-|   Precondition   | \<Boolean expression, must evaluate to true before the UC can start> |
-|  Post condition  |  \<Boolean expression, must evaluate to true after UC is finished>   |
-| Nominal Scenario |         \<Textual description of actions executed by the UC>         |
-|     Variants     |                      \<other normal executions>                      |
-|    Exceptions    |                        \<exceptions, errors >                        |
+|   Precondition   | Data are in the system && attributes' values are present in the system |
+|  Post condition  |  Owner retrieves the desidered list of data   |
+| Nominal Scenario | Owner retrieves a list of data from the system                       | 
+|     Variants     | Owner retrieves a list of data filtered by their attributes          |
+|    Exceptions    | Owner selects attribute's values (for filtering) that are incorrect or absent|
 
 ##### Scenario 1.1
 
