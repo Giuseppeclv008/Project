@@ -123,6 +123,8 @@ system <-- shipping
 |:--:|:-------------|
 | **FR1** | **Manage sales** |
 | *FR1.1* | *Read sale from cash register* |
+| FR1.1.1 | Convert sale from API-specific format to a custom format |
+| FR1.1.2 | Add sale to the list of recorded sales |
 | *FR1.2* | *Create owner-defined sale list* |
 | FR1.2.1 | for each owner-defined list filter sales a specified date (ISO 8601) or time window |
 | FR1.2.2 | Retrieve sales filtered by products sold |
@@ -143,6 +145,10 @@ system <-- shipping
 | *FR2.4* | *Manage `.csv`* |
 | FR2.4.1 | Import product list from `.csv` |
 | FR2.4.2 | Export list of products as `.csv` |
+| **FR2.5** | *Update cash register's catalogue* |
+| FR2.5.1 | Convert catalogue to API-specific format |
+| FR2.5.2 | Check connection with cash register |
+| FR2.5.3 | Send updated catalogue to connected cash register|
 | **FR3** | **Manage inventory** |
 | *FR3.1* | *Manage CRUD operations* |
 | FR3.1.1 | Create new batch in the inventory |
