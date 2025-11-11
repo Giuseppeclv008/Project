@@ -250,7 +250,6 @@ system <-- shipping
 # Use case diagram and use cases
 
 ## Use case brief
-<<<<<<< HEAD
 | **UC Name**                        | **Goal**                                  | **Description**|
 | ---------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------- |
 | **UC1 - create batch**             | Add new batch                             | Add a new batch to the inventory                                                    |
@@ -285,18 +284,22 @@ system <-- shipping
 | **UC28 - export orders list**       | export a orders list as '.csv'             | return '.csv' file with a list of orders                                                         | 
 | **UC29 - export batches list**       | export a batches list as '.csv'             | return '.csv' file with a list of batches                                                         | 
 | **UC30 - export products list**       | export a products list as '.csv'             | return '.csv' file with a list of products                                                         | 
-=======
-| **UC Name**                        | **Goal**                                   | **Description**                                                                                                                                                                                                                       |
-| ---------------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **UC1 – Manage Sales**             | Record and manage sales                    | The system allows reading sales data from the cash register, updating the inventory, creating and viewing customized sales lists, and importing/exporting data in `.csv` format.                                                      |
-| **UC2 – Manage Inventory**         | Track products and  item quantity            | User can create, update and delete product batches, generate customized lists, monitor expiration dates, and he will be automatically notificated when products quantities fall below defined thresholds.                  |
-| **UC3 – Manage Orders**            | Manage supplier orders                     | The system allows creating, updating, and deleting orders, automatically tracking their status for supported suppliers, and generating notifications when statuses change or quantities fall below set thresholds.                     |
-| **UC4 – Manage Accounting**        | Manage accounting and balance sheets        | The application keeps track of invoices, revenues, balances, and taxes, providing statistics and accounting reports for the shop owner.                                                                                               |
-| **UC5 – Authenticate Owner**       | Ensure secure access                        | The system allows the shop owner to authenticate through a password and manage it (creation, modification, and verification).                                                                                                |
-| **UC6 – Manage Product Catalogue** | Manage the product catalog                  | Allows creating, updating, or deleting products, displaying customized lists (by category, brand, price, etc.), and importing/exporting data to/from `.csv` files.                                                                    |
-| **UC7 – Receive Notifications**    | Notify the user of relevant events          | The system sends notifications related to product expirations, ongoing orders, status changes, or quantity reached thresholds.                                                                                                        |
 
->>>>>>> parent of 535de21 (feat: added UC diagram)
+
+
+| **UC Name**                        | **Goal**                                   | **Description**|
+ **UC1 – Manage Inventory**         | Track products                              | Owner creates, updates and deletes batches of products|
+| **UC2 – Manage Orders**            | Manage supplier orders                      | Owner creates, updates and deletes orders |
+| **UC3 - Suggest Orders**           | Suggest orders to a user                    | When a product quantity is behind a defined threshold the system suggest an order to the owner |
+| **UC4 – Manage Invoices**          | Record and manage invoices                  | Owner creates, updates and deletes invoices |
+| **UC5 – Authenticate Owner**       | Ensure secure access                        | Owner authenticates through a password and manage it (creation, modification)|
+| **UC6 – Manage Product Catalogue** | Manage the product catalogue                | Owner creates, updates, and deletes products of the catalogue |
+| **UC7 – Receive Notifications**    | Notify the user of relevant events          | The system sends notifications related to product expirations, ongoing orders, status changes, or quantity reached thresholds|
+| **UC8 - Import Data**              | Import data as .csv                         | Owner imports products, sales, batches or order lists as .csv | 
+| **UC9 - Export Data**              | Export data as .csv                         | Owner exports products, sales, batches or order lists as .csv |
+| **UC10 - Retrieve Data**           | Retrieve data required  by the owner        | Owner retrieves list of products, sales, orders, batches and invoices filtered by one or more fo their attributes |
+| **UC11 - Manage cash flow**        | Retrieve incomes, outgoings and balance     | Owner retrieves incomes, outogings and balance tracked and computed by the system 3|     
+| **UC12 – Manage Sales**            | Record and manage sales                     | To do... |
 
 ## Use case diagram
 
@@ -304,15 +307,15 @@ system <-- shipping
 
 \<next describe here each use case in the UCD>
 
-### Use case 1, UC1
+### Use case 10, UC10
 
-| Actors Involved  |                                                                      |
+| Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------: |
-|   Precondition   | \<Boolean expression, must evaluate to true before the UC can start> |
-|  Post condition  |  \<Boolean expression, must evaluate to true after UC is finished>   |
-| Nominal Scenario |         \<Textual description of actions executed by the UC>         |
-|     Variants     |                      \<other normal executions>                      |
-|    Exceptions    |                        \<exceptions, errors >                        |
+|   Precondition   | Data are in the system && attributes' values are present in the system |
+|  Post condition  |  Owner retrieves the desidered list of data   |
+| Nominal Scenario | Owner retrieves a list of data from the system                       | 
+|     Variants     | Owner retrieves a list of data filtered by their attributes          |
+|    Exceptions    | Owner selects attribute's values (for filtering) that are incorrect or absent|
 
 ##### Scenario 1.1
 
