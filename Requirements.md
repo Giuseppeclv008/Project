@@ -164,7 +164,7 @@ system <-- shipping
 | FR4.1.1 | Create new order in the list of orders |
 | FR4.1.2 | Update order from the list of orders |
 | FR4.1.3 | Delete order from the list of orders |
-| *FR4.2* | *Automatically track order for supported suppliers* |
+| *FR4.2* | *Automatically track order for supported curriers* |
 | FR4.2.1 | Check internet connection |
 | FR4.2.2 | Retrieve current order's status |
 | FR4.2.3 | Update current order's status |
