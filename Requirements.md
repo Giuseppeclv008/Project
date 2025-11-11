@@ -288,7 +288,8 @@ system <-- shipping
 
 
 | **UC Name**                        | **Goal**                                   | **Description**|
- **UC1 – Manage Inventory**         | Track products                              | Owner creates, updates and deletes batches of products|
+| ---------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| **UC1 – Manage Inventory**         | Track products                              | Owner creates, updates and deletes batches of products|
 | **UC2 – Manage Orders**            | Manage supplier orders                      | Owner creates, updates and deletes orders |
 | **UC3 - Suggest Orders**           | Suggest orders to a user                    | When a product quantity is behind a defined threshold the system suggest an order to the owner |
 | **UC4 – Manage Invoices**          | Record and manage invoices                  | Owner creates, updates and deletes invoices |
