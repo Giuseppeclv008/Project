@@ -126,7 +126,7 @@ system <-- shipping
 | FR1.1.1 | Convert sale from API-specific format to a custom format |
 | FR1.1.2 | Add sale to the list of recorded sales |
 | *FR1.2* | *Create owner-defined sale list* |
-| FR1.2.1 | for each owner-defined list filter sales a specified date (ISO 8601) or time window |
+| FR1.2.1 | For each owner-defined list filter sales a specified date (ISO 8601) or time window |
 | FR1.2.2 | Retrieve sales filtered by products sold |
 | FR1.2.3 | Retrieve sales ranked by number of items sold per specific product |
 | FR1.2.4 | Retrieve sales ranked by the sum of its item's prices |
