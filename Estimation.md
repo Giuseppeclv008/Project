@@ -22,7 +22,7 @@ Consider the EZShop project as described in your requirements document, assume t
 | Estimated calendar time, in calendar weeks (Assume team of 5 people, 8 hours per day, 5 days per week ) |  3          |
 
 
-### classes are: 
+###classes are: 
 - User
 - Sale
 - Order
@@ -111,72 +111,66 @@ _since CRUD operations may be modulated, only the first time higher person hours
 _since design can be implemented in many different ways, 20 person hours average is considered as acceptable_
 
 Estimated duration: (calendar time): 31 working days, a month and a week. 
-# Estimate by Function Points 
-## External Inputs (EI)
-| ID  | Description                          | Complexity | Weight |
-|:---:|:-------------------------------------|:-----------|:-------|
-| EI1 | Read sale from cash register         | Avg        | 4      |
-| EI2 | Import sales/product/batch/order CSV | High       | 6       | 
-| EI3 | CRUD Catalogue                       | Avg        |  4      |
-| EI4 | CRUD Inventory (Batches)             | Avg        |  4      |
-| EI5 | CRUD Orders                          | Avg        |    4    |
-| EI6 | CRUD Notifications                   | Low        |    3    |
-| EI7 | CRUD Cash Registers                  | Low        |    3    |
-| EI8 | Set / Change Password                | Low        |    3    |
-| EI9 | Authenticate / Verify Password       | Avg        |    4    |
-### Total EI = 38
-
-## External Outputs (EO)
-| ID  | Description                                      | Complexity | Weight |
-|:---:|:-------------------------------------------------|:-----------|:-------|
-| EO1 | Update Catalogue to Cash Register                |    Avg        |   5     |
-| EO2 | Export lists to CSV                              |      Avg      |     5   |
-| EO3 | Send updated catalogue                           |   Avg         |    5    |
-| EO4 | Generate order suggestion                        |     High       |    7    |
-| EO5 | Compute and display balance reports              |      High      |     7   |
-| EO6 | Retrieve invoices and incomes/outgoings reports  |      Avg      |    5    |
-### Total EO = 34
-
-## External Inquiries (EQ)
-| ID  | Description                                         | Complexity | Weight |
-|:---:|:----------------------------------------------------|:-----------|:-------|
-| EQ1 | Retrieve filtered sales/products/batches/orders/invoices |   Avg         |    4    |
-| EQ2 | Retrieve ranked sales                               |     Avg       |   4     |
-| EQ3 | Retrieve number of items available per product       |     Low       |    3    |
-| EQ4 | Retrieve order status                               |    Low        |    3    |
-| EQ5 | Retrieve income/expense/balance history             |      Avg      |   4     |
-### Total EQ = 18
-
-## External Interface Files (EIF)
-| ID   | Description             | Complexity | Weight |
-|:----:|:------------------------|:-----------|:-------|
-| EIF1 | Cash register API data  |    Avg        |    7    |
-| EIF2 | Supplier API data       |    Avg        |    7    |
-| EIF3 | External CSV files      |    Low        |    5    |
-### Total EIF = 19
-
-## Internal Logical Files (ILF)
-| ID   | Description                | Complexity | Weight |
-|:----:|:---------------------------|:-----------|:-------|
-| ILF1 | Sales                      |    Avg        |    10    |
-| ILF2 | Catalogue                  |    Avg        |    10    |
-| ILF3 | Inventory (Batches)        |     Avg       |    10    |
-| ILF4 | Orders                     |    Avg        |    10    |
-| ILF5 | Invoices                   |     Avg       |   10     |
-| ILF6 | Accounting data            |    Avg        |   10     |
-| ILF7 | Users / Owner credentials  |     Low       |   7     |
-| ILF8 | Notifications              |     Low      |   7     |
-| ILF9 | Cash Registers list        |     Low       |    7    |
-### Total ILF = 81
-
 
 # Estimate by activity decomposition + Gantt chart
 
 ###
 step 1: activities (WBS), step 2 Gantt chart
-| Activity name | Estimated effort (person hours) |
-| ------------- | ------------------------------- |
-|               |                                 |
+| Activity name                                              | Estimated effort (person hours) |
+| ---------------------------------------------------------- | ------------------------------- |
+| _requirement planning_                                     |                                 |
+| &nbsp;&nbsp; define stakeholders                           |                                 |    
+| &nbsp;&nbsp; define context diagram and interfaces         |                                 |
+| &nbsp;&nbsp; research needed hardware                      |                                 |
+| &nbsp;&nbsp; analyse existing similar products             |                                 |
+| &nbsp;&nbsp; analyse existing useful APIs                  |                                 |
+| &nbsp;&nbsp; define functional requirements                |                                 |
+| &nbsp;&nbsp; define non-functional requirements            |                                 |
+| &nbsp;&nbsp; write glossary                                |                                 |
+| &nbsp;&nbsp; review glossary and requirements              |                                 |
+| &nbsp;&nbsp; define use-cases and scenarios                |                                 |
+| &nbsp;&nbsp; review use-cases and scenarios                |                                 |
+| &nbsp;&nbsp; define system design and hw-sw architecture   |                                 |
+| &nbsp;&nbsp; review requirements document                  |                                 |
+| _design planning_                                          |                                 |
+| &nbsp;&nbsp; analyse requirement document                  |                                 |
+| &nbsp;&nbsp; define architecture                           |                                 |
+| &nbsp;&nbsp; define coding and convention                  |                                 |
+| &nbsp;&nbsp;&nbsp; define repository structure             |                                 |
+| &nbsp;&nbsp;&nbsp; choose programming language             |                                 |
+| &nbsp;&nbsp;&nbsp; choose frameworks                       |                                 |
+| &nbsp;&nbsp; define DBSM                                   |                                 |
+| &nbsp;&nbsp;&nbsp; produce ER-model                        |                                 |
+| &nbsp;&nbsp;&nbsp; define tables                           |                                 |
+| &nbsp;&nbsp;&nbsp; define data integrity                   |                                 |
+| &nbsp;&nbsp;&nbsp; define migration strategies             |                                 |
+| &nbsp;&nbsp; define security                               |                                 |
+| &nbsp;&nbsp;&nbsp; define authentication management        |                                 |
+| &nbsp;&nbsp;&nbsp; define data encryption                  |                                 |
+| &nbsp;&nbsp;&nbsp; define personal data storage            |                                 |
+| &nbsp;&nbsp;&nbsp; define API and network security         |                                 |
+| &nbsp;&nbsp; define error handling                         |                                 |
+| &nbsp;&nbsp; define testing strategy                       |                                 |
+
+
+
+
+
+
+
+
+
+
+
+| &nbsp;&nbsp; choose API                                    |                                 |
+| &nbsp;&nbsp; define classes                                |                                 |
+| &nbsp;&nbsp; define methods                                |                                 |
+| &nbsp;&nbsp; produce UML document                          |                                 |
+
+
+
+
+
 
 
 
