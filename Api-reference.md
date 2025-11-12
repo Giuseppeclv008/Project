@@ -50,3 +50,222 @@
 - Retrieve receipts: [Pull receipts](https://developers.lightspeedhq.com/retail/endpoints/Sale/)
 - Retrieve invoices: [Pull invoices]()
 
+---
+Excellent questions — this is exactly the kind of detail your Requirements and Design sections need. Let’s walk through how the Square POS API actually works when you want to:
+
+- Connect your EZShop management software to a physical Square POS device  
+- Push your catalogue (products)  
+- Receive completed sales (receipts)  
+- Handle authentication and authorization (OAuth)  
+
+---
+
+## 🧩 1. How “connecting to a POS” actually works in Square
+
+There’s **no direct “pair this device” API call**.
+
+Instead, Square ties everything to a **Square merchant account** (the shop owner’s account) and its **locations**.
+
+Each physical POS device (like Square Register, Square Terminal, etc.) logs in to a **merchant’s account** and operates under a **location ID**.  
+Your app integrates at the **account level**, not directly to a specific hardware device.
+
+So in practice:
+
+1. You register your app in the **Square Developer Dashboard**.  
+2. The shop owner uses OAuth (“Sign in with Square”) to authorize EZShop.  
+3. Your app receives an **access token** tied to that merchant account.  
+4. You use the `/v2/locations` endpoint to list all locations (stores/registers) associated with the account.  
+5. Any POS device logged into that merchant’s account will automatically sync catalog and orders for its assigned location.  
+
+---
+
+## 🧱 2. Pushing your catalogue to the POS
+
+Once you have the merchant’s access token and the location ID, you can send catalog data via the **Catalog API**.
+
+Typical workflow:
+
+1. Your EZShop app builds a product list using Square’s `CatalogObject` model (items, categories, modifiers, etc.).  
+2. Use the [`/v2/catalog/batch-upsert`](https://developer.squareup.com/reference/square/catalog-api/batch-upsert-catalog-objects) endpoint to push products.  
+3. The changes automatically propagate to all POS devices logged in under that merchant’s account and location.
+
+✅ No direct device connection is needed — synchronization happens via the merchant’s Square account.
+
+---
+
+## 💸 3. Receiving completed sales (receipts)
+
+When a transaction occurs on a Square POS terminal:
+
+1. The POS device records a **Payment** (via the Payments API).  
+2. That Payment is linked to an **Order** (via the Orders API).  
+3. Your app can:
+   - **Subscribe to webhooks** like `payment.created`, `order.updated`, etc.  
+   - Or **poll the API** periodically to fetch new transactions.
+
+The preferred method is **webhooks**, since Square will automatically send your app a POST request when events occur.
+
+For example:
+- Webhook topic: `payment.created` → a new sale is completed  
+- Your app receives the event payload, extracts the `payment_id`, and calls `/v2/payments/{payment_id}` or `/v2/orders/{order_id}` for details  
+- You store the sale in EZShop’s database and update inventory accordingly  
+
+Webhook setup documentation:  
+👉 [Square Webhooks Overview](https://developer.squareup.com/docs/webhooks/overview)
+
+---
+
+## 🔐 4. OAuth (Authentication and Authorization)
+
+Square requires **OAuth 2.0** for third-party integrations.  
+This allows shop owners to securely link their Square account to EZShop without sharing credentials.
+
+The sequence looks like this:
+
+1. EZShop redirects the user to Square’s OAuth authorization URL.  
+2. The user logs in and grants your app permission.  
+3. Square redirects back with an authorization code.  
+4. EZShop exchanges the code for an **access token** via the OAuth API.  
+5. That token is stored securely and used for all future API calls on behalf of the merchant.
+
+Documentation:  
+👉 [Square OAuth API](https://developer.squareup.com/docs/oauth-api/overview)
+
+---
+
+## 🧾 Example Flow Summary
+
+| Step | Action | API |
+|------|---------|-----|
+| 1 | Shop owner authorizes EZShop via OAuth | `/oauth2/authorize` |
+| 2 | EZShop receives access token | `/oauth2/token` |
+| 3 | EZShop lists merchant locations | `/v2/locations` |
+| 4 | EZShop pushes product catalog | `/v2/catalog/batch-upsert` |
+| 5 | POS device performs a sale | (handled by Square POS) |
+| 6 | Square notifies EZShop via webhook | `/v2/webhooks` |
+| 7 | EZShop retrieves sale/order details | `/v2/payments` & `/v2/orders` |
+
+
+## 🧩 Common Conceptual Model Across POS APIs
+
+| Concept | Common Meaning | Square | Clover | Lightspeed | SumUp | Nexi |
+|:--------|:----------------|:--------|:---------|:-------------|:--------|:--------|
+| **Merchant / Account** | The business entity that owns the POS system | `merchant` | `merchant` | `account` | `merchant` | `merchant` |
+| **Location / Store** | A physical place or branch where sales occur | `location` | `merchant` → `merchant_id` (single store, or `multi-merchant` mode) | `shop` | `profile` (limited) | `store` |
+| **Device / Terminal** | The physical POS hardware (register, reader, etc.) | `device` (implicit via location) | `device` (registered) | `register` | `terminal` | `terminal` |
+| **Catalog / Inventory** | The list of products, variants, prices, and stock | `catalog` | `items` | `Item` | `products` | `catalog` |
+| **Order / Transaction** | A record of a sale with its items and totals | `order` | `order` | `Sale` | `checkout` | `transaction` |
+| **Payment** | Details of how the order was paid | `payment` | `payment` | `Payment` | `transaction` | `payment` |
+| **Invoice** | A bill sent to a customer (B2B or deferred) | `invoice` | `invoice` | `Invoice` | `invoice` | `fattura elettronica` |
+| **Customer** | Customer info linked to transactions | `customer` | `customer` | `Customer` | `customer` | `customer` |
+| **Webhook / Event** | Real-time notification of actions | `webhook` | `webhook` | `Webhook` | `webhook` | (limited) |
+| **OAuth / Token** | Authorization flow for your app | `OAuth` | `OAuth2` | `OAuth2` | `OAuth2` | `OAuth2` |
+
+---
+
+## 🔁 Common Integration Methodology
+
+Despite vendor differences, all open POS systems share this **standard three-phase pattern**:
+
+### 1️⃣ Authorization Phase
+- Your app (EZShop) must be registered in the POS provider’s **developer dashboard**.  
+- You integrate an **OAuth 2.0** flow so the shop owner (merchant) can grant your app permission to access their account.  
+- The provider returns an **access token**, which you store securely and use for all subsequent API calls.
+
+🧠 Analogy:  
+> “The shop owner logs in with Square/Clover/… and authorizes EZShop to sync their sales and catalog.”
+
+---
+
+### 2️⃣ Synchronization Phase
+- Your app **pushes the catalog** (products, prices, categories) to the POS provider’s system.
+- Optionally, you may **pull the catalog** if the POS is the master source.
+- You typically identify the **location** or **store** where these apply.
+
+🧠 Analogy:  
+> “EZShop sends its product list to the POS at the downtown shop.”
+
+---
+
+### 3️⃣ Transaction Tracking Phase
+- The POS system generates sales, payments, and possibly invoices locally.
+- Your app **subscribes to webhooks** (or polls endpoints) for:
+  - `order.created`
+  - `payment.updated`
+  - `refund.created`
+- On receiving these events, you **pull detailed data** (order, payment, receipt) and update EZShop’s internal records.
+
+🧠 Analogy:  
+> “When a sale is completed on the POS, EZShop automatically updates its sales and inventory data.”
+
+---
+
+## 🧱 Differences Between APIs (in Practice)
+
+| Area | Square | Clover | Lightspeed | SumUp | Nexi |
+|------|--------|--------|-------------|--------|--------|
+| **Webhooks** | Full event system | Limited but available | Good support | Basic | Minimal |
+| **Inventory detail** | Rich & structured | Medium | Very rich | Basic | Limited |
+| **Invoices** | Complete API | Basic | Good | Partial | Excellent (e-invoicing) |
+| **Hardware integration** | Excellent | Excellent | Good | Good | Very tied to bank |
+| **API openness** | Public, self-service | Requires developer registration | Public | Semi-open | Partially closed (requires approval) |
+| **Typical market** | Global, SMB | US/EU retail | EU retail | Microbusiness | Italian retail / fiscal POS |
+
+---
+
+## ⚙️ So, for your requirement document…
+
+The **Square-based model** you’re defining is **a good reference baseline** for all these vendors.  
+You can later adapt interface requirements like so:
+
+- **FR1.1.1 – Read sale from POS:**  
+  Implement via webhook subscription (`order.created`) or polling API.
+
+- **FR2.x – Manage catalog:**  
+  Implement via batch push to `/catalog` (Square) or `/items` (Clover).
+
+- **FRx.x – Connect to POS:**  
+  Use OAuth authorization to connect merchant → EZShop → POS.
+
+Your **interface table** with:
+is **fully valid and generalizable**.
+
+---
+
+## 🧭 Key Square API Terminology (reference for your model)
+
+| Square Term | Meaning | Analogy in EZShop | Notes / Tips |
+|--------------|----------|------------------|---------------|
+| **Merchant** | The **business account** that owns the Square POS, locations, catalog, and transactions. Every Square account corresponds to one merchant entity. | **Shop Owner / Business** | Root entity you connect to using OAuth. |
+| **Location** | A **specific shop or POS location** under a merchant’s account. A merchant can have multiple locations. | **Physical store or cash register location** | Identified by `location_id`. Needed when pushing catalogues or reading sales. |
+| **Device** | A **hardware POS terminal** (Square Register, Reader, Terminal) that operates under a specific `location_id`. | **Cash Register** | You don’t “connect” directly — they sync via their location. |
+| **Catalog** | Collection of `CatalogObject` items — products, modifiers, discounts, taxes, etc. | **Product list / Inventory** | Managed via Catalog API. |
+| **Order** | A record of a customer transaction, including line items, taxes, and discounts. | **Sale transaction / Receipt** | Created automatically when a sale occurs. |
+| **Payment** | A record of how an order was paid. | **Payment details for a sale** | Linked to an Order. |
+| **Customer** | A stored customer profile. | **Customer entity** | Optional in your scope. |
+| **Invoice** | A bill sent to a customer for later payment. | **Invoice object / Sale on account** | Different from a receipt — invoices are not created automatically. |
+| **Webhook** | HTTP callback Square sends when an event occurs. | **Event listener in EZShop** | Use this to stay updated. |
+| **Application** | Your registered Square integration. | **EZShop connector** | Managed in Square Developer Dashboard. |
+| **Access Token** | OAuth token granting your app permission to act on behalf of a merchant. | **Stored API credential in EZShop** | Required for all API calls. |
+| **Sandbox** | A test environment with fake merchants, locations, and transactions. | **Test mode** | Used for development. |
+
+---
+
+## 🧾 Example Flow
+
+1. **Merchant** (your shop owner) logs into EZShop.  
+2. They click “Connect with Square” — triggers OAuth.  
+3. EZShop gets an **access token** for that merchant.  
+4. EZShop calls `/v2/locations` — retrieves merchant’s **locations**.  
+5. EZShop calls `/v2/catalog/batch-upsert` — updates **catalog**.  
+6. A customer completes a sale at one of the **devices**.  
+7. Square creates an **order** and **payment**.  
+8. Square sends your webhook an event like `order.created`.  
+9. EZShop retrieves full order details via **Orders API**.  
+
+---
+
+## 🧱 Relationships (Simplified)
+
+
+
