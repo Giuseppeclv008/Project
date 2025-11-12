@@ -170,13 +170,65 @@ Estimated duration: (calendar time): 31 working days, a month and a week.
 ### Total ILF = 81
 
 
+
+
 # Estimate by activity decomposition + Gantt chart
 
 ###
 step 1: activities (WBS), step 2 Gantt chart
-| Activity name | Estimated effort (person hours) |
-| ------------- | ------------------------------- |
-|               |                                 |
+| Activity name                                              | Estimated effort (person hours) |
+| ---------------------------------------------------------- | ------------------------------- |
+| _requirement planning_                                     |                                 |
+| &nbsp;&nbsp; define stakeholders                           |                                 |    
+| &nbsp;&nbsp; define context diagram and interfaces         |                                 |
+| &nbsp;&nbsp; research needed hardware                      |                                 |
+| &nbsp;&nbsp; analyse existing similar products             |                                 |
+| &nbsp;&nbsp; analyse existing useful APIs                  |                                 |
+| &nbsp;&nbsp; define functional requirements                |                                 |
+| &nbsp;&nbsp; define non-functional requirements            |                                 |
+| &nbsp;&nbsp; write glossary                                |                                 |
+| &nbsp;&nbsp; review glossary and requirements              |                                 |
+| &nbsp;&nbsp; define use-cases and scenarios                |                                 |
+| &nbsp;&nbsp; review use-cases and scenarios                |                                 |
+| &nbsp;&nbsp; define system design and hw-sw architecture   |                                 |
+| &nbsp;&nbsp; review requirements document                  |                                 |
+| _design planning_                                          |                                 |
+| &nbsp;&nbsp; analyse requirement document                  |                                 |
+| &nbsp;&nbsp; define architecture                           |                                 |
+| &nbsp;&nbsp; define coding and convention                  |                                 |
+| &nbsp;&nbsp;&nbsp; define repository structure             |                                 |
+| &nbsp;&nbsp;&nbsp; choose programming language             |                                 |
+| &nbsp;&nbsp;&nbsp; choose frameworks                       |                                 |
+| &nbsp;&nbsp; define DBSM                                   |                                 |
+| &nbsp;&nbsp;&nbsp; produce ER-model                        |                                 |
+| &nbsp;&nbsp;&nbsp; define tables                           |                                 |
+| &nbsp;&nbsp;&nbsp; define data integrity                   |                                 |
+| &nbsp;&nbsp;&nbsp; define migration strategies             |                                 |
+| &nbsp;&nbsp; define security                               |                                 |
+| &nbsp;&nbsp;&nbsp; define authentication management        |                                 |
+| &nbsp;&nbsp;&nbsp; define data encryption                  |                                 |
+| &nbsp;&nbsp;&nbsp; define personal data storage            |                                 |
+| &nbsp;&nbsp;&nbsp; define API and network security         |                                 |
+| &nbsp;&nbsp; define error handling                         |                                 |
+| &nbsp;&nbsp; define testing strategy                       |                                 |
+
+
+
+
+
+
+
+
+
+
+
+| &nbsp;&nbsp; choose API                                    |                                 |
+| &nbsp;&nbsp; define classes                                |                                 |
+| &nbsp;&nbsp; define methods                                |                                 |
+| &nbsp;&nbsp; produce UML document                          |                                 |
+
+
+
 
 
 
