@@ -342,11 +342,11 @@ system <-- shipping
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   | Owner is authenticated && DB services are available    |
+|  Pre condition   |  |
 |  Post condition  |  |
 | Nominal Scenario | - Owner  set password  AU1 <br> - Authenticate owner AU2 <br> | 
 |     Variants     | No variants |
-|     Exception    | | 
+|     Exception    | - Owner tries to authenticate with a wrong password <br> AU3 - Owner tries to set an empty password AU4| 
 
 ### Use case 6, UC6
 
