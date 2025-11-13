@@ -308,25 +308,66 @@ system <-- shipping
 
 \<next describe here each use case in the UCD>
 
+### Use case 1, UC1 
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Pre condition   | Owner is authenticated && DB services are available    |
+|  Post condition  | CRUD-type batches of products's operation is performed |
+| Nominal Scenario | - Owner creates a batches of products MI1 <br> - Owner updates a batches of products MI2 <br> - Owner deletes a batches of products MI3| 
+|     Variants     | -  Owner deletes many batches of productss, filtering by products' attributes MI4 |
+|     Exception    | - Owner tries to create a batches of products with inconsistent values MI5 <br> - Owner tries to create a batches of products that is alredy in the system MI6 <br> - Owner tries to update a batches of products not present in the system MI7 <br> - Owner tries to update a batches of products with inconsisten values MI8 <br> - Owner tries to delete a batches of products not present in the system MI9|
+
+### Use case 2, UC2
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Pre condition   | Owner is authenticated && DB services are available    |
+|  Post condition  | CRUD-type order's operation is performed |
+| Nominal Scenario | - Owner creates a order MO1 <br> - Owner updates a order MO2 <br> - Owner deletes a order MO3| 
+|     Variants     | -  Owner deletes many orders, filtering by products' attributes MO4 |
+|     Exception    | - Owner tries to create a order with inconsistent values MO5 <br> - Owner tries to create a order that is alredy in the system MO6 <br> - Owner tries to update a order not present in the system MO7 <br> - Owner tries to update a order with inconsisten values MO8 <br> - Owner tries to delete a order not present in the system MO9|
+
+### Use case 4, UC4 
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Pre condition   | Owner is authenticated && DB services are available    |
+|  Post condition  | CRUD-type invoice's operation is performed |
+| Nominal Scenario | - Owner creates a invoice MI1 <br> - Owner updates a invoice MI2 <br> - Owner deletes a invoice MI3| 
+|     Variants     | -  Owner deletes many invoices, filtering by products' attributes MI4 |
+|     Exception    | - Owner tries to create a invoice with inconsistent values MI5 <br> - Owner tries to create a invoice that is alredy in the system MI6 <br> - Owner tries to update a invoice not present in the system MI7 <br> - Owner tries to update a invoice with inconsisten values MI8 <br> - Owner tries to delete a invoice not present in the system MI9|
+
+### Use case 5, UC5
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Pre condition   | Owner is authenticated && DB services are available    |
+|  Post condition  |  |
+| Nominal Scenario | - Owner  set password  AU1 <br> - Authenticate owner AU2 <br> | 
+|     Variants     | No variants |
+|     Exception    | | 
 
 ### Use case 6, UC6
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
+|  Pre condition   | Owner is authenticated && DB services are available    |
 |  Post condition  | CRUD-type operation is performed in the catalogue  |
 | Nominal Scenario | - Owner creates a product MP1 <br> - Owner updates a product MP2 <br> - Owner deletes a product MP3| 
-|     Variants     | -  Owner deletes many products, filtering by products' attributes MP3V |
-|     Exception    | - Owner tries to create a product with inconsistent values MP1.1E <br> - Owner tries to create a product that is alredy in the catalogue MP1.2E <br> - Owner tries to update a product not present in the catalogue MP2.1E <br> - Owner tries to update a product with inconsisten values MP2.2E <br> - Owner tries to delete a product not present in the catalogue MP3E|
+|     Variants     | -  Owner deletes many products, filtering by products' attributes MP4 |
+|     Exception    | - Owner tries to create a product with inconsistent values MP5 <br> - Owner tries to create a product that is alredy in the catalogue MP6 <br> - Owner tries to update a product not present in the catalogue MP7 <br> - Owner tries to update a product with inconsisten values MP8 <br> - Owner tries to delete a product not present in the catalogue MP9|
 
 ### Use case 10, UC10
 
 | Actors Involved  |                 Owner                                                |
-| :--------------: | :------------------------------------------------------------------: |
-|   Precondition   | Data are in the system && attributes' values are present in the system |
-|  Post condition  |  Owner retrieves the desidered list of data   |
-| Nominal Scenario | Owner retrieves a list of data from the system                       | 
-|     Variants     | Owner retrieves a list of data filtered by their attributes          |
-|    Exceptions    | - Owner selects attribute's values (for filtering) that are incorrect or absent - Data are not in the system|
+| :--------------: | :----------------------------------------------------------------- |
+|  Pre condition   | Owner is authenticated && DB services are available    |
+|   Precondition   | Owner is authenticated && Data are in the system && BD services are available |
+|  Post condition  |  Owner retrieves the desidered list of data |
+| Nominal Scenario | Owner retrieves a list of products from the system RD1 <br> - Owner retrieves a list of sales from the system RD2 <br> - Owner retrieves a list of batches from the system RD3 <br> - Owner retrieves a list of orders from the system RD4 <br> - Owner retrieves a list of invoices from the system RD5 | 
+|     Variants     | - Owner retrieves a list of products filtered by their attributes RD6 <br> - Owner retrieves a list of sales filtered by their attributes RD7 <br> - Owner retrieves a list of batches filtered by their attributes RD8 <br> - Owner retrieves a list of invoices filtered by their attributes RD9 |
+|    Exceptions    | - Owner selects filtering product attribute's values that are absent <br> - Owner selects filtering order attribute's values that are absent <br> - Owner selects filtering batches attribute's values that are absent <br> - Owner selects filtering order attribute's values that are absent <br> - Owner selects filtering invoice attribute's values that are absent  |
 
 ##### Scenario 1.1
 
