@@ -165,11 +165,26 @@ system <-- shipping
 | *FR4.3* | *Manage `.csv`* |
 | FR4.3.1 | Import batches list from `.csv` |
 | FR4.3.2 | Export list of batches as `.csv` |
+| **FR4** | **Manage suppliers** |
+| *FR4.1* | *Manage CRUD operations* |
+| FR4.1.1 | Create new supplier |
+| FR4.1.2 | Update supplier from the list of suppliers|
+| FR4.1.3 | Delete supplier from the list of suppliers |
+| FR4.1.3 | Link supplier to one or more products|
+| FR4.1.3 | Unlink supplier from one or more products|
+| *FR4.2* | *Create owner-defined supplier list* |
+| FR4.2.1 | Retrieve suppliers list filtered by one or more product they provide |
+| FR4.2.1 | Retrieve suppliers list ranked by the number of associated purchase orders  |
+| *FR4.3* | *Manage `.csv`* |
+| FR4.3.1 | Import supplier list from `.csv` |
+| FR4.3.2 | Export list of suppliers as `.csv` |
 | **FR5** | **Manage orders** |
 | *FR5.1* | *Manage CRUD operations* |
 | FR5.1.1 | Create new order in the list of orders |
 | FR5.1.2 | Update order from the list of orders |
 | FR5.1.3 | Delete order from the list of orders |
+| FR5.1.3 | Link order to one supplier from the supplier list |
+| FR5.1.3 | Unlink order from one supplier from the supplier list|
 | *FR5.2* | *Automatically track order for supported couriers* |
 | FR5.2.1 | Check internet connection |
 | FR5.2.2 | Retrieve current order's status |
