@@ -312,7 +312,7 @@ system <-- shipping
 ### Use case 6, UC6
 
 | Actors Involved  |                 Owner                                                |
-| :--------------: | :------------------------------------------------------------------: |
+| :--------------: | :------------------------------------------------------------------ |
 |  Post condition  | CRUD-type operation is performed in the catalogue  |
 | Nominal Scenario | - Owner creates a product MP1 <br> - Owner updates a product MP2 <br> - Owner deletes a product MP3| 
 |     Variants     | -  Owner deletes many products, filtering by products' attributes MP3V |
