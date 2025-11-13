@@ -122,17 +122,14 @@ system <-- shipping
 | ID | Description |
 |:--:|:-------------|
 | **FR1** | **Manage sales** |
-| *FR1.1* | *Read sale from cash register* |
-| FR1.1.1 | Convert sale from API-specific format to a custom format |
-| FR1.1.2 | Add sale to the list of recorded sales |
-| *FR1.2* | *Create owner-defined sale list* |
-| FR1.2.1 | For each owner-defined list filter sales a specified date (ISO 8601) or time window |
-| FR1.2.2 | Retrieve sales filtered by products sold |
-| FR1.2.3 | Retrieve sales ranked by number of items sold per specific product |
-| FR1.2.4 | Retrieve sales ranked by the sum of its item's prices |
-| *FR1.3* | *Manage `.csv`* |
-| FR1.3.1 | Import sales list from `.csv` |
-| FR1.3.2 | Export list of sales as `.csv` |
+| *FR1.1* | *Create owner-defined sale list* |
+| FR1.1.1 | For each owner-defined list filter sales by a specified date (ISO 8601) or time window |
+| FR1.1.2 | Retrieve sales filtered by products sold |
+| FR1.1.3 | Retrieve sales ranked by number of items sold per specific product |
+| FR1.1.4 | Retrieve sales ranked by the sum of its item's prices |
+| *FR1.2* | *Manage `.csv`* |
+| FR1.2.1 | Import sales list from `.csv` |
+| FR1.2.2 | Export list of sales as `.csv` |
 | **FR2** | **Manage refunds** |
 | *FR2.1* | *Create owner-defined refund list* |
 | FR2.1.1 | For each owner-defined list filter refunds by a specified date (ISO 8601) or time window |
@@ -142,84 +139,81 @@ system <-- shipping
 | *FR2.2* | *Manage `.csv`* |
 | FR2.2.1 | Import refunds list from `.csv` |
 | FR2.2.2 | Export list of refunds as `.csv` |
-| **FR2** | **Manage catalogue** |
-| *FR2.1* | *Manage CRUD operations* |
-| FR2.1.1 | Create new product in the catalogue |
-| FR2.1.2 | Update product from the catalogue |
-| FR2.1.3 | Delete product from the catalogue |
-| *FR2.2* | *Set product item quantity warning threshold* |
-| *FR2.3* | *Create owner-defined product list* |
-| FR2.3.4 | Retrieve list of products filtered by one or more of their attributes |
-| FR2.3.5 | Retrieve number of items available for the selected product (sum of the quantity on each batch with the selected product) |
-| *FR2.4* | *Manage `.csv`* |
-| FR2.4.1 | Import product list from `.csv` |
-| FR2.4.2 | Export list of products as `.csv` |
-| **FR2.5** | *Update cash register's catalogue* |
-| FR2.5.1 | Convert catalogue to API-specific format |
-| FR2.5.2 | Check connection with cash register |
-| FR2.5.3 | Send updated catalogue to connected cash register|
-| **FR3** | **Manage inventory** |
+| **FR3** | **Manage catalogue** |
 | *FR3.1* | *Manage CRUD operations* |
-| FR3.1.1 | Create new batch in the inventory |
-| FR3.1.2 | Update batch from the inventory |
-| FR3.1.3 | Delete batch from the inventory |
-| *FR3.2* | *Create owner-defined batch list* |
-| FR3.2.1 | Retrieve batches filtered by one or more product/batch attributes |
-| *FR3.3* | *Manage `.csv`* |
-| FR3.3.1 | Import batches list from `.csv` |
-| FR3.3.2 | Export list of batches as `.csv` |
-| **FR4** | **Manage orders** |
+| FR3.1.1 | Create new product in the catalogue |
+| FR3.1.2 | Update product from the catalogue |
+| FR3.1.3 | Delete product from the catalogue |
+| *FR3.2* | *Set product item quantity warning threshold* |
+| *FR3.3* | *Create owner-defined product list* |
+| FR3.3.1 | Retrieve list of products filtered by one or more of their attributes |
+| FR3.3.2 | Retrieve number of items available for the selected product (sum of the quantity on each batch with the selected product) |
+| *FR3.4* | *Manage `.csv`* |
+| FR3.4.1 | Import product list from `.csv` |
+| FR3.4.2 | Export list of products as `.csv` |
+| *FR3.5* | *Update cash register's catalogue* |
+| FR3.5.1 | Convert catalogue to API-specific format |
+| FR3.5.2 | Check connection with cash register |
+| FR3.5.3 | Send updated catalogue to connected cash register |
+| **FR4** | **Manage inventory** |
 | *FR4.1* | *Manage CRUD operations* |
-| FR4.1.1 | Create new order in the list of orders |
-| FR4.1.2 | Update order from the list of orders |
-| FR4.1.3 | Delete order from the list of orders |
-| *FR4.2* | *Automatically track order for supported curriers* |
-| FR4.2.1 | Check internet connection |
-| FR4.2.2 | Retrieve current order's status |
-| FR4.2.3 | Update current order's status |
-| *FR4.3* | *Create owner-defined orders list* |
-| FR4.3.1 | Retrieve list of orders filtered by one or more of their attributes |
-| *FR4.4* | *Manage `.csv`* |
-| FR4.4.1 | Import orders list from `.csv` |
-| FR4.4.2 | Export list of orders as `.csv` |
-| FR4.5   | *Suggest order* |
-| FR4.5.1 | Retrieve products with item count below threshold |
-| FR4.5.2 | Retrieve possible supplier for products with item count below threshold|
-| FR4.5.3 | Generate order suggestion (without specifying the number of item) |
-| FR4.5.4 | Add suggested order to list of orders|
-| **FR5** | **Manage accounting** |
-| *FR5.1* | *Track invoices* |
-| FR5.1.1 | Track Invoices for orders made |
-| FR5.1.2 | Create owner-defined invoice list |
-| FR5.1.2.1 | Retrieve list of invoices filtered by one or more of their attributes |
-| *FR5.2* | *Track incomes* |
-| FR5.2.1 | Track incoming cash flow |
-| FR5.2.3 | Retrieve income history at different time granularities (day, month, year etc…) |
-| *FR5.3* | *Track expense* |
-| FR5.3.1 | Track outgoing cash flow |
-| FR5.3.2 | Retrieve outgoing history at different time granularities (day, month, year etc…) |
-| *FR5.4* | *Track balance* |
-| FR5.4.1 | Compute total balance based on incomes and expense with respect to day, week, month, quarter, semester, and year|
-| FR5.4.2 | Retrieve current balance with respect to the current day, week, month, quarter, semester, and year|
-| FR5.4.3 | Retrieve balance history  |
-| **FR6** | **Authenticate owner** |
-| FR6.1 | Set password |
-| FR6.2 | Change password |
-| FR6.3 | Verify password |
-| FR6.4 | Encrypt password |
-| FR6.5 | Decrypt password |
-|**FR7** | **Manage notifications** |
-| FR7.1 | Notify owner of order's status change |
-| FR7.2 | Notify owner of when order status cannot be changed automatically (API not responding)|
-| FR7.3 | Notify owner when quantity of a certain product is below a owner set threshold |
-| FR7.4 | Notify owner when batch is within x days from expiration date (ISO 8601)|
-| FR7.5 | Notify owner when batch is past the expiration date (ISO 8601)|
-| FR7.6 | Notify owner when there is no internet connection |
-| FR7.7 | Notify owner when cash register is not responding |
-| FR7.8 | Delete notification |
-|**FR8**| **Manage Cash registers**|
-| FR8.1 | Add new cash register to the list of cash registers |
-| FR8.2 | Delete cash register from the list of cash registers |
+| FR4.1.1 | Create new batch in the inventory |
+| FR4.1.2 | Update batch from the inventory |
+| FR4.1.3 | Delete batch from the inventory |
+| *FR4.2* | *Create owner-defined batch list* |
+| FR4.2.1 | Retrieve batches filtered by one or more product/batch attributes |
+| *FR4.3* | *Manage `.csv`* |
+| FR4.3.1 | Import batches list from `.csv` |
+| FR4.3.2 | Export list of batches as `.csv` |
+| **FR5** | **Manage orders** |
+| *FR5.1* | *Manage CRUD operations* |
+| FR5.1.1 | Create new order in the list of orders |
+| FR5.1.2 | Update order from the list of orders |
+| FR5.1.3 | Delete order from the list of orders |
+| *FR5.2* | *Automatically track order for supported couriers* |
+| FR5.2.1 | Check internet connection |
+| FR5.2.2 | Retrieve current order's status |
+| FR5.2.3 | Update current order's status |
+| *FR5.3* | *Create owner-defined orders list* |
+| FR5.3.1 | Retrieve list of orders filtered by one or more of their attributes |
+| *FR5.4* | *Manage `.csv`* |
+| FR5.4.1 | Import orders list from `.csv` |
+| FR5.4.2 | Export list of orders as `.csv` |
+| *FR5.5* | *Suggest order* |
+| FR5.5.1 | Retrieve products with item count below threshold |
+| FR5.5.2 | Retrieve possible supplier for products with item count below threshold |
+| FR5.5.3 | Generate order suggestion (without specifying the number of items) |
+| FR5.5.4 | Add suggested order to list of orders |
+| **FR6** | **Manage accounting** |
+| *FR6.1* | *Track invoices* |
+| FR6.1.1 | Track invoices for orders made |
+| FR6.1.2 | Create owner-defined invoice list |
+| FR6.1.2.1 | Retrieve list of invoices filtered by one or more of their attributes |
+| *FR6.2* | *Track incomes* |
+| FR6.2.1 | Track incoming cash flow |
+| FR6.2.2 | Retrieve income history at different time granularities (day, month, year etc…) |
+| *FR6.3* | *Track expenses* |
+| FR6.3.1 | Track outgoing cash flow |
+| FR6.3.2 | Retrieve outgoing history at different time granularities (day, month, year etc…) |
+| *FR6.4* | *Track balance* |
+| FR6.4.1 | Compute total balance based on incomes and expenses with respect to day, week, month, quarter, semester, and year |
+| FR6.4.2 | Retrieve current balance with respect to the current day, week, month, quarter, semester, and year |
+| FR6.4.3 | Retrieve balance history |
+| **FR7** | **Authenticate owner** |
+| FR7.1 | Set password |
+| FR7.2 | Change password |
+| FR7.3 | Verify password |
+| FR7.4 | Encrypt password |
+| FR7.5 | Decrypt password |
+| **FR8** | **Manage notifications** |
+| FR8.1 | Notify owner of order's status change |
+| FR8.2 | Notify owner of when order status cannot be changed automatically (API not responding) |
+| FR8.3 | Notify owner when quantity of a certain product is below a owner set threshold |
+| FR8.4 | Notify owner when batch is within x days from expiration date (ISO 8601) |
+| FR8.5 | Notify owner when batch is past the expiration date (ISO 8601) |
+| FR8.6 | Notify owner when there is no internet connection |
+| FR8.7 | Notify owner when cash register is not responding |
+| FR8.8 | Delete notification |
 | **FR9** | **Manage cash registers** |
 | *FR9.1* | *Link with POS provider's account* |
 | FR9.1.1 | Redirect user to POS provider's authorization URL |
