@@ -314,15 +314,9 @@ system <-- shipping
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------: |
 |  Post condition  | CRUD-type operation is performed in the catalogue  |
-| Nominal Scenario | - Owner creates a product MP1 <br>
-                     - Owner updates a product MP2 <br>
-                     - Owner deletes a product MP3| 
+| Nominal Scenario | - Owner creates a product MP1 <br> - Owner updates a product MP2 <br> - Owner deletes a product MP3| 
 |     Variants     | -  Owner deletes many products, filtering by products' attributes MP3V |
-|     Exception    | - Owner tries to create a product with inconsistent values MP1.1E <br>
-                     - Owner tries to create a product that is alredy in the catalogue MP1.2E <br>
-                     - Owner tries to update a product not present in the catalogue MP2.1E <br>
-                     - Owner tries to update a product with inconsisten values MP2.2E <br>
-                     - Owner tries to delete a product not present in the catalogue MP3E|
+|     Exception    | - Owner tries to create a product with inconsistent values MP1.1E <br> - Owner tries to create a product that is alredy in the catalogue MP1.2E <br> - Owner tries to update a product not present in the catalogue MP2.1E <br> - Owner tries to update a product with inconsisten values MP2.2E <br> - Owner tries to delete a product not present in the catalogue MP3E|
 
 ### Use case 10, UC10
 
