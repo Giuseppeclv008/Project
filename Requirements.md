@@ -308,6 +308,22 @@ system <-- shipping
 
 \<next describe here each use case in the UCD>
 
+
+### Use case 6, UC6
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------: |
+|  Post condition  | CRUD-type operation is performed in the catalogue  |
+| Nominal Scenario | - Owner creates a product MP1 <br>
+                     - Owner updates a product MP2 <br>
+                     - Owner deletes a product MP3| 
+|     Variants     | -  Owner deletes many products, filtering by products' attributes MP3V |
+|     Exception    | - Owner tries to create a product with inconsistent values MP1.1E <br>
+                     - Owner tries to create a product that is alredy in the catalogue MP1.2E <br>
+                     - Owner tries to update a product not present in the catalogue MP2.1E <br>
+                     - Owner tries to update a product with inconsisten values MP2.2E <br>
+                     - Owner tries to delete a product not present in the catalogue MP3E|
+
 ### Use case 10, UC10
 
 | Actors Involved  |                 Owner                                                |
@@ -316,7 +332,7 @@ system <-- shipping
 |  Post condition  |  Owner retrieves the desidered list of data   |
 | Nominal Scenario | Owner retrieves a list of data from the system                       | 
 |     Variants     | Owner retrieves a list of data filtered by their attributes          |
-|    Exceptions    | Owner selects attribute's values (for filtering) that are incorrect or absent|
+|    Exceptions    | - Owner selects attribute's values (for filtering) that are incorrect or absent - Data are not in the system|
 
 ##### Scenario 1.1
 
