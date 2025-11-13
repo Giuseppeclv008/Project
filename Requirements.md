@@ -165,99 +165,99 @@ system <-- shipping
 | *FR4.3* | *Manage `.csv`* |
 | FR4.3.1 | Import batches list from `.csv` |
 | FR4.3.2 | Export list of batches as `.csv` |
-| **FR4** | **Manage suppliers** |
-| *FR4.1* | *Manage CRUD operations* |
-| FR4.1.1 | Create new supplier |
-| FR4.1.2 | Update supplier from the list of suppliers|
-| FR4.1.3 | Delete supplier from the list of suppliers |
-| FR4.1.3 | Link supplier to one or more products|
-| FR4.1.3 | Unlink supplier from one or more products|
-| *FR4.2* | *Create owner-defined supplier list* |
-| FR4.2.1 | Retrieve suppliers list filtered by one or more product they provide |
-| FR4.2.1 | Retrieve suppliers list ranked by the number of associated purchase orders  |
-| *FR4.3* | *Manage `.csv`* |
-| FR4.3.1 | Import supplier list from `.csv` |
-| FR4.3.2 | Export list of suppliers as `.csv` |
-| **FR5** | **Manage orders** |
+| **FR5** | **Manage suppliers** |
 | *FR5.1* | *Manage CRUD operations* |
-| FR5.1.1 | Create new order in the list of orders |
-| FR5.1.2 | Update order from the list of orders |
-| FR5.1.3 | Delete order from the list of orders |
-| FR5.1.3 | Link order to one supplier from the supplier list |
-| FR5.1.3 | Unlink order from one supplier from the supplier list|
-| *FR5.2* | *Automatically track order for supported couriers* |
-| FR5.2.1 | Check internet connection |
-| FR5.2.2 | Retrieve current order's status |
-| FR5.2.3 | Update current order's status |
-| *FR5.3* | *Create owner-defined orders list* |
-| FR5.3.1 | Retrieve list of orders filtered by one or more of their attributes |
-| *FR5.4* | *Manage `.csv`* |
-| FR5.4.1 | Import orders list from `.csv` |
-| FR5.4.2 | Export list of orders as `.csv` |
-| *FR5.5* | *Suggest order* |
-| FR5.5.1 | Retrieve products with item count below threshold |
-| FR5.5.2 | Retrieve possible supplier for products with item count below threshold |
-| FR5.5.3 | Generate order suggestion (without specifying the number of items) |
-| FR5.5.4 | Add suggested order to list of orders |
-| **FR6** | **Manage accounting** |
-| *FR6.1* | *Track invoices* |
-| FR6.1.1 | Track invoices for orders made |
-| FR6.1.2 | Create owner-defined invoice list |
-| FR6.1.2.1 | Retrieve list of invoices filtered by one or more of their attributes |
-| *FR6.2* | *Track incomes* |
-| FR6.2.1 | Compute incoming cash flow from sales list and refunds list|
-| FR6.2.2 | Retrieve incoming cash flow at different time granularities (day, month, year etc…) |
-| *FR6.3* | *Track expenses* |
-| FR6.3.1 | Compute outgoing cash flow from orders list and refunds list|
-| FR6.3.2 | Retrieve outgoing cash flow at different time granularities (day, month, year etc…) |
-| *FR6.4* | *Track balance* |
-| FR6.4.1 | Compute total balance based on incomes and expenses at different time granularities (day, week, month, quarter, semester, and year) |
-| FR6.4.2 | Retrieve balance at different time granularities (day, week, month, quarter, semester, and year) |
-| FR6.4.3 | Retrieve current balance |
-| **FR7** | **Authenticate owner** |
-| FR7.1 | Set password |
-| FR7.2 | Change password |
-| FR7.3 | Verify password |
-| FR7.4 | Encrypt password |
-| FR7.5 | Decrypt password |
-| **FR8** | **Manage notifications** |
-| FR8.1 | Notify owner of order's status change |
-| FR8.2 | Notify owner of when order status cannot be changed automatically (API not responding) |
-| FR8.3 | Notify owner when quantity of a certain product is below a owner set threshold |
-| FR8.4 | Notify owner when batch is within x days from expiration date (ISO 8601) |
-| FR8.5 | Notify owner when batch is past the expiration date (ISO 8601) |
-| FR8.6 | Notify owner when there is no internet connection |
-| FR8.7 | Notify owner when cash register is not responding |
-| FR8.8 | Delete notification |
-| **FR9** | **Manage cash registers** |
-| *FR9.1* | *Link with POS provider's account* |
-| FR9.1.1 | Redirect user to POS provider's authorization URL |
-| FR9.1.2 | Retrieve access token and refresh token |
-| FR9.1.3 | Encrypt access token |
-| FR9.1.4 | Retrieve new token when old token is expired |
-| *FR9.2* | *Get cash register list* |
-| FR9.2.1 | Decrypt access token |
-| FR9.2.2 | Retrieve list of cash registers using POS provider's API and access token |
-| FR9.2.3 | Update local list of cash registers |
-| *FR9.3* | *Sync catalogue* |
-| FR9.3.1 | Convert catalogue to POS provider compliant format |
-| FR9.3.2 | Push new catalogue to found cash registers |
-| FR9.3.3 | Detect unresponsive (POS API returns error message or fails to respond within default timeout threshold) cash register and update its status |
-| *FR9.4* | *Retrieve sales* |
-| FR9.4.1 | Pull sales list from found cash registers |
-| FR9.4.2 | Convert sales list to EzShop compliant format |
-| FR9.4.3 | Update item quantities in the inventory |
-| FR9.4.4 | Add sale to sales list |
-| FR9.4.5 | Detect unresponsive (POS API returns error message or fails to respond within default timeout threshold) cash register and update its status |
-| *FR9.5* | *Retrieve refunds* |
-| FR9.5.1 | Pull refunds list from found cash registers |
-| FR9.5.2 | Convert refunds list to EzShop compliant format |
-| FR9.5.3 | Update item quantities in the inventory |
-| FR9.5.4 | Add refunds to refunds list |
-| FR9.5.5 | Detect unresponsive (POS API returns error message or fails to respond within default timeout threshold) cash register and update its status |
-| *FR9.6* | *Create owner-defined list of cash registers* |
-| FR9.6.1 | Retrieve list of cash registers filtered by one or more of its attributes |
-| FR9.6.2 | Retrieve list of cash registers grouped by the POS provider's brand |
+| FR5.1.1 | Create new supplier |
+| FR5.1.2 | Update supplier from the list of suppliers|
+| FR5.1.3 | Delete supplier from the list of suppliers |
+| FR5.1.4 | Link supplier to one or more products|
+| FR5.1.5 | Unlink supplier from one or more products|
+| *FR5.2* | *Create owner-defined supplier list* |
+| FR5.2.1 | Retrieve suppliers list filtered by one or more product they provide |
+| FR5.2.2 | Retrieve suppliers list ranked by the number of associated purchase orders |
+| *FR5.3* | *Manage `.csv`* |
+| FR5.3.1 | Import supplier list from `.csv` |
+| FR5.3.2 | Export list of suppliers as `.csv` |
+| **FR6** | **Manage orders** |
+| *FR6.1* | *Manage CRUD operations* |
+| FR6.1.1 | Create new order in the list of orders |
+| FR6.1.2 | Update order from the list of orders |
+| FR6.1.3 | Delete order from the list of orders |
+| FR6.1.4 | Link order to one supplier from the supplier list |
+| FR6.1.5 | Unlink order from one supplier from the supplier list|
+| *FR6.2* | *Automatically track order for supported couriers* |
+| FR6.2.1 | Check internet connection |
+| FR6.2.2 | Retrieve current order's status |
+| FR6.2.3 | Update current order's status |
+| *FR6.3* | *Create owner-defined orders list* |
+| FR6.3.1 | Retrieve list of orders filtered by one or more of their attributes |
+| *FR6.4* | *Manage `.csv`* |
+| FR6.4.1 | Import orders list from `.csv` |
+| FR6.4.2 | Export list of orders as `.csv` |
+| *FR6.5* | *Suggest order* |
+| FR6.5.1 | Retrieve products with item count below threshold |
+| FR6.5.2 | Retrieve possible supplier for products with item count below threshold |
+| FR6.5.3 | Generate order suggestion (without specifying the number of items) |
+| FR6.5.4 | Add suggested order to list of orders |
+| **FR7** | **Manage accounting** |
+| *FR7.1* | *Track invoices* |
+| FR7.1.1 | Track invoices for orders made |
+| FR7.1.2 | Create owner-defined invoice list |
+| FR7.1.2.1 | Retrieve list of invoices filtered by one or more of their attributes |
+| *FR7.2* | *Track incomes* |
+| FR7.2.1 | Compute incoming cash flow from sales list and refunds list|
+| FR7.2.2 | Retrieve incoming cash flow at different time granularities (day, month, year etc…) |
+| *FR7.3* | *Track expenses* |
+| FR7.3.1 | Compute outgoing cash flow from orders list and refunds list|
+| FR7.3.2 | Retrieve outgoing cash flow at different time granularities (day, month, year etc…) |
+| *FR7.4* | *Track balance* |
+| FR7.4.1 | Compute total balance based on incomes and expenses at different time granularities (day, week, month, quarter, semester, and year) |
+| FR7.4.2 | Retrieve balance at different time granularities (day, week, month, quarter, semester, and year) |
+| FR7.4.3 | Retrieve current balance |
+| **FR8** | **Authenticate owner** |
+| FR8.1 | Set password |
+| FR8.2 | Change password |
+| FR8.3 | Verify password |
+| FR8.4 | Encrypt password |
+| FR8.5 | Decrypt password |
+| **FR9** | **Manage notifications** |
+| FR9.1 | Notify owner of order's status change |
+| FR9.2 | Notify owner of when order status cannot be changed automatically (API not responding) |
+| FR9.3 | Notify owner when quantity of a certain product is below a owner set threshold |
+| FR9.4 | Notify owner when batch is within x days from expiration date (ISO 8601) |
+| FR9.5 | Notify owner when batch is past the expiration date (ISO 8601) |
+| FR9.6 | Notify owner when there is no internet connection |
+| FR9.7 | Notify owner when cash register is not responding |
+| FR9.8 | Delete notification |
+| **FR10** | **Manage cash registers** |
+| *FR10.1* | *Link with POS provider's account* |
+| FR10.1.1 | Redirect user to POS provider's authorization URL |
+| FR10.1.2 | Retrieve access token and refresh token |
+| FR10.1.3 | Encrypt access token |
+| FR10.1.4 | Retrieve new token when old token is expired |
+| *FR10.2* | *Get cash register list* |
+| FR10.2.1 | Decrypt access token |
+| FR10.2.2 | Retrieve list of cash registers using POS provider's API and access token |
+| FR10.2.3 | Update local list of cash registers |
+| *FR10.3* | *Sync catalogue* |
+| FR10.3.1 | Convert catalogue to POS provider compliant format |
+| FR10.3.2 | Push new catalogue to found cash registers |
+| FR10.3.3 | Detect unresponsive (POS API returns error message or fails to respond within default timeout threshold) cash register and update its status |
+| *FR10.4* | *Retrieve sales* |
+| FR10.4.1 | Pull sales list from found cash registers |
+| FR10.4.2 | Convert sales list to EzShop compliant format |
+| FR10.4.3 | Update item quantities in the inventory |
+| FR10.4.4 | Add sale to sales list |
+| FR10.4.5 | Detect unresponsive (POS API returns error message or fails to respond within default timeout threshold) cash register and update its status |
+| *FR10.5* | *Retrieve refunds* |
+| FR10.5.1 | Pull refunds list from found cash registers |
+| FR10.5.2 | Convert refunds list to EzShop compliant format |
+| FR10.5.3 | Update item quantities in the inventory |
+| FR10.5.4 | Add refunds to refunds list |
+| FR10.5.5 | Detect unresponsive (POS API returns error message or fails to respond within default timeout threshold) cash register and update its status |
+| *FR10.6* | *Create owner-defined list of cash registers* |
+| FR10.6.1 | Retrieve list of cash registers filtered by one or more of its attributes |
+| FR10.6.2 | Retrieve list of cash registers grouped by the POS provider's brand |
 
 **Design cues** 
 - The system shall store for each sale:
