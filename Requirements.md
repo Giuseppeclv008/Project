@@ -220,6 +220,35 @@ system <-- shipping
 |**FR8**| **Manage Cash registers**|
 | FR8.1 | Add new cash register to the list of cash registers |
 | FR8.2 | Delete cash register from the list of cash registers |
+| **FR9** | **Manage cash registers** |
+| *FR9.1* | *Link with POS provider's account* |
+| FR9.1.1 | Redirect user to POS provider's authorization URL |
+| FR9.1.2 | Retrieve access token and refresh token |
+| FR9.1.3 | Encrypt access token |
+| FR9.1.4 | Retrieve new token when old token is expired |
+| *FR9.2* | *Get cash register list* |
+| FR9.2.1 | Decrypt access token |
+| FR9.2.2 | Retrieve list of cash registers using POS provider's API and access token |
+| FR9.2.3 | Update local list of cash registers |
+| *FR9.3* | *Sync catalogue* |
+| FR9.3.1 | Convert catalogue to POS provider compliant format |
+| FR9.3.2 | Push new catalogue to found cash registers |
+| FR9.3.3 | Detect unresponsive (POS API returns error message or fails to respond within default timeout threshold) cash register and update its status |
+| *FR9.4* | *Retrieve sales* |
+| FR9.4.1 | Pull sales list from found cash registers |
+| FR9.4.2 | Convert sales list to EzShop compliant format |
+| FR9.4.3 | Update item quantities in the inventory |
+| FR9.4.4 | Add sale to sales list |
+| FR9.4.5 | Detect unresponsive (POS API returns error message or fails to respond within default timeout threshold) cash register and update its status |
+| *FR9.5* | *Retrieve refunds* |
+| FR9.5.1 | Pull refunds list from found cash registers |
+| FR9.5.2 | Convert refunds list to EzShop compliant format |
+| FR9.5.3 | Update item quantities in the inventory |
+| FR9.5.4 | Add refunds to sales list |
+| FR9.5.5 | Detect unresponsive (POS API returns error message or fails to respond within default timeout threshold) cash register and update its status |
+| *FR9.6* | *Create owner-defined list of cash registers* |
+| FR9.6.1 | Retrieve list of cash registers filtered by one or more of its attributes |
+| FR9.6.2 | Retrieve list of cash registers grouped by the POS provider's brand |
 
 **Design cues** 
 - The system shall store for each sale:
