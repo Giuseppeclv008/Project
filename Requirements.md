@@ -190,15 +190,15 @@ system <-- shipping
 | FR6.1.2 | Create owner-defined invoice list |
 | FR6.1.2.1 | Retrieve list of invoices filtered by one or more of their attributes |
 | *FR6.2* | *Track incomes* |
-| FR6.2.1 | Track incoming cash flow |
-| FR6.2.2 | Retrieve income history at different time granularities (day, month, year etc…) |
+| FR6.2.1 | Compute incoming cash flow from sales list and refunds list|
+| FR6.2.2 | Retrieve incoming cash flow at different time granularities (day, month, year etc…) |
 | *FR6.3* | *Track expenses* |
-| FR6.3.1 | Track outgoing cash flow |
-| FR6.3.2 | Retrieve outgoing history at different time granularities (day, month, year etc…) |
+| FR6.3.1 | Compute outgoing cash flow from orders list and refunds list|
+| FR6.3.2 | Retrieve outgoing cash flow at different time granularities (day, month, year etc…) |
 | *FR6.4* | *Track balance* |
-| FR6.4.1 | Compute total balance based on incomes and expenses with respect to day, week, month, quarter, semester, and year |
-| FR6.4.2 | Retrieve current balance with respect to the current day, week, month, quarter, semester, and year |
-| FR6.4.3 | Retrieve balance history |
+| FR6.4.1 | Compute total balance based on incomes and expenses at different time granularities (day, week, month, quarter, semester, and year) |
+| FR6.4.2 | Retrieve balance at different time granularities (day, week, month, quarter, semester, and year) |
+| FR6.4.3 | Retrieve current balance |
 | **FR7** | **Authenticate owner** |
 | FR7.1 | Set password |
 | FR7.2 | Change password |
