@@ -238,7 +238,7 @@ system <-- shipping
 | FR9.5.1 | Pull refunds list from found cash registers |
 | FR9.5.2 | Convert refunds list to EzShop compliant format |
 | FR9.5.3 | Update item quantities in the inventory |
-| FR9.5.4 | Add refunds to sales list |
+| FR9.5.4 | Add refunds to refunds list |
 | FR9.5.5 | Detect unresponsive (POS API returns error message or fails to respond within default timeout threshold) cash register and update its status |
 | *FR9.6* | *Create owner-defined list of cash registers* |
 | FR9.6.1 | Retrieve list of cash registers filtered by one or more of its attributes |
