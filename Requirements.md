@@ -202,8 +202,12 @@ system <-- shipping
 | **FR7** | **Manage accounting** |
 | *FR7.1* | *Track invoices* |
 | FR7.1.1 | Track invoices for orders made |
-| FR7.1.2 | Create owner-defined invoice list |
-| FR7.1.2.1 | Retrieve list of invoices filtered by one or more of their attributes |
+| FR7.1.2 | *Manage CRUD operations* |
+| FR7.1.2.1 | Create new invoice |
+| FR7.1.2.2 | Update an invoice |
+| FR7.1.2.3 | Delete an invoice |
+| FR7.1.3 | *Create owner-defined invoice list* |
+| FR7.1.3.1 | Retrieve list of invoices filtered by one or more of their attributes |
 | *FR7.2* | *Track incomes* |
 | FR7.2.1 | Compute incoming cash flow from sales list and refunds list|
 | FR7.2.2 | Retrieve incoming cash flow at different time granularities (day, month, year etc…) |
