@@ -228,13 +228,13 @@ system <-- shipping
 | FR8.4 | Encrypt password |
 | FR8.5 | Decrypt password |
 | **FR9** | **Manage notifications** |
-| FR9.1 | Notify owner of order's status change |
-| FR9.2 | Notify owner of when order status cannot be changed automatically (API not responding) |
-| FR9.3 | Notify owner when quantity of a certain product is below a owner set threshold |
-| FR9.4 | Notify owner when batch is within x days from expiration date (ISO 8601) |
-| FR9.5 | Notify owner when batch is past the expiration date (ISO 8601) |
-| FR9.6 | Notify owner when there is no internet connection |
-| FR9.7 | Notify owner when cash register is not responding |
+| FR9.1 | Create "order's status changed" notification |
+| FR9.2 | Create "order's status unable to be automatically updated" notification (API not responding) |
+| FR9.3 | Create "items below threshold" notification |
+| FR9.4 | Create "batch is about to expire" notification when batch is within owner-defined days from expiration date in ISO 8601 format) |
+| FR9.5 | Create "batch is expired" notification when batch is past the expiration date in ISO 8601 format |
+| FR9.6 | Create "no internet connection" notification|
+| FR9.7 | Create "cash register is not responding" notification |
 | FR9.8 | Delete notification |
 | **FR10** | **Manage cash registers** |
 | *FR10.1* | *Link with POS provider's account* |
