@@ -133,7 +133,7 @@ system <-- shipping
 | **FR2** | **Manage refunds** |
 | *FR2.1* | *Create owner-defined refund list* |
 | FR2.1.1 | For each owner-defined list filter refunds by a specified date (ISO 8601) or time window |
-| FR2.1.2 | Retrieve refunds filtered by products sold |
+| FR2.1.2 | Retrieve refunds filtered by products returned |
 | FR2.1.3 | Retrieve refunds ranked by number of items given back per specific product |
 | FR2.1.4 | Retrieve refunds ranked by the sum of its item's prices |
 | *FR2.2* | *Manage `.csv`* |
