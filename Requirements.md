@@ -178,6 +178,17 @@ system <-- shipping
 | *FR5.3* | *Manage `.csv`* |
 | FR5.3.1 | Import supplier list from `.csv` |
 | FR5.3.2 | Export list of suppliers as `.csv` |
+| **FR7.1** | **Track invoices** |
+| FR7.1.2 | *Manage CRUD operations* |
+| FR7.1.2.1 | Create new invoice |
+| FR7.1.2.2 | Update invoice |
+| FR7.1.2.3 | Delete invoice |
+| FR7.1.2.3 | Link invoice to a specific order|
+| FR7.1.3 | *Create owner-defined invoice list* |
+| FR7.1.3.1 | Retrieve list of invoices filtered by one or more of their attributes |
+| *FR5.3* | *Manage `.csv`* |
+| FR5.3.1 | Import invoices list from `.csv` |
+| FR5.3.2 | Export invoices list as `.csv` |
 | **FR6** | **Manage orders** |
 | *FR6.1* | *Manage CRUD operations* |
 | FR6.1.1 | Create new order in the list of orders |
@@ -200,14 +211,6 @@ system <-- shipping
 | FR6.5.3 | Generate order suggestion (without specifying the number of items) |
 | FR6.5.4 | Add suggested order to list of orders |
 | **FR7** | **Manage accounting** |
-| *FR7.1* | *Track invoices* |
-| FR7.1.1 | Track invoices for orders made |
-| FR7.1.2 | *Manage CRUD operations* |
-| FR7.1.2.1 | Create new invoice |
-| FR7.1.2.2 | Update an invoice |
-| FR7.1.2.3 | Delete an invoice |
-| FR7.1.3 | *Create owner-defined invoice list* |
-| FR7.1.3.1 | Retrieve list of invoices filtered by one or more of their attributes |
 | *FR7.2* | *Track incomes* |
 | FR7.2.1 | Compute incoming cash flow from sales list and refunds list|
 | FR7.2.2 | Retrieve incoming cash flow at different time granularities (day, month, year etc…) |
