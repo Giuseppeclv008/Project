@@ -212,11 +212,11 @@ system <-- shipping
 | FR6.5.4 | Add suggested order to list of orders |
 | **FR7** | **Manage accounting** |
 | *FR7.2* | *Track incomes* |
-| FR7.2.1 | Compute incoming cash flow from sales list and refunds list|
-| FR7.2.2 | Retrieve incoming cash flow at different time granularities (day, month, year etc…) |
+| FR7.2.1 | Compute incoming cash flow from sales list and refunds list at different time granularities (day, month, year, etc…)|
+| FR7.2.2 | Retrieve incoming cash flow at different time granularities (day, month, year, etc…) |
 | *FR7.3* | *Track expenses* |
-| FR7.3.1 | Compute outgoing cash flow from orders list and refunds list|
-| FR7.3.2 | Retrieve outgoing cash flow at different time granularities (day, month, year etc…) |
+| FR7.3.1 | Compute outgoing cash flow from orders list and refunds list at different time granularities (day, month, year, etc…)||
+| FR7.3.2 | Retrieve outgoing cash flow at different time granularities (day, month, year, etc…) |
 | *FR7.4* | *Track balance* |
 | FR7.4.1 | Compute total balance based on incomes and expenses at different time granularities (day, week, month, quarter, semester, and year) |
 | FR7.4.2 | Retrieve balance at different time granularities (day, week, month, quarter, semester, and year) |
