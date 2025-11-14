@@ -266,6 +266,168 @@ system <-- shipping
 | FR10.6.1 | Retrieve list of cash registers filtered by one or more of its attributes |
 | FR10.6.2 | Retrieve list of cash registers grouped by the POS provider's brand |
 
+
+- **Manage sales**
+    * *Create owner-defined sale list*
+        + For each owner-defined list filter sales by a specified date (ISO 8601) or time window
+        + Retrieve sales filtered by products sold
+        + Retrieve sales ranked by number of items sold per specific product
+        + Retrieve sales ranked by the sum of its item's prices
+    * *Manage `.csv`*
+        + Import sales list from `.csv`
+        + Export list of sales as `.csv`
+- **Manage refunds**
+    * *Create owner-defined refund list*
+        + For each owner-defined list filter refunds by a specified date (ISO 8601) or time window
+        + Retrieve refunds filtered by products returned
+        + Retrieve refunds ranked by number of items given back per specific product
+        + Retrieve refunds ranked by the sum of its item's prices
+    - *Manage `.csv`*
+        * Import refunds list from `.csv`
+        * Export list of refunds as `.csv`
+- **Manage catalogue**
+    * *Manage CRUD operations*
+        + Create new product in the catalogue
+        + Update product from the catalogue
+        + Delete product from the catalogue
+    * *Set product item quantity warning threshold*
+    * *Create owner-defined product list*
+        + Retrieve list of products filtered by one or more of their attributes
+        + Retrieve number of items available for a selected product
+    * *Manage `.csv`*
+        + Import product list from `.csv`
+        + Export list of products as `.csv`
+    * *Update cash register's catalogue*
+        + Convert catalogue to API-specific format
+        + Check connection with cash register
+        + Send updated catalogue to connected cash register
+- **Manage inventory**
+    * *Manage CRUD operations*
+        + Create new batch in the inventory
+        + Update batch from the inventory
+        + Delete batch from the inventory
+    * *Create owner-defined batch list*
+        + Retrieve batches filtered by one or more product/batch attributes
+    * *Manage `.csv`*
+        + Import batches list from `.csv`
+        + Export list of batches as `.csv`
+- **Manage suppliers**
+    * *Manage CRUD operations*
+        + Create new supplier
+        + Update supplier
+        + Delete supplier
+        + Link supplier to one or more products
+        + Unlink supplier from one or more products
+    * *Create owner-defined supplier list*
+        + Retrieve suppliers list filtered by one or more product they provide
+        + Retrieve suppliers list ranked by number of associated purchase orders
+    * *Manage `.csv`*
+        + Import supplier list from `.csv`
+        + Export list of suppliers as `.csv`
+- **Track invoices**
+    * *Manage CRUD operations*
+        + Create new invoice
+        + Update invoice
+        + Delete invoice
+        + Link invoice to a specific order
+    * *Create owner-defined invoice list*
+        + Retrieve list of invoices filtered by one or more of their attributes
+    * *Manage `.csv`*
+        + Import invoices list from `.csv`
+        + Export invoices list as `.csv`
+- **Manage orders**
+    * *Manage CRUD operations*
+        + Create new order
+        + Update order
+        + Delete order
+        + Link order to a supplier
+        + Unlink order from a supplier
+    * *Automatically track order for supported couriers*
+        + Check internet connection
+        + Retrieve current order status
+        + Update current order status
+    * *Create owner-defined orders list*
+        + Retrieve list of orders filtered by one or more attributes
+    * *Manage `.csv`*
+        + Import orders list from `.csv`
+        + Export orders list as `.csv`
+    * *Suggest order*
+        + Retrieve products with item count below threshold
+        + Retrieve possible supplier for products with item count below threshold
+        + Generate order suggestion
+        + Add suggested order to the list of orders
+- **Manage accounting**
+    * *Track incomes*
+        + Compute incoming cash flow at different time granularities
+        + Retrieve incoming cash flow at different time granularities
+    * *Track expenses*
+        + Compute outgoing cash flow at different time granularities
+        + Retrieve outgoing cash flow at different time granularities
+    * *Track balance*
+        + Compute total balance at different time granularities
+        + Retrieve balance at different time granularities
+        + Retrieve current balance
+- **Authenticate owner**
+    * Set password
+    * Change password
+    * Verify password
+    * Encrypt password
+    * Decrypt password
+- **Manage notifications**
+    * Create “order’s status changed” notification
+    * Create “order’s status unable to be automatically updated” notification
+    * Create “items below threshold” notification
+    * Create “batch is about to expire” notification
+    * Create “batch is expired” notification
+    * Create “no internet connection” notification
+    * Create “cash register is not responding” notification
+    * Delete notification
+- **Manage cash registers**
+    * *Link with POS provider’s account*
+    - Redirect user to authorization URL
+    - Retrieve access and refresh tokens
+    - Store access and refresh tokens securely
+    - Retrieve new token when expired
+  - *Get cash register list*
+    - Decrypt access token
+    - Retrieve list of cash registers from provider API
+    - Update local list of cash registers
+  - *Sync catalogue*
+    - Convert catalogue to provider format
+    - Push new catalogue to cash registers
+    - Detect unresponsive cash registers and update status
+  - *Retrieve sales*
+    - Pull sales list
+    - Convert sales to local format
+    - Update inventory quantities
+    - Add sale to sales list
+    - Detect unresponsive cash registers
+  - *Retrieve refunds*
+    - Pull refunds list
+    - Convert refunds to local format
+    - Update item quantities
+    - Add refund to refunds list
+    - Detect unresponsive cash registers
+  - *Create owner-defined cash register list*
+    - Retrieve cash registers filtered by attributes
+    - Retrieve cash registers grouped by provider brand
+- **Manage `.csv` 
+    * Import data from `.csv` file
+        + Check selected file exists
+        + Load selected file
+        + Check `.csv` schema matches domain-specific schema 
+        + Detect missing values
+        + Detect duplicate entries
+        + Detect cross-field inconsistencies (adding batch for a product not present in the catalogue)
+        + Detect import errors
+        + Update data using selected (create, update, remove duplicates, ...) import strategy
+    * Export data to `.csv` file 
+        + Validate selected file path
+        + Retrieve domain-specific data
+        + Convert data to `.csv` format
+        + Create data`.csv` file and write the converted data in it
+        + Detect exporting errors
+
 **Design cues** 
 - The system shall store for each sale:
     * the cash that sales products

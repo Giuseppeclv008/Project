@@ -8,14 +8,14 @@
         + Delete data entry
 - **Manage data list**
     * *Inherited by: catalogue, inventory, sales, refunds, suppliers, orders, invoices, cash registers*
-        * Combine filter and sorting/ranking operations on a list
+        * Combine filter and sorting/ranking operations on a data list
     * *Inherited by: catalogue, inventory, sales, refunds, suppliers, orders, invoices, cash registers*
-        + Search entry by its unique identifier
-        + Filter list by one or more of the entry's attributes
-        + Sort list by one or more of the entry's sortable attributes
-        + Rank list by one or more of the entry's sortable attributes
+        + Search entry in a data list by its unique identifier
+        + Filter data list by one or more of the entry's attributes
+        + Sort data list by one or more of the entry's sortable attributes
+        + Rank data list by one or more of the entry's sortable attributes
     * *Inherited by: inventory, sales, refunds, orders, invoices*
-        + Filter list by a specific time window
+        + Filter data list by a specific time window
 - **Manage inventory** 
     * Detect bach expiration
         + Detect batches within owner-defined days from the expiration date
