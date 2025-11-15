@@ -305,17 +305,17 @@ system <-- shipping
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   |  |Owner has a password|
-|  Post condition  |  |Owner is correctly authenticated
+|  Pre condition   |  Owner has a password          |
+|  Post condition  |  Owner is correctly authenticated |
 | Nominal Scenario | - Authenticate owner SP1 <br> | 
-|     Exception    | - Owner tries to authenticate with a wrong password <br> SP2| 
+|     Exception    | - Owner tries to authenticate with a wrong password <br> SP2    | 
 
 ### Use case 5, UC5
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   |  |Owner  is authenticated|
-|  Post condition  |  |Owner set a new password|
+|  Pre condition   |  Owner  is authenticated
+|  Post condition  |  Owner set a new password
 | Nominal Scenario | - Authenticate owner AU1 <br> | 
 |     Exception    | - Owner tries to set an empty password <br> AU2| 
 
@@ -335,8 +335,7 @@ system <-- shipping
 | :--------------: | :------------------------------------------------------------------ |
 |  Pre condition   | Owner is authenticated && DB services are available &&  internet connection is available |
 |  Post condition  | Owner receive the notification  |
-| Nominal Scenario | - Owner is notified when an order status changes MN1 <br> - Owner is notified when a batch is expired MN2 <br> - Owner is notified when a cash is not responding MN3
-  <br> - Owner is notified when a product is going to run out MN4 <br> - Owner is notified when there is no internet connection MN5| 
+| Nominal Scenario | - Owner is notified when an order status changes MN1 <br> - Owner is notified when a batch is expired MN2 <br> - Owner is notified when a cash is not responding MN3 <<br> - Owner is notified when a product is going to run out MN4 <br> - Owner is notified when there is no internet connection MN5| 
 |     Variants     | -  Owner is notified when a batch is about to expire MN6 <br> Owner is notified when an order status cannot be updated since API is not responding |
 
 ### Use case 8, UC8
