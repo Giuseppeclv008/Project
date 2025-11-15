@@ -249,59 +249,22 @@ system <-- shipping
 
 # Use case diagram and use cases
 
-## Use case brief
-| **UC Name**                        | **Goal**                                  | **Description**|
-| ---------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| **UC1 - create batch**             | Add new batch                             | Add a new batch to the inventory                                                    |
-| **UC2 - delete batch**             | Delete batch                              | Delete a batch from the inventory                                                                 |
-| **UC3 - update batch**             | Update batch                              | Update information of a batch stored in the inventory
-| **UC4 - create product**          | Add new product                           | Add a new product to the list of products                                                            |
-| **UC5 - delete product**          | Delete product                            | Delete an product from the list of products                                                          |
-| **UC6 - update product**          | Update product                            | Update product's information from the list of products                                               |
-| **UC7 - create order**            | Add new order                             | Add a new order to the list of orders                                                            |
-| **UC8 - delete order**            | Delete order                              | Delete an order from the list of orders                                                          |
-| **UC9 - update order**            | Update order                              | Update order's information from the list of orders                                               |
-| **UC10 - add cash register**       | Add new cash register                     | Add a new cash register it to the list of cash registers                                                   |
-| **UC11 - delete cash register**    | Delete cash register                      | Delete a cash register from the list of cash registers                                           |
-| **variantUC18 - retrieve batch**           | Retrieve batch                            | Retrieve batch's information from the inventory                                                  |
-| **variantUC17 - retrieve product**         | Retrieve product                          | Retrieve product's information from the inventory                                                  |
-| **UC12 - retrieve incomes**        | Retrieve shop incomes                     | Retrieve shop's income at different time granularity                                              |
-| **UC13 - retrieve expenses**       | Retrieve shop expenses                    | Retrieve shop's expenses at different time granularity                                             |
-| **UC14 - retrieve balance**        | Retrieve balance                          | Retrieve current balance and balance history at different time granularity                       |
-| **UC15 - create sales list**       | Create owner-defined orders list          | Retrieve batches list filtered by a set of orders' attributes |
-| **UC16 - create invoice list**     | Create owner-defined invoice list         | Retrieve invoices filtered by one or more invoice's attributes                                   |
-| **UC17 - create product list**     | Create owner-defined product list         | Retrieve products filtered by one or more product's attributes                                   |
-| **UC18 - create batches list**      | Create owner-defined batches list         | Retrieve batches list filtered by a set of batches' attributes                                            |
-| **UC19 - set password**            | Set owner password                        | Let owner set a new password                                                                     |
-| **UC20 - authenticate**            | Authenticate owner                        | Authenticate the owner if the password provided is correct                                       |
-|**UC21 - set threshold**            | set item quantity threshold               | set for a product a threshold value for item quantity                                               |
-| **UC22 - suggest new order**       | Suggest new order                         | Suggest a new order when a product is about to run out                                           |
-| **UC23 - import products list**    | Import orders list as `.csv`              | Read `.csv` file and add new orders                                                              |
-| **UC24 - import batches list**      | Import batches list as `.csv`             | Read `.csv` file and create new batches in the inventory                                         |
-| **UC25 - import sales list**        | Import sales list as `.csv`               | Read `.csv` file and update the sales list                                                        |
-| **UC26 - import orders list**      | Import orders list as `.csv`              | Read `.csv` file and add new orders                                                              |
-| **UC27 - export sales list**       | export a sales list as '.csv'             | return '.csv' file with a list of sales                                                         | 
-| **UC28 - export orders list**       | export a orders list as '.csv'             | return '.csv' file with a list of orders                                                         | 
-| **UC29 - export batches list**       | export a batches list as '.csv'             | return '.csv' file with a list of batches                                                         | 
-| **UC30 - export products list**       | export a products list as '.csv'             | return '.csv' file with a list of products                                                         | 
-
-
-
 | **UC Name**                        | **Goal**                                   | **Description**|
 | ---------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| **UC1 – Manage Inventory**         | Track products                              | Owner creates, updates and deletes batches of products|
+| **UC1 – Manage Inventory**         | Track products                              | Owner creates, updates and deletes batches of products| 
 | **UC2 – Manage Orders**            | Manage supplier orders                      | Owner creates, updates and deletes orders |
-| **UC3 - Suggest Orders**           | Suggest orders to a user                    | When a product quantity is behind a defined threshold the system suggest an order to the owner |
-| **UC4 – Manage Invoices**          | Record and manage invoices                  | Owner creates, updates and deletes invoices |
-| **UC5 – Authenticate Owner**       | Ensure secure access                        | Owner authenticates through a password and manage it (creation, modification)|
+| **UC3 – Manage Invoices**          | Record and manage invoices                  | Owner creates, updates and deletes invoices |
+| **UC4 – Authenticate Owner**       | Ensure secure access                        | Owner authenticates through a password |
+| **UC5 - Change password**          | Change the password                         | Owner change system's password |
 | **UC6 – Manage Product Catalogue** | Manage the product catalogue                | Owner creates, updates, and deletes products of the catalogue |
-| **UC7 – Receive Notifications**    | Notify the user of relevant events          | The system sends notifications related to product expirations, ongoing orders, status changes, or quantity reached thresholds|
+| **UC7 – Receive Notifications**    | Notify the user of relevant events          | The system sends notifications related to product expirations, ongoing orders, status changes, or orders' suggestions|
 | **UC8 - Import Data**              | Import data as .csv                         | Owner imports products, sales, batches or order lists as .csv | 
 | **UC9 - Export Data**              | Export data as .csv                         | Owner exports products, sales, batches or order lists as .csv |
-| **UC10 - Retrieve Data**           | Retrieve data required  by the owner        | Owner retrieves list of products, sales, orders, batches and invoices filtered by one or more fo their attributes |
-| **UC11 - Manage cash flow**        | Retrieve incomes, outgoings and balance     | Owner retrieves incomes, outogings and balance tracked and computed by the system 3|     
-| **UC12 – Manage Sales**            | Record and manage sales                     | To do... |
-
+| **UC10 - Retrieve Data**           | Retrieve data required  by the owner        | Owner retrieves list of products, sales, orders, batches, refunds, cash registers and invoices filtered by one or more fo their attributes |
+| **UC11 - Manage cash flow**        | Retrieve incomes, outgoings and balance     | Owner retrieves incomes, outogings and balance tracked and computed by the system|     
+| **UC12 - Manage cash registers**   | add cash registers to the system            | Owner connect cash registers to the system through POS API |
+| **UC13 – Get cash operation**      | Send sales and refunds                      | Cash register sends information about sales and refunds to the system |
+| **UC14 - Get Catalogue**           | Get catalogue from system                   | Cash register gets catalogue from the system |
 ## Use case diagram
 
 \<define here UML Use case diagram UCD summarizing all use cases, and their relationships>
@@ -328,35 +291,71 @@ system <-- shipping
 |     Variants     | -  Owner deletes many orders, filtering by products' attributes MO4 |
 |     Exception    | - Owner tries to create a order with inconsistent values MO5 <br> - Owner tries to create a order that is alredy in the system MO6 <br> - Owner tries to update a order not present in the system MO7 <br> - Owner tries to update a order with inconsisten values MO8 <br> - Owner tries to delete a order not present in the system MO9|
 
-### Use case 4, UC4 
+### Use case 3, UC3
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   | Owner is authenticated && DB services are available    |
+|  Pre condition   | Owner is authenticated && DB services are available && internet connection is available |
 |  Post condition  | CRUD-type invoice's operation is performed |
 | Nominal Scenario | - Owner creates a invoice MI1 <br> - Owner updates a invoice MI2 <br> - Owner deletes a invoice MI3| 
 |     Variants     | -  Owner deletes many invoices, filtering by products' attributes MI4 |
 |     Exception    | - Owner tries to create a invoice with inconsistent values MI5 <br> - Owner tries to create a invoice that is alredy in the system MI6 <br> - Owner tries to update a invoice not present in the system MI7 <br> - Owner tries to update a invoice with inconsisten values MI8 <br> - Owner tries to delete a invoice not present in the system MI9|
 
+### Use case 4, UC4
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Pre condition   |  |Owner has a password|
+|  Post condition  |  |Owner is correctly authenticated
+| Nominal Scenario | - Authenticate owner SP1 <br> | 
+|     Exception    | - Owner tries to authenticate with a wrong password <br> SP2| 
+
 ### Use case 5, UC5
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   |  |
-|  Post condition  |  |
-| Nominal Scenario | - Owner  set password  AU1 <br> - Authenticate owner AU2 <br> | 
-|     Variants     | No variants |
-|     Exception    | - Owner tries to authenticate with a wrong password <br> AU3 - Owner tries to set an empty password AU4| 
+|  Pre condition   |  |Owner  is authenticated|
+|  Post condition  |  |Owner set a new password|
+| Nominal Scenario | - Authenticate owner AU1 <br> | 
+|     Exception    | - Owner tries to set an empty password <br> AU2| 
 
 ### Use case 6, UC6
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   | Owner is authenticated && DB services are available    |
+|  Pre condition   | Owner is authenticated && DB services are available && internet connection is available |
 |  Post condition  | CRUD-type operation is performed in the catalogue  |
 | Nominal Scenario | - Owner creates a product MP1 <br> - Owner updates a product MP2 <br> - Owner deletes a product MP3| 
 |     Variants     | -  Owner deletes many products, filtering by products' attributes MP4 |
 |     Exception    | - Owner tries to create a product with inconsistent values MP5 <br> - Owner tries to create a product that is alredy in the catalogue MP6 <br> - Owner tries to update a product not present in the catalogue MP7 <br> - Owner tries to update a product with inconsisten values MP8 <br> - Owner tries to delete a product not present in the catalogue MP9|
+
+### Use case 7, UC7
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Pre condition   | Owner is authenticated && DB services are available &&  internet connection is available |
+|  Post condition  | Owner receive the notification  |
+| Nominal Scenario | - Owner is notified when an order status changes MN1 <br> - Owner is notified when a batch is expired MN2 <br> - Owner is notified when a cash is not responding MN3
+  <br> - Owner is notified when a product is going to run out MN4 <br> - Owner is notified when there is no internet connection MN5| 
+|     Variants     | -  Owner is notified when a batch is about to expire MN6 <br> Owner is notified when an order status cannot be updated since API is not responding |
+
+### Use case 8, UC8
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Pre condition   | Owner is authenticated && DB services are available && internet connection is available && file .csv data are in the correct format|
+|  Post condition  | .csv file's data are correctly imported |
+| Nominal Scenario | - Owner import a list of product as .csv file <br> -  Owner import a list of invoices as .csv file< <br> -  Owner import a list of suppliers as .csv file <br>  Owner import a list of sales as .csv file <br>  Owner import a list of refunds as .csv file <br> Owner importr a list of orders as .csv file | 
+|     Exception    | - Owner import .csv file with format error |
+
+### Use case 9, UC9 
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Pre condition   | Owner is authenticated && DB services are available && internet connection is available && needed data are in the system|
+|  Post condition  | data are correctly exported as .csv |
+| Nominal Scenario | - Owner export a list of product as .csv file <br> -  Owner export a list of invoices as .csv file< <br> -  Owner export a list of suppliers as .csv file <br>  Owner export a list of sales as .csv file <br>  Owner export a list of refunds as .csv file <br> Owner exportr a list of orders as .csv file | 
+|     Exception    | - Owner export .csv file with format error |
 
 ### Use case 10, UC10
 
@@ -366,8 +365,23 @@ system <-- shipping
 |   Precondition   | Owner is authenticated && Data are in the system && BD services are available |
 |  Post condition  |  Owner retrieves the desidered list of data |
 | Nominal Scenario | Owner retrieves a list of products from the system RD1 <br> - Owner retrieves a list of sales from the system RD2 <br> - Owner retrieves a list of batches from the system RD3 <br> - Owner retrieves a list of orders from the system RD4 <br> - Owner retrieves a list of invoices from the system RD5 | 
-|     Variants     | - Owner retrieves a list of products filtered by their attributes RD6 <br> - Owner retrieves a list of sales filtered by their attributes RD7 <br> - Owner retrieves a list of batches filtered by their attributes RD8 <br> - Owner retrieves a list of invoices filtered by their attributes RD9 |
-|    Exceptions    | - Owner selects filtering product attribute's values that are absent <br> - Owner selects filtering order attribute's values that are absent <br> - Owner selects filtering batches attribute's values that are absent <br> - Owner selects filtering order attribute's values that are absent <br> - Owner selects filtering invoice attribute's values that are absent  |
+|     Variants     | - Owner retrieves a list of products filtered by their attributes RD6 <br> - Owner retrieves a list of sales filtered by their attributes RD7 <br> - Owner retrieves a list of batches filtered by their attributes RD8 <br> - Owner retrieves a list of invoices filtered by their attributes RD9 <br> - Owner retrieves a list of cash registers filtered by their attributes RD10 <br>  - Owner retrieves a list of suppliers filtered by their attributes RD11 <br>  - Owner retrieves a list of refunds filtered by their attributes RD12 |
+|    Exceptions    | - Owner selects filtering datat attribute's values that are absent |
+
+### Use case 11, UC11
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Pre condition   | Owner is authenticated && DB services are available && internet connection is available|
+|  Post condition  | cash flow is correctly tracked |
+| Nominal Scenario | - Owner retrieves incomes at different time granularities <br> - Owner retrieves outgoing at different time granularity <br> - Owner retrieves balance at different time granularity <br> | 
+
+### Use case 12, UC13
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :----------------------------------------------------------------- |
+|  Pre condition   | Owner is authenticated && DB services are available && internet connection is available && cash register is tracked by the system |
+|  Post condition  | information about cash operations are gets and saved by the sytem |
+
 
 ##### Scenario 1.1
 
