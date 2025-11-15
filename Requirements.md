@@ -344,7 +344,7 @@ system <-- shipping
 | :--------------: | :------------------------------------------------------------------ |
 |  Pre condition   | Owner is authenticated && DB services are available && internet connection is available && file .csv data are in the correct format|
 |  Post condition  | .csv file's data are correctly imported |
-| Nominal Scenario | - Owner import a list of product as .csv file <br> -  Owner import a list of invoices as .csv file< <br> -  Owner import a list of suppliers as .csv file <br>  Owner import a list of sales as .csv file <br>  Owner import a list of refunds as .csv file <br> Owner importr a list of orders as .csv file | 
+| Nominal Scenario | - Owner import a list of product as .csv file <br> -  Owner import a list of invoices as .csv file< <br> -  Owner import a list of suppliers as .csv file <br> - Owner import a list of sales as .csv file <br> -  Owner import a list of refunds as .csv file <br> - Owner importr a list of orders as .csv file | 
 |     Exception    | - Owner import .csv file with format error |
 
 ### Use case 9, UC9 
@@ -353,7 +353,7 @@ system <-- shipping
 | :--------------: | :------------------------------------------------------------------ |
 |  Pre condition   | Owner is authenticated && DB services are available && internet connection is available && needed data are in the system|
 |  Post condition  | data are correctly exported as .csv |
-| Nominal Scenario | - Owner export a list of product as .csv file <br> -  Owner export a list of invoices as .csv file< <br> -  Owner export a list of suppliers as .csv file <br>  Owner export a list of sales as .csv file <br>  Owner export a list of refunds as .csv file <br> Owner exportr a list of orders as .csv file | 
+| Nominal Scenario | - Owner export a list of product as .csv file <br> -  Owner export a list of invoices as .csv file< <br> -  Owner export a list of suppliers as .csv file <br> - Owner export a list of sales as .csv file <br> - Owner export a list of refunds as .csv file <br> - Owner exportr a list of orders as .csv file | 
 |     Exception    | - Owner export .csv file with format error |
 
 ### Use case 10, UC10
@@ -364,7 +364,7 @@ system <-- shipping
 |   Precondition   | Owner is authenticated && Data are in the system && BD services are available |
 |  Post condition  |  Owner retrieves the desidered list of data |
 | Nominal Scenario | Owner retrieves a list of products from the system RD1 <br> - Owner retrieves a list of sales from the system RD2 <br> - Owner retrieves a list of batches from the system RD3 <br> - Owner retrieves a list of orders from the system RD4 <br> - Owner retrieves a list of invoices from the system RD5 | 
-|     Variants     | - Owner retrieves a list of products filtered by their attributes RD6 <br> - Owner retrieves a list of sales filtered by their attributes RD7 <br> - Owner retrieves a list of batches filtered by their attributes RD8 <br> - Owner retrieves a list of invoices filtered by their attributes RD9 <br> - Owner retrieves a list of cash registers filtered by their attributes RD10 <br>  - Owner retrieves a list of suppliers filtered by their attributes RD11 <br>  - Owner retrieves a list of refunds filtered by their attributes RD12 |
+|     Variants     | - Owner retrieves a list of data filtered by their attributes |
 |    Exceptions    | - Owner selects filtering datat attribute's values that are absent |
 
 ### Use case 11, UC11
