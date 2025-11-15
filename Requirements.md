@@ -373,9 +373,9 @@ system <-- shipping
 | :--------------: | :------------------------------------------------------------------ |
 |  Pre condition   | Owner is authenticated && DB services are available && internet connection is available|
 |  Post condition  | cash flow is correctly tracked |
-| Nominal Scenario | - Owner retrieves incomes at different time granularities <br> - Owner retrieves outgoing at different time granularity <br> - Owner retrieves balance at different time granularity <br> | 
+| Nominal Scenario | - Owner retrieves incomes at different time granularities <br> - Owner retrieves outgoing at different time granularities <br> - Owner retrieves balance at different time granularities <br> | 
 
-### Use case 12, UC13
+### Use case 13, UC13
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :----------------------------------------------------------------- |
 |  Pre condition   | Owner is authenticated && DB services are available && internet connection is available && cash register is tracked by the system |
