@@ -274,8 +274,14 @@ system <-- shipping
         + Retrieve sales ranked by number of items sold per specific product
         + Retrieve sales ranked by the sum of its item's prices
     * *Manage `.csv`*
-        + Import sales list from `.csv`
-        + Export list of sales as `.csv`
+        + Import batches list from `.csv`
+            + Detect import errors
+            + Detect schema mismatch
+            + Update sales
+        + Export list of batches as `.csv`
+            + Retrieve sales
+            + Create `.csv` file
+            + Detect export errors
 - **Manage refunds**
     * *Create owner-defined refund list*
         + For each owner-defined list filter refunds by a specified date (ISO 8601) or time window
@@ -283,8 +289,14 @@ system <-- shipping
         + Retrieve refunds ranked by number of items given back per specific product
         + Retrieve refunds ranked by the sum of its item's prices
     - *Manage `.csv`*
-        * Import refunds list from `.csv`
-        * Export list of refunds as `.csv`
+        + Import batches list from `.csv`
+            + Detect import errors
+            + Detect schema mismatch
+            + Update refunds
+        + Export list of batches as `.csv`
+            + Retrieve refunds
+            + Create `.csv` file
+            + Detect export errors
 - **Manage catalogue**
     * *Manage CRUD operations*
         + Create new product in the catalogue
@@ -310,7 +322,11 @@ system <-- shipping
         + Retrieve batches filtered by one or more product/batch attributes
     * *Manage `.csv`*
         + Import batches list from `.csv`
+            + Detect import errors
+            + Detect schema mismatch
+            + Update inventory
         + Export list of batches as `.csv`
+            + Detect export errors
 - **Manage suppliers**
     * *Manage CRUD operations*
         + Create new supplier
@@ -323,7 +339,13 @@ system <-- shipping
         + Retrieve suppliers list ranked by number of associated purchase orders
     * *Manage `.csv`*
         + Import supplier list from `.csv`
+            + Detect import errors
+            + Detect schema mismatch
+            + Update suppliers
         + Export list of suppliers as `.csv`
+            + Retrieve invoices
+            + Create `.csv` file
+            + Detect export errors
 - **Track invoices**
     * *Manage CRUD operations*
         + Create new invoice
@@ -334,7 +356,13 @@ system <-- shipping
         + Retrieve list of invoices filtered by one or more of their attributes
     * *Manage `.csv`*
         + Import invoices list from `.csv`
-        + Export invoices list as `.csv`
+            + Detect import errors
+            + Detect schema mismatch
+            + Update refunds
+        + Export list of invoices as `.csv`
+            + Retrieve invoices
+            + Create `.csv` file
+            + Detect export errors
 - **Manage orders**
     * *Manage CRUD operations*
         + Create new order
@@ -350,7 +378,13 @@ system <-- shipping
         + Retrieve list of orders filtered by one or more attributes
     * *Manage `.csv`*
         + Import orders list from `.csv`
-        + Export orders list as `.csv`
+            + Detect import errors
+            + Detect schema mismatch
+            + Update refunds
+        + Export list of orders as `.csv`
+            + Retrieve invoices
+            + Create `.csv` file
+            + Detect export errors
     * *Suggest order*
         + Retrieve products with item count below threshold
         + Retrieve possible supplier for products with item count below threshold
@@ -381,52 +415,37 @@ system <-- shipping
     * Create “batch is expired” notification
     * Create “no internet connection” notification
     * Create “cash register is not responding” notification
+    * Create notification
     * Delete notification
 - **Manage cash registers**
     * *Link with POS provider’s account*
-    - Redirect user to authorization URL
-    - Retrieve access and refresh tokens
-    - Store access and refresh tokens securely
-    - Retrieve new token when expired
-  - *Get cash register list*
-    - Decrypt access token
-    - Retrieve list of cash registers from provider API
-    - Update local list of cash registers
-  - *Sync catalogue*
-    - Convert catalogue to provider format
-    - Push new catalogue to cash registers
-    - Detect unresponsive cash registers and update status
-  - *Retrieve sales*
-    - Pull sales list
-    - Convert sales to local format
-    - Update inventory quantities
-    - Add sale to sales list
-    - Detect unresponsive cash registers
-  - *Retrieve refunds*
-    - Pull refunds list
-    - Convert refunds to local format
-    - Update item quantities
-    - Add refund to refunds list
-    - Detect unresponsive cash registers
-  - *Create owner-defined cash register list*
-    - Retrieve cash registers filtered by attributes
-    - Retrieve cash registers grouped by provider brand
-- **Manage `.csv` 
-    * Import data from `.csv` file
-        + Check selected file exists
-        + Load selected file
-        + Check `.csv` schema matches domain-specific schema 
-        + Detect missing values
-        + Detect duplicate entries
-        + Detect cross-field inconsistencies (adding batch for a product not present in the catalogue)
-        + Detect import errors
-        + Update data using selected (create, update, remove duplicates, ...) import strategy
-    * Export data to `.csv` file 
-        + Validate selected file path
-        + Retrieve domain-specific data
-        + Convert data to `.csv` format
-        + Create data`.csv` file and write the converted data in it
-        + Detect exporting errors
+        + Redirect user to authorization URL
+        + Retrieve access and refresh tokens
+        + Store access and refresh tokens securely
+        + Retrieve new token when expired
+    * *Get cash register list*
+        + Decrypt access token
+        + Retrieve list of cash registers from provider API
+        + Update local list of cash registers
+    * *Sync catalogue*
+        + Convert catalogue to provider format
+        + Push new catalogue to cash registers
+        + Detect unresponsive cash registers and update status
+    * *Retrieve sales*
+        + Pull sales list
+        + Convert sales to local format
+        + Update inventory quantities
+        + Add sale to sales list
+        + Detect unresponsive cash registers
+    * *Retrieve refunds*
+        + Pull refunds list
+        + Convert refunds to local format
+        + Update item quantities
+        + Add refund to refunds list
+        + Detect unresponsive cash registers
+    * *Create owner-defined cash register list*
+        + Retrieve cash registers filtered by attributes
+        + Retrieve cash registers grouped by provider brand
 
 **Design cues** 
 - The system shall store for each sale:
