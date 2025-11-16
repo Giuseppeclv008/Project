@@ -350,7 +350,7 @@ system <-- shipping
             + Retrieve suppliers
             + Create `.csv` file
             + Detect export errors
-- **Track invoices**
+- **Manage invoices**
     * *Manage CRUD operations*
         + Create new invoice
         + Update invoice
@@ -362,7 +362,7 @@ system <-- shipping
         + Import invoices list from `.csv`
             + Detect import errors
             + Detect schema mismatch
-            + Update refunds
+            + Update invoices
         + Export list of invoices as `.csv`
             + Retrieve invoices
             + Create `.csv` file
@@ -451,7 +451,7 @@ system <-- shipping
         + Add sale to sales list
         + Detect unresponsive cash registers
     * *Retrieve refunds*
-        + Retrieve sales list from cash register
+        + Retrieve refunds list from cash register
         + Update item quantities
         + Add refund to refunds list
         + Detect unresponsive cash registers
