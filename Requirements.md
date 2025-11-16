@@ -307,8 +307,14 @@ system <-- shipping
         + Retrieve list of products filtered by one or more of their attributes
         + Retrieve number of items available for a selected product
     * *Manage `.csv`*
-        + Import product list from `.csv`
-        + Export list of products as `.csv`
+        + Import products list from `.csv`
+            + Detect import errors
+            + Detect schema mismatch
+            + Update products list
+        + Export products list as `.csv`
+            + Retrieve products list
+            + Create `.csv` file
+            + Detect export errors
 - **Manage inventory**
     * *Manage CRUD operations*
         + Create new batch in the inventory
@@ -322,6 +328,8 @@ system <-- shipping
             + Detect schema mismatch
             + Update inventory
         + Export list of batches as `.csv`
+            + Retrieve batches list
+            + Create `.csv` file
             + Detect export errors
 - **Manage suppliers**
     * *Manage CRUD operations*
