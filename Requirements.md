@@ -347,7 +347,7 @@ system <-- shipping
             + Detect schema mismatch
             + Update suppliers
         + Export list of suppliers as `.csv`
-            + Retrieve invoices
+            + Retrieve suppliers
             + Create `.csv` file
             + Detect export errors
 - **Track invoices**
@@ -384,7 +384,7 @@ system <-- shipping
         + Import orders list from `.csv`
             + Detect import errors
             + Detect schema mismatch
-            + Update refunds
+            + Update orders
         + Export list of orders as `.csv`
             + Retrieve invoices
             + Create `.csv` file
@@ -398,9 +398,27 @@ system <-- shipping
     * *Track incomes*
         + Compute incoming cash flow at different time granularities
         + Retrieve incoming cash flow at different time granularities
+    * *Manage incomes `.csv`*
+        + Import incomes list from `.csv`
+            + Detect import errors
+            + Detect schema mismatch
+            + Update incomes
+        + Export list of incomes as `.csv`
+            + Retrieve incomes
+            + Create `.csv` file
+            + Detect export errors
     * *Track expenses*
         + Compute outgoing cash flow at different time granularities
         + Retrieve outgoing cash flow at different time granularities
+    * *Manage expenses `.csv`*
+        + Import expenses list from `.csv`
+            + Detect import errors
+            + Detect schema mismatch
+            + Update expenses
+        + Export list of expenses as `.csv`
+            + Retrieve expenses
+            + Create `.csv` file
+            + Detect export errors
     * *Track balance*
         + Compute total balance at different time granularities
         + Retrieve balance at different time granularities
