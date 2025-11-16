@@ -270,9 +270,9 @@ Steps
 
 # Glossary
 - **Shop**
-    * The small business entity that uses the EzShop software to manage its operations, including sales, inventory, orders, and accounting. A shop typically has one owner, two or more cash registers, and several suppliers. In the current scope, EZShop menages a single shop.
+    * The small business entity that uses the EzShop software to manage its operations, including sales, inventory, orders, and accounting. A shop typically has one owner, two or more cash registers, and several suppliers. In the current scope, EzShop manages a single shop.
 - **Product** 
-    * An ideal entity representing a type of product sold or stocked by the shop; not a single physical object. Each product describes the characteristics shared by all physical units of that product (e.g., 1L bottle of "GoodMilk!").
+    * An entity representing a type of product sold or stocked by the shop; not a single physical object. Each product describes the characteristics shared by all physical units of that product (e.g., 1L bottle of "GoodMilk!").
 - **Batch**
     * A batch represents a specific group of items associated with a product in the inventory. Multiple batches can exist for the same product, each identified by its own quantity and expiration date.
 - **Item**
@@ -290,11 +290,11 @@ Steps
 - **Invoice**
     * A formal document that records a financial transaction between the shop and a supplier or customer, serving as proof of purchase or sale.
 - **Order** 
-    * The purchase of a collection of batches from a supplier. Orders have a defined structure and status, typically one of: processing, shipped, in transit, out of delivery, delivered and cancelled.
+    * The purchase of a collection of batches from a supplier. Orders have a defined structure and status, typically one of: processing, shipped, in transit, delivered and cancelled.
 - **Income**
     * The amount of money earned from completed sales.
 - **Expenses** 
-    * The amount of money spent by the shop to maintain it operation such as electrical bills, renting fees, and products purchases.
+    * The amount of money spent by the shop to maintain it operation such as electrical bills, renting fees, wages, and products purchases.
 - **Balance**
     * The overall financial position of the shop, calculated as the difference between total incomes and total expenses within a given period.
 - **Owner**
