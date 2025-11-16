@@ -410,7 +410,6 @@ system <-- shipping
     * Change password
     * Verify password
     * Encrypt password
-    * Decrypt password
 - **Manage notifications**
     * Create notification
     * Change notification's status
