@@ -309,10 +309,6 @@ system <-- shipping
     * *Manage `.csv`*
         + Import product list from `.csv`
         + Export list of products as `.csv`
-    * *Update cash register's catalogue*
-        + Convert catalogue to API-specific format
-        + Check connection with cash register
-        + Send updated catalogue to connected cash register
 - **Manage inventory**
     * *Manage CRUD operations*
         + Create new batch in the inventory
