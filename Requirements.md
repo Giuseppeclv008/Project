@@ -331,6 +331,23 @@ system <-- shipping
             + Retrieve batches list
             + Create `.csv` file
             + Detect export errors
+- **Manage invoices**
+    * *Manage CRUD operations*
+        + Create new invoice
+        + Update invoice
+        + Delete invoice
+        + Link invoice to a specific order
+    * *Create owner-defined invoice list*
+        + Retrieve list of invoices filtered by one or more of their attributes
+    * *Manage `.csv`*
+        + Import invoices list from `.csv`
+            + Detect import errors
+            + Detect schema mismatch
+            + Update invoices
+        + Export list of invoices as `.csv`
+            + Retrieve invoices
+            + Create `.csv` file
+            + Detect export errors
 - **Manage suppliers**
     * *Manage CRUD operations*
         + Create new supplier
@@ -350,23 +367,34 @@ system <-- shipping
             + Retrieve suppliers
             + Create `.csv` file
             + Detect export errors
-- **Manage invoices**
+- **Manage Shipping companies**
     * *Manage CRUD operations*
-        + Create new invoice
-        + Update invoice
-        + Delete invoice
-        + Link invoice to a specific order
-    * *Create owner-defined invoice list*
-        + Retrieve list of invoices filtered by one or more of their attributes
+        + Create new shipping company
+        + Update shipping company
+        + Delete shipping company
+        + Link shipping company to one or more orders
+        + Unlink shipping company from one or more orders
+    * *Create owner-defined supplier list*
+        + Retrieve shipping companies list filtered by one or more of their attributes 
+        + Retrieve shipping companies list ranked by number of associated shipments with a selected status
     * *Manage `.csv`*
-        + Import invoices list from `.csv`
+        + Import shipping companies list from `.csv`
             + Detect import errors
             + Detect schema mismatch
-            + Update invoices
-        + Export list of invoices as `.csv`
-            + Retrieve invoices
+            + Update shipping companies list
+        + Export list of shipping companies as `.csv`
+            + Retrieve shipping companies list
             + Create `.csv` file
             + Detect export errors
+- **Track order**
+    * *Link with easy post account*
+        + Redirect user to authorization URL
+        + Retrieve access and refresh tokens
+        + Store access and refresh tokens securely
+        + Retrieve new token when expired
+    * *Retrieve shipment status*
+        + Retrieve tracking updates from provider API
+        + Update order's status accordingly
 - **Manage orders**
     * *Manage CRUD operations*
         + Create new order
@@ -374,10 +402,6 @@ system <-- shipping
         + Delete order
         + Link order to a supplier
         + Unlink order from a supplier
-    * *Automatically track order for supported couriers*
-        + Check internet connection
-        + Retrieve current order status
-        + Update current order status
     * *Create owner-defined orders list*
         + Retrieve list of orders filtered by one or more attributes
     * *Manage `.csv`*
