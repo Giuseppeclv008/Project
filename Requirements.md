@@ -307,6 +307,165 @@ Steps
     * A system-generated message or alert that informs the shop owner about important events or conditions, such as changes in order status, low product quantity, batch expiration, or connectivity issues.
 
 
+```plantuml
+@startuml
+!pragma layout smetana
+
+class Shop {
+    + name
+    + address
+    + owner
+}
+
+class Product {
+    + id
+    + name
+    + description
+    + price
+    + category
+    + brand
+    + discount
+    + IVA
+}
+
+class Batch {
+    + code
+    + expirationDate
+    + productionDate
+}
+
+class Item {
+    + id
+    + status
+}
+
+class Sale {
+}
+
+class Refund {
+}
+
+class Catalogue {
+}
+
+class Inventory {
+}
+
+class Supplier {
+    + id
+    + name
+    + pIva
+    + contactInfo
+    + address
+}
+
+class Invoice {
+    + id
+    + date
+    + amount
+}
+
+class Order {
+    + id
+    + status
+    + orderDate
+    + deliveryDate
+}
+
+class Income {
+    + id
+    + amount
+    + date
+    + source
+}
+
+class Expense {
+    + id
+    + amount
+    + date
+    + source
+}
+
+class Balance {
+    + totalIncome
+    + totalExpenses
+}
+
+class Owner {
+    + id
+    + password
+}
+
+class CashRegister {
+    + id
+    + location
+    + provider
+    + accessToken
+    + refreshToken
+}
+
+class ShippingCompany {
+    + id
+    + name
+    + apiAvailable
+    + contactInfo
+}
+
+class Notification {
+    + id
+    + message
+    + date
+    + status
+    + tag
+}
+
+
+Balance "1" -- "0..1" Expense: > based on 
+Balance "1" -- "0..*" Income: > based on
+
+Sale "0.*" -- "1.*" Product : has
+Refund "0.*" -- "1.*" Product: has
+Catalogue "1" -- "1.*" Product:has
+Batch "0..*" -- "1" Product: related to
+Supplier "1..*" -- "1..*" Product: provides
+
+
+(Sale, Product) .. SaleOf
+class SaleOf{
+    + quantity
+}
+(Refund, Product) .. RefundOf
+class RefundOf{
+    + quantity
+}
+
+Batch "1" -- "1..*" Item: > has
+
+Order "1" -- "1..*" Batch: > of
+Order "0..*" -- "1..*" Supplier: > made to 
+Order "0..*" -- "1..*" ShippingCompany: > delivered by 
+
+Invoice --  Order:> associated with
+
+CashRegister "1" -l- "0..*" Refund: > sent by
+CashRegister "1" -r- "0..*" Sale: > sends
+CashRegister "0..*" -d- "0,1" Catalogue: > receives
+
+Inventory "1" -- "0..*" Batch: > contains
+
+Income <|-- Sale
+Expense <|-- Refund
+Expense <|-- Invoice
+
+
+Owner "1" -- "1..*" Shop:> manages
+Owner "1" -r- "1..*" Notification:> interacts with
+
+Shop -- Inventory : > has
+
+
+@enduml
+```
 \<use UML class diagram to define important terms, or concepts in the domain of the application, and their relationships>
 
 \<concepts must be used consistently all over the document, ex in use cases, requirements etc>
