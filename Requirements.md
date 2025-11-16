@@ -421,7 +421,6 @@ system <-- shipping
         + Store access and refresh tokens securely
         + Retrieve new token when expired
     * *Get cash register list*
-        + Decrypt access token
         + Retrieve list of cash registers from provider API
         + Update local list of cash registers
     * *Sync catalogue*
@@ -429,14 +428,12 @@ system <-- shipping
         + Push new catalogue to cash registers
         + Detect unresponsive cash registers and update status
     * *Retrieve sales*
-        + Pull sales list
-        + Convert sales to local format
+        + Retrieve sales list from cash register
         + Update inventory quantities
         + Add sale to sales list
         + Detect unresponsive cash registers
     * *Retrieve refunds*
-        + Pull refunds list
-        + Convert refunds to local format
+        + Retrieve sales list from cash register
         + Update item quantities
         + Add refund to refunds list
         + Detect unresponsive cash registers
