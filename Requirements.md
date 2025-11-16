@@ -374,7 +374,7 @@ system <-- shipping
         + Delete shipping company
         + Link shipping company to one or more orders
         + Unlink shipping company from one or more orders
-    * *Create owner-defined supplier list*
+    * *Create owner-defined shipping companies list*
         + Retrieve shipping companies list filtered by one or more of their attributes 
         + Retrieve shipping companies list ranked by number of associated shipments with a selected status
     * *Manage `.csv`*
