@@ -408,14 +408,8 @@ system <-- shipping
     * Encrypt password
     * Decrypt password
 - **Manage notifications**
-    * Create “order’s status changed” notification
-    * Create “order’s status unable to be automatically updated” notification
-    * Create “items below threshold” notification
-    * Create “batch is about to expire” notification
-    * Create “batch is expired” notification
-    * Create “no internet connection” notification
-    * Create “cash register is not responding” notification
     * Create notification
+    * Change notification's status
     * Delete notification
 - **Manage cash registers**
     * *Link with POS provider’s account*
