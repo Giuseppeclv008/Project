@@ -122,89 +122,368 @@ system <-- shipping
 | ID | Description |
 |:--:|:-------------|
 | **FR1** | **Manage sales** |
-| *FR1.1* | *Read sale from cash register* |
-| *FR1.2* | *Create owner-defined sale list* |
-| FR1.2.1 | for each owner-defined list filter sales a specified date (ISO 8601) or time window |
-| FR1.2.2 | Retrieve sales filtered by products sold |
-| FR1.2.3 | Retrieve sales ranked by number of items sold per specific product |
-| FR1.2.4 | Retrieve sales ranked by the sum of its item's prices |
-| *FR1.3* | *Manage `.csv`* |
-| FR1.3.1 | Import sales list from `.csv` |
-| FR1.3.2 | Export list of sales as `.csv` |
-| **FR2** | **Manage catalogue** |
-| *FR2.1* | *Manage CRUD operations* |
-| FR2.1.1 | Create new product in the catalogue |
-| FR2.1.2 | Update product from the catalogue |
-| FR2.1.3 | Delete product from the catalogue |
-| *FR2.2* | *Set product item quantity warning threshold* |
-| *FR2.3* | *Create owner-defined product list* |
-| FR2.3.4 | Retrieve list of products filtered by one or more of their attributes |
-| FR2.3.5 | Retrieve number of items available for the selected product (sum of the quantity on each batch with the selected product) |
-| *FR2.4* | *Manage `.csv`* |
-| FR2.4.1 | Import product list from `.csv` |
-| FR2.4.2 | Export list of products as `.csv` |
-| **FR3** | **Manage inventory** |
+| *FR1.1* | *Create owner-defined sale list* |
+| FR1.1.1 | For each owner-defined list filter sales by a specified date (ISO 8601) or time window |
+| FR1.1.2 | Retrieve sales filtered by products sold |
+| FR1.1.3 | Retrieve sales ranked by number of items sold per specific product |
+| FR1.1.4 | Retrieve sales ranked by the sum of its item's prices |
+| *FR1.2* | *Manage `.csv`* |
+| FR1.2.1 | Import sales list from `.csv` |
+| FR1.2.2 | Export list of sales as `.csv` |
+| **FR2** | **Manage refunds** |
+| *FR2.1* | *Create owner-defined refund list* |
+| FR2.1.1 | For each owner-defined list filter refunds by a specified date (ISO 8601) or time window |
+| FR2.1.2 | Retrieve refunds filtered by products returned |
+| FR2.1.3 | Retrieve refunds ranked by number of items given back per specific product |
+| FR2.1.4 | Retrieve refunds ranked by the sum of its item's prices |
+| *FR2.2* | *Manage `.csv`* |
+| FR2.2.1 | Import refunds list from `.csv` |
+| FR2.2.2 | Export list of refunds as `.csv` |
+| **FR3** | **Manage catalogue** |
 | *FR3.1* | *Manage CRUD operations* |
-| FR3.1.1 | Create new batch in the inventory |
-| FR3.1.2 | Update batch from the inventory |
-| FR3.1.3 | Delete batch from the inventory |
-| *FR3.2* | *Create owner-defined batch list* |
-| FR3.2.1 | Retrieve batches filtered by one or more product/batch attributes |
-| *FR3.3* | *Manage `.csv`* |
-| FR3.3.1 | Import batches list from `.csv` |
-| FR3.3.2 | Export list of batches as `.csv` |
-| **FR4** | **Manage orders** |
+| FR3.1.1 | Create new product in the catalogue |
+| FR3.1.2 | Update product from the catalogue |
+| FR3.1.3 | Delete product from the catalogue |
+| *FR3.2* | *Set product item quantity warning threshold* |
+| *FR3.3* | *Create owner-defined product list* |
+| FR3.3.1 | Retrieve list of products filtered by one or more of their attributes |
+| FR3.3.2 | Retrieve number of items available for the selected product (sum of the quantity on each batch with the selected product) |
+| *FR3.4* | *Manage `.csv`* |
+| FR3.4.1 | Import product list from `.csv` |
+| FR3.4.2 | Export list of products as `.csv` |
+| *FR3.5* | *Update cash register's catalogue* |
+| FR3.5.1 | Convert catalogue to API-specific format |
+| FR3.5.2 | Check connection with cash register |
+| FR3.5.3 | Send updated catalogue to connected cash register |
+| **FR4** | **Manage inventory** |
 | *FR4.1* | *Manage CRUD operations* |
-| FR4.1.1 | Create new order in the list of orders |
-| FR4.1.2 | Update order from the list of orders |
-| FR4.1.3 | Delete order from the list of orders |
-| *FR4.2* | *Automatically track order for supported suppliers* |
-| FR4.2.1 | Check internet connection |
-| FR4.2.2 | Retrieve current order's status |
-| FR4.2.3 | Update current order's status |
-| *FR4.3* | *Create owner-defined orders list* |
-| FR4.3.1 | Retrieve list of orders filtered by one or more of their attributes |
-| *FR4.4* | *Manage `.csv`* |
-| FR4.4.1 | Import orders list from `.csv` |
-| FR4.4.2 | Export list of orders as `.csv` |
-| FR4.5   | *Suggest order* |
-| FR4.5.1 | Retrieve products with item count below threshold |
-| FR4.5.2 | Retrieve possible supplier for products with item count below threshold|
-| FR4.5.3 | Generate order suggestion (without specifying the number of item) |
-| FR4.5.4 | Add suggested order to list of orders|
-| **FR5** | **Manage accounting** |
-| *FR5.1* | *Track invoices* |
-| FR5.1.1 | Track Invoices for orders made |
-| FR5.1.2 | Create owner-defined invoice list |
-| FR5.1.2.1 | Retrieve list of invoices filtered by one or more of their attributes |
-| *FR5.2* | *Track incomes* |
-| FR5.2.1 | Track incoming cash flow |
-| FR5.2.3 | Retrieve income history at different time granularities (day, month, year etc…) |
-| *FR5.3* | *Track expense* |
-| FR5.3.1 | Track outgoing cash flow |
-| FR5.3.2 | Retrieve outgoing history at different time granularities (day, month, year etc…) |
-| *FR5.4* | *Track balance* |
-| FR5.4.1 | Compute total balance based on incomes and expense with respect to day, week, month, quarter, semester, and year|
-| FR5.4.2 | Retrieve current balance with respect to the current day, week, month, quarter, semester, and year|
-| FR5.4.3 | Retrieve balance history  |
-| **FR6** | **Authenticate owner** |
-| FR6.1 | Set password |
-| FR6.2 | Change password |
-| FR6.3 | Verify password |
-| FR6.4 | Encrypt password |
-| FR6.5 | Decrypt password |
-|**FR7** | **Manage notifications** |
-| FR7.1 | Notify owner of order's status change |
-| FR7.2 | Notify owner of when order status cannot be changed automatically (API not responding)|
-| FR7.3 | Notify owner when quantity of a certain product is below a owner set threshold |
-| FR7.4 | Notify owner when batch is within x days from expiration date (ISO 8601)|
-| FR7.5 | Notify owner when batch is past the expiration date (ISO 8601)|
-| FR7.6 | Notify owner when there is no internet connection |
-| FR7.7 | Notify owner when cash register is not responding |
-| FR7.8 | Delete notification |
-|**FR8**| **Manage Cash registers**|
-| FR8.1 | Add new cash register to the list of cash registers |
-| FR8.2 | Delete cash register from the list of cash registers |
+| FR4.1.1 | Create new batch in the inventory |
+| FR4.1.2 | Update batch from the inventory |
+| FR4.1.3 | Delete batch from the inventory |
+| *FR4.2* | *Create owner-defined batch list* |
+| FR4.2.1 | Retrieve batches filtered by one or more product/batch attributes |
+| *FR4.3* | *Manage `.csv`* |
+| FR4.3.1 | Import batches list from `.csv` |
+| FR4.3.2 | Export list of batches as `.csv` |
+| **FR5** | **Manage suppliers** |
+| *FR5.1* | *Manage CRUD operations* |
+| FR5.1.1 | Create new supplier |
+| FR5.1.2 | Update supplier from the list of suppliers|
+| FR5.1.3 | Delete supplier from the list of suppliers |
+| FR5.1.4 | Link supplier to one or more products|
+| FR5.1.5 | Unlink supplier from one or more products|
+| *FR5.2* | *Create owner-defined supplier list* |
+| FR5.2.1 | Retrieve suppliers list filtered by one or more product they provide |
+| FR5.2.2 | Retrieve suppliers list ranked by the number of associated purchase orders |
+| *FR5.3* | *Manage `.csv`* |
+| FR5.3.1 | Import supplier list from `.csv` |
+| FR5.3.2 | Export list of suppliers as `.csv` |
+| **FR7.1** | **Track invoices** |
+| FR7.1.2 | *Manage CRUD operations* |
+| FR7.1.2.1 | Create new invoice |
+| FR7.1.2.2 | Update invoice |
+| FR7.1.2.3 | Delete invoice |
+| FR7.1.2.3 | Link invoice to a specific order|
+| FR7.1.3 | *Create owner-defined invoice list* |
+| FR7.1.3.1 | Retrieve list of invoices filtered by one or more of their attributes |
+| *FR5.3* | *Manage `.csv`* |
+| FR5.3.1 | Import invoices list from `.csv` |
+| FR5.3.2 | Export invoices list as `.csv` |
+| **FR6** | **Manage orders** |
+| *FR6.1* | *Manage CRUD operations* |
+| FR6.1.1 | Create new order in the list of orders |
+| FR6.1.2 | Update order from the list of orders |
+| FR6.1.3 | Delete order from the list of orders |
+| FR6.1.4 | Link order to one supplier from the supplier list |
+| FR6.1.5 | Unlink order from one supplier from the supplier list|
+| *FR6.2* | *Automatically track order for supported couriers* |
+| FR6.2.1 | Check internet connection |
+| FR6.2.2 | Retrieve current order's status |
+| FR6.2.3 | Update current order's status |
+| *FR6.3* | *Create owner-defined orders list* |
+| FR6.3.1 | Retrieve list of orders filtered by one or more of their attributes |
+| *FR6.4* | *Manage `.csv`* |
+| FR6.4.1 | Import orders list from `.csv` |
+| FR6.4.2 | Export list of orders as `.csv` |
+| *FR6.5* | *Suggest order* |
+| FR6.5.1 | Retrieve products with item count below threshold |
+| FR6.5.2 | Retrieve possible supplier for products with item count below threshold |
+| FR6.5.3 | Generate order suggestion (without specifying the number of items) |
+| FR6.5.4 | Add suggested order to list of orders |
+| **FR7** | **Manage accounting** |
+| *FR7.2* | *Track incomes* |
+| FR7.2.1 | Compute incoming cash flow from sales list and refunds list at different time granularities (day, month, year, etc…)|
+| FR7.2.2 | Retrieve incoming cash flow at different time granularities (day, month, year, etc…) |
+| *FR7.3* | *Track expenses* |
+| FR7.3.1 | Compute outgoing cash flow from orders list and refunds list at different time granularities (day, month, year, etc…)||
+| FR7.3.2 | Retrieve outgoing cash flow at different time granularities (day, month, year, etc…) |
+| *FR7.4* | *Track balance* |
+| FR7.4.1 | Compute total balance based on incomes and expenses at different time granularities (day, week, month, quarter, semester, and year) |
+| FR7.4.2 | Retrieve balance at different time granularities (day, week, month, quarter, semester, and year) |
+| FR7.4.3 | Retrieve current balance |
+| **FR8** | **Authenticate owner** |
+| FR8.1 | Set password |
+| FR8.2 | Change password |
+| FR8.3 | Verify password |
+| FR8.4 | Encrypt password |
+| FR8.5 | Decrypt password |
+| **FR9** | **Manage notifications** |
+| FR9.1 | Create "order's status changed" notification |
+| FR9.2 | Create "order's status unable to be automatically updated" notification (API not responding) |
+| FR9.3 | Create "items below threshold" notification |
+| FR9.4 | Create "batch is about to expire" notification when batch is within owner-defined days from expiration date in ISO 8601 format) |
+| FR9.5 | Create "batch is expired" notification when batch is past the expiration date in ISO 8601 format |
+| FR9.6 | Create "no internet connection" notification|
+| FR9.7 | Create "cash register is not responding" notification |
+| FR9.8 | Delete notification |
+| **FR10** | **Manage cash registers** |
+| *FR10.1* | *Link with POS provider's account* |
+| FR10.1.1 | Redirect user to POS provider's authorization URL |
+| FR10.1.2 | Retrieve access token and refresh token |
+| FR10.1.3 | Encrypt access token |
+| FR10.1.4 | Retrieve new token when old token is expired |
+| *FR10.2* | *Get cash register list* |
+| FR10.2.1 | Decrypt access token |
+| FR10.2.2 | Retrieve list of cash registers using POS provider's API and access token |
+| FR10.2.3 | Update local list of cash registers |
+| *FR10.3* | *Sync catalogue* |
+| FR10.3.1 | Convert catalogue to POS provider compliant format |
+| FR10.3.2 | Push new catalogue to found cash registers |
+| FR10.3.3 | Detect unresponsive (POS API returns error message or fails to respond within default timeout threshold) cash register and update its status |
+| *FR10.4* | *Retrieve sales* |
+| FR10.4.1 | Pull sales list from found cash registers |
+| FR10.4.2 | Convert sales list to EzShop compliant format |
+| FR10.4.3 | Update item quantities in the inventory |
+| FR10.4.4 | Add sale to sales list |
+| FR10.4.5 | Detect unresponsive (POS API returns error message or fails to respond within default timeout threshold) cash register and update its status |
+| *FR10.5* | *Retrieve refunds* |
+| FR10.5.1 | Pull refunds list from found cash registers |
+| FR10.5.2 | Convert refunds list to EzShop compliant format |
+| FR10.5.3 | Update item quantities in the inventory |
+| FR10.5.4 | Add refunds to refunds list |
+| FR10.5.5 | Detect unresponsive (POS API returns error message or fails to respond within default timeout threshold) cash register and update its status |
+| *FR10.6* | *Create owner-defined list of cash registers* |
+| FR10.6.1 | Retrieve list of cash registers filtered by one or more of its attributes |
+| FR10.6.2 | Retrieve list of cash registers grouped by the POS provider's brand |
+
+
+- **Manage sales**
+    * *Create owner-defined sale list*
+        + For each owner-defined list filter sales by a specified date (ISO 8601) or time window
+        + Retrieve sales filtered by products sold
+        + Retrieve sales ranked by number of items sold per specific product
+        + Retrieve sales ranked by the sum of its item's prices
+    * *Manage `.csv`*
+        + Import batches list from `.csv`
+            + Detect import errors
+            + Detect schema mismatch
+            + Update sales
+        + Export list of batches as `.csv`
+            + Retrieve sales
+            + Create `.csv` file
+            + Detect export errors
+- **Manage refunds**
+    * *Create owner-defined refund list*
+        + For each owner-defined list filter refunds by a specified date (ISO 8601) or time window
+        + Retrieve refunds filtered by products returned
+        + Retrieve refunds ranked by number of items given back per specific product
+        + Retrieve refunds ranked by the sum of its item's prices
+    - *Manage `.csv`*
+        + Import batches list from `.csv`
+            + Detect import errors
+            + Detect schema mismatch
+            + Update refunds
+        + Export list of batches as `.csv`
+            + Retrieve refunds
+            + Create `.csv` file
+            + Detect export errors
+- **Manage catalogue**
+    * *Manage CRUD operations*
+        + Create new product in the catalogue
+        + Update product from the catalogue
+        + Delete product from the catalogue
+    * *Set product item quantity warning threshold*
+    * *Create owner-defined product list*
+        + Retrieve list of products filtered by one or more of their attributes
+        + Retrieve number of items available for a selected product
+    * *Manage `.csv`*
+        + Import products list from `.csv`
+            + Detect import errors
+            + Detect schema mismatch
+            + Update products list
+        + Export products list as `.csv`
+            + Retrieve products list
+            + Create `.csv` file
+            + Detect export errors
+- **Manage inventory**
+    * *Manage CRUD operations*
+        + Create new batch in the inventory
+        + Update batch from the inventory
+        + Delete batch from the inventory
+    * *Create owner-defined batch list*
+        + Retrieve batches filtered by one or more product/batch attributes
+    * *Manage `.csv`*
+        + Import batches list from `.csv`
+            + Detect import errors
+            + Detect schema mismatch
+            + Update inventory
+        + Export list of batches as `.csv`
+            + Retrieve batches list
+            + Create `.csv` file
+            + Detect export errors
+- **Manage invoices**
+    * *Manage CRUD operations*
+        + Create new invoice
+        + Update invoice
+        + Delete invoice
+        + Link invoice to a specific order
+    * *Create owner-defined invoice list*
+        + Retrieve list of invoices filtered by one or more of their attributes
+    * *Manage `.csv`*
+        + Import invoices list from `.csv`
+            + Detect import errors
+            + Detect schema mismatch
+            + Update invoices
+        + Export list of invoices as `.csv`
+            + Retrieve invoices
+            + Create `.csv` file
+            + Detect export errors
+- **Manage suppliers**
+    * *Manage CRUD operations*
+        + Create new supplier
+        + Update supplier
+        + Delete supplier
+        + Link supplier to one or more products
+        + Unlink supplier from one or more products
+        + Link supplier to one or more batches
+        + Unlink supplier from one or more batches
+    * *Create owner-defined supplier list*
+        + Retrieve suppliers list filtered by one or more product they provide
+        + Retrieve suppliers list ranked by number of associated purchase orders
+    * *Manage `.csv`*
+        + Import supplier list from `.csv`
+            + Detect import errors
+            + Detect schema mismatch
+            + Update suppliers
+        + Export list of suppliers as `.csv`
+            + Retrieve suppliers
+            + Create `.csv` file
+            + Detect export errors
+- **Manage Shipping companies**
+    * *Manage CRUD operations*
+        + Create new shipping company
+        + Update shipping company
+        + Delete shipping company
+        + Link shipping company to one or more orders
+        + Unlink shipping company from one or more orders
+    * *Create owner-defined shipping companies list*
+        + Retrieve shipping companies list filtered by one or more of their attributes 
+        + Retrieve shipping companies list ranked by number of associated shipments with a selected status
+    * *Manage `.csv`*
+        + Import shipping companies list from `.csv`
+            + Detect import errors
+            + Detect schema mismatch
+            + Update shipping companies list
+        + Export list of shipping companies as `.csv`
+            + Retrieve shipping companies list
+            + Create `.csv` file
+            + Detect export errors
+- **Track order**
+    * *Link with easy post account*
+        + Redirect user to authorization URL
+        + Retrieve access and refresh tokens
+        + Store access and refresh tokens securely
+        + Retrieve new token when expired
+    * *Retrieve shipment status*
+        + Retrieve tracking updates from provider API
+        + Update order's status accordingly
+- **Manage orders**
+    * *Manage CRUD operations*
+        + Create new order
+        + Update order
+        + Delete order
+        + Link order to a supplier
+        + Unlink order from a supplier
+    * *Create owner-defined orders list*
+        + Retrieve list of orders filtered by one or more attributes
+    * *Manage `.csv`*
+        + Import orders list from `.csv`
+            + Detect import errors
+            + Detect schema mismatch
+            + Update orders
+        + Export list of orders as `.csv`
+            + Retrieve invoices
+            + Create `.csv` file
+            + Detect export errors
+    * *Suggest order*
+        + Retrieve products with item count below threshold
+        + Retrieve possible supplier for products with item count below threshold
+        + Generate order suggestion
+        + Add suggested order to the list of orders
+- **Manage accounting**
+    * *Track incomes*
+        + Compute incoming cash flow at different time granularities
+        + Retrieve incoming cash flow at different time granularities
+    * *Manage incomes `.csv`*
+        + Import incomes list from `.csv`
+            + Detect import errors
+            + Detect schema mismatch
+            + Update incomes
+        + Export list of incomes as `.csv`
+            + Retrieve incomes
+            + Create `.csv` file
+            + Detect export errors
+    * *Track expenses*
+        + Compute outgoing cash flow at different time granularities
+        + Retrieve outgoing cash flow at different time granularities
+    * *Manage expenses `.csv`*
+        + Import expenses list from `.csv`
+            + Detect import errors
+            + Detect schema mismatch
+            + Update expenses
+        + Export list of expenses as `.csv`
+            + Retrieve expenses
+            + Create `.csv` file
+            + Detect export errors
+    * *Track balance*
+        + Compute total balance at different time granularities
+        + Retrieve balance at different time granularities
+        + Retrieve current balance
+- **Authenticate owner**
+    * Set password
+    * Change password
+    * Verify password
+    * Encrypt password
+- **Manage notifications**
+    * Create notification
+    * Change notification's status
+    * Delete notification
+- **Manage cash registers**
+    * *Link with POS provider’s account*
+        + Redirect user to authorization URL
+        + Retrieve access and refresh tokens
+        + Store access and refresh tokens securely
+        + Retrieve new token when expired
+    * *Get cash register list*
+        + Retrieve list of cash registers from provider API
+        + Update local list of cash registers
+    * *Sync catalogue*
+        + Convert catalogue to provider format
+        + Push new catalogue to cash registers
+        + Detect unresponsive cash registers and update status
+    * *Retrieve sales*
+        + Retrieve sales list from cash register
+        + Update inventory quantities
+        + Add sale to sales list
+        + Detect unresponsive cash registers
+    * *Retrieve refunds*
+        + Retrieve refunds list from cash register
+        + Update item quantities
+        + Add refund to refunds list
+        + Detect unresponsive cash registers
+    * *Create owner-defined cash register list*
+        + Retrieve cash registers filtered by attributes
+        + Retrieve cash registers grouped by provider brand
 
 **Design cues** 
 - The system shall store for each sale:
