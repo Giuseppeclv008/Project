@@ -355,6 +355,8 @@ system <-- shipping
         + Delete supplier
         + Link supplier to one or more products
         + Unlink supplier from one or more products
+        + Link supplier to one or more batches
+        + Unlink supplier from one or more batches
     * *Create owner-defined supplier list*
         + Retrieve suppliers list filtered by one or more product they provide
         + Retrieve suppliers list ranked by number of associated purchase orders
