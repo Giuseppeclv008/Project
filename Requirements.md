@@ -92,12 +92,10 @@ skinparam actorStyle hollow
 rectangle "EzShop" as system
 actor "Shop Owner" as shopManager
 actor "Cash register" as register
-actor "Data base supplier " as db
 actor "Shipping company" as shipping
 
 shopManager <--> system
 register --> system
-system <--> db
 system <-- shipping
 ```
 
@@ -106,7 +104,6 @@ system <-- shipping
 |   Actor   | Logical Interface | Physical Interface |
 | :-------: | :---------------: | :----------------: |
 | Shop manager | GUI | Desktop computer |
-| Data base | API | Internet connection |
 | Cash register | API | Internet connection |
 | Shipping company | API | Internet connection |
 
