@@ -371,6 +371,8 @@ Steps
 # System Design
 
 \<describe here system design>
+- EzShop Back end (cash registers comunication)
+- Windows EzShop app (business logic + front end)
 
 \<must be consistent with Context diagram>
 
