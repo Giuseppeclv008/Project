@@ -419,7 +419,7 @@ class Notification {
 }
 
 
-Balance "1" -- "0..1" Expense: > based on 
+Balance "1" -- "0..*" Expense: > based on 
 Balance "1" -- "0..*" Income: > based on
 
 Sale "0.*" -- "1.*" Product : has
