@@ -190,7 +190,7 @@ Given the values calculated in the previous sections we can finally evalute the 
 Assuming that the project will be devolped using Python as coding language, with an\
 an estimation of about *25 LOC/FP* we can forecast a total of about\
 **AFP * 25=206.75 * 25 = 5169 LOC**
-****
+** **
 
 
 
@@ -462,7 +462,7 @@ Report here the results of the three estimation approaches. The estimates may di
 
 |                                    | Estimated effort (ph) | Estimated duration (calendar time, relative)|
 | ---------------------------------- | ---------------- | ------------------ |
-| estimation by size                   |        595 ph           |                    |
-| estimation by FP |          |                    |
-| estimation by product decomposition  |                  |                    |
-| estimation by activity decomposition (Gantt) |          |                    |
+| estimation by size                   |        500 ph           |                    |
+| estimation by FP |       517 ph   |                    |
+| estimation by product decomposition  |          334 ph        |                    |
+| estimation by activity decomposition (Gantt) |       756 ph   |                    |
