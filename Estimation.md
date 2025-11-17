@@ -333,8 +333,6 @@ _total estimated calendar time is: 3 weeks_
 
 # Estimation by activity decomposition - WBS + Gantt chart
 
-###
-### Backend implementation
 
 # WBS - EZShop Project
 
@@ -451,44 +449,29 @@ _total estimated calendar time is: 3 weeks_
 ## Gantt chart
 ```mermaid
 gantt
-    title Supermarket Management Software – Team of 5
     dateFormat  YYYY-MM-DD
-    axisFormat  %d/%m
+    title EZShop Project - Gantt Chart (No Progress Bars)
 
-    section Analysis
-    Requirements Analysis     :a1, 2025-11-18, 3d
-    Function Points Review    :a2, after a1, 1d
+    section Requirements
+    Requirements Analysis           :a1, 2025-11-18, 3d
+    Function Points Review          :a2, after a1, 1d
 
     section Design
-    Architecture Design       :d1, after a2, 2d
-    Database Schema           :d2, after d1, 2d
-    API Specification         :d3, after d1, 2d
-    UI/UX Wireframes          :d4, after a2, 3d
+    Architecture Design             :d1, after a2, 2d
+    API Specification               :d3, after d1, 3d
 
-    section Backend (2 dev)
-    Core Backend Services     :b1, after d3, 10d
-    Inventory & Batches       :b2, after d3, 8d
-    POS Integration Backend   :b3, after b1, 5d
+    section Backend
+    Core Backend Services           :b1, after d3, 8d
+    POS Integration Backend         :b3, after b1, 4d
+    POS End-to-End Flow             :i2, after b3, 3d
 
-    section Frontend (1 dev)
-    UI Components             :f1, after d4, 8d
-    POS/Scanner UI            :f2, after f1, 5d
-
-    section Database (1 dev)
-    DB Implementation         :db1, after d2, 6d
-    Data Migration Scripts    :db2, after db1, 3d
-
-    section Integration
-    API–Frontend Integration  :i1, after b1, 4d
-    POS End-to-End Flow       :i2, after b3, 4d
-
-    section Testing (1 tester + others support)
-    Unit & Integration Tests  :t1, after i2, 5d
-    Acceptance Testing        :t2, after t1, 3d
+    section Testing
+    Unit & Integration Tests        :t1, after i2, 4d
+    Acceptance Testing              :t2, after t1, 3d
 
     section Deployment
-    Dockerization             :dep1, after t2, 2d
-    Deployment & Monitoring   :dep2, after dep1, 2d
+    Dockerization                   :dep1, after t2, 2d
+    Final Deployment & Monitoring   :dep2, after dep1, 3d
 ```
 
 ## Summary
