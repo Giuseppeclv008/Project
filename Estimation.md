@@ -450,6 +450,7 @@ _total estimated calendar time is: 3 weeks_
 
 ## Gantt chart
 Insert here Gantt chart
+
 ```mermaid
 gantt
     title Project Timeline
@@ -459,6 +460,7 @@ gantt
     section Documentation
     Requirement Document :req, 2025-11-18, 10d
     Design Document      :des, after req, 15d
+    Summary Report       :sum, after des, 5d
 
     section Frontend
     Desktop Front-end    :front, after des, 20d
@@ -468,6 +470,8 @@ gantt
 
     section Database
     Database             :db, after des, 5d
+
+
 Estimated duration: (calendar time)
 
 # Summary
