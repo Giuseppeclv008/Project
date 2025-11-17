@@ -1,8 +1,8 @@
 # Project Estimation
 
-Date:
+Date: 17 Nov 2025
 
-Version:
+Version: 2
 
 # Estimation approach
 
@@ -14,33 +14,14 @@ Consider the EZShop project as described in your requirements document, assume t
 
 |                                                                                                         | Estimate    |
 | ------------------------------------------------------------------------------------------------------- | --------    |
-| NC = Estimated number of classes to be developed                                                        |  11         |
-| A = Estimated average size per class, in LOC                                                            |  457        |
-| S = Estimated size of project, in LOC (= NC \* A)                                                       |  5944       |
-| E = Estimated effort, in person hours (here use productivity 10 LOC per person hour)                    |595 ph       |
-| C = Estimated cost, in euro (here use 1 person hour cost = 30 euro)                                     |17850euro    |
-| Estimated calendar time, in calendar weeks (Assume team of 5 people, 8 hours per day, 5 days per week ) |  3          |
+| NC = Estimated number of classes to be developed                                                        |  25         |
+| A = Estimated average size per class, in LOC                                                            |  200        |
+| S = Estimated size of project, in LOC (= NC \* A)                                                       |  5000       |
+| E = Estimated effort, in person hours (here use productivity 10 LOC per person hour)                    |500 ph       |
+| C = Estimated cost, in euro (here use 1 person hour cost = 30 euro)                                     |15000 euro    |
+| Estimated calendar time, in calendar weeks (Assume team of 5 people, 8 hours per day, 5 days per week ) |  2.5         |
 
 
-### classes are: 
-- User
-- Sale
-- Order
-- Product
-    - Batch
-    - item (inside either batch or product, it has the same characteristics)
-- Inventory
-- Catalogue
-- Accounting (all these below are attributes)
-    - _balance_
-    - _taxes (10% of income)_
-    - _expenses_
-    - _income_
-- Invoice
-- Product supplier (since its contact are saved and the system must use them)
-- Payment (since we save if it is pending, done, its date etc)
-- cash register
-- 
 
 # Estimation by Function Points
 In order to give a more precise forecast of the size of our project we can do an estimation using FP.\
@@ -209,6 +190,7 @@ Given the values calculated in the previous sections we can finally evalute the 
 Assuming that the project will be devolped using Python as coding language, with an\
 an estimation of about *25 LOC/FP* we can forecast a total of about\
 **AFP * 25=206.75 * 25 = 5169 LOC**
+****
 
 
 
@@ -480,7 +462,7 @@ Report here the results of the three estimation approaches. The estimates may di
 
 |                                    | Estimated effort (ph) | Estimated duration (calendar time, relative)|
 | ---------------------------------- | ---------------- | ------------------ |
-| estimation by size                   |                  |                    |
+| estimation by size                   |        595 ph           |                    |
 | estimation by FP |          |                    |
 | estimation by product decomposition  |                  |                    |
 | estimation by activity decomposition (Gantt) |          |                    |
