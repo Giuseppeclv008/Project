@@ -263,9 +263,10 @@ system <-- shipping
 | **UC10 - Export Data**              | Export data as .csv                         | Owner exports products, sales, batches or order lists as .csv |
 | **UC11 - Retrieve Data**           | Retrieve data required  by the owner        | Owner retrieves list of products, sales, orders, batches, refunds, cash registers and invoices filtered by one or more fo their attributes |
 | **UC12 - Manage cash flow**        | Retrieve incomes, outgoings and balance     | Owner retrieves incomes, outogings and balance tracked and computed by the system|     
-| **UC13 - Manage cash registers**   | add cash registers to the system            | Owner connect cash registers to the system through POS API |
+| **UC13 - Manage cash registers**   | Add cash registers to the system            | Owner connect cash registers to the system through POS API |
 | **UC14 – Get cash operation**      | Send sales and refunds                      | Cash register sends information about sales and refunds to the system |
-| **UC15 - Get Catalogue**           | Get catalogue from system                   | Cash register gets catalogue from the system |
+| **UC15 - Send Catalogue**           | Get catalogue from system                   | Cash register gets catalogue from the system |
+| **UC16 - Track Orders** |          | Get the current status of one or more orders | The system ask to the shipping company tracking service via api the current status of the order and gets it 
 ## Use case diagram
 
 \<define here UML Use case diagram UCD summarizing all use cases, and their relationships>
@@ -279,8 +280,8 @@ system <-- shipping
 |  Pre condition   | Owner is authenticated && DB services are available    |
 |  Post condition  | CRUD-type batches of products's operation is performed |
 | Nominal Scenario | - Owner creates a batches of products MI1 <br> - Owner updates a batches of products MI2 <br> - Owner deletes a batches of products MI3| 
-|     Variants     | -  Owner deletes many batches of products, filtering by products' attributes MI4 |
-|     Exception    | - Owner tries to create a batch of products with inconsistent values MI5 <br> - Owner tries to create a batches of products that is alredy in the system MI6 <br> - Owner tries to update a batches of products not present in the system MI7 <br> - Owner tries to update a batches of products with inconsisten values MI8 <br> - Owner tries to delete a batches of products not present in the system MI9|
+|     Variants     | -  Owner deletes many batches of products, filtering by products' attributes MI3V1 |
+|     Exception    | - Owner tries to create a batch of products with inconsistent values MI1E1 <br> - Owner tries to create a batches of products that is alredy in the system MI1E2 <br> - Owner tries to update a batches of products with inconsisten values MI2E1 <br>|
 
 ### Use case Manage Supplier, UC2 
 
@@ -289,7 +290,7 @@ system <-- shipping
 |  Pre condition   | Owner is authenticated && DB services are available    |
 |  Post condition  | CRUD-type suppliers's operation is performed |
 | Nominal Scenario | - Owner creates a supplier MS1 <br> - Owner updates a supplier MS2 <br> - Owner deletes a supplier MS3| 
-|     Exception    | - Owner tries to create a suppliers with inconsistent values MS4 <br> - Owner tries to create a suppliers that is alredy in the system MS5 <br> - Owner tries to update a suppliers not present in the system MS6 <br> - Owner tries to update a suppliers with inconsisten values MS7 <br> - Owner tries to delete a suppliers not present in the system MS8|
+|     Exception    | - Owner tries to create a suppliers with inconsistent values MS1E1 <br> - Owner tries to create a suppliers that is alredy in the system MS1E2 <br> - Owner tries to update a suppliers with inconsistent values MS2E2 <br>|
 
 ### Use case Manage Orders, UC3
 
@@ -298,8 +299,8 @@ system <-- shipping
 |  Pre condition   | Owner is authenticated && DB services are available    |
 |  Post condition  | CRUD-type order's operation is performed |
 | Nominal Scenario | - Owner creates a order MO1 <br> - Owner updates a order MO2 <br> - Owner deletes a order MO3| 
-|     Variants     | -  Owner deletes many orders, filtering by products' attributes MO4 |
-|     Exception    | - Owner tries to create a order with inconsistent values MO5 <br> - Owner tries to create a order that is alredy in the system MO6 <br> - Owner tries to update a order not present in the system MO7 <br> - Owner tries to update a order with inconsisten values MO8 <br> - Owner tries to delete a order not present in the system MO9|
+|     Variants     | -  Owner deletes many orders, filtering by products' attributes MO3V1 |
+|     Exception    | - Owner tries to create a order with inconsistent values MO1E1 <br> - Owner tries to create a order that is alredy in the system MO1E2 <br> - Owner tries to update a order with inconsisten values MO2E2 <br>|
 
 ### Use case Manage Invoices, UC4
 
@@ -308,23 +309,23 @@ system <-- shipping
 |  Pre condition   | Owner is authenticated && DB services are available && internet connection is available |
 |  Post condition  | CRUD-type invoice's operation is performed |
 | Nominal Scenario | - Owner creates a invoice MI1 <br> - Owner updates a invoice MI2 <br> - Owner deletes a invoice MI3| 
-|     Variants     | -  Owner deletes many invoices, filtering by products' attributes MI4 |
-|     Exception    | - Owner tries to create a invoice with inconsistent values MI5 <br> - Owner tries to create a invoice that is alredy in the system MI6 <br> - Owner tries to update a invoice not present in the system MI7 <br> - Owner tries to update a invoice with inconsisten values MI8 <br> - Owner tries to delete a invoice not present in the system MI9|
+|     Variants     | -  Owner deletes many invoices, filtering by products' attributes MI3V1 |
+|     Exception    | - Owner tries to create a invoice with inconsistent values MI1E1 <br> - Owner tries to create a invoice that is alredy in the system MI1E2 <br> - Owner tries to update a invoice with inconsisten values MI2E2 <br>|
 
 ### Use case Authenticate Owner, UC5
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   |  Owner has a password          |
+|  Pre condition   |  Owner knows a password          |
 |  Post condition  |  Owner is correctly authenticated |
-| Nominal Scenario | - Authenticate owner SP1 <br> | 
-|     Exception    | - Owner tries to authenticate with a wrong password <br> SP2    | 
+| Nominal Scenario | - Authenticate owner AO1 <br> | 
+|     Exception    | - Owner tries to authenticate with a wrong password <br> AO1E1    | 
 
-##### Scenario SP1  
+##### Scenario AO1  
 
-|  Scenario SP1  |                                                                            |
+|  Scenario AO1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Owner has a password | 
+|  Precondition  | Owner knows a password | 
 | Post condition | Owner is correctly authenticated  |
 
 Steps
@@ -335,11 +336,11 @@ Steps
 |     System     |     Check  the password                                              |           |
 |     System     |     Authenticate owner                                               |           |
 
-##### Scenario SP2 
+##### Scenario AO1E 
 
-|  Scenario SP2  |                                                                            |
+|  Scenario AO1E1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Owner has an incorrect password | 
+|  Precondition  | Owner knows an incorrect password | 
 | Post condition | Owner is not authenticated |
 
 Steps
@@ -357,12 +358,12 @@ Steps
 | :--------------: | :------------------------------------------------------------------ |
 |  Pre condition   |  Owner  is authenticated
 |  Post condition  |  Owner set a new password
-| Nominal Scenario | - Authenticate owner AU1 <br> | 
-|     Exception    | - Owner tries to set an empty password <br> AU2| 
+| Nominal Scenario | - Authenticate owner CP1 <br> | 
+|     Exception    | - Owner tries to set an invalid type of password CP1E1 <br>| 
 
-##### Scenario AU1
+##### Scenario CP1
 
-|  Scenario AU1  |                                                                            |
+|  Scenario CP1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 |  Precondition  | Owner is authenticated |
 | Post condition | Owner set a new password  |
@@ -377,9 +378,9 @@ Steps
 |     System     |     Check new password                                               |           |
 |     System     |     Save new password                                                |           |
 
-##### Scenario AU2
+##### Scenario CP1E1
 
-|  Scenario AU2  |                                                                            |
+|  Scenario CP1E1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 |  Precondition  | Owner is authenticated && Owner wants to set an invalid password           |
 | Post condition | Owner don't set a new password                                             |
@@ -402,8 +403,8 @@ Steps
 |  Pre condition   | Owner is authenticated && DB services are available && internet connection is available |
 |  Post condition  | CRUD-type operation is performed in the catalogue  |
 | Nominal Scenario | - Owner creates a product MP1 <br> - Owner updates a product MP2 <br> - Owner deletes a product MP3| 
-|     Variants     | -  Owner deletes many products, filtering by products' attributes MP4 |
-|     Exception    | - Owner tries to create a product with inconsistent values MP5 <br> - Owner tries to create a product that is alredy in the catalogue MP6 <br> - Owner tries to update a product not present in the catalogue MP7 <br> - Owner tries to update a product with inconsisten values MP8 <br> - Owner tries to delete a product not present in the catalogue MP9|
+|     Variants     | -  Owner deletes many products, filtering by products' attributes MP3V1 |
+|     Exception    | - Owner tries to create a product with inconsistent values MP1E1 <br> - Owner tries to create a product that is alredy in the catalogue MP1E2 <br> - Owner tries to update a product with inconsisten values MP2E2 <br>|
 
 ### Use case Receive Notifications, UC8
 
@@ -411,8 +412,8 @@ Steps
 | :--------------: | :------------------------------------------------------------------ |
 |  Pre condition   | Owner is authenticated && DB services are available &&  internet connection is available |
 |  Post condition  | Owner receive the notification  |
-| Nominal Scenario | - Owner is notified when an order status changes MN1 <br> - Owner is notified when a batch is expired MN2 <br> - Owner is notified when a cash is not responding MN3 <<br> - Owner is notified when a product is going to run out MN4 <br> - Owner is notified when there is no internet connection MN5| 
-|     Variants     | -  Owner is notified when a batch is about to expire MN6 <br> Owner is notified when an order status cannot be updated since API is not responding |
+| Nominal Scenario | - Owner is notified when an order status changes RN1 <br> - Owner is notified when a batch is expired RN2 <br> - Owner is notified when a cash is not responding RN3 <br> - Owner is notified when a product is going to run out RN4 <br> - Owner is notified when there is no internet connection RN5| 
+|     Variants     | - Owner is notified when an order status cannot be updated since API is not responding RN1V1 |
 
 ### Use case Import Data, UC9
 
@@ -420,19 +421,19 @@ Steps
 | :--------------: | :------------------------------------------------------------------ |
 |  Pre condition   | Owner is authenticated && DB services are available && internet connection is available && file .csv data are in the correct format|
 |  Post condition  | .csv file's data are correctly imported |
-| Nominal Scenario | - Owner import a list of product as .csv file <br> -  Owner import a list of invoices as .csv file< <br> -  Owner import a list of suppliers as .csv file <br> - Owner import a list of sales as .csv file <br> -  Owner import a list of refunds as .csv file <br> - Owner importr a list of orders as .csv file | 
-|     Exception    | - Owner import .csv file with format error |
+| Nominal Scenario | - Owner import a list of product as .csv file ID1 <br> -  Owner import a list of invoices as .csv file ID2 <br> -  Owner import a list of suppliers as .csv file ID3 <br> - Owner import a list of sales as .csv file ID4<br> -  Owner import a list of refunds as .csv file ID5<br> - Owner importr a list of orders as .csv file ID6 | 
+|     Exception    | - Owner import .csv file with format error IDE1|
 
-### Use case Export Data, UC11 
+### Use case Export Data, UC10
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
 |  Pre condition   | Owner is authenticated && DB services are available && internet connection is available && needed data are in the system|
 |  Post condition  | data are correctly exported as .csv |
-| Nominal Scenario | - Owner export a list of product as .csv file ED1 <br> -  Owner export a list of invoices as .csv file ED2 <br> -  Owner export a list of suppliers as .csv file ED3 <br> - Owner export a list of sales as .csv file ED4 <br> - Owner export a list of refunds as .csv file ED5 <br> - Owner exportr a list of orders as .csv file ED6| 
-|     Exception    | - Owner export .csv file with format error ED7|
+| Nominal Scenario | - Owner export a list of product as .csv file ED1 <br> -  Owner export a list of invoices as .csv file ED2 <br> -  Owner export a list of suppliers as .csv file ED3 <br> - Owner export a list of sales as .csv file ED4 <br> - Owner export a list of refunds as .csv file ED5 <br> - Owner export a list of orders as .csv file ED6| 
+|     Exception    | - Owner export .csv file with format error EDE1|
 
-### Use case Retrieve Data, UC12
+### Use case Retrieve Data, UC11
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :----------------------------------------------------------------- |
@@ -440,21 +441,19 @@ Steps
 |   Precondition   | Owner is authenticated && Data are in the system && BD services are available |
 |  Post condition  |  Owner retrieves the desidered list of data |
 | Nominal Scenario | Owner retrieves a list of products from the system RD1 <br> - Owner retrieves a list of sales from the system RD2 <br> - Owner retrieves a list of batches from the system RD3 <br> - Owner retrieves a list of orders from the system RD4 <br> - Owner retrieves a list of invoices from the system RD5 | 
-|     Variants     | - Owner retrieves a list of data filtered by their attributes RD6
-|    Exceptions    | - Owner selects filtering datat attribute's values that are absent RD7 |
+|     Variants     | - Owner retrieves a list of data filtered by their attributes RDV1
 
-## Use case Manage Cash Flow, UC11
+## Use case Manage Cash Flow, UC12
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
 |  Pre condition   | Owner is authenticated && DB services are available && internet connection is available|
 |  Post condition  | cash flow is correctly tracked |
-| Nominal Scenario | - Owner retrieves incomes at different time granularities MF1<br> - Owner retrieves outgoing at different time granularities MF2<br> - Owner retrieves balance at different time granularitiesMF3 <br> | 
+| Nominal Scenario | - Owner retrieves incomes at different time granularities MC1<br> - Owner retrieves outgoing at different time granularities MC2<br> - Owner retrieves balance at different time granularities MC3 <br> | 
 
+##### Scenario MC1  
 
-##### Scenario MF1  
-
-|  Scenario SP1  |                                                                            |
+|  Scenario MC1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 |  Precondition  | Every income is correctly tracked | 
 | Post condition | Owner retrieve Income |
@@ -463,10 +462,45 @@ Steps
 
 |     Actor's action      |  System action                                              | FR needed |
 | :------------: | :------------------------------------------------------------------: |:---------:|
-|     Owner      |     Autheticate (UC5)                                                |           |
 |     Owner      |     Choose time granularity                                          |           |
 |     System     |     Return the income                                                |           |
 
+
+## Use case Manage Cash Registers, UC13
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Pre condition   | Owner is authenticated && DB services are available && internet connection is available|
+|  Post condition  | Cash register's list is up to date |
+| Nominal Scenario |  - Owner add a new cash register to the list CR1 <br> - Owner updates a cash register in the list CR2 <br> - Owner deletes a cash register from the list CR3 | 
+|     Exception    | - Owner tries to add a new cash register with inconsistent values CR1E1 <br> - Owner tries to add a cash register that is alredy in the list CR1E2 <br> - Owner tries to update a cash register with inconsisten values CR2E1 |
+
+## Use case Get cash operation, UC14
+
+| Actors Involved  |                 Cash Register                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Pre condition   | Cash Registers ad on && DB services are available && lan connection is available|
+|  Post condition  | The system received new sales and refunds from the cash register|
+| Nominal Scenario |  - The system ask to the cash register sales GC1 <br> - The system ask to the cash register refunds GC2 <br> | 
+|     Exception    | - The data transfer is corrupted GCE1 <br>|
+
+## Use case Send Catalogue, UC15
+
+| Actors Involved  |                 Cash Register                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Pre condition   |  Cash Registers ad on && DB services are available && lan connection is available|
+|  Post condition  | The cash register internal catalogue is consistent with the db's|
+| Nominal Scenario | - The system sends to the cash register the updated catalogue SC1<br>| 
+|     Exception    | - The data transfer is corrupted SCE1 <br>|
+
+## Use case Track Orders, UC16
+
+| Actors Involved  |                 Shipping Company                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Pre condition   | DB services are available && internet connection is available|
+|  Post condition  | The order status is up to date |
+| Nominal Scenario | - The system ask a status update to a shipping company tracking service TO1 <br> | 
+|     Exception    | - The traking service is unreachable TOE1 <br> |
 
 ##### Scenario 1.1
 
