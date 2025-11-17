@@ -449,38 +449,55 @@ _total estimated calendar time is: 3 weeks_
 ###
 
 ## Gantt chart
-Insert here Gantt chart
-
 ```mermaid
 gantt
-    title Project Timeline
+    title Supermarket Management Software – Team of 5
     dateFormat  YYYY-MM-DD
     axisFormat  %d/%m
 
-    section Documentation
-    Requirement Document :req, 2025-11-18, 10d
-    Design Document      :des, after req, 15d
-    Summary Report       :sum, after des, 5d
+    section Analysis
+    Requirements Analysis     :a1, 2025-11-18, 3d
+    Function Points Review    :a2, after a1, 1d
 
-    section Frontend
-    Desktop Front-end    :front, after des, 20d
+    section Design
+    Architecture Design       :d1, after a2, 2d
+    Database Schema           :d2, after d1, 2d
+    API Specification         :d3, after d1, 2d
+    UI/UX Wireframes          :d4, after a2, 3d
 
-    section Backend
-    Backend              :back, after des, 40d
+    section Backend (2 dev)
+    Core Backend Services     :b1, after d3, 10d
+    Inventory & Batches       :b2, after d3, 8d
+    POS Integration Backend   :b3, after b1, 5d
 
-    section Database
-    Database             :db, after des, 5d
+    section Frontend (1 dev)
+    UI Components             :f1, after d4, 8d
+    POS/Scanner UI            :f2, after f1, 5d
 
+    section Database (1 dev)
+    DB Implementation         :db1, after d2, 6d
+    Data Migration Scripts    :db2, after db1, 3d
 
-Estimated duration: (calendar time)
+    section Integration
+    API–Frontend Integration  :i1, after b1, 4d
+    POS End-to-End Flow       :i2, after b3, 4d
 
-# Summary
+    section Testing (1 tester + others support)
+    Unit & Integration Tests  :t1, after i2, 5d
+    Acceptance Testing        :t2, after t1, 3d
+
+    section Deployment
+    Dockerization             :dep1, after t2, 2d
+    Deployment & Monitoring   :dep2, after dep1, 2d
+```
+
+## Summary
 
 Report here the results of the three estimation approaches. The estimates may differ. Discuss here the possible reasons for the difference
 
 |                                    | Estimated effort (ph) | Estimated duration (calendar time, relative)|
 | ---------------------------------- | ---------------- | ------------------ |
-| estimate by size                   |                  |                    |
+| estimation by size                   |                  |                    |
 | estimation by FP |          |                    |
-| estimate by product decomposition  |                  |                    |
-| estimate by activity decomposition (Gantt) |          |                    |
+| estimation by product decomposition  |                  |                    |
+| estimation by activity decomposition (Gantt) |          |                    |
