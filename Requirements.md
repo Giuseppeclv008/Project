@@ -699,43 +699,198 @@ Steps
 
 # Glossary
 - **Shop**
-    * The small business entity that uses the EzShop software to manage its operations, including sales, inventory, orders, and accounting. A shop typically has one owner, two or more cash registers, and several suppliers. In the current scope, EZShop menages a single shop.
-- **Sale** 
-    * An Event, identified by a unique code, that occurs every time a customer completes the purchase of one or more items. A sale record the list of items with associated quantities, the date and the total amount spent.
-- **Order** 
-    * The purchase of a collection of batches from a supplier. Orders have a defined structure and status, typically one of: processing, shipped, in transit, out of delivery, delivered and cancelled.
+    * The small business entity that uses the EzShop software to manage its operations, including sales, inventory, orders, and accounting. A shop typically has one owner, two or more cash registers, and several suppliers. In the current scope, EzShop manages a single shop.
 - **Product** 
-    * An ideal entity representing a type of product sold or stocked by the shop; not a single physical object. Each product describes the characteristics shared by all physical units of that product (e.g., 1L bottle of "GoodMilk!").
+    * An entity representing a type of product sold or stocked by the shop; not a single physical object. Each product describes the characteristics shared by all physical units of that product (e.g., 1L bottle of "GoodMilk!").
 - **Batch**
     * A batch represents a specific group of items associated with a product in the inventory. Multiple batches can exist for the same product, each identified by its own quantity and expiration date.
 - **Item**
     * An item represents a single physical unit of a product that exists in the shop’s inventory. Each item belongs to a specific batch.
-- **Inventory** 
-    * The collection of all batches (identified by code) and the name of the product they belong to. It represents the shop's overall product availability and supports search, filtering, expiration tracking and quantity monitoring.
+- **Sale** 
+    * An event, identified by a unique code, that occurs every time a customer completes the purchase of one or more items. A sale records a list of items with associated quantities, the date and the total amount spent.
+- **Refund** 
+    * An event, identified by a unique code, that occurs every time a customer successfully returns one or more items. A refund records a list of items with associated quantities, the date and the total amount owed.
 - **Catalogue**
     * The catalog is the complete collection of all product available in the shop’s system. The catalog serves as a reference for managing inventory, creating orders, and displaying available products to the user.
-- **Stats** 
-    * Aggregated or derived data generated from sales, orders, or accounting records, used to support decision-making. (e.g., Sales trends, revenue summary or supplier performance indicators)
+- **Inventory** 
+    * The collection of all batches (identified by code) and the name of the product they belong to. It represents the shop's overall product availability and supports search, filtering, expiration tracking and quantity monitoring.
+- **Supplier**
+    * A business entity providing batches to the shop. Each supplier may have identifying details such as name and P.IVA.
+- **Invoice**
+    * A formal document that records a financial transaction between the shop and a supplier or customer, serving as proof of purchase or sale.
+- **Order** 
+    * The purchase of a collection of batches from a supplier. Orders have a defined structure and status, typically one of: processing, shipped, in transit, delivered and cancelled.
+- **Income**
+    * The amount of money earned from completed sales.
+- **Expenses** 
+    * The amount of money spent by the shop to maintain it operation such as electrical bills, renting fees, wages, and products purchases.
+- **Balance**
+    * The overall financial position of the shop, calculated as the difference between total incomes and total expenses within a given period.
 - **Owner**
     * The shop holder or manager who uses the EzShop software to control sales, inventory, orders, and accounting. The real end user of the software.
 - **Cash Register**
     * A physical or digital terminal that records sales data and transmits it to the EzShop application via API.
-- **Supplier**
-    * A business entity providing batches to the shop. Each supplier may have identifying details such as name and P.IVA.
 - **Shipping company** 
     * A third-party service that delivers batches from suppliers to the shop. Some shipping company offer APIs to track delivery and shipment status.
-- **Income**
-    * The amount of money earned from completed sales.
-- **Expenses** 
-    * The amount of money spent by the shop to maintain it operation such as electrical bills, renting fees, and products purchases.
-- **Invoice**
-    * A formal document that records a financial transaction between the shop and a supplier or customer, serving as proof of purchase or sale.
-- **Balance**
-    * The overall financial position of the shop, calculated as the difference between total incomes and total expenses within a given period.
 - **Notification**
     * A system-generated message or alert that informs the shop owner about important events or conditions, such as changes in order status, low product quantity, batch expiration, or connectivity issues.
 
 
+```plantuml
+@startuml
+!pragma layout smetana
+
+class Shop {
+    + name
+    + address
+}
+
+class Product {
+    + id
+    + name
+    + description
+    + price
+    + category
+    + brand
+    + discount
+    + IVA
+}
+
+class Batch {
+    + code
+    + expirationDate
+    + productionDate
+}
+
+class Item {
+    + id
+    + status
+}
+
+class Sale {
+}
+
+class Refund {
+}
+
+class Catalogue {
+}
+
+class Inventory {
+}
+
+class Supplier {
+    + id
+    + name
+    + pIva
+    + contactInfo
+    + address
+}
+
+class Invoice {
+}
+
+class Order {
+    + id
+    + status
+    + orderDate
+    + deliveryDate
+}
+
+class Income {
+    + id
+    + amount
+    + date
+    + source
+}
+
+class Expense {
+    + id
+    + amount
+    + date
+    + source
+}
+
+class Balance {
+    + totalIncome
+    + totalExpenses
+}
+
+class Owner {
+    + id
+    + password
+}
+
+class CashRegister {
+    + id
+    + location
+    + provider
+    + accessToken
+    + refreshToken
+}
+
+class ShippingCompany {
+    + id
+    + name
+    + apiAvailable
+    + contactInfo
+}
+
+class Notification {
+    + id
+    + message
+    + date
+    + status
+    + tag
+}
+
+
+Balance  -- "0..*" Expense: > based on 
+Balance  -- "0..*" Income: > based on
+
+Sale "0.*" -- "1.*" Product : has
+Refund "0.*" -- "1.*" Product: has
+Catalogue  -- "1.*" Product:has
+Batch "0..*" --  Product: related to
+Supplier "1..*" -- "1..*" Product: provides
+
+
+(Sale, Product) .. SaleOf
+class SaleOf{
+    + quantity
+}
+(Refund, Product) .. RefundOf
+class RefundOf{
+    + quantity
+}
+
+Batch  -- "1..*" Item: > has
+
+Order  -- "1..*" Batch: > has
+Order "0..*" -- "1..*" Supplier: > made to 
+Order "0..*" -- "1..*" ShippingCompany: > delivered by 
+
+Invoice --  Order:> associated with
+
+CashRegister  -l- "0..*" Refund: > sent by
+CashRegister  -r- "0..*" Sale: > sends
+CashRegister "0..*" -d- "0,1" Catalogue: > receives
+
+Inventory  -- "0..*" Batch: > contains
+
+Income <|-- Sale
+Expense <|-- Refund
+Expense <|-- Invoice
+
+
+Owner  -- "1..*" Shop:> manages
+Owner  -r- "1..*" Notification:> interacts with
+
+Shop -- Inventory : > has
+
+
+@enduml
+```
 \<use UML class diagram to define important terms, or concepts in the domain of the application, and their relationships>
 
 \<concepts must be used consistently all over the document, ex in use cases, requirements etc>
