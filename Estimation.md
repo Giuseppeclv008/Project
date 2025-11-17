@@ -450,7 +450,7 @@ _total estimated calendar time is: 3 weeks_
 ```mermaid
 gantt
     dateFormat  YYYY-MM-DD
-    title EZShop Project - Gantt Chart (No Progress Bars)
+    title EZShop Project - Gantt Chart 
 
     section Requirements
     Requirements Analysis           :a1, 2025-11-18, 3d
