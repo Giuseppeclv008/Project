@@ -214,40 +214,58 @@ an estimation of about *25 LOC/FP* we can forecast a total of about\
 
 
 
-# Estimate by product decomposition
+# Estimation by product decomposition
 
 ###
 
 | component name                                                | Estimated effort (person hours) |
 | ------------------------------------------------------------  | ------------------------------- |
-| requirement document                                          |               50                |
-| design document                                               |               20                |
-| _Desktop front-end_                                           |               42                |
-| &nbsp;&nbsp;  UI Login-page                                   |               3                 |
-| &nbsp;&nbsp;  Dashboard page                                  |               8                 |
-| &nbsp;&nbsp;  Catalogue page                                  |               6                 |
-| &nbsp;&nbsp;  Inventory page                                  |               6                 |
-| &nbsp;&nbsp;  Sales page                                      |               5                 |
-| &nbsp;&nbsp;  Orders page                                     |               4                 |
-| &nbsp;&nbsp;  Accounting page                                 |               4                 |
-| &nbsp;&nbsp;  Profile page                                    |               3                 |
-| &nbsp;&nbsp;  Notification page                               |               3                 |
-|_Backend_                                                      |              120                |
+| _requirement document_                                        |              100                |
+| _design document_                                             |              150                |
+| _Desktop front-end_                                           |               85                |
+| &nbsp;&nbsp;  _UI Login-page_                                 |               3                 |
+| &nbsp;&nbsp;  _Dashboard page_                                |               12                |
+| &nbsp;&nbsp;  _Catalogue page_                                |               8                 |
+| &nbsp;&nbsp;&nbsp; catalogue filters and user-defined list    |               4                 |
+| &nbsp;&nbsp;&nbsp; manual insertion of the product threshold  |               4                 |
+| &nbsp;&nbsp;  _Inventory page_                                |               6                 |
+| &nbsp;&nbsp;&nbsp; inventory filters and user-defined list    |               3                 |
+| &nbsp;&nbsp;  _Sales page_                                    |               10                |
+| &nbsp;&nbsp;&nbsp; Sales filters and user-defined list        |               5                 |
+| &nbsp;&nbsp;&nbsp; refunds filters and user-defined list      |               5                 |
+| &nbsp;&nbsp;  _Orders page_                                   |               14                |
+| &nbsp;&nbsp;&nbsp; suppliers filters and user-defined list    |               5                 |
+| &nbsp;&nbsp;&nbsp; orders filters and user-defined list       |               5                 |
+| &nbsp;&nbsp;&nbsp; suggested orders tab                       |               2                 |
+| &nbsp;&nbsp;&nbsp; orders status tab                          |               2                 |
+| &nbsp;&nbsp;  _Accounting page_                               |              17                 |
+| &nbsp;&nbsp;&nbsp; invoices filters and user-defined list     |               5                 |
+| &nbsp;&nbsp;&nbsp; field to change the invoice status         |               3                 |
+| &nbsp;&nbsp;&nbsp; income data with different granularities   |               3                 |
+| &nbsp;&nbsp;&nbsp; expenses data with different granularities |               3                 |
+| &nbsp;&nbsp;&nbsp; balance data                               |               3                 |
+| &nbsp;&nbsp;  _Profile page_                                  |               5                 |
+| &nbsp;&nbsp;  _Notification section_                          |               5                 |
+| &nbsp;&nbsp;  _cash register page_                            |               5                 |
+| &nbsp;&nbsp;&nbsp; filters and user-defined list              |               5                 |
+|_Backend_                                                      |               334               |
 | &nbsp;&nbsp; _Authentication_                                 |               15                |
 | &nbsp;&nbsp;&nbsp;  set username-password                     |               3                 |
 | &nbsp;&nbsp;&nbsp;  change username-password                  |               4                 |
 | &nbsp;&nbsp;&nbsp;  verification                              |               4                 |
 | &nbsp;&nbsp;&nbsp;  encryption                                |               4                 |
-| &nbsp;&nbsp; _Csv management_                                 |               7                 |
-| &nbsp;&nbsp;&nbsp;  csv read                                  |               2                 |
-| &nbsp;&nbsp;&nbsp;  csv write                                 |               2                 |
+| &nbsp;&nbsp; _Csv management_                                 |               30                |
+| &nbsp;&nbsp;&nbsp;  csv read                                  |               5                 |
+| &nbsp;&nbsp;&nbsp;  csv write                                 |               3                 |
 | &nbsp;&nbsp;&nbsp;  csv download                              |               3                 |
+| &nbsp;&nbsp;&nbsp;  csv error detection                       |               12                |
+| &nbsp;&nbsp;&nbsp;  csv data correction                       |               7                 |
 | &nbsp;&nbsp; _Order management_                               |               20                |
 | &nbsp;&nbsp;&nbsp;  CRUD operations over orders               |               10                |
 | &nbsp;&nbsp;&nbsp;  send order request                        |               4                 |
 | &nbsp;&nbsp;&nbsp;  update order status                       |               4                 |
 | &nbsp;&nbsp;&nbsp;  csv import management                     |               6                 |
-| &nbsp;&nbsp; _API design_                                     |               10                |
+| &nbsp;&nbsp; _API integration_                                |               10                |
 | &nbsp;&nbsp; _Orders suggestion_                              |               9                 |
 | &nbsp;&nbsp;&nbsp;  retrieve low-stock products               |               2                 |
 | &nbsp;&nbsp;&nbsp;  retrieve suppliers                        |               3                 |
@@ -259,94 +277,197 @@ an estimation of about *25 LOC/FP* we can forecast a total of about\
 | &nbsp;&nbsp; _Check internet connection_                      |               2                 |
 | &nbsp;&nbsp; _Manage  Notifications_                          |               8                 |
 | &nbsp;&nbsp;&nbsp;  generate notification                     |               5                 |
-| &nbsp;&nbsp;&nbsp;  change notifcation status                 |               3                 |                                   
-| &nbsp;&nbsp; _Sales management_                               |               10                |
-| &nbsp;&nbsp;&nbsp;  read barcode                              |               3                 |
-| &nbsp;&nbsp;&nbsp;  find products                             |               3                 |
-| &nbsp;&nbsp;&nbsp;  compute discount (from 0% to 90%)         |               2                 |
-| &nbsp;&nbsp;&nbsp;  generate receipt                          |               2                 |
-| &nbsp;&nbsp;&nbsp;  save sale                                 |               2                 |
-| &nbsp;&nbsp; _Inventory management_                           |               11                |
+| &nbsp;&nbsp;&nbsp;  change notifcation status                 |               3                 |                                  
+| &nbsp;&nbsp; _Sales management_                               |               11                |
+| &nbsp;&nbsp;&nbsp;  inherit from CSV management module        |               5                 |
+| &nbsp;&nbsp;&nbsp;  implement merge between DB and CSV data   |               6                 |
+| &nbsp;&nbsp; _refunds management_                             |               13                |
+| &nbsp;&nbsp;&nbsp;  inherit from CSV management module        |               5                 |
+| &nbsp;&nbsp;&nbsp;  implement merge between DB and CSV data   |               8                 |
+| &nbsp;&nbsp; _Inventory management_                           |               22                |
 | &nbsp;&nbsp;&nbsp;  CRUD operations over batches              |               5                 |
-| &nbsp;&nbsp;&nbsp;  find batches near expiring date           |               3                 |
-| &nbsp;&nbsp;&nbsp;  find expired batches                      |               3                 |
-| &nbsp;&nbsp; _Catalogue management_                           |               7                 |
+| &nbsp;&nbsp;&nbsp;  inherit from CSV management module        |               5                 |
+| &nbsp;&nbsp;&nbsp;  implement merge between DB and CSV data   |               12                |
+| &nbsp;&nbsp; _Catalogue management_                           |               24                |
 | &nbsp;&nbsp;&nbsp;  CRUD operations over catalogue            |               5                 |
 | &nbsp;&nbsp;&nbsp;  set threshold                             |               2                 |
-| Database                                                      |               17                |
+| &nbsp;&nbsp;&nbsp;  inherit from CSV management module        |               5                 |
+| &nbsp;&nbsp;&nbsp;  implement merge between DB and CSV data   |               12                |
+| &nbsp;&nbsp; _invoice management_                             |               21                |
+| &nbsp;&nbsp;&nbsp;  CRUD operations over invoices             |               5                 |
+| &nbsp;&nbsp;&nbsp;  link invoice to a specific order          |               5                 |
+| &nbsp;&nbsp;&nbsp;  inherit from CSV management module        |               5                 |
+| &nbsp;&nbsp;&nbsp;  implement merge between DB and CSV data   |               6                 |
+| &nbsp;&nbsp; _suppliers management_                           |              23                 |
+| &nbsp;&nbsp;&nbsp;  CRUD operations over invoices             |               5                 |
+| &nbsp;&nbsp;&nbsp;  link/unlink suppliers to orders/batches   |               5                 |
+| &nbsp;&nbsp;&nbsp;  inherit from CSV management module        |               5                 |
+| &nbsp;&nbsp;&nbsp;  implement merge between DB and CSV data   |               8                 |
+| &nbsp;&nbsp; _orders management_                              |               66                |
+| &nbsp;&nbsp;&nbsp;  _track orders section_                    |               20                |
+| &nbsp;&nbsp;&nbsp;&nbsp; connection with Easy Post account    |               12                |
+| &nbsp;&nbsp;&nbsp;&nbsp; token storage, management and update |               8                 |
+| &nbsp;&nbsp;&nbsp;  CRUD operations over orders               |               5                 |
+| &nbsp;&nbsp;&nbsp;  link/unlink orders to suppliers           |               5                 |
+| &nbsp;&nbsp;&nbsp;  inherit from CSV management module        |               6                 |
+| &nbsp;&nbsp;&nbsp;  implement merge between DB and CSV data   |               12                |
+| &nbsp;&nbsp;&nbsp;  _track orders section_                    |               18                |
+| &nbsp;&nbsp;&nbsp;&nbsp; threshold detection                  |               4                 |
+| &nbsp;&nbsp;&nbsp;&nbsp; product-supplier match finding       |               4                 |
+| &nbsp;&nbsp;&nbsp;&nbsp; order suggestion generation          |               6                 |
+| &nbsp;&nbsp;&nbsp;&nbsp; order suggestion saving              |               4                 |
+| &nbsp;&nbsp; _accounting management_                          |               66                |
+| &nbsp;&nbsp;&nbsp; _income and expenses management_           |               32                |
+| &nbsp;&nbsp;&nbsp;&nbsp  inherit from CSV management module   |               12                |
+|&nbsp;&nbsp;&nbsp;&nbsp  implement merge between DB and CSV data|             20                |
+| &nbsp;&nbsp; _cash regisger management_                       |               34                |
+| &nbsp;&nbsp;&nbsp;  connection with POS                       |                14               |
+| &nbsp;&nbsp;&nbsp;  registers list creation/update            |                6                |
+| &nbsp;&nbsp;&nbsp;  catalogue synchronization logic           |                6                |
+| &nbsp;&nbsp;&nbsp;  sales/refunds list update                 |                8                |
+| Database                                                      |                30               |
+
+_total amount of estimated person hours is: 334_ 
+_total estimated calendar time is: 3 weeks_
 
 
-_since CRUD operations may be modulated, only the first time higher person hours count is considered_
-_since design can be implemented in many different ways, 20 person hours average is considered as acceptable_
-
-Estimated duration: (calendar time): 31 working days, a month and a week. 
-
-
-# Estimate by activity decomposition + Gantt chart
+# Estimation by activity decomposition - WBS + Gantt chart
 
 ###
-step 1: activities (WBS), step 2 Gantt chart
-| Activity name                                              | Estimated effort (person hours) |
-| ---------------------------------------------------------- | ------------------------------- |
-| _requirement planning_                                     |                                 |
-| &nbsp;&nbsp; define stakeholders                           |                                 |    
-| &nbsp;&nbsp; define context diagram and interfaces         |                                 |
-| &nbsp;&nbsp; research needed hardware                      |                                 |
-| &nbsp;&nbsp; analyse existing similar products             |                                 |
-| &nbsp;&nbsp; analyse existing useful APIs                  |                                 |
-| &nbsp;&nbsp; define functional requirements                |                                 |
-| &nbsp;&nbsp; define non-functional requirements            |                                 |
-| &nbsp;&nbsp; write glossary                                |                                 |
-| &nbsp;&nbsp; review glossary and requirements              |                                 |
-| &nbsp;&nbsp; define use-cases and scenarios                |                                 |
-| &nbsp;&nbsp; review use-cases and scenarios                |                                 |
-| &nbsp;&nbsp; define system design and hw-sw architecture   |                                 |
-| &nbsp;&nbsp; review requirements document                  |                                 |
-| _design planning_                                          |                                 |
-| &nbsp;&nbsp; analyse requirement document                  |                                 |
-| &nbsp;&nbsp; define architecture                           |                                 |
-| &nbsp;&nbsp; define coding and convention                  |                                 |
-| &nbsp;&nbsp;&nbsp; define repository structure             |                                 |
-| &nbsp;&nbsp;&nbsp; choose programming language             |                                 |
-| &nbsp;&nbsp;&nbsp; choose frameworks                       |                                 |
-| &nbsp;&nbsp; define DBSM                                   |                                 |
-| &nbsp;&nbsp;&nbsp; produce ER-model                        |                                 |
-| &nbsp;&nbsp;&nbsp; define tables                           |                                 |
-| &nbsp;&nbsp;&nbsp; define data integrity                   |                                 |
-| &nbsp;&nbsp;&nbsp; define migration strategies             |                                 |
-| &nbsp;&nbsp; define security                               |                                 |
-| &nbsp;&nbsp;&nbsp; define authentication management        |                                 |
-| &nbsp;&nbsp;&nbsp; define data encryption                  |                                 |
-| &nbsp;&nbsp;&nbsp; define personal data storage            |                                 |
-| &nbsp;&nbsp;&nbsp; define API and network security         |                                 |
-| &nbsp;&nbsp; define error handling                         |                                 |
-| &nbsp;&nbsp; define testing strategy                       |                                 |
+### Backend implementation
 
+# WBS - EZShop Project
 
-
-
-
-
-
-
-
-
-
-| &nbsp;&nbsp; choose API                                    |                                 |
-| &nbsp;&nbsp; define classes                                |                                 |
-| &nbsp;&nbsp; define methods                                |                                 |
-| &nbsp;&nbsp; produce UML document                          |                                 |
-
-
-
-
-
+| Activity Name                                               | Estimated Effort (person hours) |
+| ----------------------------------------------------------- | ------------------------------- |
+| _Requirement Document_                                      | 100                             |
+| _Design Document_                                           | 150                             |
+| _Desktop Front-end_                                         | 142                             |
+| &nbsp;&nbsp; _UI Login-page_                                | 3                               |
+| &nbsp;&nbsp; _Dashboard Page_                                | 12                              |
+| &nbsp;&nbsp; _Catalogue Page_                                | 16                              |
+| &nbsp;&nbsp;&nbsp;&nbsp; Catalogue filters and user-defined list | 4                         |
+| &nbsp;&nbsp;&nbsp;&nbsp; Manual insertion of the product threshold | 4                       |
+| &nbsp;&nbsp; _Inventory Page_                                | 9                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Inventory filters and user-defined list | 3                         |
+| &nbsp;&nbsp; _Sales Page_                                    | 20                              |
+| &nbsp;&nbsp;&nbsp;&nbsp; Sales filters and user-defined list | 5                              |
+| &nbsp;&nbsp;&nbsp;&nbsp; Refunds filters and user-defined list | 5                            |
+| &nbsp;&nbsp; _Orders Page_                                   | 28                              |
+| &nbsp;&nbsp;&nbsp;&nbsp; Suppliers filters and user-defined list | 5                           |
+| &nbsp;&nbsp;&nbsp;&nbsp; Orders filters and user-defined list | 5                              |
+| &nbsp;&nbsp;&nbsp;&nbsp; Suggested orders tab               | 2                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Orders status tab                  | 2                               |
+| &nbsp;&nbsp; _Accounting Page_                               | 17                              |
+| &nbsp;&nbsp;&nbsp;&nbsp; Invoices filters and user-defined list | 5                             |
+| &nbsp;&nbsp;&nbsp;&nbsp; Field to change the invoice status | 3                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Income data with different granularities | 3                           |
+| &nbsp;&nbsp;&nbsp;&nbsp; Expenses data with different granularities | 3                         |
+| &nbsp;&nbsp;&nbsp;&nbsp; Balance data                       | 3                               |
+| &nbsp;&nbsp; _Profile Page_                                  | 5                               |
+| &nbsp;&nbsp; _Notification Section_                          | 5                               |
+| &nbsp;&nbsp; _Cash Register Page_                             | 10                              |
+| &nbsp;&nbsp;&nbsp;&nbsp; Filters and user-defined list      | 5                               |
+| _Backend_                                                   | 334                             |
+| &nbsp;&nbsp; _Authentication_                                | 15                              |
+| &nbsp;&nbsp;&nbsp;&nbsp; Set username-password              | 3                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Change username-password           | 4                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Verification                       | 4                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Encryption                         | 4                               |
+| &nbsp;&nbsp; _CSV Management_                                 | 30                              |
+| &nbsp;&nbsp;&nbsp;&nbsp; CSV read                            | 5                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; CSV write                           | 3                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; CSV download                        | 3                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; CSV error detection                 | 12                              |
+| &nbsp;&nbsp;&nbsp;&nbsp; CSV data correction                 | 7                               |
+| &nbsp;&nbsp; _Order Management_                               | 20                              |
+| &nbsp;&nbsp;&nbsp;&nbsp; CRUD operations over orders        | 10                              |
+| &nbsp;&nbsp;&nbsp;&nbsp; Send order request                 | 4                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Update order status                | 4                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; CSV import management              | 6                               |
+| &nbsp;&nbsp; _API Integration_                                | 10                              |
+| &nbsp;&nbsp; _Orders Suggestion_                              | 9                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Retrieve low-stock products        | 2                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Retrieve suppliers                 | 3                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Suggest order                      | 2                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Add order to suggested ones        | 2                               |
+| &nbsp;&nbsp; _Accounting Management_                          | 4                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Manage invoices                     | 2                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Perform analysis balance-expenses   | 2                               |
+| &nbsp;&nbsp; _Check Internet Connection_                      | 2                               |
+| &nbsp;&nbsp; _Manage Notifications_                          | 8                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Generate notification              | 5                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Change notification status         | 3                               |
+| &nbsp;&nbsp; _Sales Management_                               | 11                              |
+| &nbsp;&nbsp;&nbsp;&nbsp; Inherit from CSV management module | 5                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Implement merge between DB and CSV data | 6                             |
+| &nbsp;&nbsp; _Refunds Management_                             | 13                              |
+| &nbsp;&nbsp;&nbsp;&nbsp; Inherit from CSV management module | 5                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Implement merge between DB and CSV data | 8                             |
+| &nbsp;&nbsp; _Inventory Management_                           | 22                              |
+| &nbsp;&nbsp;&nbsp;&nbsp; CRUD operations over batches       | 5                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Inherit from CSV management module | 5                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Implement merge between DB and CSV data | 12                            |
+| &nbsp;&nbsp; _Catalogue Management_                           | 24                              |
+| &nbsp;&nbsp;&nbsp;&nbsp; CRUD operations over catalogue     | 5                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Set threshold                      | 2                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Inherit from CSV management module | 5                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Implement merge between DB and CSV data | 12                            |
+| &nbsp;&nbsp; _Invoice Management_                             | 21                              |
+| &nbsp;&nbsp;&nbsp;&nbsp; CRUD operations over invoices      | 5                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Link invoice to a specific order   | 5                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Inherit from CSV management module | 5                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Implement merge between DB and CSV data | 6                             |
+| &nbsp;&nbsp; _Suppliers Management_                           | 23                              |
+| &nbsp;&nbsp;&nbsp;&nbsp; CRUD operations over invoices      | 5                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Link/unlink suppliers to orders/batches | 5                             |
+| &nbsp;&nbsp;&nbsp;&nbsp; Inherit from CSV management module | 5                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Implement merge between DB and CSV data | 8                             |
+| &nbsp;&nbsp; _Orders Management_                              | 66                              |
+| &nbsp;&nbsp;&nbsp;&nbsp; _Track Orders Section_             | 38                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Connection with Easy Post account | 12                      |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Token storage, management and update | 8                      |
+| &nbsp;&nbsp;&nbsp;&nbsp; CRUD operations over orders        | 5                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Link/unlink orders to suppliers    | 5                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Inherit from CSV management module | 6                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Implement merge between DB and CSV data | 12                             |
+| &nbsp;&nbsp;&nbsp;&nbsp; Threshold detection                | 4                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Product-supplier match finding     | 4                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Order suggestion generation       | 6                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Order suggestion saving           | 4                               |
+| &nbsp;&nbsp; _Accounting Management_                          | 66                              |
+| &nbsp;&nbsp;&nbsp;&nbsp; _Income and Expenses Management_  | 32                              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Inherit from CSV management module | 12                      |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Implement merge between DB and CSV data | 20                      |
+| &nbsp;&nbsp; _Cash Register Management_                       | 34                              |
+| &nbsp;&nbsp;&nbsp;&nbsp; Connection with POS                | 14                              |
+| &nbsp;&nbsp;&nbsp;&nbsp; Registers list creation/update     | 6                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Catalogue synchronization logic    | 6                               |
+| &nbsp;&nbsp;&nbsp;&nbsp; Sales/refunds list update          | 8                               |
+| Database                                                     | 30                              |
 
 ###
 
 ## Gantt chart
 Insert here Gantt chart
+```mermaid
+gantt
+    title Project Timeline
+    dateFormat  YYYY-MM-DD
+    axisFormat  %d/%m
 
+    section Documentation
+    Requirement Document :req, 2025-11-18, 10d
+    Design Document      :des, after req, 15d
+
+    section Frontend
+    Desktop Front-end    :front, after des, 20d
+
+    section Backend
+    Backend              :back, after des, 40d
+
+    section Database
+    Database             :db, after des, 5d
 Estimated duration: (calendar time)
 
 # Summary
@@ -356,5 +477,6 @@ Report here the results of the three estimation approaches. The estimates may di
 |                                    | Estimated effort (ph) | Estimated duration (calendar time, relative)|
 | ---------------------------------- | ---------------- | ------------------ |
 | estimate by size                   |                  |                    |
+| estimation by FP |          |                    |
 | estimate by product decomposition  |                  |                    |
 | estimate by activity decomposition (Gantt) |          |                    |
