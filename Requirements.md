@@ -359,9 +359,6 @@ class Supplier {
 }
 
 class Invoice {
-    + id
-    + date
-    + amount
 }
 
 class Order {
@@ -419,13 +416,13 @@ class Notification {
 }
 
 
-Balance "1" -- "0..*" Expense: > based on 
-Balance "1" -- "0..*" Income: > based on
+Balance  -- "0..*" Expense: > based on 
+Balance  -- "0..*" Income: > based on
 
 Sale "0.*" -- "1.*" Product : has
 Refund "0.*" -- "1.*" Product: has
-Catalogue "1" -- "1.*" Product:has
-Batch "0..*" -- "1" Product: related to
+Catalogue  -- "1.*" Product:has
+Batch "0..*" --  Product: related to
 Supplier "1..*" -- "1..*" Product: provides
 
 
@@ -438,27 +435,27 @@ class RefundOf{
     + quantity
 }
 
-Batch "1" -- "1..*" Item: > has
+Batch  -- "1..*" Item: > has
 
-Order "1" -- "1..*" Batch: > has
+Order  -- "1..*" Batch: > has
 Order "0..*" -- "1..*" Supplier: > made to 
 Order "0..*" -- "1..*" ShippingCompany: > delivered by 
 
 Invoice --  Order:> associated with
 
-CashRegister "1" -l- "0..*" Refund: > sent by
-CashRegister "1" -r- "0..*" Sale: > sends
+CashRegister  -l- "0..*" Refund: > sent by
+CashRegister  -r- "0..*" Sale: > sends
 CashRegister "0..*" -d- "0,1" Catalogue: > receives
 
-Inventory "1" -- "0..*" Batch: > contains
+Inventory  -- "0..*" Batch: > contains
 
 Income <|-- Sale
 Expense <|-- Refund
 Expense <|-- Invoice
 
 
-Owner "1" -- "1..*" Shop:> manages
-Owner "1" -r- "1..*" Notification:> interacts with
+Owner  -- "1..*" Shop:> manages
+Owner  -r- "1..*" Notification:> interacts with
 
 Shop -- Inventory : > has
 
