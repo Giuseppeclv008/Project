@@ -314,7 +314,6 @@ Steps
 class Shop {
     + name
     + address
-    + owner
 }
 
 class Product {
