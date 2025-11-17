@@ -1,5 +1,5 @@
 
-# Estimate by product decomposition
+# Estimation by product decomposition
 
 ###
 
