@@ -111,64 +111,118 @@ _since CRUD operations may be modulated, only the first time higher person hours
 _since design can be implemented in many different ways, 20 person hours average is considered as acceptable_
 
 Estimated duration: (calendar time): 31 working days, a month and a week. 
-# Estimate by Function Points 
-## External Inputs (EI)
-| ID  | Description                          | Complexity | Weight |
-|:---:|:-------------------------------------|:-----------|:-------|
-| EI1 | Read sale from cash register         | Avg        | 4      |
-| EI2 | Import sales/product/batch/order CSV | High       | 6       | 
-| EI3 | CRUD Catalogue                       | Avg        |  4      |
-| EI4 | CRUD Inventory (Batches)             | Avg        |  4      |
-| EI5 | CRUD Orders                          | Avg        |    4    |
-| EI6 | CRUD Notifications                   | Low        |    3    |
-| EI7 | CRUD Cash Registers                  | Low        |    3    |
-| EI8 | Set / Change Password                | Low        |    3    |
-| EI9 | Authenticate / Verify Password       | Avg        |    4    |
-### Total EI = 38
-
-## External Outputs (EO)
-| ID  | Description                                      | Complexity | Weight |
-|:---:|:-------------------------------------------------|:-----------|:-------|
-| EO1 | Update Catalogue to Cash Register                |    Avg        |   5     |
-| EO2 | Export lists to CSV                              |      Avg      |     5   |
-| EO3 | Send updated catalogue                           |   Avg         |    5    |
-| EO4 | Generate order suggestion                        |     High       |    7    |
-| EO5 | Compute and display balance reports              |      High      |     7   |
-| EO6 | Retrieve invoices and incomes/outgoings reports  |      Avg      |    5    |
-### Total EO = 34
-
-## External Inquiries (EQ)
+# External Inputs (EI)
 | ID  | Description                                         | Complexity | Weight |
-|:---:|:----------------------------------------------------|:-----------|:-------|
-| EQ1 | Retrieve filtered sales/products/batches/orders/invoices |   Avg         |    4    |
-| EQ2 | Retrieve ranked sales                               |     Avg       |   4     |
-| EQ3 | Retrieve number of items available per product       |     Low       |    3    |
-| EQ4 | Retrieve order status                               |    Low        |    3    |
-| EQ5 | Retrieve income/expense/balance history             |      Avg      |   4     |
-### Total EQ = 18
+|:---:|:----------------------------------------------------|:-----------|:-------:|
+| EI1 | Read sale from cash register                        | Avg        | 4      |
+| EI2 | Import sales/product/batch/order CSV                | High       | 6      |
+| EI3 | CRUD Catalogue                                      | Avg        | 4      |
+| EI4 | CRUD Inventory (Batches)                            | Avg        | 4      |
+| EI5 | CRUD Orders                                         | Avg        | 4      |
+| EI6 | CRUD Notifications                                  | Low        | 3      |
+| EI7 | CRUD Cash Registers                                 | Low        | 3      |
+| EI8 | Set / Change Password                               | Low        | 3      |
+| EI9 | Authenticate / Verify Password                      | Avg        | 4      |
+| EI10| Import products list from .csv                      | High       | 6      |
+| EI11| Import batches list from .csv                       | High       | 6      |
+| EI12| Import orders list from .csv                        | High       | 6      |
+| EI13| Import refunds list from .csv                       | High       | 6      |
+| EI14| Import suppliers list from .csv                     | Avg        | 4      |
+| EI15| Import invoices list from .csv                      | Avg        | 4      |
+| EI16| Link POS provider (redirect to auth URL)            | Avg        | 4      |
+| EI17| Retrieve access & refresh token (POS)               | Avg        | 4      |
+| EI18| Encrypt access token / store securely               | Avg        | 4      |
+| EI19| Retrieve new token when expired (POS)               | Avg        | 4      |
+| EI20| Push catalogue to cash register (convert + send)    | Avg        | 4      |
+| EI21| Pull sales list from cash registers (manual/API)    | Avg        | 4      |
+| EI22| Detect import errors / schema mismatch (CSV import) | Low        | 3      |
+| EI23| Add suggested order to orders list                  | High       | 6      |
 
-## External Interface Files (EIF)
-| ID   | Description             | Complexity | Weight |
-|:----:|:------------------------|:-----------|:-------|
-| EIF1 | Cash register API data  |    Avg        |    7    |
-| EIF2 | Supplier API data       |    Avg        |    7    |
-| EIF3 | External CSV files      |    Low        |    5    |
-### Total EIF = 19
+**Total EI = 103**
 
-## Internal Logical Files (ILF)
-| ID   | Description                | Complexity | Weight |
-|:----:|:---------------------------|:-----------|:-------|
-| ILF1 | Sales                      |    Avg        |    10    |
-| ILF2 | Catalogue                  |    Avg        |    10    |
-| ILF3 | Inventory (Batches)        |     Avg       |    10    |
-| ILF4 | Orders                     |    Avg        |    10    |
-| ILF5 | Invoices                   |     Avg       |   10     |
-| ILF6 | Accounting data            |    Avg        |   10     |
-| ILF7 | Users / Owner credentials  |     Low       |   7     |
-| ILF8 | Notifications              |     Low      |   7     |
-| ILF9 | Cash Registers list        |     Low       |    7    |
-### Total ILF = 81
+---
 
+# External Outputs (EO)
+| ID  | Description                                               | Complexity | Weight |
+|:---:|:----------------------------------------------------------|:-----------|:------:|
+| EO1 | Update Catalogue to Cash Register                         | Avg        | 5      |
+| EO2 | Export lists to CSV                                       | Avg        | 5      |
+| EO3 | Send updated catalogue                                    | Avg        | 5      |
+| EO4 | Generate order suggestion                                 | High       | 7      |
+| EO5 | Compute and display balance reports                       | High       | 7      |
+| EO6 | Retrieve invoices and incomes/outgoings reports           | Avg        | 5      |
+| EO7 | Export products list as .csv                              | Avg        | 5      |
+| EO8 | Export batches list as .csv                               | Avg        | 5      |
+| EO9 | Export refunds list as .csv                               | Avg        | 5      |
+| EO10| Export orders list as .csv                                | Avg        | 5      |
+| EO11| Export suppliers list as .csv                             | Avg        | 5      |
+| EO12| Export invoices list as .csv                              | Avg        | 5      |
+| EO13| Send confirmation / notification after catalogue push     | Avg        | 5      |
+
+**Total EO = 69**
+
+---
+
+# External Inquiries (EQ)
+| ID  | Description                                                       | Complexity | Weight |
+|:---:|:------------------------------------------------------------------|:-----------|:------:|
+| EQ1 | Retrieve filtered sales/products/batches/orders/invoices          | Avg        | 4      |
+| EQ2 | Retrieve ranked sales                                             | Avg        | 4      |
+| EQ3 | Retrieve number of items available per product                    | Low        | 3      |
+| EQ4 | Retrieve order status                                             | Low        | 3      |
+| EQ5 | Retrieve income/expense/balance history                           | Avg        | 4      |
+| EQ6 | Retrieve filtered refunds / refunds by product                    | Avg        | 4      |
+| EQ7 | Retrieve ranked refunds (by items / amount)                       | Avg        | 4      |
+| EQ8 | Retrieve suppliers list filtered by product                       | Avg        | 4      |
+| EQ9 | Retrieve suppliers ranked by associated purchase orders           | Avg        | 4      |
+| EQ10| Retrieve shipping companies filtered by attributes                | Avg        | 4      |
+| EQ11| Retrieve shipment/tracking status from courier API                | Avg        | 4      |
+| EQ12| Retrieve products below threshold (for suggestions)               | Avg        | 4      |
+
+**Total EQ = 46**
+
+---
+
+# External Interface Files (EIF)
+| ID   | Description                      | Complexity | Weight |
+|:----:|:----------------------------------|:-----------|:------:|
+| EIF1 | Cash register API data            | Avg        | 7      |
+| EIF2 | Supplier API data                 | Avg        | 7      |
+| EIF3 | External CSV files                | Low        | 5      |
+| EIF4 | Shipping / Courier API data       | Avg        | 7      |
+
+**Total EIF = 26**
+
+---
+
+# Internal Logical Files (ILF)
+| ID   | Description                        | Complexity | Weight |
+|:----:|:-----------------------------------|:-----------|:------:|
+| ILF1 | Sales                              | Avg        | 10     |
+| ILF2 | Catalogue                          | Avg        | 10     |
+| ILF3 | Inventory (Batches)                | Avg        | 10     |
+| ILF4 | Orders                             | Avg        | 10     |
+| ILF5 | Invoices                           | Avg        | 10     |
+| ILF6 | Accounting data                    | Avg        | 10     |
+| ILF7 | Users / Owner credentials          | Low        | 7      |
+| ILF8 | Notifications                      | Low        | 7      |
+| ILF9 | Cash Registers list                | Low        | 7      |
+| ILF10| Refunds                            | Avg        | 10     |
+| ILF11| Suppliers                          | Avg        | 10     |
+| ILF12| Shipping Companies                 | Avg        | 10     |
+
+**Total ILF = 111**
+
+---
+
+# Total UFP
+- EI = 103  
+- EO = 69  
+- EQ = 46  
+- EIF = 26  
+- ILF = 111  
+
+**Grand Total = 355 UFP**
 
 
 
