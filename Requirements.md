@@ -262,7 +262,7 @@ system <-- shipping
 | **UC9 - Import Data**              | Import data as .csv                         | Owner imports products, sales, batches or order lists as .csv | 
 | **UC10 - Export Data**              | Export data as .csv                         | Owner exports products, sales, batches or order lists as .csv |
 | **UC11 - Retrieve Data**           | Retrieve data required  by the owner        | Owner retrieves list of products, sales, orders, batches, refunds, cash registers and invoices filtered by one or more fo their attributes |
-| **UC12 - Manage cash flow**        | Retrieve incomes, outgoings and balance     | Owner retrieves incomes, outogings and balance tracked and computed by the system|     
+| **UC12 - Manage accounting**        | Retrieve incomes, expenses and balance     | Owner retrieves incomes, outogings and balance tracked and computed by the system|     
 | **UC13 - Manage cash registers**   | Add cash registers to the system            | Owner connect cash registers to the system through POS API |
 | **UC14 – Manage Sales and Refunds**      | Send sales and refunds                      | The system sends api polling every 2 minutes asking to cash registers to send their stored sales and refunds |
 | **UC15 - Get Catalogue**           | Get catalogue from system                   | The system sends api polling every day at 6.00 a.m. to update the cash register's internal catalogue |
@@ -280,49 +280,74 @@ system <-- shipping
 |  Precondition   | Owner is authenticated && DB services are available    |
 |  Post condition  | CRUD-type batches of products's operation is performed |
 | Nominal Scenario | - Owner creates a batches of products MI1 <br> - Owner updates a batches of products MI2 <br> - Owner deletes a batches of products MI3| 
+|     Exception    | - Owner tries to create a batches of products that is alredy in the system MI1E1 <br> |
 
-##### Scenario MI1  
+
+### Scenario MI1
 
 |  Scenario MI1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Owner is authenticated && DB services are available | 
-| Post condition | A new batch is inserted in the inventory|
+| Precondition   | Owner is authenticated && DB services are available                        |
+| Post condition | A new batch is inserted in the inventory                                   |
 
-Steps
+#### Steps
 
-|     Actor's action      |  System action                                              | FR needed |
-| :---------------------------------------:|:------------------------------------------------------------------: |:---------:|
-|     Request to create a new batch        | Ask to insert parameters launching a data-entry dialog                                          |           |
-|     Insert batch parameters              | Create and insert a new batch in the DB using Owner parameters      |           |                                                   
+| Actor's Action                                  | System Action                                                      | FR needed |
+|--------------------------------------------------|--------------------------------------------------------------------|-----------|
+| Owner requests to create a new batch             | System opens a data-entry dialog requesting batch parameters       |           |
+| Owner enters batch parameters                    |                                                                    |           |
+|                                                  | System creates and inserts a new batch in the DB using the parameters |        |
+                                        
 
-##### Scenario MI2 
+### Scenario MI2 
 
 |  Scenario MI2  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Owner retrieve batch to update                                             | 
-| Post condition | A batch in the inventory is updated                                        |
+| Precondition   | Owner is authenticated && DB services are available                                         |
+| Post condition | The selected batch is updated in the inventory                              |
 
-Steps
+#### Steps
 
-|     Actor's action                       |  System action                                              | FR needed |
-| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
-|     Request to update a batch            | Ask to insert parameters launching a data-entry dialog                                           |           |
-|     modify the batch parameters          | update the batch in the DB using Owner parameters                    |           |                                                   
+| Actor's Action                                  | System Action                                                      | FR needed |
+|--------------------------------------------------|--------------------------------------------------------------------|-----------|
+| Owner requests to update a batch                 | System opens a data-entry dialog requesting updated parameters     |           |
+| Owner modifies batch parameters                  |                                                                    |           |
+|                                                  | System updates the batch in the DB using the new parameters        |           |
 
 
-##### Scenario MI3 
+### Scenario MI3 
 
-|  Scenario MI1  |                                                                            |
+|  Scenario MI3  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Owner retrieve batch to delete                                             | 
-| Post condition | Batch is deleted from the inventory                                        |
+| Precondition   | Owner is authenticated && DB services are available                                         |
+| Post condition | The batch is deleted from the inventory                                     |
 
-Steps
+#### Steps
 
-|     Actor's action                       |  System action                                              | FR needed |
-| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
-|     Request to delete a batch            | Delete the batch from the DB                                         |           |
-                                               
+| Actor's Action                                  | System Action                                                      | FR needed |
+|--------------------------------------------------|--------------------------------------------------------------------|-----------|
+| Owner requests to delete a batch                 |                                                                    |           |
+|                                                  | System deletes the batch from the DB                               |           |
+
+### Scenario MI1E1
+
+|  Scenario MI1E1 |                                                                            |
+| :-------------: | :------------------------------------------------------------------------: |
+| Precondition    | Owner is authenticated && DB services are available                        |
+| Post condition  | No new batch is created          |
+
+#### Steps
+
+| Actor's Action                                  | System Action                                                      | FR needed |
+|--------------------------------------------------|--------------------------------------------------------------------|-----------|
+| Owner requests to create a new batch             | System opens a data-entry dialog requesting batch parameters       |           |
+| Owner enters batch parameters                    |                                                                    |           |
+|                                                  | System checks if a batch with the same identifying values exists   |           |
+|                                                  | System detects the batch already exists                            |           |
+|                                                  | System rejects the creation and displays an error message          |           |
+
+
+
 
 ## Use case Manage Supplier, UC2 
 
@@ -330,51 +355,71 @@ Steps
 | :--------------: | :------------------------------------------------------------------ |
 |  Precondition   | Owner is authenticated && DB services are available    |
 |  Post condition  | CRUD-type suppliers's operation is performed |
-| Nominal Scenario | - Owner creates a supplier MS1 <br> - Owner updates a supplier MS2 <br> - Owner deletes a supplier MS3| 
-| Variants         | 
+| Nominal Scenario | - Owner creates a supplier MS1 <br> - Owner updates a supplier MS2 <br> - Owner deletes a supplier MS3|  
+|     Exception    | - Owner tries to create a supplier that is alredy in the system MS1E1 <br> |
 
-##### Scenario MS1  
+### Scenario MS1  
 
 |  Scenario MS1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Owner is authenticated && DB services are available | 
-| Post condition | A new supplier is inserted in the inventory|
+| Precondition   | Owner is authenticated && DB services are available                        |
+| Post condition | A new supplier is inserted in the system                                    |
 
-Steps
+#### Steps
 
-|     Actor's action      |  System action                                              | FR needed |
-| :---------------------------------------:|:------------------------------------------------------------------: |:---------:|
-|     Request to create a new supplier        | Ask to insert parameters launching a data-entry dialog                                       |           |
-|     Insert supplier parameters              | Create and insert a new supplier in the DB using Owner parameters|           |                                                   
+| Actor's Action                        | System Action                                                       | FR needed |
+|----------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to create a new supplier| System opens a data-entry dialog requesting supplier parameters     |           |
+| Owner inserts supplier parameters      |                                                                     |           |
+|                                        | System creates and inserts a new supplier in the DB                 |           |
 
-##### Scenario MS2 
+### Scenario MS2 
 
 |  Scenario MS2  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Owner retrieve supplier to update                                          | 
-| Post condition | A supplier in the inventory is updated                                     |
+| Precondition   | Owner is authenticated && DB services are available                                      |
+| Post condition | The selected supplier is updated in the system                             |
 
-Steps
+#### Steps
 
-|     Actor's action                       |  System action                                                       | FR needed |
-| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
-|     Request to update a supplier         | Ask to insert parameters launching a data-entry dialog                                           |           |
-|     modify the supplier parameters       | update the supplier in the DB using Owner parameters                 |           |                                                   
+| Actor's Action                        | System Action                                                       | FR needed |
+|----------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to update a supplier    | System opens a data-entry dialog requesting new parameters          |           |
+| Owner modifies supplier parameters     |                                                                     |           |
+|                                        | System updates the supplier in the DB using the new parameters      |           |
 
 
-##### Scenario MS3 
+### Scenario MS3 
 
 |  Scenario MS3  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Owner retrieve supplier to delete                                          | 
-| Post condition | Supplier is deleted from the inventory                                     |
+| Precondition   | Owner is authenticated && DB services are available                                      |
+| Post condition | The supplier is deleted from the system                                     |
 
-Steps
+#### Steps
 
-|     Actor's action                       |  System action                                                       | FR needed |
-| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
-|     Request to delete a supplier         | Delete the supplier from the DB                                      |           |
-                                               
+| Actor's Action                        | System Action                                                       | FR needed |
+|----------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to delete a supplier    |                                                                     |           |
+|                                        | System deletes the supplier from the DB                             |           |
+
+### Scenario MS1E1
+
+|  Scenario MS1E1 |                                                                            |
+| :-------------: | :------------------------------------------------------------------------: |
+| Precondition    | Owner is authenticated && DB services are available                        |
+| Post condition  | No new supplier is created |
+
+#### Steps
+
+| Actor's Action                        | System Action                                                       | FR needed |
+|----------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to create a new supplier| System opens a data-entry dialog requesting supplier parameters     |           |
+| Owner inserts supplier parameters      |                                                                     |           |
+|                                        | System checks if supplier already exists in the DB                  |           |
+|                                        | System detects duplication                                           |           |
+|                                        | System rejects the creation and displays an error message            |           |
+
 
 
 
@@ -385,49 +430,72 @@ Steps
 |  Precondition   | Owner is authenticated && DB services are available    |
 |  Post condition  | CRUD-type order's operation is performed |
 | Nominal Scenario | - Owner creates a order MO1 <br> - Owner updates a order MO2 <br> - Owner deletes a order MO3| 
+|     Exception    | - Owner tries to create an order that is alredy in the system MO1E1 <br> |
 
-##### Scenario MO1  
+### Scenario MO1  
 
 |  Scenario MO1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Owner is authenticated && DB services are available | 
-| Post condition | A new order is inserted in the inventory|
+| Precondition   | Owner is authenticated && DB services are available                        |
+| Post condition | A new order is inserted in the inventory                                   |
 
-Steps
+#### Steps
 
-|     Actor's action      |  System action                                              | FR needed |
-| :---------------------------------------:|:------------------------------------------------------------------: |:---------:|
-|     Request to create a new order        | Ask to insert parameters launching a data-entry dialog                                       |           |
-|     Insert order parameters              | Create and insert a new order in the DB using Owner parameters|           |                                                   
+| Actor's Action                        | System Action                                                       | FR needed |
+|----------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to create a new order   | System opens a data-entry dialog requesting order parameters        |           |
+| Owner inserts order parameters         |                                                                     |           |
+|                                        | System creates and inserts a new order in the DB                   |           |
 
-##### Scenario MO2 
+
+### Scenario MO2 
 
 |  Scenario MO2  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Owner retrieve order to update                                             | 
-| Post condition | A order in the inventory is updated                                        |
+| Precondition   | Owner is authenticated && DB services are available                                        |
+| Post condition | The selected order is updated in the inventory                             |
 
-Steps
+#### Steps
 
-|     Actor's action                       |  System action                                                       | FR needed |
-| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
-|     Request to update a order            |  Ask to insert parameters launching a data-entry dialog              |           |
-|     modify the order parameters          | update the order in the DB using Owner parameters                    |           |                                                   
+| Actor's Action                        | System Action                                                       | FR needed |
+|----------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to update an order      | System opens a data-entry dialog requesting updated parameters      |           |
+| Owner modifies the order parameters    |                                                                     |           |
+|                                        | System updates the order in the DB using the new parameters         |           |
 
 
-##### Scenario MO3 
+### Scenario MO3 
 
 |  Scenario MO3  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Owner retrieve order to delete                                             | 
-| Post condition | Order is deleted from the inventory                                        |
+| Precondition   | Owner is authenticated && DB services are available                                      |
+| Post condition | The order is deleted from the inventory                                     |
 
-Steps
+#### Steps
 
-|     Actor's action                       |  System action                                                       | FR needed |
-| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
-|     Request to delete a order         | Delete the order from the DB                                            |           |
-                                               
+| Actor's Action                        | System Action                                                       | FR needed |
+|----------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to delete the order     |                                                                     |           |
+|                                        | System deletes the order from the DB                                |           |
+
+### Scenario MO1E1
+
+|  Scenario MO1E1 |                                                                            |
+| :-------------: | :------------------------------------------------------------------------: |
+| Precondition    | Owner is authenticated && DB services are available                        |
+| Post condition  | No new order is created    |
+
+#### Steps
+
+| Actor's Action                        | System Action                                                       | FR needed |
+|----------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to create a new order   | System opens a data-entry dialog requesting order parameters        |           |
+| Owner inserts order parameters         |                                                                     |           |
+|                                        | System checks if the order already exists in the DB                |           |
+|                                        | System detects duplication                                           |           |
+|                                        | System rejects the creation and displays an error message           |           |
+
+
 ### Use case Manage Invoices, UC4
 
 | Actors Involved  |                 Owner                                                |
@@ -435,50 +503,69 @@ Steps
 |  Precondition   | Owner is authenticated && DB services are available && internet connection is available |
 |  Post condition  | CRUD-type invoice's operation is performed |
 | Nominal Scenario | - Owner creates a invoice MI1 <br> - Owner updates a invoice MI2 <br> - Owner deletes a invoice MI3| 
+|     Exception    | - Owner tries to create an invoice that is alredy in the system MI1E1 <br> |
 
-##### Scenario MI1  
+### Scenario MI1  
 
 |  Scenario MI1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Owner is authenticated && DB services are available | 
-| Post condition | A new invoice is inserted in the inventory|
+| Precondition   | Owner is authenticated && DB services are available                        |
+| Post condition | A new invoice is inserted in the inventory                                 |
 
-Steps
+#### Steps
 
-|     Actor's action      |  System action                                              | FR needed |
-| :---------------------------------------:|:------------------------------------------------------------------: |:---------:|
-|     Request to create a new invoice        |  Ask to insert parameters launching a data-entry dialog           |           |
-|     Insert invoice parameters              | Create and insert a new invoice in the DB using Owner parameters  |           |                                                   
+| Actor's Action                          | System Action                                                       | FR needed |
+|------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to create a new invoice   | System opens a data-entry dialog requesting invoice parameters      |           |
+| Owner inserts invoice parameters         |                                                                     |           |
+|                                          | System creates and inserts a new invoice in the DB                  |           |
 
-##### Scenario MI2 
+### Scenario MI2 
 
 |  Scenario MI2  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Owner retrieve invoice to update                                           | 
-| Post condition | A invoice in the inventory is updated                                      |
+| Precondition   | Owner is authenticated && DB services are available                                       |
+| Post condition | The selected invoice is updated in the system                               |
 
-Steps
+#### Steps
 
-|     Actor's action                       |  System action                                                       | FR needed |
-| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
-|     Request to update a invoice            |  Ask to insert parameters launching a data-entry dialog            |           |
-|     modify the invoice parameters          | update the invoice in the DB using Owner parameters                |           |                                                   
+| Actor's Action                          | System Action                                                       | FR needed |
+|------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to update an invoice      | System opens a data-entry dialog requesting updated parameters      |           |
+| Owner modifies the invoice parameters    |                                                                     |           |
+|                                          | System updates the invoice in the DB using the new parameters       |           |
 
 
-##### Scenario MI3 
+### Scenario MI3 
 
 |  Scenario MI3  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Owner retrieve invoice to delete                                             | 
-| Post condition | Invoice is deleted from the inventory                                        |
+| Precondition   |  Owner is authenticated && DB services are available                                        |
+| Post condition | The invoice is deleted from the system                                      |
 
-Steps
+#### Steps
 
-|     Actor's action                       |  System action                                                       | FR needed |
-| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
-|     Request to delete a invoice          | Delete the invoice from the DB                                       |           |
- 
+| Actor's Action                          | System Action                                                       | FR needed |
+|------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to delete an invoice      |                                                                     |           |
+|                                          | System deletes the invoice from the DB                               |           |
 
+### Scenario MI1E1
+
+|  Scenario MI1E1 |                                                                            |
+| :-------------: | :------------------------------------------------------------------------: |
+| Precondition    | Owner is authenticated && DB services are available                        |
+| Post condition  | No new invoice is created; system notifies that the invoice already exists |
+
+#### Steps
+
+| Actor's Action                          | System Action                                                       | FR needed |
+|------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to create a new invoice   | System opens a data-entry dialog requesting invoice parameters      |           |
+| Owner inserts invoice parameters         |                                                                     |           |
+|                                          | System checks if the invoice already exists in the DB               |           |
+|                                          | System detects duplication                                           |           |
+|                                          | System rejects creation and displays an error message               |           |
 
 ## Use case Authenticate Owner, UC5
 
@@ -493,30 +580,36 @@ Steps
 
 |  Scenario AO1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Owner knows the correct password | 
-| Post condition | Owner is correctly authenticated  |
+| Precondition   | Owner knows the correct password                                           |
+| Post condition | Owner is correctly authenticated                                            |
 
 #### Steps
 
-|     Actor's action           |  System action                                                       | FR needed |
-| :--------------------------: | :------------------------------------------------------------------: |:---------:|
-|                              |      Ask to insert parameters launching a data-entry dialog          |           |
-|   Insert the password        |     Check  the password                                              |           |
-|                              |     Authenticate owner                                               |           |
+| Actor's Action                       | System Action                                                       | FR needed |
+|---------------------------------------|---------------------------------------------------------------------|-----------|
+|                                       | System asks the Owner to insert the password (data-entry dialog)    |           |
+| Owner inserts the password            |                                                                     |           |
+|                                       | System checks the password                                          |           |
+|                                       | System authenticates the Owner                                      |           |
+
 
 ### Scenario AO1E 
 
-|  Scenario AOE1  |                                                                            |
-| :------------: | :------------------------------------------------------------------------:   |
-|  Precondition  | Owner knows an incorrect password                                            | 
-| Post condition | Owner is not authenticated                                                   |
+|  Scenario AOE1 |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner knows an incorrect password                                           |
+| Post condition | Owner is not authenticated                                                  |
 
-|     Actor's action           |  System action                                                       | FR needed |
-| :--------------------------: | :------------------------------------------------------------------: |:---------:|
-|                              |     Ask owner to insert the password, launching a data-entry dialog  |           |
-|   Insert the password        |     Check  the password                                              |           |
-|                              |     inform the user the password is not correct                      |           |
-|                              |     Don't authenticate owner                                           |           |
+#### Steps
+
+| Actor's Action                       | System Action                                                       | FR needed |
+|---------------------------------------|---------------------------------------------------------------------|-----------|
+| —                                     | System asks the Owner to insert the password (data-entry dialog)    |           |
+| Owner inserts the password            |                                                                     |           |
+|                                       | System checks the password                                          |           |
+|                                       | System informs the Owner that the password is incorrect             |           |
+|                                       | System does **not** authenticate the Owner                          |           |
+
 
 
 ## Use case Change Password, UC6
@@ -532,32 +625,34 @@ Steps
 
 |  Scenario CP1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Owner is authenticated |
-| Post condition | Owner set a new password  |
+| Precondition   | Owner is authenticated                                                     |
+| Post condition | Owner sets a new valid password                                            |
 
 #### Steps
 
-|     Actor's action               |  System action                                                       | FR needed |
-| :------------------------------: | :------------------------------------------------------------------: |:---------:|
-|   Request to change the password |    launching a data-entry dialog                                     |           |
-|   Insert the password            |     Validate  the password                                           |           |
-|                                  |     Change the password                                              |           |
+| Actor's Action                       | System Action                                                       | FR needed |
+|---------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to change password     | System opens a data-entry dialog                                    |           |
+| Owner inserts the new password        |                                                                     |           |
+|                                       | System validates the password                                       |           |
+|                                       | System changes the password                                         |           |
 
 ### Scenario CP1E1
 
-|  Scenario CP1E1  |                                                                            |
-| :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Owner is authenticated && Owner wants to set an invalid password           |
-| Post condition | Owner don't set a new password                                             |
+|  Scenario CP1E1 |                                                                            |
+| :-------------: | :------------------------------------------------------------------------: |
+| Precondition    | Owner is authenticated && Owner inserts an invalid password                |
+| Post condition  | Password is not changed                                                    |
 
-steps 
+#### Steps
 
-|     Actor's action               |  System action                                                       | FR needed |
-| :------------------------------: | :------------------------------------------------------------------: |:---------:|
-|   Request to change the password |     Ask to insert parameters launching a data-entry dialog           |           |
-|   Insert the password            |     Validate  the password                                           |           |
-|                                  |     Inform user the password is not correct                          |           |
-|                                  |     Don't change the password since it is not valid                  |           |
+| Actor's Action                       | System Action                                                       | FR needed |
+|---------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to change password     | System opens a data-entry dialog                                    |           |
+| Owner inserts the new (invalid) password |                                                                   |           |
+|                                       | System validates the password                                       |           |
+|                                       | System informs the Owner that the password is invalid               |           |
+|                                       | System does **not** change the password                             |           |
 
 
 
@@ -568,48 +663,71 @@ steps
 |  Precondition   | Owner is authenticated && DB services are available && internet connection is available |
 |  Post condition  | CRUD-type operation is performed in the catalogue  |
 | Nominal Scenario | - Owner creates a product MP1 <br> - Owner updates a product MP2 <br> - Owner deletes a product MP3| 
+|     Exception    | - Owner tries to create a product that is alredy in the system MP1E1 <br> |
 
-##### Scenario MP1  
+### Scenario MP1  
 
 |  Scenario MP1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Owner is authenticated && DB services are available | 
-| Post condition | A new product is inserted in the inventory|
+| Precondition   | Owner is authenticated && DB services are available                        |
+| Post condition | A new product is inserted in the catalogue                                 |
 
-Steps
+#### Steps
 
-|     Actor's action      |  System action                                              | FR needed |
-| :---------------------------------------:|:------------------------------------------------------------------: |:---------:|
-|     Request to create a new product        |  Ask to insert parameters launching a data-entry dialog           |           |
-|     Insert product parameters              | Create and insert a new product in the DB using Owner parameters|           |                                                   
+| Actor's Action                          | System Action                                                       | FR needed |
+|------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to create a new product   | System opens a data-entry dialog requesting product parameters      |           |
+| Owner inserts product parameters         |                                                                     |           |
+|                                          | System creates and inserts a new product in the DB                  |           |
+                                                   
 
-##### Scenario MP2 
+### Scenario MP2 
 
 |  Scenario MP2  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Owner retrieve product to update                                             | 
-| Post condition | A product in the inventory is updated                                        |
+| Precondition   | Owner is authenticated && DB services are available                                      |
+| Post condition | The selected product is updated in the catalogue                           |
 
-Steps
+#### Steps
 
-|     Actor's action                       |  System action                                                       | FR needed |
-| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
-|     Request to update a product            | Ask to insert parameters launching a data-entry dialog             |           |
-|     modify the product parameters          | update the product in the DB using Owner parameters                |           |                                                   
+| Actor's Action                          | System Action                                                       | FR needed |
+|------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to update a product       | System opens a data-entry dialog requesting updated parameters      |           |
+| Owner modifies the product parameters    |                                                                     |           |
+|                                          | System updates the product in the DB using the new parameters       |           |
 
 
-##### Scenario MP3 
+### Scenario MP3 
 
 |  Scenario MP3  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Owner retrieve product to delete                                           | 
-| Post condition | Product is deleted from the inventory                                      |
+| Precondition   | Owner is authenticated && DB services are available                                      |
+| Post condition | The product is deleted from the catalogue                                  |
 
-Steps
+#### Steps
 
-|     Actor's action                       |  System action                                                       | FR needed |
-| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
-|     Request to delete a product          | Delete the product from the DB                                        |           |
+| Actor's Action                          | System Action                                                       | FR needed |
+|------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to delete a product       |                                                                     |           |
+|                                          | System deletes the product from the DB                              |           |
+
+### Scenario MP1E1
+
+|  Scenario MP1E1 |                                                                            |
+| :-------------: | :------------------------------------------------------------------------: |
+| Precondition    | Owner is authenticated && product with same identifiers already exists     |
+| Post condition  | No new product is created                     |
+
+#### Steps
+
+| Actor's Action                          | System Action                                                       | FR needed |
+|------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to create a new product   | System opens a data-entry dialog requesting product parameters      |           |
+| Owner inserts product parameters         |                                                                     |           |
+|                                          | System checks if the product already exists in the DB               |           |
+|                                          | System detects duplication                                           |           |
+|                                          | System rejects the creation and displays an error message           |           |
+
  
 ### Use case Receive Notifications, UC8
 
@@ -617,8 +735,148 @@ Steps
 | :--------------: | :------------------------------------------------------------------ |
 |  Precondition   | Owner is authenticated && DB services are available &&  internet connection is available |
 |  Post condition  | Owner receive the notification  |
-| Nominal Scenario | - Owner is notified when an order status changes RN1 <br> - Owner is notified when a batch is expired RN2 <br> - Owner is notified when a cash is not responding RN3 <br> - Owner is notified when a product is going to run out RN4 <br> - Owner is notified when there is no internet connection RN5| 
-|     Variants     | - Owner is notified when an order status cannot be updated since API is not responding RN1V1 |
+| Nominal Scenario | - Owner is notified when an order status changes RN1 <br> - Owner is notified when a batch is expired RN2 <br> - Owner is notified when a cash is not responding RN3 <br> - Owner is notified when a product is going to run out RN4 <br> - Owner is notified when there is no internet connection RN5 <br> - Owner reads the list of notifications RN6 <br> | 
+|     Variants     | - Owner is notified when an order status cannot be updated since API is not responding RN1V1 <br> - Owner reads the list of notification and clean it RN6V1 <br> |
+
+### Scenario RN1
+
+|  Scenario RN1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Order status changes in the system                                         |
+| Post condition | Owner receives a notification regarding the new status                     |
+
+#### Steps
+
+| Actor's Action                         | System Action                                                     | FR needed |
+|-----------------------------------------|-------------------------------------------------------------------|-----------|
+|                                       | System detects order status change                                |           |
+|                                        | System generates a notification entity                            |           |
+|                                        | System stores the notification in the DB                          |           |
+|                                       | System displays the notification in a pop-up                      |           |
+| Owner sees the pop-up notification      | System shows the same notification in the notification menu       |           |
+
+
+### Scenario RN2
+
+|  Scenario RN2  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | A batch expiration date is reached                                         |
+| Post condition | Owner receives an expiration notification                                  |
+
+#### Steps
+
+| Actor's Action                         | System Action                                                     | FR needed |
+|-----------------------------------------|-------------------------------------------------------------------|-----------|
+|                                        | System detects an expired batch        |           |
+|                                        | System generates an expiration notification                       |           |
+|                                        | System stores the notification in the DB                          |           |
+|                                       | System displays the notification in a pop-up                      |           |
+| Owner sees the pop-up notification      | System shows the notification in the notification menu            |           |
+
+### Scenario RN3
+
+|  Scenario RN3  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | A cash register does not respond to system polling                         |
+| Post condition | Owner receives a notification about the missing response                   |
+
+#### Steps
+
+| Actor's Action                         | System Action                                                     | FR needed |
+|-----------------------------------------|-------------------------------------------------------------------|-----------|
+|                                       | System polls cash registers                                       |           |
+|                                        | System detects no response from a cash register                   |           |
+|                                        | System generates a “cash not responding” notification             |           |
+|                                        | System stores the notification in the DB                          |           |
+|                                        | System displays the notification in a pop-up                      |           |
+| Owner sees the pop-up notification      | System shows the notification in the notification menu            |           |
+
+### Scenario RN4
+
+|  Scenario RN4  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Product quantity falls below a stock threshold                             |
+| Post condition | Owner receives a low-stock notification                                   |
+
+#### Steps
+
+| Actor's Action                         | System Action                                                     | FR needed |
+|-----------------------------------------|-------------------------------------------------------------------|-----------|
+|                                        | System monitors product stock levels                              |           |
+|                                        | System detects a product is running out                           |           |
+|                                       | System generates a low-stock notification                         |           |
+|                                        | System stores the notification in the DB                          |           |
+|                                        | System displays the notification in a pop-up                      |           |
+| Owner sees the pop-up notification      | System shows the notification in the notification menu            |           |
+
+### Scenario RN5
+
+|  Scenario RN5  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | System detects loss of internet connection                                 |
+| Post condition | Owner receives a notification about connection loss                        |
+
+#### Steps
+
+| Actor's Action                         | System Action                                                     | FR needed |
+|-----------------------------------------|-------------------------------------------------------------------|-----------|
+| —                                       | System detects internet connectivity failure                      |           |
+| —                                       | System generates a “no internet connection” notification          |           |
+| —                                       | System stores the notification in the DB (lan connected)             |           |
+| —                                       | System displays the notification in a pop-up                      |           |
+| Owner sees the pop-up notification      | System shows the notification in the notification menu  |       |
+
+### Scenario RN6
+
+|  Scenario RN6  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | At least one notification exists in the system                             |
+| Post condition | Notifications are displayed or marked as read                               |
+
+#### Steps
+
+| Actor's Action                         | System Action                                                     | FR needed |
+|-----------------------------------------|-------------------------------------------------------------------|-----------|
+| Owner opens the notification menu       | System retrieves notifications from the DB                        |           |
+| Owner reads notifications               | System marks notifications as read                                |           |
+
+
+
+### Scenario RN1V1
+
+|  Scenario RN1V1 |                                                                           |
+| :-------------: | :------------------------------------------------------------------------ |
+| Precondition    | System fails to update the order status due to API timeout/failure        |
+| Post condition  | Owner receives a notification about the failed update                     |
+
+#### Steps
+
+| Actor's Action                         | System Action                                                     | FR needed |
+|-----------------------------------------|-------------------------------------------------------------------|-----------|
+|                                        | System attempts to update order status                            |           |
+|                                        | System detects API timeout / unreachable provider                 |           |
+|                                        | System generates a “status update failed” notification            |           |
+|                                        | System stores the notification in the DB                          |           |
+|                                       | System displays the notification in a pop-up                      |           |
+| Owner sees the pop-up notification      | System shows the notification in the notification menu            |           |
+
+### Scenario RN6V1
+
+|  Scenario RN6V1 |                                                                           |
+| :-------------: | :------------------------------------------------------------------------ |
+| Precondition    | At least one notification exists in the system                                    |
+| Post condition  | All notifications are cleared from the list                               |
+
+#### Steps
+
+| Actor's Action                         | System Action                                                     | FR needed |
+|-----------------------------------------|-------------------------------------------------------------------|-----------|
+| Owner opens the notification menu       | System retrieves notifications from the DB                        |           |
+| Owner selects “Clear notifications”     |                                                                   |           |
+|                                         | System deletes or marks all notifications as cleared in the DB    |           |
+|                                         | System updates the notification menu to show an empty list        |           |
+
+
 
 ## Use case Import Data, UC9
 
@@ -626,39 +884,43 @@ Steps
 | :--------------: | :------------------------------------------------------------------ |
 |  Precondition   | Owner is authenticated && DB services are available && internet connection is available && file .csv data are in the correct format|
 |  Post condition  | .csv file's data are correctly imported |
-| Nominal Scenario | - Owner import a set of lists containg products, invoices, suppliers, sales, refunds, orders as .csv file ID1| 
-|     Exception    | - Owner import .csv files with format error IDE1|
+| Nominal Scenario | - Owner imports a set of lists containg products, invoices, suppliers, sales, refunds, orders as .csv file ID1| 
+|     Exception    | - Owner imports .csv files with format error ID1E1|
 
-##### Scenario ID1
+### Scenario ID1
 
 |  Scenario ID1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | data in .csv files are in the correct format                               | 
-| Post condition | .csv files are imported in the system                                      |
+| Precondition   | Data in .csv files are in the correct format                               |
+| Post condition | .csv files are imported into the system                                     |
 
-Steps
+#### Steps
 
-|     Actor's action                       |  System action                                                       | FR needed |
-| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
-| Request to import a set of .csv files    | Ask to upload .csv files                                             |           |
-| Upload .csv files                        | check .csv files are in the correct format                           |           |
-|                                          | import new data in the system                                        |           | 
+| Actor's Action                              | System Action                                                       | FR needed |
+|----------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to import .csv files          | System opens file-import dialog                                     |           |
+| Owner adds all .csv files                    |                                                                     |           |
+|                                              | System checks if .csv files are in the correct format               |           |
+|                                              | System imports new data into the system                             |           |
 
-##### Scenario IDE1
+### Scenario ID1E1
 
-|  Scenario IDE1  |                                                                            |
+|  Scenario IDE1 |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | data in .csv files are not in the correct format                               | 
-| Post condition | .csv files are not imported in the system                                      |
+| Precondition   | Data in .csv files are not in the correct format                           |
+| Post condition | .csv files are not imported into the system                                |
 
-Steps
+#### Steps
 
-|     Actor's action                       |  System action                                                       | FR needed |
-| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
-| Request to import a set of .csv files    | Ask to upload .csv files                                             |           |
-| Upload .csv files                        | check .csv files are in the correct format                           |           |
-|                                          | Inform the user that some data is not in the correct form            |           |
-|                                          | don't import new data in the system                                  |           | 
+| Actor's Action                              | System Action                                                       | FR needed |
+|----------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to import .csv files          | System opens file-import dialog                                     |           |
+| Owner adds all .csv files                     |                                                                     |           |
+|                                              | System checks if .csv files are in the correct format               |           |
+|                                              | System detects format errors                                        |           |
+|                                              | System informs the Owner that some data is not in the correct form  |           |
+|                                              | System does **not** import any new data                              |           |
+
 
 ## Use case Export Data, UC10
 
@@ -666,21 +928,43 @@ Steps
 | :--------------: | :------------------------------------------------------------------ |
 |  Precondition   | Owner is authenticated && DB services are available && internet connection is available && needed data are in the system|
 |  Post condition  | data are correctly exported as .csv |
-| Nominal Scenario | - Owner export a set of lists containg products, invoices, suppliers, sales, refunds, orders as .csv file ED1| 
+| Nominal Scenario | - Owner exports a set of lists containg products, invoices, suppliers, sales, refunds, orders as .csv file ED1| 
+|     Exception    | - Owner exports corrupted .csv files ED1E1|
 
-##### Scenario ED1
+### Scenario ED1
 
 |  Scenario ED1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  |                                                                            | 
-| Post condition | .csv files are imported in the system                                      |
+| Precondition   | Data to be exported exist in the system                                   |
+| Post condition | Data are exported into one or more .csv files                             |
 
-Steps
+#### Steps
 
-|     Actor's action                       |  System action                                                       | FR needed |
-| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
-| Request to export data as .csv file      | retrieve data                                                        |           |
-|                                          | export data as .csv file                                          |            |
+| Actor's Action                             | System Action                                                       | FR needed |
+|---------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to export data as .csv       | System retrieves the requested data from the DB                     |           |
+|                                            | System formats the retrieved data in .csv format                    |           |
+|                                            | System generates and provides one or more .csv files for download   |           |
+| Owner downloads the .csv files              | System confirms successful export                                   |           |
+
+### Scenario ED1E1
+
+|  Scenario ED1E1 |                                                                           |
+| :-------------: | :------------------------------------------------------------------------ |
+| Precondition    | Data to be exported exist in the system                    |
+| Post condition  | Data are NOT correctly exported                 |
+
+#### Steps
+
+| Actor's Action                             | System Action                                                       | FR needed |
+|---------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to export data as .csv       | System retrieves data from the DB                                    |           |
+|                                            | System attempts to format data into .csv files                      |           |
+|                                            | System detects an error during file generation (corrupted output)   |           |
+|                                           | System does **not** complete the export process                      |           |
+|                                            | System informs the Owner that export has failed due to corrupted output |        |
+
+
 
 ## Use case Retrieve Data, UC11
 
@@ -688,76 +972,98 @@ Steps
 | :--------------: | :----------------------------------------------------------------- |
 |   Precondition   | Owner is authenticated && Data are in the system && BD services are available |
 |  Post condition  |  Owner retrieves the desidered list of data |
-| Nominal Scenario | Owner retrieves a list of products, invoices, suppliers, sales, refunds or orders RD1 | 
-|     Variants     | - Owner retrieves a list of products, invoices, suppliers, sales, refunds or orders filtered by their attributes RDV1|
+| Nominal Scenario | - Owner generates a list of one selected type: products, invoices, suppliers, sales, refunds, or orders RD1 | 
+|     Variants     | - Owner generates a filtered list of one selected type based on specific attributes RDV1|
 
-##### Scenario RD1
+### Scenario RD1
 
-|  Scenario ED1  |                                                                            |
+|  Scenario RD1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  |                                                                            | 
-| Post condition | Owner gets the data                                                        |
+| Precondition   | Requested data type exists in the system && Owner is authenticated         |
+| Post condition | Owner receives the full list of the selected data type                     |
 
-Steps
+#### Steps
 
-|     Actor's action                       |  System action                                                       | FR needed |
-| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
-| Request to get a list of products, invoices, suppliers, sales, refunds or orders      | retrieve data                                                        |           |
-|                                          |   return data to the owner                                             |            |
+| Actor's Action                                        | System Action                                                       | FR needed |
+|--------------------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner selects a data type to retrieve (e.g. products, invoices, etc.) | System retrieves all records of the selected type from the DB       |           |
+|                                                        | System returns the retrieved list to the Owner                      |           |
+| Owner views the list                                   | System displays the data in the appropriate UI                      |           |
 
-### Use case Manage Cash Flow, UC12
+### Scenario RDV1
+
+|  Scenario RDV1 |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Filterable data exist in the system && Owner is authenticated              |
+| Post condition | Owner receives the filtered list                                           |
+
+#### Steps
+
+| Actor's Action                                        | System Action                                                       | FR needed |
+|--------------------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner selects a data type to retrieve                  | System opens a filter parameters dialog                             |           |
+| Owner inserts filter attributes                        |                                                                     |           |
+|                                                        | System retrieves only the records matching the filters from the DB  |           |
+|                                                        | System returns the filtered list                                    |           |
+| Owner views the filtered list                          | System displays the filtered data in the UI                          |           |
+
+
+
+### Use case Manage Accounting, UC12
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
 |  Precondition   | Owner is authenticated && DB services are available && internet connection is available|
 |  Post condition  | Cash flow is correctly tracked |
-| Nominal Scenario | - Owner retrieves incomes at different time granularities MC1<br> - Owner retrieves outgoing at different time granularities MC2<br> - Owner retrieves balance at different time granularities MC3 <br> | 
+| Nominal Scenario | - Owner retrieves incomes at different time granularities MA1<br> - Owner retrieves expenses at different time granularities MA2<br> - Owner retrieves balance at different time granularities MA3 <br> | 
 
-### Scenario MC1  
+### Scenario MA1
 
-|  Scenario MC1  |                                                                            |
+|  Scenario MA1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Every income is correctly tracked | 
-| Post condition | Owner retrieve Income |
+| Precondition   | Every income is correctly tracked                                          |
+| Post condition | Owner retrieves incomes                                                     |
 
 #### Steps
 
-|     Actor's action          |  System action                                                                  | FR needed |
-| :-------------------------: | :-----------------------------------------------------------------------------: |:---------:|
-|     Request the income     |  Ask time window in year                                                        |           |                   
-|     Choose time window      |    Ask time granularity (day, week, month, quarter, semiannual, annual)         |           | 
-|     Choose time granularity |  Return the income                                                             |           |
+| Actor's Action                     | System Action                                                                  | FR needed |
+|------------------------------------|--------------------------------------------------------------------------------|-----------|
+| Owner requests the incomes         | System asks for the time window (year)                                         |           |
+| Owner chooses the time window      | System asks for the time granularity (day, week, month, quarter, semester, year) |         |
+| Owner chooses the granularity      | System retrieves and returns the incomes for the selected window & granularity |           |
 
 
-##### Scenario MC2  
+### Scenario MA2  
 
-|  Scenario MC2  |                                                                            |
+|  Scenario MA2  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Every outoging is correctly tracked                                        | 
-| Post condition | Owner retrieves outgoing                                                    |
+| Precondition   | Every expenses is correctly tracked                                        |
+| Post condition | Owner retrieves expenses                                                  |
 
-Steps
+#### Steps
 
-|     Actor's action          |  System action                                                                  | FR needed |
-| :-------------------------: | :-----------------------------------------------------------------------------: |:---------:|
-|     Request the outgoing     |  Ask time window in year                                                        |           |                   
-|     Choose time window      |    Ask time granularity (day, week, month, quarter, semiannual, annual)         |           | 
-|     Choose time granularity |  Return the outgoing                                                             |           |
+| Actor's Action                     | System Action                                                                  | FR needed |
+|------------------------------------|--------------------------------------------------------------------------------|-----------|
+| Owner requests the expenses       | System asks for the time window (year)                                         |           |
+| Owner chooses the time window      | System asks for the time granularity (day, week, month, quarter, semester, year) |         |
+| Owner chooses the granularity      | System retrieves and returns the expenses for the selected window & granularity |         |
 
-##### Scenario MC3  
 
-|  Scenario MC3  |                                                                            |
+### Scenario MA3  
+
+|  Scenario MA3  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Every outoging and incomes are correctly tracked                           | 
-| Post condition | Owner retrieves balance                                                    |
+| Precondition   | Every outgoing and every income is correctly tracked                       |
+| Post condition | Owner retrieves the balance                                                |
 
-Steps
+#### Steps
 
-|     Actor's action          |  System action                                                                  | FR needed |
-| :-------------------------: | :-----------------------------------------------------------------------------: |:---------:|
-|     Request the balance     |  Ask time window in year                                                        |           |                   
-|     Choose time window      |    Ask time granularity (day, week, month, quarter, semiannual, annual)         |           | 
-|     Choose time granularity |  Return the balance                                                             |           |
+| Actor's Action                     | System Action                                                                  | FR needed |
+|------------------------------------|--------------------------------------------------------------------------------|-----------|
+| Owner requests the balance         | System asks for the time window (year)                                         |           |
+| Owner chooses the time window      | System asks for the time granularity (day, week, month, quarter, semester, year) |         |
+| Owner chooses the granularity      | System retrieves and returns the balance (incomes – expenses)                  |           |
+
 
 
 ### Use case Manage Cash Registers, UC13
@@ -826,7 +1132,7 @@ Steps
 | Precondition    | Owner is authenticated && DB services are available && internet connection is available |
 | Post condition  | No cash register is added, user is notified                                |
 
-### Steps
+#### Steps
 
 | Actor's Action                                      | System Action                                                     | FR needed |
 |------------------------------------------------------|-------------------------------------------------------------------|-----------|
