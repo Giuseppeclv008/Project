@@ -280,8 +280,49 @@ system <-- shipping
 |  Precondition   | Owner is authenticated && DB services are available    |
 |  Post condition  | CRUD-type batches of products's operation is performed |
 | Nominal Scenario | - Owner creates a batches of products MI1 <br> - Owner updates a batches of products MI2 <br> - Owner deletes a batches of products MI3| 
-|     Variants     | -  Owner deletes many batches of products, filtering by products' attributes MI3V1 |
-|     Exception    | - Owner tries to create a batch of products with inconsistent values MI1E1 <br> - Owner tries to create a batches of products that is alredy in the system MI1E2 <br> - Owner tries to update a batches of products with inconsisten values MI2E1 <br>|
+
+##### Scenario MI1  
+
+|  Scenario MI1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Owner is authenticated && DB services are available | 
+| Post condition | A new batch is inserted in the inventory|
+
+Steps
+
+|     Actor's action      |  System action                                              | FR needed |
+| :---------------------------------------:|:------------------------------------------------------------------: |:---------:|
+|     Request to create a new batch        | Ask to insert parameters launching a data-entry dialog                                          |           |
+|     Insert batch parameters              | Create and insert a new batch in the DB using Owner parameters      |           |                                                   
+
+##### Scenario MI2 
+
+|  Scenario MI2  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Owner retrieve batch to update                                             | 
+| Post condition | A batch in the inventory is updated                                        |
+
+Steps
+
+|     Actor's action                       |  System action                                              | FR needed |
+| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
+|     Request to update a batch            | Ask to insert parameters launching a data-entry dialog                                           |           |
+|     modify the batch parameters          | update the batch in the DB using Owner parameters                    |           |                                                   
+
+
+##### Scenario MI3 
+
+|  Scenario MI1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Owner retrieve batch to delete                                             | 
+| Post condition | Batch is deleted from the inventory                                        |
+
+Steps
+
+|     Actor's action                       |  System action                                              | FR needed |
+| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
+|     Request to delete a batch            | Delete the batch from the DB                                         |           |
+                                               
 
 ## Use case Manage Supplier, UC2 
 
@@ -290,7 +331,52 @@ system <-- shipping
 |  Precondition   | Owner is authenticated && DB services are available    |
 |  Post condition  | CRUD-type suppliers's operation is performed |
 | Nominal Scenario | - Owner creates a supplier MS1 <br> - Owner updates a supplier MS2 <br> - Owner deletes a supplier MS3| 
-|     Exception    | - Owner tries to create a suppliers with inconsistent values MS1E1 <br> - Owner tries to create a suppliers that is alredy in the system MS1E2 <br> - Owner tries to update a suppliers with inconsistent values MS2E2 <br>|
+| Variants         | 
+
+##### Scenario MS1  
+
+|  Scenario MS1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Owner is authenticated && DB services are available | 
+| Post condition | A new supplier is inserted in the inventory|
+
+Steps
+
+|     Actor's action      |  System action                                              | FR needed |
+| :---------------------------------------:|:------------------------------------------------------------------: |:---------:|
+|     Request to create a new supplier        | Ask to insert parameters launching a data-entry dialog                                       |           |
+|     Insert supplier parameters              | Create and insert a new supplier in the DB using Owner parameters|           |                                                   
+
+##### Scenario MS2 
+
+|  Scenario MS2  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Owner retrieve supplier to update                                          | 
+| Post condition | A supplier in the inventory is updated                                     |
+
+Steps
+
+|     Actor's action                       |  System action                                                       | FR needed |
+| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
+|     Request to update a supplier         | Ask to insert parameters launching a data-entry dialog                                           |           |
+|     modify the supplier parameters       | update the supplier in the DB using Owner parameters                 |           |                                                   
+
+
+##### Scenario MS3 
+
+|  Scenario MS3  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Owner retrieve supplier to delete                                          | 
+| Post condition | Supplier is deleted from the inventory                                     |
+
+Steps
+
+|     Actor's action                       |  System action                                                       | FR needed |
+| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
+|     Request to delete a supplier         | Delete the supplier from the DB                                      |           |
+                                               
+
+
 
 ## Use case Manage Orders, UC3
 
@@ -299,18 +385,100 @@ system <-- shipping
 |  Precondition   | Owner is authenticated && DB services are available    |
 |  Post condition  | CRUD-type order's operation is performed |
 | Nominal Scenario | - Owner creates a order MO1 <br> - Owner updates a order MO2 <br> - Owner deletes a order MO3| 
-|     Variants     | -  Owner deletes many orders, filtering by products' attributes MO3V1 |
-|     Exception    | - Owner tries to create a order with inconsistent values MO1E1 <br> - Owner tries to create a order that is alredy in the system MO1E2 <br> - Owner tries to update a order with inconsisten values MO2E2 <br>|
 
-## Use case Manage Invoices, UC4
+##### Scenario MO1  
+
+|  Scenario MO1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Owner is authenticated && DB services are available | 
+| Post condition | A new order is inserted in the inventory|
+
+Steps
+
+|     Actor's action      |  System action                                              | FR needed |
+| :---------------------------------------:|:------------------------------------------------------------------: |:---------:|
+|     Request to create a new order        | Ask to insert parameters launching a data-entry dialog                                       |           |
+|     Insert order parameters              | Create and insert a new order in the DB using Owner parameters|           |                                                   
+
+##### Scenario MO2 
+
+|  Scenario MO2  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Owner retrieve order to update                                             | 
+| Post condition | A order in the inventory is updated                                        |
+
+Steps
+
+|     Actor's action                       |  System action                                                       | FR needed |
+| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
+|     Request to update a order            |  Ask to insert parameters launching a data-entry dialog              |           |
+|     modify the order parameters          | update the order in the DB using Owner parameters                    |           |                                                   
+
+
+##### Scenario MO3 
+
+|  Scenario MO3  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Owner retrieve order to delete                                             | 
+| Post condition | Order is deleted from the inventory                                        |
+
+Steps
+
+|     Actor's action                       |  System action                                                       | FR needed |
+| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
+|     Request to delete a order         | Delete the order from the DB                                            |           |
+                                               
+### Use case Manage Invoices, UC4
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
 |  Precondition   | Owner is authenticated && DB services are available && internet connection is available |
 |  Post condition  | CRUD-type invoice's operation is performed |
 | Nominal Scenario | - Owner creates a invoice MI1 <br> - Owner updates a invoice MI2 <br> - Owner deletes a invoice MI3| 
-|     Variants     | -  Owner deletes many invoices, filtering by products' attributes MI3V1 |
-|     Exception    | - Owner tries to create a invoice with inconsistent values MI1E1 <br> - Owner tries to create a invoice that is alredy in the system MI1E2 <br> - Owner tries to update a invoice with inconsisten values MI2E2 <br>|
+
+##### Scenario MI1  
+
+|  Scenario MI1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Owner is authenticated && DB services are available | 
+| Post condition | A new invoice is inserted in the inventory|
+
+Steps
+
+|     Actor's action      |  System action                                              | FR needed |
+| :---------------------------------------:|:------------------------------------------------------------------: |:---------:|
+|     Request to create a new invoice        |  Ask to insert parameters launching a data-entry dialog           |           |
+|     Insert invoice parameters              | Create and insert a new invoice in the DB using Owner parameters  |           |                                                   
+
+##### Scenario MI2 
+
+|  Scenario MI2  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Owner retrieve invoice to update                                           | 
+| Post condition | A invoice in the inventory is updated                                      |
+
+Steps
+
+|     Actor's action                       |  System action                                                       | FR needed |
+| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
+|     Request to update a invoice            |  Ask to insert parameters launching a data-entry dialog            |           |
+|     modify the invoice parameters          | update the invoice in the DB using Owner parameters                |           |                                                   
+
+
+##### Scenario MI3 
+
+|  Scenario MI3  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Owner retrieve invoice to delete                                             | 
+| Post condition | Invoice is deleted from the inventory                                        |
+
+Steps
+
+|     Actor's action                       |  System action                                                       | FR needed |
+| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
+|     Request to delete a invoice          | Delete the invoice from the DB                                       |           |
+ 
+
 
 ## Use case Authenticate Owner, UC5
 
@@ -319,47 +487,46 @@ system <-- shipping
 |  Precondition   |  Owner knows a password          |
 |  Post condition  |  Owner is correctly authenticated |
 | Nominal Scenario | - Authenticate owner AO1 <br> | 
-|     Exception    | - Owner tries to authenticate with a wrong password <br> AO1E1    | 
+|     Exception    | - Owner tries to authenticate with a wrong password <br> AOE1    | 
 
 ### Scenario AO1  
 
 |  Scenario AO1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Owner knows a password | 
+|  Precondition  | Owner knows the correct password | 
 | Post condition | Owner is correctly authenticated  |
 
 #### Steps
 
-|     Actor's action      |  System action                                              | FR needed |
-| :------------: | :------------------------------------------------------------------: |:---------:|
-|     Owner      |     Insert the password                                              |           |
-|     System     |     Check  the password                                              |           |
-|     System     |     Authenticate owner                                               |           |
+|     Actor's action           |  System action                                                       | FR needed |
+| :--------------------------: | :------------------------------------------------------------------: |:---------:|
+|                              |      Ask to insert parameters launching a data-entry dialog          |           |
+|   Insert the password        |     Check  the password                                              |           |
+|                              |     Authenticate owner                                               |           |
 
 ### Scenario AO1E 
 
-|  Scenario AO1E1  |                                                                            |
-| :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Owner knows an incorrect password | 
-| Post condition | Owner is not authenticated |
+|  Scenario AOE1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------:   |
+|  Precondition  | Owner knows an incorrect password                                            | 
+| Post condition | Owner is not authenticated                                                   |
 
-#### Steps
-
-|     Actor's action      |  System action                                              | FR needed |
-| :------------: | :------------------------------------------------------------------: |:---------:|
-|     Owner      |     Insert the password                                              |           |
-|     System     |     Check  the password                                              |           |
-|     System     |     Notify the owner that the password is not correct                |           |
+|     Actor's action           |  System action                                                       | FR needed |
+| :--------------------------: | :------------------------------------------------------------------: |:---------:|
+|                              |     Ask owner to insert the password, launching a data-entry dialog  |           |
+|   Insert the password        |     Check  the password                                              |           |
+|                              |     inform the user the password is not correct                      |           |
+|                              |     Don't authenticate owner                                           |           |
 
 
 ## Use case Change Password, UC6
 
 | Actors Involved  |                 Owner                                                |
-| :--------------: | :------------------------------------------------------------------ |
-|  Precondition   |  Owner  is authenticated
-|  Post condition  |  Owner set a new password
-| Nominal Scenario | - Authenticate owner CP1 <br> | 
-|     Exception    | - Owner tries to set an invalid type of password CP1E1 <br>| 
+| :--------------: | :------------------------------------------------------------------  |
+|  Pre condition   |  Owner  is authenticated                                             |  
+|  Post condition  |  Owner set a new password                                            |
+| Nominal Scenario | - Authenticate owner CP1 <br>                                        |  
+|     Exception    | - Owner tries to set an invalid type of password CP1E1 <br>          | 
 
 ### Scenario CP1
 
@@ -370,13 +537,11 @@ system <-- shipping
 
 #### Steps
 
-|     Actor's action      |  System action                                              | FR needed |
-| :------------: | :------------------------------------------------------------------: |:---------:|
-|     Owner      |     Authenticate using current password (UC5)                        |           |
-|     Owner      |     Click on change password button                                  |           |
-|     Owner      |     Insert new passord                                               |           |
-|     System     |     Check new password                                               |           |
-|     System     |     Save new password                                                |           |
+|     Actor's action               |  System action                                                       | FR needed |
+| :------------------------------: | :------------------------------------------------------------------: |:---------:|
+|   Request to change the password |    launching a data-entry dialog                                     |           |
+|   Insert the password            |     Validate  the password                                           |           |
+|                                  |     Change the password                                              |           |
 
 ### Scenario CP1E1
 
@@ -385,15 +550,15 @@ system <-- shipping
 |  Precondition  | Owner is authenticated && Owner wants to set an invalid password           |
 | Post condition | Owner don't set a new password                                             |
 
-#### Steps
+steps 
 
-|     Actor's action      |  System action                                              | FR needed |
-| :------------: | :------------------------------------------------------------------: |:---------:|
-|     Owner      |     Authenticate using current password (UC5)                        |           |
-|     Owner      |     Click on change password button                                  |           |
-|     Owner      |     Insert an empty passord                                          |           |
-|     System     |     Check new password                                               |           |
-|     System     |     Inform user that an empty password is not allowed                |           |
+|     Actor's action               |  System action                                                       | FR needed |
+| :------------------------------: | :------------------------------------------------------------------: |:---------:|
+|   Request to change the password |     Ask to insert parameters launching a data-entry dialog           |           |
+|   Insert the password            |     Validate  the password                                           |           |
+|                                  |     Inform user the password is not correct                          |           |
+|                                  |     Don't change the password since it is not valid                  |           |
+
 
 
 ## Use case Manage Product Catalogue, UC7
@@ -403,10 +568,50 @@ system <-- shipping
 |  Precondition   | Owner is authenticated && DB services are available && internet connection is available |
 |  Post condition  | CRUD-type operation is performed in the catalogue  |
 | Nominal Scenario | - Owner creates a product MP1 <br> - Owner updates a product MP2 <br> - Owner deletes a product MP3| 
-|     Variants     | -  Owner deletes many products, filtering by products' attributes MP3V1 |
-|     Exception    | - Owner tries to create a product with inconsistent values MP1E1 <br> - Owner tries to create a product that is alredy in the catalogue MP1E2 <br> - Owner tries to update a product with inconsisten values MP2E2 <br>|
 
-## Use case Receive Notifications, UC8
+##### Scenario MP1  
+
+|  Scenario MP1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Owner is authenticated && DB services are available | 
+| Post condition | A new product is inserted in the inventory|
+
+Steps
+
+|     Actor's action      |  System action                                              | FR needed |
+| :---------------------------------------:|:------------------------------------------------------------------: |:---------:|
+|     Request to create a new product        |  Ask to insert parameters launching a data-entry dialog           |           |
+|     Insert product parameters              | Create and insert a new product in the DB using Owner parameters|           |                                                   
+
+##### Scenario MP2 
+
+|  Scenario MP2  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Owner retrieve product to update                                             | 
+| Post condition | A product in the inventory is updated                                        |
+
+Steps
+
+|     Actor's action                       |  System action                                                       | FR needed |
+| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
+|     Request to update a product            | Ask to insert parameters launching a data-entry dialog             |           |
+|     modify the product parameters          | update the product in the DB using Owner parameters                |           |                                                   
+
+
+##### Scenario MP3 
+
+|  Scenario MP3  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Owner retrieve product to delete                                           | 
+| Post condition | Product is deleted from the inventory                                      |
+
+Steps
+
+|     Actor's action                       |  System action                                                       | FR needed |
+| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
+|     Request to delete a product          | Delete the product from the DB                                        |           |
+ 
+### Use case Receive Notifications, UC8
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
@@ -421,8 +626,39 @@ system <-- shipping
 | :--------------: | :------------------------------------------------------------------ |
 |  Precondition   | Owner is authenticated && DB services are available && internet connection is available && file .csv data are in the correct format|
 |  Post condition  | .csv file's data are correctly imported |
-| Nominal Scenario | - Owner import a list of product as .csv file ID1 <br> -  Owner import a list of invoices as .csv file ID2 <br> -  Owner import a list of suppliers as .csv file ID3 <br> - Owner import a list of sales as .csv file ID4<br> -  Owner import a list of refunds as .csv file ID5<br> - Owner importr a list of orders as .csv file ID6 | 
-|     Exception    | - Owner import .csv file with format error IDE1|
+| Nominal Scenario | - Owner import a set of lists containg products, invoices, suppliers, sales, refunds, orders as .csv file ID1| 
+|     Exception    | - Owner import .csv files with format error IDE1|
+
+##### Scenario ID1
+
+|  Scenario ID1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | data in .csv files are in the correct format                               | 
+| Post condition | .csv files are imported in the system                                      |
+
+Steps
+
+|     Actor's action                       |  System action                                                       | FR needed |
+| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
+| Request to import a set of .csv files    | Ask to upload .csv files                                             |           |
+| Upload .csv files                        | check .csv files are in the correct format                           |           |
+|                                          | import new data in the system                                        |           | 
+
+##### Scenario IDE1
+
+|  Scenario IDE1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | data in .csv files are not in the correct format                               | 
+| Post condition | .csv files are not imported in the system                                      |
+
+Steps
+
+|     Actor's action                       |  System action                                                       | FR needed |
+| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
+| Request to import a set of .csv files    | Ask to upload .csv files                                             |           |
+| Upload .csv files                        | check .csv files are in the correct format                           |           |
+|                                          | Inform the user that some data is not in the correct form            |           |
+|                                          | don't import new data in the system                                  |           | 
 
 ## Use case Export Data, UC10
 
@@ -430,8 +666,21 @@ system <-- shipping
 | :--------------: | :------------------------------------------------------------------ |
 |  Precondition   | Owner is authenticated && DB services are available && internet connection is available && needed data are in the system|
 |  Post condition  | data are correctly exported as .csv |
-| Nominal Scenario | - Owner export a list of product as .csv file ED1 <br> -  Owner export a list of invoices as .csv file ED2 <br> -  Owner export a list of suppliers as .csv file ED3 <br> - Owner export a list of sales as .csv file ED4 <br> - Owner export a list of refunds as .csv file ED5 <br> - Owner export a list of orders as .csv file ED6| 
-|     Exception    | - Owner export .csv file with format error EDE1|
+| Nominal Scenario | - Owner export a set of lists containg products, invoices, suppliers, sales, refunds, orders as .csv file ED1| 
+
+##### Scenario ED1
+
+|  Scenario ED1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  |                                                                            | 
+| Post condition | .csv files are imported in the system                                      |
+
+Steps
+
+|     Actor's action                       |  System action                                                       | FR needed |
+| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
+| Request to export data as .csv file      | retrieve data                                                        |           |
+|                                          | export data as .csv file                                          |            |
 
 ## Use case Retrieve Data, UC11
 
@@ -439,10 +688,24 @@ system <-- shipping
 | :--------------: | :----------------------------------------------------------------- |
 |   Precondition   | Owner is authenticated && Data are in the system && BD services are available |
 |  Post condition  |  Owner retrieves the desidered list of data |
-| Nominal Scenario | Owner retrieves a list of products from the system RD1 <br> - Owner retrieves a list of sales from the system RD2 <br> - Owner retrieves a list of batches from the system RD3 <br> - Owner retrieves a list of orders from the system RD4 <br> - Owner retrieves a list of invoices from the system RD5 | 
-|     Variants     | - Owner retrieves a list of data filtered by their attributes RDV1 |
+| Nominal Scenario | Owner retrieves a list of products, invoices, suppliers, sales, refunds or orders RD1 | 
+|     Variants     | - Owner retrieves a list of products, invoices, suppliers, sales, refunds or orders filtered by their attributes RDV1|
 
-## Use case Manage Cash Flow, UC12
+##### Scenario RD1
+
+|  Scenario ED1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  |                                                                            | 
+| Post condition | Owner gets the data                                                        |
+
+Steps
+
+|     Actor's action                       |  System action                                                       | FR needed |
+| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
+| Request to get a list of products, invoices, suppliers, sales, refunds or orders      | retrieve data                                                        |           |
+|                                          |   return data to the owner                                             |            |
+
+### Use case Manage Cash Flow, UC12
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
@@ -459,13 +722,45 @@ system <-- shipping
 
 #### Steps
 
-|     Actor's action      |  System action                                              | FR needed |
-| :------------: | :------------------------------------------------------------------: |:---------:|
-|     Owner      |     Choose time granularity                                          |           |
-|     System     |     Return the income                                                |           |
+|     Actor's action          |  System action                                                                  | FR needed |
+| :-------------------------: | :-----------------------------------------------------------------------------: |:---------:|
+|     Request the income     |  Ask time window in year                                                        |           |                   
+|     Choose time window      |    Ask time granularity (day, week, month, quarter, semiannual, annual)         |           | 
+|     Choose time granularity |  Return the income                                                             |           |
 
 
-## Use case Manage Cash Registers, UC13
+##### Scenario MC2  
+
+|  Scenario MC2  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Every outoging is correctly tracked                                        | 
+| Post condition | Owner retrieves outgoing                                                    |
+
+Steps
+
+|     Actor's action          |  System action                                                                  | FR needed |
+| :-------------------------: | :-----------------------------------------------------------------------------: |:---------:|
+|     Request the outgoing     |  Ask time window in year                                                        |           |                   
+|     Choose time window      |    Ask time granularity (day, week, month, quarter, semiannual, annual)         |           | 
+|     Choose time granularity |  Return the outgoing                                                             |           |
+
+##### Scenario MC3  
+
+|  Scenario MC3  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Every outoging and incomes are correctly tracked                           | 
+| Post condition | Owner retrieves balance                                                    |
+
+Steps
+
+|     Actor's action          |  System action                                                                  | FR needed |
+| :-------------------------: | :-----------------------------------------------------------------------------: |:---------:|
+|     Request the balance     |  Ask time window in year                                                        |           |                   
+|     Choose time window      |    Ask time granularity (day, week, month, quarter, semiannual, annual)         |           | 
+|     Choose time granularity |  Return the balance                                                             |           |
+
+
+### Use case Manage Cash Registers, UC13
 
 | Actors Involved  |                - Main: Owner <br> - Passive: POS provider, Cash Register                                               |
 | :--------------: | :------------------------------------------------------------------ |
@@ -652,7 +947,7 @@ system <-- shipping
 
 
 
-## Use case Track Orders, UC16
+### Use case Track Orders, UC16
 
 | Actors Involved  |                 Shipment tracking provider                                               |
 | :--------------: | :------------------------------------------------------------------ |
