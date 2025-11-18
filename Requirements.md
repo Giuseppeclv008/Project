@@ -292,7 +292,7 @@ Steps
 
 |     Actor's action      |  System action                                              | FR needed |
 | :---------------------------------------:|:------------------------------------------------------------------: |:---------:|
-|     Request to create a new batch        | launch a data-entry dialog                                          |           |
+|     Request to create a new batch        | Ask to insert parameters launching a data-entry dialog                                          |           |
 |     Insert batch parameters              | Create and insert a new batch in the DB using Owner parameters      |           |                                                   
 
 ##### Scenario MI2 
@@ -306,7 +306,7 @@ Steps
 
 |     Actor's action                       |  System action                                              | FR needed |
 | :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
-|     Request to update a batch            | launch a data-entry dialog                                           |           |
+|     Request to update a batch            | Ask to insert parameters launching a data-entry dialog                                           |           |
 |     modify the batch parameters          | update the batch in the DB using Owner parameters                    |           |                                                   
 
 
@@ -344,7 +344,7 @@ Steps
 
 |     Actor's action      |  System action                                              | FR needed |
 | :---------------------------------------:|:------------------------------------------------------------------: |:---------:|
-|     Request to create a new supplier        | launch a data-entry dialog                                       |           |
+|     Request to create a new supplier        | Ask to insert parameters launching a data-entry dialog                                       |           |
 |     Insert supplier parameters              | Create and insert a new supplier in the DB using Owner parameters|           |                                                   
 
 ##### Scenario MS2 
@@ -358,7 +358,7 @@ Steps
 
 |     Actor's action                       |  System action                                                       | FR needed |
 | :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
-|     Request to update a supplier         | launch a data-entry dialog                                           |           |
+|     Request to update a supplier         | Ask to insert parameters launching a data-entry dialog                                           |           |
 |     modify the supplier parameters       | update the supplier in the DB using Owner parameters                 |           |                                                   
 
 
@@ -397,7 +397,7 @@ Steps
 
 |     Actor's action      |  System action                                              | FR needed |
 | :---------------------------------------:|:------------------------------------------------------------------: |:---------:|
-|     Request to create a new order        | launch a data-entry dialog                                       |           |
+|     Request to create a new order        | Ask to insert parameters launching a data-entry dialog                                       |           |
 |     Insert order parameters              | Create and insert a new order in the DB using Owner parameters|           |                                                   
 
 ##### Scenario MO2 
@@ -411,7 +411,7 @@ Steps
 
 |     Actor's action                       |  System action                                                       | FR needed |
 | :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
-|     Request to update a order            | launch a data-entry dialog                                           |           |
+|     Request to update a order            |  Ask to insert parameters launching a data-entry dialog              |           |
 |     modify the order parameters          | update the order in the DB using Owner parameters                    |           |                                                   
 
 
@@ -447,7 +447,7 @@ Steps
 
 |     Actor's action      |  System action                                              | FR needed |
 | :---------------------------------------:|:------------------------------------------------------------------: |:---------:|
-|     Request to create a new invoice        | launch a data-entry dialog                                        |           |
+|     Request to create a new invoice        |  Ask to insert parameters launching a data-entry dialog           |           |
 |     Insert invoice parameters              | Create and insert a new invoice in the DB using Owner parameters  |           |                                                   
 
 ##### Scenario MI2 
@@ -461,7 +461,7 @@ Steps
 
 |     Actor's action                       |  System action                                                       | FR needed |
 | :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
-|     Request to update a invoice            | launch a data-entry dialog                                         |           |
+|     Request to update a invoice            |  Ask to insert parameters launching a data-entry dialog            |           |
 |     modify the invoice parameters          | update the invoice in the DB using Owner parameters                |           |                                                   
 
 
@@ -500,7 +500,7 @@ Steps
 
 |     Actor's action           |  System action                                                       | FR needed |
 | :--------------------------: | :------------------------------------------------------------------: |:---------:|
-|                              |     Ask owner to insert the password, launching a data-entry dialog  |           |
+|                              |      Ask to insert parameters launching a data-entry dialog          |           |
 |   Insert the password        |     Check  the password                                              |           |
 |                              |     Authenticate owner                                               |           |
 
@@ -553,7 +553,7 @@ steps
 
 |     Actor's action               |  System action                                                       | FR needed |
 | :------------------------------: | :------------------------------------------------------------------: |:---------:|
-|   Request to change the password |    launching a data-entry dialog                                     |           |
+|   Request to change the password |     Ask to insert parameters launching a data-entry dialog           |           |
 |   Insert the password            |     Validate  the password                                           |           |
 |                                  |     Don't change the password since it is not valid                  |           |
 
@@ -566,8 +566,51 @@ steps
 |  Pre condition   | Owner is authenticated && DB services are available && internet connection is available |
 |  Post condition  | CRUD-type operation is performed in the catalogue  |
 | Nominal Scenario | - Owner creates a product MP1 <br> - Owner updates a product MP2 <br> - Owner deletes a product MP3| 
-|     Variants     | -  Owner deletes many products, filtering by products' attributes MP3V1 |
-|     Exception    | - Owner tries to create a product with inconsistent values MP1E1 <br> - Owner tries to create a product that is alredy in the catalogue MP1E2 <br> - Owner tries to update a product with inconsisten values MP2E2 <br>|
+
+##### Scenario MP1  
+
+|  Scenario MP1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Owner is authenticated && DB services are available | 
+| Post condition | A new product is inserted in the inventory|
+
+Steps
+
+|     Actor's action      |  System action                                              | FR needed |
+| :---------------------------------------:|:------------------------------------------------------------------: |:---------:|
+|     Request to create a new product        |  Ask to insert parameters launching a data-entry dialog           |           |
+|     Insert product parameters              | Create and insert a new product in the DB using Owner parameters|           |                                                   
+
+##### Scenario MP2 
+
+|  Scenario MP2  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Owner retrieve product to update                                             | 
+| Post condition | A product in the inventory is updated                                        |
+
+Steps
+
+|     Actor's action                       |  System action                                                       | FR needed |
+| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
+|     Request to update a product            | Ask to insert parameters launching a data-entry dialog             |           |
+|     modify the product parameters          | update the product in the DB using Owner parameters                |           |                                                   
+
+
+##### Scenario MP3 
+
+|  Scenario MP3  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Owner retrieve product to delete                                           | 
+| Post condition | Product is deleted from the inventory                                      |
+
+Steps
+
+|     Actor's action                       |  System action                                                       | FR needed |
+| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
+|     Request to delete a product          | Delete the product from the DB                                        |           |
+ 
+
+
 
 ### Use case Receive Notifications, UC8
 
@@ -623,10 +666,42 @@ steps
 
 Steps
 
-|     Actor's action      |  System action                                              | FR needed |
-| :------------: | :------------------------------------------------------------------: |:---------:|
-|     Owner      |     Choose time granularity                                          |           |
-|     System     |     Return the income                                                |           |
+|     Actor's action          |  System action                                                                  | FR needed |
+| :-------------------------: | :-----------------------------------------------------------------------------: |:---------:|
+|     Request the income     |  Ask time window in year                                                        |           |                   
+|     Choose time window      |    Ask time granularity (day, week, month, quarter, semiannual, annual)         |           | 
+|     Choose time granularity |  Return the income                                                             |           |
+
+
+##### Scenario MC2  
+
+|  Scenario MC2  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Every outoging is correctly tracked                                        | 
+| Post condition | Owner retrieves outgoing                                                    |
+
+Steps
+
+|     Actor's action          |  System action                                                                  | FR needed |
+| :-------------------------: | :-----------------------------------------------------------------------------: |:---------:|
+|     Request the outgoing     |  Ask time window in year                                                        |           |                   
+|     Choose time window      |    Ask time granularity (day, week, month, quarter, semiannual, annual)         |           | 
+|     Choose time granularity |  Return the outgoing                                                             |           |
+
+##### Scenario MC3  
+
+|  Scenario MC3  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Every outoging and incomes are correctly tracked                           | 
+| Post condition | Owner retrieves balance                                                    |
+
+Steps
+
+|     Actor's action          |  System action                                                                  | FR needed |
+| :-------------------------: | :-----------------------------------------------------------------------------: |:---------:|
+|     Request the balance     |  Ask time window in year                                                        |           |                   
+|     Choose time window      |    Ask time granularity (day, week, month, quarter, semiannual, annual)         |           | 
+|     Choose time granularity |  Return the balance                                                             |           |
 
 
 ## Use case Manage Cash Registers, UC13
