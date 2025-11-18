@@ -86,11 +86,15 @@ Consider that the document should be delivered to another team (unknown to you)
 # Context Diagram and interfaces
 
 ## Context Diagram
+%%
 ```plantuml
 
-@startuml
+@startuml contextDiagram
+!pragma layout smetana
+skinparam backgroundColor #fcf7f2
 skinparam actorStyle hollow
-rectangle "EzShop" as system
+
+circle "EzShop" as system
 actor "Owner" as owner
 actor "Cash register" as register
 actor "Shipment tracking provider" as shipping
@@ -104,6 +108,8 @@ system <-- posProvider
 'comment
 @enduml
 ```
+%%
+![](contextDiagram.svg)
 
 ## Interfaces
 
@@ -546,9 +552,12 @@ Steps
     * A system-generated message or alert that informs the shop owner about important events or conditions, such as changes in order status, low product quantity, batch expiration, or connectivity issues.
 
 
-```plantuml
-@startuml
+
+
+%%
+@startuml glossaryDiagram
 !pragma layout smetana
+skinparam backgroundColor #fcf7f2
 
 class Shop {
     + name
@@ -682,9 +691,9 @@ Order "0..*" -- "1..*" ShippingCompany: > delivered by
 
 Invoice --  Order:> associated with
 
-CashRegister  -l- "0..*" Refund: > sent by
-CashRegister  -r- "0..*" Sale: > sends
-CashRegister "0..*" -d- "0,1" Catalogue: > receives
+CashRegister  -- "0..*" Refund: > sent by
+CashRegister  -- "0..*" Sale: > sends
+CashRegister "0..*" -- "0,1" Catalogue: > receives
 
 Inventory  -- "0..*" Batch: > contains
 
@@ -694,13 +703,18 @@ Expense <|-- Invoice
 
 
 Owner  -- "1..*" Shop:> manages
-Owner  -r- "1..*" Notification:> interacts with
+Owner  -- "1..*" Notification:> interacts with
 
 Shop -- Inventory : > has
 
+Refund .r[hidden]. Catalogue
+Catalogue .r[hidden]. Sale
+
 
 @enduml
-```
+%%
+![](glossaryDiagram.svg) 
+
 \<use UML class diagram to define important terms, or concepts in the domain of the application, and their relationships>
 
 \<concepts must be used consistently all over the document, ex in use cases, requirements etc>
@@ -716,5 +730,44 @@ Shop -- Inventory : > has
 # Hardware Software architecture
 
 \<describe here the hardware software architecture using UML deployment diagram >
+
+
+%%
+```plantuml
+@startuml deploymentDiagram
+!pragma layout smetana
+skinparam backgroundColor #fcf7f2
+
+' Define artifact symbol with file icon
+artifact "POS service" as POS
+artifact "EzShop Windows app" as EzShopWinApp
+artifact "Order tracking service" as OrderTracking
+artifact "DB service" as DBService
+artifact "EzShop back end" as EzShopBackEnd
+
+node "Cash register" as CashRegister
+node "client Windows computer" as ClientPC
+node "Shipping company service" as ShippingService
+node "EzShop server" as EzShopServer
+node "POS provider" as pos
+
+' Deployment relationships (dashed with <<deploy>>)
+POS --> CashRegister : <<deploy>>
+EzShopWinApp --> ClientPC : <<deploy>>
+OrderTracking --> ShippingService : <<deploy>>
+DBService --> EzShopServer : <<deploy>>
+EzShopBackEnd --> EzShopServer : <<deploy>>
+
+' Network links (solid lines with labels)
+CashRegister -r- EzShopServer : LAN link
+ClientPC -l- EzShopServer : LAN link
+ClientPC -r- ShippingService : internet link
+EzShopServer -- pos: internet link
+@enduml
+
+```
+%%
+
+![](deploymentDiagram.svg) 
 
 
