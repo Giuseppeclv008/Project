@@ -462,8 +462,11 @@ Report here the results of the three estimation approaches. The estimates may di
 
 |                                    | Estimated effort (ph) | Estimated duration (calendar time, relative)|
 | ---------------------------------- | ---------------- | ------------------ |
-| estimation by size                   |        500 ph           |                    |
-| estimation by FP |       517 ph   |                    |
-| estimation by product decomposition  |          700 ph        |                    |
-| estimation by activity decomposition (Gantt) |       756 ph   |                    |
+| estimation by size                   |        500 ph           |  2 weeks and a half   (13 days)               |
+| estimation by FP |       517 ph   |                    | 2 weeks and a half (13 days)
+| estimation by product decomposition  |          700 ph        |     3 weeks a and a half (18 days)               |
+| estimation by activity decomposition (Gantt) |       756 ph   |        almost 4 weeks (19 days)            |
 
+The gap between the size/FP estimates and the product/activity decomposition estimates is due to the different methods used: the former relies on metrics that measure only the implementation part of the proejct: since the requirements and design engineering part of the project is not considered, the estimated effort is way lower than the real one. The latter considers also the first stages of the software engineering process, providing better estimations.
+
+Differences between the Product and the Activity decomposition may be explained by an underestimation of the effort required by the design document. In the PBS it was considered as a unique block, while the WBS decomposed it in several activities. The estimation of every single task in the design document has provided a better estimation of the effort of the project. However, since the gap between PBS and WBS is lower than 10%, both of them are acceptable.
