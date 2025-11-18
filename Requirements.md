@@ -110,8 +110,9 @@ system <-- posProvider
 |   Actor   | Logical Interface | Physical Interface |
 | :-------: | :---------------: | :----------------: |
 | Shop manager | GUI | Desktop computer |
-| Cash register | API | Internet connection |
-| Shipping company | API | Internet connection |
+| Cash register | Square, lightspeed, nexi or clover API | Lan connection |
+| POS provider | Square, lightspeed, nexi or clover API | Internet connection |
+| Shipment tracking provider | easy post API | Internet connection |
 
 
 # Functional and non functional requirements
