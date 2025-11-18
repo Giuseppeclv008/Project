@@ -732,7 +732,7 @@ Catalogue .r[hidden]. Sale
 \<describe here the hardware software architecture using UML deployment diagram >
 
 
-<!---
+%%
 ```plantuml
 @startuml deploymentDiagram
 !pragma layout smetana
@@ -766,7 +766,8 @@ EzShopServer -- pos: internet link
 @enduml
 
 ```
---->
+%%
+
 
 
 ![](deploymentDiagram.svg) 
