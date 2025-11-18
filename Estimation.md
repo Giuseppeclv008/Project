@@ -464,5 +464,6 @@ Report here the results of the three estimation approaches. The estimates may di
 | ---------------------------------- | ---------------- | ------------------ |
 | estimation by size                   |        500 ph           |                    |
 | estimation by FP |       517 ph   |                    |
-| estimation by product decomposition  |          334 ph        |                    |
+| estimation by product decomposition  |          700 ph        |                    |
 | estimation by activity decomposition (Gantt) |       756 ph   |                    |
+
