@@ -63,6 +63,13 @@ Consider that the document should be delivered to another team (unknown to you)
 - Revenue Stream
     * Yearly fee
     * Privately founded
+ 
+
+>[!Note]  
+> We realized that our business model, while it may make sense in theory, it would likely not work in reality.\
+> All POS provider (that we were able to find) with an open API that our application can interact with always sell a management software + hardware bundle.\
+> We would be a small start up company, so it is very unlikely for us to be able to provide more or better functionality than the software the hardware comes with for free.\
+> Considering this context, our potential customer would not really have many incentives towards buying our product.
 
 
 
