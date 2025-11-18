@@ -496,7 +496,7 @@ system <-- shipping
 |                                        | System rejects the creation and displays an error message           |           |
 
 
-### Use case Manage Invoices, UC4
+## Use case Manage Invoices, UC4
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
@@ -729,7 +729,7 @@ system <-- shipping
 |                                          | System rejects the creation and displays an error message           |           |
 
  
-### Use case Receive Notifications, UC8
+## Use case Receive Notifications, UC8
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
@@ -1009,7 +1009,7 @@ system <-- shipping
 
 
 
-### Use case Manage Accounting, UC12
+## Use case Manage Accounting, UC12
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
@@ -1066,7 +1066,7 @@ system <-- shipping
 
 
 
-### Use case Manage Cash Registers, UC13
+## Use case Manage Cash Registers, UC13
 
 | Actors Involved  |                - Main: Owner <br> - Passive: POS provider, Cash Register                                               |
 | :--------------: | :------------------------------------------------------------------ |
@@ -1253,7 +1253,7 @@ system <-- shipping
 
 
 
-### Use case Track Orders, UC16
+## Use case Track Orders, UC16
 
 | Actors Involved  |                 Shipment tracking provider                                               |
 | :--------------: | :------------------------------------------------------------------ |
