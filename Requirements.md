@@ -264,8 +264,8 @@ system <-- shipping
 | **UC11 - Retrieve Data**           | Retrieve data required  by the owner        | Owner retrieves list of products, sales, orders, batches, refunds, cash registers and invoices filtered by one or more fo their attributes |
 | **UC12 - Manage cash flow**        | Retrieve incomes, outgoings and balance     | Owner retrieves incomes, outogings and balance tracked and computed by the system|     
 | **UC13 - Manage cash registers**   | Add cash registers to the system            | Owner connect cash registers to the system through POS API |
-| **UC14 – Get cash operation**      | Send sales and refunds                      | Cash register sends information about sales and refunds to the system |
-| **UC15 - Send Catalogue**           | Get catalogue from system                   | Cash register gets catalogue from the system |
+| **UC14 – Send cash operation**      | Send sales and refunds                      | The system sends api polling every 2 minuts asking to cash registers to send their stored sales and refunds |
+| **UC15 - Get Catalogue**           | Get catalogue from system                   | The system sends api polling every day at 6.00 a.m. to update the cash register's internal catalogue |
 | **UC16 - Track Orders** |   Get the current status of one or more orders        | The system ask to the shipping company tracking service via api the current status of the order and gets it |
 ## Use case diagram
 
@@ -441,7 +441,7 @@ Steps
 |   Precondition   | Owner is authenticated && Data are in the system && BD services are available |
 |  Post condition  |  Owner retrieves the desidered list of data |
 | Nominal Scenario | Owner retrieves a list of products from the system RD1 <br> - Owner retrieves a list of sales from the system RD2 <br> - Owner retrieves a list of batches from the system RD3 <br> - Owner retrieves a list of orders from the system RD4 <br> - Owner retrieves a list of invoices from the system RD5 | 
-|     Variants     | - Owner retrieves a list of data filtered by their attributes RDV1
+|     Variants     | - Owner retrieves a list of data filtered by their attributes RDV1 |
 
 ## Use case Manage Cash Flow, UC12
 
@@ -468,39 +468,74 @@ Steps
 
 ## Use case Manage Cash Registers, UC13
 
-| Actors Involved  |                 Owner                                                |
+| Actors Involved  |                - Main: Owner <br> - Passive: POS provider, Cash Register                                               |
 | :--------------: | :------------------------------------------------------------------ |
 |  Pre condition   | Owner is authenticated && DB services are available && internet connection is available|
 |  Post condition  | Cash register's list is up to date |
 | Nominal Scenario |  - Owner add a new cash register to the list CR1 <br> - Owner updates a cash register in the list CR2 <br> - Owner deletes a cash register from the list CR3 | 
 |     Exception    | - Owner tries to add a new cash register with inconsistent values CR1E1 <br> - Owner tries to add a cash register that is alredy in the list CR1E2 <br> - Owner tries to update a cash register with inconsisten values CR2E1 |
 
-## Use case Get cash operation, UC14
+
+|  Scenario CR1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Owner is authenticated && DB services are available && internet connection is available | 
+| Post condition | A new cash register is added to the system  |
+
+Steps
+
+|     Actor's action      |  System action                                              | FR needed |
+| :------------: | :------------------------------------------------------------------: |:---------:|
+|     Owner      |     Open cash registers' list                                            |           |
+|     Owner      |     Authenticate on POS provider website                                            |           |
+|     Owner     |      Add new cash register on POS provider website | |
+|     Owner     |      Insert cash register attributes and api token                                              |           |
+|     System    |    Validate token with POS provider                              |           |
+|    System     |    Insert cash register on db | |
+
+
+
+## Use case Send cash operation, UC14
 
 | Actors Involved  |                 Cash Register                                                |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   | Cash Registers ad on && DB services are available && lan connection is available|
+|  Pre condition   | Cash Registers are turned on && DB services are available && lan connection is available|
 |  Post condition  | The system received new sales and refunds from the cash register|
-| Nominal Scenario |  - The system ask to the cash register sales GC1 <br> - The system ask to the cash register refunds GC2 <br> | 
-|     Exception    | - The data transfer is corrupted GCE1 <br>|
+| Nominal Scenario |  - The system ask to the cash register sales SC1 <br> - The system ask to the cash register refunds SC2 <br> | 
+|     Exception    | - The data transfer is corrupted SCE1 <br>|
 
-## Use case Send Catalogue, UC15
+## Use case Get Catalogue, UC15
 
 | Actors Involved  |                 Cash Register                                                |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   |  Cash Registers ad on && DB services are available && lan connection is available|
+|  Pre condition   |  Cash Registers are turned on && DB services are available && lan connection is available|
 |  Post condition  | The cash register internal catalogue is consistent with the db's|
-| Nominal Scenario | - The system sends to the cash register the updated catalogue SC1<br>| 
-|     Exception    | - The data transfer is corrupted SCE1 <br>|
+| Nominal Scenario | - The system sends to the cash register the updated catalogue GC1<br>| 
+|     Exception    | - The data transfer is corrupted GCE1 <br>|
 
 ## Use case Track Orders, UC16
 
-| Actors Involved  |                 Shipping Company                                                |
+| Actors Involved  |                 Shipment tracking provider                                               |
 | :--------------: | :------------------------------------------------------------------ |
 |  Pre condition   | DB services are available && internet connection is available|
 |  Post condition  | The order status is up to date |
-| Nominal Scenario | - The system ask a status update to a shipping company tracking service TO1 <br> | 
+| Nominal Scenario | - The system ask a status update to the shipping tracking service TO1 <br> | 
 |     Exception    | - The traking service is unreachable TOE1 <br> |
+
+|  Scenario TO1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | DB services are available && internet connection is available | 
+| Post condition | The order status is up to date |
+
+Steps
+
+|     Actor's action      |  System action                                              | FR needed |
+| :------------: | :------------------------------------------------------------------: |:---------:|
+|     System      |    Sends an api request to Shipment tracking provider asking an order status check                                              |           |
+|     Shipment tracking provider      |    Sends a response with the current order status                                         |           |
+|     System     |     Send ack to shipment tracking provider | |
+|     System     |     Update order status on db                                      |           |
+
+
 
 ##### Scenario 1.1
 
