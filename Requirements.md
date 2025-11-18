@@ -73,7 +73,7 @@ Consider that the document should be delivered to another team (unknown to you)
 | Shop owner | Reviews accounting information and initiates orders to suppliers |
 | Cashier | Handles transactions and enters sales info through the cash register |
 | Cash register | Feeds data to the application |
-| POS provider | Grants access token to comunicate securely with the cash registers |
+| POS provider | Grants access token to identify and comunicate securely with the cash registers |
 | Shipment tracking provider | Grants the ability to retrieve the current order's status|
 | Desktop OS| The device where the application resides |
 | Product suppliers | Business who supply the shop with items |
