@@ -820,10 +820,10 @@ system <-- shipping
 
 | Actor's Action                         | System Action                                                     | FR needed |
 |-----------------------------------------|-------------------------------------------------------------------|-----------|
-| —                                       | System detects internet connectivity failure                      |           |
-| —                                       | System generates a “no internet connection” notification          |           |
-| —                                       | System stores the notification in the DB (lan connected)             |           |
-| —                                       | System displays the notification in a pop-up                      |           |
+|                                        | System detects internet connectivity failure                      |           |
+|                                        | System generates a “no internet connection” notification          |           |
+|                                        | System stores the notification in the DB (lan connected)             |           |
+|                                        | System displays the notification in a pop-up                      |           |
 | Owner sees the pop-up notification      | System shows the notification in the notification menu  |       |
 
 ### Scenario RN6
