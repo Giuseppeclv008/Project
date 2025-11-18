@@ -266,7 +266,7 @@ system <-- shipping
 | **UC13 - Manage cash registers**   | Add cash registers to the system            | Owner connect cash registers to the system through POS API |
 | **UC14 – Get cash operation**      | Send sales and refunds                      | Cash register sends information about sales and refunds to the system |
 | **UC15 - Send Catalogue**           | Get catalogue from system                   | Cash register gets catalogue from the system |
-| **UC16 - Track Orders** |          | Get the current status of one or more orders | The system ask to the shipping company tracking service via api the current status of the order and gets it |
+| **UC16 - Track Orders** |   Get the current status of one or more orders        | The system ask to the shipping company tracking service via api the current status of the order and gets it |
 ## Use case diagram
 
 \<define here UML Use case diagram UCD summarizing all use cases, and their relationships>
