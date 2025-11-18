@@ -189,8 +189,8 @@ Given the values calculated in the previous sections we can finally evalute the 
 **AFP =UFP * TCF * ECF = 355 * 1.04 * 0.56= 206,75**\
 Assuming that the project will be devolped using Python as coding language, with an\
 an estimation of about *25 LOC/FP* we can forecast a total of about\
-**AFP * 25=206.75 * 25 = 5169 LOC**
-** **
+**AFP * 25=206.75 * 25 = 5169 LOC**\
+**The amount of person hours is calculate by the given productivity value - 10 LOC per person hour: 517 ph**
 
 
 
@@ -467,6 +467,8 @@ Report here the results of the three estimation approaches. The estimates may di
 | estimation by product decomposition  |          700 ph        |     3 weeks a and a half (18 days)               |
 | estimation by activity decomposition (Gantt) |       756 ph   |        almost 4 weeks (19 days)            |
 
-The gap between the size/FP estimates and the product/activity decomposition estimates is due to the different methods used: the former relies on metrics that measure only the implementation part of the proejct: since the requirements and design engineering part of the project is not considered, the estimated effort is way lower than the real one. The latter considers also the first stages of the software engineering process, providing better estimations.
+
+The gap between the estimation made by size and FP with the one found by the PBS and later in the WBS is due to the fact that the given productivity value is really high, hence valuating the project by product decomposition, giving an expected amount of hours per product and then per activity gives a better and realisitical estimation of the time needed.
+
 
 Differences between the Product and the Activity decomposition may be explained by an underestimation of the effort required by the design document. In the PBS it was considered as a unique block, while the WBS decomposed it in several activities. The estimation of every single task in the design document has provided a better estimation of the effort of the project. However, since the gap between PBS and WBS is lower than 10%, both of them are acceptable.
