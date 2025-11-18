@@ -73,6 +73,8 @@ Consider that the document should be delivered to another team (unknown to you)
 | Shop owner | Reviews accounting information and initiates orders to suppliers |
 | Cashier | Handles transactions and enters sales info through the cash register |
 | Cash register | Feeds data to the application |
+| POS provider | Grants access token to comunicate securely with the cash registers |
+| Shipment tracking provider | Grants the ability to retrieve the current order's status|
 | Desktop OS| The device where the application resides |
 | Product suppliers | Business who supply the shop with items |
 | Shipping company | Company who delivers the items to the shop|
@@ -85,18 +87,22 @@ Consider that the document should be delivered to another team (unknown to you)
 
 ## Context Diagram
 ```plantuml
-!theme blueprint
-skinparam backgroundColor transparent
 
+@startuml
 skinparam actorStyle hollow
 rectangle "EzShop" as system
-actor "Shop Owner" as shopManager
+actor "Owner" as owner
 actor "Cash register" as register
-actor "Shipping company" as shipping
+actor "Shipment tracking provider" as shipping
+actor "POS provider" as posProvider
 
-shopManager <--> system
-register --> system
+system <--> owner
+system <-- register
 system <-- shipping
+system <-- posProvider 
+
+'comment
+@enduml
 ```
 
 ## Interfaces
