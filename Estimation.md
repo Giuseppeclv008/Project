@@ -300,16 +300,18 @@ an estimation of about *25 LOC/FP* we can forecast a total of about\
 | &nbsp;&nbsp;&nbsp;&nbsp; order suggestion saving              |               4                 |
 | &nbsp;&nbsp; _accounting management_                          |               66                |
 | &nbsp;&nbsp;&nbsp; _income and expenses management_           |               32                |
-| &nbsp;&nbsp;&nbsp;&nbsp  inherit from CSV management module   |               12                |
-|&nbsp;&nbsp;&nbsp;&nbsp  implement merge between DB and CSV data|             20                |
+| &nbsp;&nbsp;&nbsp;&nbsp; inherit from CSV management module   |               12                |
+|&nbsp;&nbsp;&nbsp;&nbsp;  implement merge between DB and CSV data|             20                |
 | &nbsp;&nbsp; _cash regisger management_                       |               34                |
 | &nbsp;&nbsp;&nbsp;  connection with POS                       |                14               |
 | &nbsp;&nbsp;&nbsp;  registers list creation/update            |                6                |
 | &nbsp;&nbsp;&nbsp;  catalogue synchronization logic           |                6                |
 | &nbsp;&nbsp;&nbsp;  sales/refunds list update                 |                8                |
 | Database                                                      |                30               |
-
-_total amount of estimated person hours is: 334_ 
+| _Testing_                                                      |   77  |
+| &nbsp;&nbsp; Unit testing                                      |   40  |
+| &nbsp;&nbsp; Integration testing                               |   37  |
+_total amount of estimated person hours is: 776_ 
 _total estimated calendar time is: 3 weeks_
 
 
@@ -362,47 +364,24 @@ _total estimated calendar time is: 3 weeks_
 | 5.1 Logical modeling                               | 10 |
 | 5.2 Physical modeling                              | 10 |
 | 5.3 Initial configuration and data seeding         | 10 |
+| **6. Testing**                                  | **70** |
+| 6.1 Unit testing                                | 40 |
+| 6.2 Integration testing                          | 30 |
 ###
 
 ## Gantt chart
-```mermaid
-gantt
-    dateFormat  YYYY-MM-DD
-    title EZShop Project - Gantt Chart 
-
-    section Requirements
-    Requirements Analysis           :a1, 2025-11-18, 3d
-    Function Points Review          :a2, after a1, 1d
-
-    section Design
-    Architecture Design             :d1, after a2, 2d
-    API Specification               :d3, after d1, 3d
-
-    section Backend
-    Core Backend Services           :b1, after d3, 8d
-    POS Integration Backend         :b3, after b1, 4d
-    POS End-to-End Flow             :i2, after b3, 3d
-
-    section Testing
-    Unit & Integration Tests        :t1, after i2, 4d
-    Acceptance Testing              :t2, after t1, 3d
-
-    section Deployment
-    Dockerization                   :dep1, after t2, 2d
-    Final Deployment & Monitoring   :dep2, after dep1, 3d
-```
+![alt text](<Online Gantt 20251118 (1).png>)
 
 ## Summary
 
 Report here the results of the three estimation approaches. The estimates may differ. Discuss here the possible reasons for the difference
 
-|                                    | Estimated effort (ph) | Estimated duration (calendar time, relative)|
-| ---------------------------------- | ---------------- | ------------------ |
-| estimation by size                   |        500 ph           |  2 weeks and a half   (13 days)               |
-| estimation by FP |       517 ph   |                    | 2 weeks and a half (13 days)
-| estimation by product decomposition  |          700 ph        |     3 weeks a and a half (18 days)               |
-| estimation by activity decomposition (Gantt) |       756 ph   |        almost 4 weeks (19 days)            |
-
+|                                    | Estimated effort (ph) | Estimated duration (calendar time, relative) |
+| ---------------------------------- | --------------------- | --------------------------------------------- |
+| estimation by size                 | 500 ph                | 2 weeks and a half (13 days)                  |
+| estimation by FP                   | 517 ph                | 2 weeks and a half (13 days)                  |
+| estimation by product decomposition| 770 ph | about 4 weeks (19 days) |
+| estimation by activity decomposition (Gantt) | 826 ph | almost 4 weeks and 3 days (21 days) |
 
 The gap between the estimation made by size and FP with the one found by the PBS and later in the WBS is due to the fact that the given productivity value is really high, hence valuating the project by product decomposition, giving an expected amount of hours per product and then per activity gives a better and realisitical estimation of the time needed.
 
