@@ -487,7 +487,7 @@ Steps
 |  Pre condition   |  Owner knows the correct password |
 |  Post condition  |  Owner is correctly authenticated |
 | Nominal Scenario | - Authenticate owner AO1 <br> | 
-|     Variant      | - Owner tries to authenticate with a wrong password <br> AO1V1    | 
+|     Exception    | - Owner tries to authenticate with a wrong password <br> AOE1    | 
 
 ##### Scenario AO1  
 
@@ -504,9 +504,9 @@ Steps
 |   Insert the password        |     Check  the password                                              |           |
 |                              |     Authenticate owner                                               |           |
 
-##### Scenario AO1V1 
+##### Scenario AOE1 
 
-|  Scenario AO1V1  |                                                                            |
+|  Scenario AOE1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------:   |
 |  Precondition  | Owner knows an incorrect password                                            | 
 | Post condition | Owner is not authenticated                                                   |
@@ -515,7 +515,8 @@ Steps
 | :--------------------------: | :------------------------------------------------------------------: |:---------:|
 |                              |     Ask owner to insert the password, launching a data-entry dialog  |           |
 |   Insert the password        |     Check  the password                                              |           |
-|                              |     Not authenticate owner since password is incorrect               |           |
+|                              |     inform the user the password is not correct                      |           |
+|                              |     Don't authenticate owner                                           |           |
 
 
 ### Use case Change Password, UC6
@@ -555,6 +556,7 @@ steps
 | :------------------------------: | :------------------------------------------------------------------: |:---------:|
 |   Request to change the password |     Ask to insert parameters launching a data-entry dialog           |           |
 |   Insert the password            |     Validate  the password                                           |           |
+|                                  |     Inform user the password is not correct                          |           |
 |                                  |     Don't change the password since it is not valid                  |           |
 
 
@@ -609,9 +611,6 @@ Steps
 | :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
 |     Request to delete a product          | Delete the product from the DB                                        |           |
  
-
-
-
 ### Use case Receive Notifications, UC8
 
 | Actors Involved  |                 Owner                                                |
@@ -625,10 +624,41 @@ Steps
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   | Owner is authenticated && DB services are available && internet connection is available && file .csv data are in the correct format|
+|  Pre condition   | Owner is authenticated && DB services are available && internet connection is available |
 |  Post condition  | .csv file's data are correctly imported |
-| Nominal Scenario | - Owner import a list of product as .csv file ID1 <br> -  Owner import a list of invoices as .csv file ID2 <br> -  Owner import a list of suppliers as .csv file ID3 <br> - Owner import a list of sales as .csv file ID4<br> -  Owner import a list of refunds as .csv file ID5<br> - Owner importr a list of orders as .csv file ID6 | 
-|     Exception    | - Owner import .csv file with format error IDE1|
+| Nominal Scenario | - Owner import a set of lists containg products, invoices, suppliers, sales, refunds, orders as .csv file ID1| 
+|     Exception    | - Owner import .csv files with format error IDE1|
+
+##### Scenario ID1
+
+|  Scenario ID1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | data in .csv files are in the correct format                               | 
+| Post condition | .csv files are imported in the system                                      |
+
+Steps
+
+|     Actor's action                       |  System action                                                       | FR needed |
+| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
+| Request to import a set of .csv files    | Ask to upload .csv files                                             |           |
+| Upload .csv files                        | check .csv files are in the correct format                           |           |
+|                                          | import new data in the system                                        |           | 
+
+##### Scenario IDE1
+
+|  Scenario IDE1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | data in .csv files are not in the correct format                               | 
+| Post condition | .csv files are not imported in the system                                      |
+
+Steps
+
+|     Actor's action                       |  System action                                                       | FR needed |
+| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
+| Request to import a set of .csv files    | Ask to upload .csv files                                             |           |
+| Upload .csv files                        | check .csv files are in the correct format                           |           |
+|                                          | Inform the user that some data is not in the correct form            |           |
+|                                          | don't import new data in the system                                  |           | 
 
 ### Use case Export Data, UC10
 
@@ -636,8 +666,21 @@ Steps
 | :--------------: | :------------------------------------------------------------------ |
 |  Pre condition   | Owner is authenticated && DB services are available && internet connection is available && needed data are in the system|
 |  Post condition  | data are correctly exported as .csv |
-| Nominal Scenario | - Owner export a list of product as .csv file ED1 <br> -  Owner export a list of invoices as .csv file ED2 <br> -  Owner export a list of suppliers as .csv file ED3 <br> - Owner export a list of sales as .csv file ED4 <br> - Owner export a list of refunds as .csv file ED5 <br> - Owner export a list of orders as .csv file ED6| 
-|     Exception    | - Owner export .csv file with format error EDE1|
+| Nominal Scenario | - Owner export a set of lists containg products, invoices, suppliers, sales, refunds, orders as .csv file ED1| 
+
+##### Scenario ED1
+
+|  Scenario ED1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  |                                                                            | 
+| Post condition | .csv files are imported in the system                                      |
+
+Steps
+
+|     Actor's action                       |  System action                                                       | FR needed |
+| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
+| Request to export data as .csv file      | retrieve data                                                        |           |
+|                                          | export data as .csv file                                          |            |
 
 ### Use case Retrieve Data, UC11
 
@@ -646,10 +689,24 @@ Steps
 |  Pre condition   | Owner is authenticated && DB services are available    |
 |   Precondition   | Owner is authenticated && Data are in the system && BD services are available |
 |  Post condition  |  Owner retrieves the desidered list of data |
-| Nominal Scenario | Owner retrieves a list of products from the system RD1 <br> - Owner retrieves a list of sales from the system RD2 <br> - Owner retrieves a list of batches from the system RD3 <br> - Owner retrieves a list of orders from the system RD4 <br> - Owner retrieves a list of invoices from the system RD5 | 
-|     Variants     | - Owner retrieves a list of data filtered by their attributes RDV1
+| Nominal Scenario | Owner retrieves a list of products, invoices, suppliers, sales, refunds or orders RD1 | 
+|     Variants     | - Owner retrieves a list of products, invoices, suppliers, sales, refunds or orders filtered by their attributes RDV1|
 
-## Use case Manage Cash Flow, UC12
+##### Scenario RD1
+
+|  Scenario ED1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  |                                                                            | 
+| Post condition | Owner gets the data                                                        |
+
+Steps
+
+|     Actor's action                       |  System action                                                       | FR needed |
+| :---------------------------------------:| :------------------------------------------------------------------: |:---------:|
+| Request to get a list of products, invoices, suppliers, sales, refunds or orders      | retrieve data                                                        |           |
+|                                          |   return data to the owner                                             |            |
+
+### Use case Manage Cash Flow, UC12
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
@@ -704,7 +761,7 @@ Steps
 |     Choose time granularity |  Return the balance                                                             |           |
 
 
-## Use case Manage Cash Registers, UC13
+### Use case Manage Cash Registers, UC13
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
@@ -713,7 +770,7 @@ Steps
 | Nominal Scenario |  - Owner add a new cash register to the list CR1 <br> - Owner updates a cash register in the list CR2 <br> - Owner deletes a cash register from the list CR3 | 
 |     Exception    | - Owner tries to add a new cash register with inconsistent values CR1E1 <br> - Owner tries to add a cash register that is alredy in the list CR1E2 <br> - Owner tries to update a cash register with inconsisten values CR2E1 |
 
-## Use case Get cash operation, UC14
+### Use case Get cash operation, UC14
 
 | Actors Involved  |                 Cash Register                                                |
 | :--------------: | :------------------------------------------------------------------ |
@@ -722,7 +779,7 @@ Steps
 | Nominal Scenario |  - The system ask to the cash register sales GC1 <br> - The system ask to the cash register refunds GC2 <br> | 
 |     Exception    | - The data transfer is corrupted GCE1 <br>|
 
-## Use case Send Catalogue, UC15
+### Use case Send Catalogue, UC15
 
 | Actors Involved  |                 Cash Register                                                |
 | :--------------: | :------------------------------------------------------------------ |
@@ -731,7 +788,7 @@ Steps
 | Nominal Scenario | - The system sends to the cash register the updated catalogue SC1<br>| 
 |     Exception    | - The data transfer is corrupted SCE1 <br>|
 
-## Use case Track Orders, UC16
+### Use case Track Orders, UC16
 
 | Actors Involved  |                 Shipping Company                                                |
 | :--------------: | :------------------------------------------------------------------ |
