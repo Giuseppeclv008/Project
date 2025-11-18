@@ -264,7 +264,7 @@ system <-- shipping
 | **UC11 - Retrieve Data**           | Retrieve data required  by the owner        | Owner retrieves list of products, sales, orders, batches, refunds, cash registers and invoices filtered by one or more fo their attributes |
 | **UC12 - Manage cash flow**        | Retrieve incomes, outgoings and balance     | Owner retrieves incomes, outogings and balance tracked and computed by the system|     
 | **UC13 - Manage cash registers**   | Add cash registers to the system            | Owner connect cash registers to the system through POS API |
-| **UC14 – Send cash operation**      | Send sales and refunds                      | The system sends api polling every 2 minuts asking to cash registers to send their stored sales and refunds |
+| **UC14 – Manage Sales and Refunds**      | Send sales and refunds                      | The system sends api polling every 2 minutes asking to cash registers to send their stored sales and refunds |
 | **UC15 - Get Catalogue**           | Get catalogue from system                   | The system sends api polling every day at 6.00 a.m. to update the cash register's internal catalogue |
 | **UC16 - Track Orders** |   Get the current status of one or more orders        | The system ask to the shipping company tracking service via api the current status of the order and gets it |
 ## Use case diagram
@@ -273,62 +273,62 @@ system <-- shipping
 
 \<next describe here each use case in the UCD>
 
-### Use case Manage Inventory, UC1 
+## Use case Manage Inventory, UC1 
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   | Owner is authenticated && DB services are available    |
+|  Precondition   | Owner is authenticated && DB services are available    |
 |  Post condition  | CRUD-type batches of products's operation is performed |
 | Nominal Scenario | - Owner creates a batches of products MI1 <br> - Owner updates a batches of products MI2 <br> - Owner deletes a batches of products MI3| 
 |     Variants     | -  Owner deletes many batches of products, filtering by products' attributes MI3V1 |
 |     Exception    | - Owner tries to create a batch of products with inconsistent values MI1E1 <br> - Owner tries to create a batches of products that is alredy in the system MI1E2 <br> - Owner tries to update a batches of products with inconsisten values MI2E1 <br>|
 
-### Use case Manage Supplier, UC2 
+## Use case Manage Supplier, UC2 
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   | Owner is authenticated && DB services are available    |
+|  Precondition   | Owner is authenticated && DB services are available    |
 |  Post condition  | CRUD-type suppliers's operation is performed |
 | Nominal Scenario | - Owner creates a supplier MS1 <br> - Owner updates a supplier MS2 <br> - Owner deletes a supplier MS3| 
 |     Exception    | - Owner tries to create a suppliers with inconsistent values MS1E1 <br> - Owner tries to create a suppliers that is alredy in the system MS1E2 <br> - Owner tries to update a suppliers with inconsistent values MS2E2 <br>|
 
-### Use case Manage Orders, UC3
+## Use case Manage Orders, UC3
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   | Owner is authenticated && DB services are available    |
+|  Precondition   | Owner is authenticated && DB services are available    |
 |  Post condition  | CRUD-type order's operation is performed |
 | Nominal Scenario | - Owner creates a order MO1 <br> - Owner updates a order MO2 <br> - Owner deletes a order MO3| 
 |     Variants     | -  Owner deletes many orders, filtering by products' attributes MO3V1 |
 |     Exception    | - Owner tries to create a order with inconsistent values MO1E1 <br> - Owner tries to create a order that is alredy in the system MO1E2 <br> - Owner tries to update a order with inconsisten values MO2E2 <br>|
 
-### Use case Manage Invoices, UC4
+## Use case Manage Invoices, UC4
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   | Owner is authenticated && DB services are available && internet connection is available |
+|  Precondition   | Owner is authenticated && DB services are available && internet connection is available |
 |  Post condition  | CRUD-type invoice's operation is performed |
 | Nominal Scenario | - Owner creates a invoice MI1 <br> - Owner updates a invoice MI2 <br> - Owner deletes a invoice MI3| 
 |     Variants     | -  Owner deletes many invoices, filtering by products' attributes MI3V1 |
 |     Exception    | - Owner tries to create a invoice with inconsistent values MI1E1 <br> - Owner tries to create a invoice that is alredy in the system MI1E2 <br> - Owner tries to update a invoice with inconsisten values MI2E2 <br>|
 
-### Use case Authenticate Owner, UC5
+## Use case Authenticate Owner, UC5
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   |  Owner knows a password          |
+|  Precondition   |  Owner knows a password          |
 |  Post condition  |  Owner is correctly authenticated |
 | Nominal Scenario | - Authenticate owner AO1 <br> | 
 |     Exception    | - Owner tries to authenticate with a wrong password <br> AO1E1    | 
 
-##### Scenario AO1  
+### Scenario AO1  
 
 |  Scenario AO1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 |  Precondition  | Owner knows a password | 
 | Post condition | Owner is correctly authenticated  |
 
-Steps
+#### Steps
 
 |     Actor's action      |  System action                                              | FR needed |
 | :------------: | :------------------------------------------------------------------: |:---------:|
@@ -336,14 +336,14 @@ Steps
 |     System     |     Check  the password                                              |           |
 |     System     |     Authenticate owner                                               |           |
 
-##### Scenario AO1E 
+### Scenario AO1E 
 
 |  Scenario AO1E1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 |  Precondition  | Owner knows an incorrect password | 
 | Post condition | Owner is not authenticated |
 
-Steps
+#### Steps
 
 |     Actor's action      |  System action                                              | FR needed |
 | :------------: | :------------------------------------------------------------------: |:---------:|
@@ -352,23 +352,23 @@ Steps
 |     System     |     Notify the owner that the password is not correct                |           |
 
 
-### Use case Change Password, UC6
+## Use case Change Password, UC6
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   |  Owner  is authenticated
+|  Precondition   |  Owner  is authenticated
 |  Post condition  |  Owner set a new password
 | Nominal Scenario | - Authenticate owner CP1 <br> | 
 |     Exception    | - Owner tries to set an invalid type of password CP1E1 <br>| 
 
-##### Scenario CP1
+### Scenario CP1
 
 |  Scenario CP1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 |  Precondition  | Owner is authenticated |
 | Post condition | Owner set a new password  |
 
-Steps
+#### Steps
 
 |     Actor's action      |  System action                                              | FR needed |
 | :------------: | :------------------------------------------------------------------: |:---------:|
@@ -378,14 +378,14 @@ Steps
 |     System     |     Check new password                                               |           |
 |     System     |     Save new password                                                |           |
 
-##### Scenario CP1E1
+### Scenario CP1E1
 
 |  Scenario CP1E1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 |  Precondition  | Owner is authenticated && Owner wants to set an invalid password           |
 | Post condition | Owner don't set a new password                                             |
 
-Steps
+#### Steps
 
 |     Actor's action      |  System action                                              | FR needed |
 | :------------: | :------------------------------------------------------------------: |:---------:|
@@ -396,48 +396,47 @@ Steps
 |     System     |     Inform user that an empty password is not allowed                |           |
 
 
-### Use case Manage Product Catalogue, UC7
+## Use case Manage Product Catalogue, UC7
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   | Owner is authenticated && DB services are available && internet connection is available |
+|  Precondition   | Owner is authenticated && DB services are available && internet connection is available |
 |  Post condition  | CRUD-type operation is performed in the catalogue  |
 | Nominal Scenario | - Owner creates a product MP1 <br> - Owner updates a product MP2 <br> - Owner deletes a product MP3| 
 |     Variants     | -  Owner deletes many products, filtering by products' attributes MP3V1 |
 |     Exception    | - Owner tries to create a product with inconsistent values MP1E1 <br> - Owner tries to create a product that is alredy in the catalogue MP1E2 <br> - Owner tries to update a product with inconsisten values MP2E2 <br>|
 
-### Use case Receive Notifications, UC8
+## Use case Receive Notifications, UC8
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   | Owner is authenticated && DB services are available &&  internet connection is available |
+|  Precondition   | Owner is authenticated && DB services are available &&  internet connection is available |
 |  Post condition  | Owner receive the notification  |
 | Nominal Scenario | - Owner is notified when an order status changes RN1 <br> - Owner is notified when a batch is expired RN2 <br> - Owner is notified when a cash is not responding RN3 <br> - Owner is notified when a product is going to run out RN4 <br> - Owner is notified when there is no internet connection RN5| 
 |     Variants     | - Owner is notified when an order status cannot be updated since API is not responding RN1V1 |
 
-### Use case Import Data, UC9
+## Use case Import Data, UC9
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   | Owner is authenticated && DB services are available && internet connection is available && file .csv data are in the correct format|
+|  Precondition   | Owner is authenticated && DB services are available && internet connection is available && file .csv data are in the correct format|
 |  Post condition  | .csv file's data are correctly imported |
 | Nominal Scenario | - Owner import a list of product as .csv file ID1 <br> -  Owner import a list of invoices as .csv file ID2 <br> -  Owner import a list of suppliers as .csv file ID3 <br> - Owner import a list of sales as .csv file ID4<br> -  Owner import a list of refunds as .csv file ID5<br> - Owner importr a list of orders as .csv file ID6 | 
 |     Exception    | - Owner import .csv file with format error IDE1|
 
-### Use case Export Data, UC10
+## Use case Export Data, UC10
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   | Owner is authenticated && DB services are available && internet connection is available && needed data are in the system|
+|  Precondition   | Owner is authenticated && DB services are available && internet connection is available && needed data are in the system|
 |  Post condition  | data are correctly exported as .csv |
 | Nominal Scenario | - Owner export a list of product as .csv file ED1 <br> -  Owner export a list of invoices as .csv file ED2 <br> -  Owner export a list of suppliers as .csv file ED3 <br> - Owner export a list of sales as .csv file ED4 <br> - Owner export a list of refunds as .csv file ED5 <br> - Owner export a list of orders as .csv file ED6| 
 |     Exception    | - Owner export .csv file with format error EDE1|
 
-### Use case Retrieve Data, UC11
+## Use case Retrieve Data, UC11
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :----------------------------------------------------------------- |
-|  Pre condition   | Owner is authenticated && DB services are available    |
 |   Precondition   | Owner is authenticated && Data are in the system && BD services are available |
 |  Post condition  |  Owner retrieves the desidered list of data |
 | Nominal Scenario | Owner retrieves a list of products from the system RD1 <br> - Owner retrieves a list of sales from the system RD2 <br> - Owner retrieves a list of batches from the system RD3 <br> - Owner retrieves a list of orders from the system RD4 <br> - Owner retrieves a list of invoices from the system RD5 | 
@@ -447,18 +446,18 @@ Steps
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   | Owner is authenticated && DB services are available && internet connection is available|
-|  Post condition  | cash flow is correctly tracked |
+|  Precondition   | Owner is authenticated && DB services are available && internet connection is available|
+|  Post condition  | Cash flow is correctly tracked |
 | Nominal Scenario | - Owner retrieves incomes at different time granularities MC1<br> - Owner retrieves outgoing at different time granularities MC2<br> - Owner retrieves balance at different time granularities MC3 <br> | 
 
-##### Scenario MC1  
+### Scenario MC1  
 
 |  Scenario MC1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 |  Precondition  | Every income is correctly tracked | 
 | Post condition | Owner retrieve Income |
 
-Steps
+#### Steps
 
 |     Actor's action      |  System action                                              | FR needed |
 | :------------: | :------------------------------------------------------------------: |:---------:|
@@ -470,70 +469,232 @@ Steps
 
 | Actors Involved  |                - Main: Owner <br> - Passive: POS provider, Cash Register                                               |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   | Owner is authenticated && DB services are available && internet connection is available|
+|  Precondition   | Owner is authenticated && DB services are available && internet connection is available|
 |  Post condition  | Cash register's list is up to date |
 | Nominal Scenario |  - Owner add a new cash register to the list CR1 <br> - Owner updates a cash register in the list CR2 <br> - Owner deletes a cash register from the list CR3 | 
-|     Exception    | - Owner tries to add a new cash register with inconsistent values CR1E1 <br> - Owner tries to add a cash register that is alredy in the list CR1E2 <br> - Owner tries to update a cash register with inconsisten values CR2E1 |
+|     Exception    | - Owner tries to add a cash register that is alredy in the list CR1E1 <br> |
 
+### Scenario CR1
 
 |  Scenario CR1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | Owner is authenticated && DB services are available && internet connection is available | 
-| Post condition | A new cash register is added to the system  |
+| Precondition   | Owner is authenticated && DB services are available && internet connection is available |
+| Post condition | A new cash register is added to the system                                |
 
-Steps
+#### Steps
 
-|     Actor's action      |  System action                                              | FR needed |
-| :------------: | :------------------------------------------------------------------: |:---------:|
-|     Owner      |     Open cash registers' list                                            |           |
-|     Owner      |     Authenticate on POS provider website                                            |           |
-|     Owner     |      Add new cash register on POS provider website | |
-|     Owner     |      Insert cash register attributes and api token                                              |           |
-|     System    |    Validate token with POS provider                              |           |
-|    System     |    Insert cash register on db | |
+| Actor's Action                                      | System Action                                                     | FR needed |
+|------------------------------------------------------|-------------------------------------------------------------------|-----------|
+| Owner opens the cash registers list                  |                                                                   |           |
+| Owner authenticates on the POS provider website      |                                                                   |           |
+| Owner adds a new cash register on the POS provider website |                                                             |           |
+| Owner enters the cash register attributes and API token |                                                                |           |
+|                                                      | System validates the token with the POS provider                  |           |
+|                                                      | System inserts the new cash register into the database            |           |
+
+### Scenario CR2
+
+|  Scenario CR2 |                                                                            |
+| :-----------: | :------------------------------------------------------------------------: |
+| Precondition  | Owner is authenticated && DB services are available && internet connection is available |
+| Post condition| The selected cash register is updated in the system                        |
+
+#### Steps
+
+| Actor's Action                                      | System Action                                                     | FR needed |
+|------------------------------------------------------|-------------------------------------------------------------------|-----------|
+| Owner opens the cash registers list                  |                                                                   |           |
+| Owner selects an existing cash register to update    |                                                                   |           |
+| Owner modifies the cash register attributes          |                                                                   |           |
+|                                                      | System updates the cash register in the database                  |           |
+
+### Scenario CR3
+
+|  Scenario CR3 |                                                                            |
+| :-----------: | :------------------------------------------------------------------------: |
+| Precondition  | Owner is authenticated && DB services are available |
+| Post condition| The selected cash register is removed from the system                     |
+
+#### Steps
+
+| Actor's Action                                      | System Action                                                     | FR needed |
+|------------------------------------------------------|-------------------------------------------------------------------|-----------|
+| Owner opens the cash registers list                  |                                                                   |           |
+| Owner selects a cash register to delete              |                                                                   |           |
+| Owner confirms deletion                              |                                                                   |           |
+|                                                      | System removes the cash register from the database                |           |
+
+### Scenario CR1E1
+
+|  Scenario CR1E2 |                                                                            |
+| :-------------: | :------------------------------------------------------------------------: |
+| Precondition    | Owner is authenticated && DB services are available && internet connection is available |
+| Post condition  | No cash register is added, user is notified                                |
+
+### Steps
+
+| Actor's Action                                      | System Action                                                     | FR needed |
+|------------------------------------------------------|-------------------------------------------------------------------|-----------|
+| Owner attempts to add a new cash register            |                                                                   |           |
+| Owner enters attributes already present in the system|                                                                   |           |
+|                                                      | System checks for duplicates                                      |           |
+|                                                      | System rejects creation and notifies "Cash register already exists" |         |
 
 
 
-## Use case Send cash operation, UC14
+## Use case Manage Sales and Refunds, UC14
 
 | Actors Involved  |                 Cash Register                                                |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   | Cash Registers are turned on && DB services are available && lan connection is available|
+|  Precondition   | Cash Registers are turned on && DB services are available && lan connection is available|
 |  Post condition  | The system received new sales and refunds from the cash register|
-| Nominal Scenario |  - The system ask to the cash register sales SC1 <br> - The system ask to the cash register refunds SC2 <br> | 
-|     Exception    | - The data transfer is corrupted SCE1 <br>|
+| Nominal Scenario |  - The system ask to the cash register sales MS1 <br> - The system ask to the cash register refunds MS2 <br> | 
+|     Exception    | - The data transfer is corrupted MSE1 <br>|
+
+
+### Scenario MS1
+
+|  Scenario MS1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Cash registers are turned on && DB services are available && LAN connection is available |
+| Post condition | The system stores the new sales provided by the cash register              |
+
+#### Steps
+
+| Actor's Action                                  | System Action                                                  | FR needed |
+|--------------------------------------------------|----------------------------------------------------------------|-----------|
+|                                                  | System polls the cash register requesting new sales            |           |
+| Cash register receives the polling request        |                                                                |           |
+| Cash register sends sales data to the system     |                                                                |           |
+|                                                  | System receives the sales data                                 |           |
+|                                                  | System validates the sales data                                 |           |
+|                                                  | System inserts new sales into the database                     |           |
+
+### Scenario MS2
+
+|  Scenario MS2  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Cash registers are turned on && DB services are available && LAN connection is available |
+| Post condition | The system stores the new refunds provided by the cash register            |
+
+#### Steps
+
+| Actor's Action                                  | System Action                                                  | FR needed |
+|--------------------------------------------------|----------------------------------------------------------------|-----------|
+|                                                  | System polls the cash register requesting new refunds          |           |
+| Cash register receives the polling request        |                                                                |           |
+| Cash register sends refund data to the system    |                                                                |           |
+|                                                  | System receives the refund data                                |           |
+|                                                  | System validates the refund data                               |           |
+|                                                  | System inserts new refunds into the database                   |           |
+
+### Scenario MSE1
+
+|  Scenario MSE1 |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Cash registers are turned on && DB services are available && LAN connection is available |
+| Post condition | No new sales/refunds are saved                                             |
+
+#### Steps
+
+| Actor's Action                                   | System Action                                                    | FR needed |
+|--------------------------------------------------|------------------------------------------------------------------|-----------|
+|                                                  | System polls the cash register requesting data                   |           |
+| Cash register sends corrupted/invalid data       |                                                                  |           |
+|                                                  | System detects corrupted or unreadable data                      |           |
+|                                                  | System rejects the data                                          |           |
+
 
 ## Use case Get Catalogue, UC15
 
 | Actors Involved  |                 Cash Register                                                |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   |  Cash Registers are turned on && DB services are available && lan connection is available|
+|  Precondition   |  Cash Registers are turned on && DB services are available && lan connection is available|
 |  Post condition  | The cash register internal catalogue is consistent with the db's|
 | Nominal Scenario | - The system sends to the cash register the updated catalogue GC1<br>| 
 |     Exception    | - The data transfer is corrupted GCE1 <br>|
+
+### Scenario GC1
+
+|  Scenario GC1 |                                                                            |
+| :-----------: | :------------------------------------------------------------------------: |
+| Precondition  | Cash registers are turned on && DB services are available && LAN connection is available |
+| Post condition| Cash register catalogue is aligned with the system catalogue                |
+
+#### Steps
+
+| Actor's Action                                 | System Action                                                      | FR needed |
+|------------------------------------------------|----------------------------------------------------------------------|-----------|
+|                                                | System polls the cash register to check catalogue synchronization    |           |
+| Cash register responds to the polling           |                                                                      |           |
+|                                                | System retrieves the latest catalogue from the database              |           |
+|                                                | System sends the updated catalogue to the cash register              |           |
+| Cash register receives the catalogue            |                                                                      |           |
+| Cash register updates its internal data         |                                                                      |           |
+
+### Scenario GCE1
+
+|  Scenario GCE1 |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Cash registers are turned on && DB services are available && LAN connection is available |
+| Post condition | The cash register catalogue is not updated                                 |
+
+#### Steps
+
+| Actor's Action                             | System Action                                                      | FR needed |
+|---------------------------------------------|--------------------------------------------------------------------|-----------|
+|                                             | System polls the cash register to check catalogue synchronization   |           |
+| Cash register responds to the polling        |                                                                    |           |
+|                                             | System sends the catalogue to the cash register                     |           |
+| Cash register receives corrupted data        |                                                                    |           |
+|                                             | System detects corruption (checksum/format error)                   |           |
+|                                             | System aborts the catalogue update                                  |           |
+
+
 
 ## Use case Track Orders, UC16
 
 | Actors Involved  |                 Shipment tracking provider                                               |
 | :--------------: | :------------------------------------------------------------------ |
-|  Pre condition   | DB services are available && internet connection is available|
+|  Precondition   | DB services are available && internet connection is available|
 |  Post condition  | The order status is up to date |
 | Nominal Scenario | - The system ask a status update to the shipping tracking service TO1 <br> | 
 |     Exception    | - The traking service is unreachable TOE1 <br> |
 
+### Scenario TO1
+
 |  Scenario TO1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
+| Precondition   | DB services are available && internet connection is available              |
+| Post condition | The order status is up to date                                             |
+
+#### Steps
+
+| Actor's Action                                              | System Action                                                         | FR needed |
+|-------------------------------------------------------------|-----------------------------------------------------------------------|-----------|
+|                                                            | System sends an API request to the shipment tracking provider         |           |
+| Shipment tracking provider returns updated status           | System receives, validates, and processes the tracking response       |           |
+|                                                          | System updates the order status in the database                       |           |
+|                                                            | System sends an acknowledgment (ACK) if required by the protocol      |           |
+
+
+### Scenario TOE1 
+
+|  Scenario TOE1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
 |  Precondition  | DB services are available && internet connection is available | 
-| Post condition | The order status is up to date |
+| Post condition | The order status is not up to date |
 
-Steps
+#### Steps
 
-|     Actor's action      |  System action                                              | FR needed |
-| :------------: | :------------------------------------------------------------------: |:---------:|
-|     System      |    Sends an api request to Shipment tracking provider asking an order status check                                              |           |
-|     Shipment tracking provider      |    Sends a response with the current order status                                         |           |
-|     System     |     Send ack to shipment tracking provider | |
-|     System     |     Update order status on db                                      |           |
+| Actor's Action                                   | System Action                                                    | FR needed |
+|--------------------------------------------------|------------------------------------------------------------------|-----------|
+|                                               | System sends a request to the shipment tracking provider         |           |
+| Shipment tracking provider is unreachable         | System fails to receive a response (timeout / network error)     |           |
+|                                              | System logs the communication error                              |           |
+|                                              | System stops the status update process                           |           |
+|                                                | System keeps the current order status unchanged                  |           |
+
 
 
 
@@ -553,7 +714,7 @@ Steps
 | Post condition |  \<Boolean expression, must evaluate to true after scenario is finished>   |
 
 
-Steps
+### Steps
 
 |     Actor's action      |  System action                                                                    | FR needed |
 | :------------: | :------------------------------------------------------------------------: |:---:|
