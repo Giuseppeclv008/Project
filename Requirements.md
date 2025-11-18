@@ -104,7 +104,7 @@ system <-- shipping
 |   Actor   | Logical Interface | Physical Interface |
 | :-------: | :---------------: | :----------------: |
 | Shop manager | GUI | Desktop computer |
-| Cash register | Square, lightspeed, nexi or clover API | Internet connection |
+| Cash register | Square, lightspeed, nexi or clover API | Lan connection |
 | POS provider | Square, lightspeed, nexi or clover API | Internet connection |
 | Shipment tracking provider | easy post API | Internet connection |
 
