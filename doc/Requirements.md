@@ -556,94 +556,15 @@ Consider that the document should be delivered to another team (unknown to you)
 | :-----: | :--------------------------------: | :--------- | :-------: |
 | || |
 
-- **Functionality**
-    * **Suitability**
-        + All owner needs identified in the use cases should map to at least one functional requirement
-    * **Accuracy**
-        + Catalogue updates, order-status updates, sales, refunds and similar synchronization operations must achieve a guaranteed delivery rate greater than $99.999$ %
-        + Exported `.csv` files should have less than $1$ mistaken row every $100'000$
-        + Importing `.csv` files should generate less than $1$ mistaken row every $100'000$
-        + CRUD operations should have less than $1$ error every $100'000$ operations
-        + Notification should fail to trigger less than $1$ every $100'000$ expected notifications
-        + Order status should fail to update properly less than $1$ time every $100'000$ updates
-    * **Interoperability**
-        + The application should use the square API to pull/push data to square POS      
-        + The application should use the lightspeed API to pull/push data to lightspeed POS      
-        + The application should use the clover API to pull/push data to clover POS      
-        + The application should use the nexi API to pull/push data to nexi POS      
-        + The application should use the easy post API to interact with shipping companies and automatically track order status
-        + All functions that may access data concurrently, must be thread-safe
-    * **Security**
-        + Passwords must be encrypted using AES-256 
-        + The application must pass Gitlab SATS without high severity issues (CSVV $\gt 7$) being highlighted
-- **Reliability**
-  - **Maturity**
-      * The application should crash less than $1$ time every $200$ hours of operation
-      * The application should suffer less than $1$ minor visual glitch (solved by changing/refreshing the current tab) every $50$ hours of operation
-  - **Fault Tolerance**
-      * The application should not crash when Importing `.csv` files without the right format 
-      * The application should be able to perform all its operations, beside syncing with cash registers and shipping companies, even without an internet connection 
-      * The application should be able to work without crashing even when data read from the cash registers is corrupted, malformed or absent
-      * The application should be able to work without crashing even when data read from the shipping companies' APIs is corrupted, malformed or absent
-      * The application should queue failed API calls and retry every $5$ minutes
-      * All multi-steps functions must be atomic; partial updates should be rolled back or notified to the owner
-- **Usability**
-  - **Understandability**
-      * The application should display tooltips when hovering over buttons which can be pressed
-      * The application should use consistent design elements and language
-      * The application should follow industry standard practices and conventions
-      * All GUI elements should have a contrast rating greater than $4.5$
-  - **Learnability**
-      * A user with low to moderate digital literacy should be able to learn how to:
-          + navigate the main interface within $5$ minutes
-          + to correctly import a `.csv` file within $10$ minutes
-          + to modify how the data is displayed within $10$ minutes
-          + to add a new product, batch, order, invoice, supplier, shipping company or cash register within $30$ minutes
-  - **Operability**
-      * All CRUD operations should be accessible within $2$ clicks
-      * The GUI should be able to respond to user input within $500$ ms
-  - **Usability compliance** 
-      * The application should follow WCAG guidelines
-- **Efficiency**
-  - **Time Behavior**
-      * All CRUD operations operating on single entities should be completed within $1000$ ms 
-      * Retrieving $\approx 100$ MB of data filtered, sorted or ranked by a specific set of rules should be completed within $10'000$ ms
-      * Importing and exporting `.csv` files should take within $10'000$ ms every $1000$ rows 
-      * Order status for supported suppliers should be updated within $3$ h from the actual reported change
-      * Sales and refunds should be updated at least every $2$ minutes
-      * Catalogue updates should be propagated to all cash registers every day at 6.00 a.m.
-      * Startup time should be within $5'000$ ms
-  - **Resource Utilization**
-      * The application should use no more than $500$ MB of disk storage space (excluding data such as orders, sales, refunds, ...)
-      * The application should use no more than $2$ GB of RAM memory under expected load
-      * The application should use no more than $50$ % of the available CPU resources under normal load on tested hardware (Intel Core i5-8000 or i5-9000 series, $8$ G of RAM)
-- **Maintainability**
-  - **Analyzability**
-      * $95$ % of code functions should be documented
-      * New functions should be documented within $1$ week
-      * Mean time to diagnose a defect should be within $1$ day
-      * All API errors, sync errors, and critical errors must be logged and persisted
-  - **Changeability**
-      * Mean time to implement a minor feature should be within $1$ working week
-      * Mean time to implement major features should be within $1$ months
-      * The cyclomatic complexity of functions should be on average less than $15$; no single function should exceed a cyclomatic complexity of $20$
-  - **Stability**
-      * A new release should introduce less than $1$ regression defect
-  - **Testability**
-      * Unit tests should cover $90$ % of the codebase
-      * Integration tests should cover $80$ % of the codebase
-- **Portability**
-  - **Adaptability**
-      * The application should run on Windows 10 and 11 without code modification
-  - **Installability**
-      * The application should complete installation within $10$ minutes on tested hardware
-      * The application should complete installation with a success rate greater than $95$ % on tested hardware (Intel Core i5-8000 or i5-9000 series, $8$ G of RAM)
-  - **Co-existence**
-      * The application should be able to run alongside the common antivirus applications (such as: Windows Defender, Avast, McAfee, Norton, BitDefender, Kaspersky, AVG, ESET, Trend Micro, Sophos) without conflicts
-      * The application should be able to perform its functionalities without requiring exclusive system resources access
-      * The application should be able to work alongside firewalls
-  - **Interoperability**
-      * Future version of the EzShop application should be able to import data in `.csv` format exported from previous version of the application 
+| ID   | Type          | Description | Refers to |
+|------|---------------|-------------|-----------|
+| NFR1 | Functionality | **Suitability**<br>• All owner needs identified in the use cases should map to at least one functional requirement<br><br>**Accuracy**<br>• Catalogue updates, order-status updates, sales, refunds and similar synchronization operations must achieve a guaranteed delivery rate greater than 99.999 %<br>• Exported `.csv` files should have less than 1 mistaken row every 100'000<br>• Importing `.csv` files should generate less than 1 mistaken row every 100'000<br>• CRUD operations should have less than 1 error every 100'000 operations<br>• Notification should fail to trigger less than 1 every 100'000 expected notifications<br>• Order status should fail to update properly less than 1 time every 100'000 updates<br><br>**Interoperability**<br>• The application should use the square API to pull/push data to square POS<br>• The application should use the lightspeed API to pull/push data to lightspeed POS<br>• The application should use the clover API to pull/push data to clover POS<br>• The application should use the nexi API to pull/push data to nexi POS<br>• The application should use the easy post API to interact with shipping companies and automatically track order status<br>• All functions that may access data concurrently, must be thread-safe<br><br>**Security**<br>• Passwords must be encrypted using AES-256<br>• The application must pass Gitlab SATS without high severity issues (CSVV > 7) being highlighted | |
+| NFR2 | Reliability | **Maturity**<br>• The application should crash less than 1 time every 200 hours of operation<br>• The application should suffer less than 1 minor visual glitch (solved by changing/refreshing the current tab) every 50 hours of operation<br><br>**Fault Tolerance**<br>• The application should not crash when Importing `.csv` files without the right format<br>• The application should be able to perform all its operations, beside syncing with cash registers and shipping companies, even without an internet connection<br>• The application should be able to work without crashing even when data read from the cash registers is corrupted, malformed or absent<br>• The application should be able to work without crashing even when data read from the shipping companies' APIs is corrupted, malformed or absent<br>• The application should queue failed API calls and retry every 5 minutes<br>• All multi-steps functions must be atomic; partial updates should be rolled back or notified to the owner | |
+| NFR3 | Usability | **Understandability**<br>• The application should display tooltips when hovering over buttons which can be pressed<br>• The application should use consistent design elements and language<br>• The application should follow industry standard practices and conventions<br>• All GUI elements should have a contrast rating greater than 4.5<br><br>**Learnability**<br>• A user with low to moderate digital literacy should be able to learn how to:<br>– navigate the main interface within 5 minutes<br>– correctly import a `.csv` file within 10 minutes<br>– modify how the data is displayed within 10 minutes<br>– add a new product, batch, order, invoice, supplier, shipping company or cash register within 30 minutes<br><br>**Operability**<br>• All CRUD operations should be accessible within 2 clicks<br>• The GUI should be able to respond to user input within 500 ms<br><br>**Usability compliance**<br>• The application should follow WCAG guidelines | |
+| NFR4 | Efficiency | **Time Behavior**<br>• All CRUD operations operating on single entities should be completed within 1000 ms<br>• Retrieving ≈ 100 MB of data filtered, sorted or ranked by a specific set of rules should be completed within 10'000 ms<br>• Importing and exporting `.csv` files should take within 10'000 ms every 1000 rows<br>• Order status for supported suppliers should be updated within 3 h from the actual reported change<br>• Sales and refunds should be updated at least every 2 minutes<br>• Catalogue updates should be propagated to all cash registers every day at 6.00 a.m.<br>• Startup time should be within 5'000 ms<br><br>**Resource Utilization**<br>• The application should use no more than 500 MB of disk storage space (excluding data such as orders, sales, refunds, ...)<br>• The application should use no more than 2 GB of RAM memory under expected load<br>• The application should use no more than 50 % of the available CPU resources under normal load on tested hardware (Intel Core i5-8000 or i5-9000 series, 8 G of RAM) | |
+| NFR5 | Maintainability | **Analyzability**<br>• 95 % of code functions should be documented<br>• New functions should be documented within 1 week<br>• Mean time to diagnose a defect should be within 1 day<br>• All API errors, sync errors, and critical errors must be logged and persisted<br><br>**Changeability**<br>• Mean time to implement a minor feature should be within 1 working week<br>• Mean time to implement major features should be within 1 months<br>• The cyclomatic complexity of functions should be on average less than 15; no single function should exceed a cyclomatic complexity of 20<br><br>**Stability**<br>• A new release should introduce less than 1 regression defect<br><br>**Testability**<br>• Unit tests should cover 90 % of the codebase<br>• Integration tests should cover 80 % of the codebase | |
+| NFR6 | Portability | **Adaptability**<br>• The application should run on Windows 10 and 11 without code modification<br><br>**Installability**<br>• The application should complete installation within 10 minutes on tested hardware<br>• The application should complete installation with a success rate greater than 95 % on tested hardware (Intel Core i5-8000 or i5-9000 series, 8 G of RAM)<br><br>**Co-existence**<br>• The application should be able to run alongside the common antivirus applications (Windows Defender, Avast, McAfee, Norton, BitDefender, Kaspersky, AVG, ESET, Trend Micro, Sophos) without conflicts<br>• The application should be able to perform its functionalities without requiring exclusive system resources access<br>• The application should be able to work alongside firewalls<br><br>**Interoperability**<br>• Future version of the EzShop application should be able to import data in `.csv` format exported from previous version of the application | |
+
 
 
 
