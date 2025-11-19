@@ -86,7 +86,7 @@ Consider that the document should be delivered to another team (unknown to you)
 # Context Diagram and interfaces
 
 ## Context Diagram
-![](contextDiagram.svg)
+![context-diagram-missing](res/plantuml/contextDiagram.svg)
 
 ## Interfaces
 
