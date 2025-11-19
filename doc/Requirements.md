@@ -548,6 +548,6 @@ Steps
 \<describe here the hardware software architecture using UML deployment diagram >
 
 
-![missing-deployment](..res/plantuml/deploymentDiagram.svg) 
+![missing-deployment](../res/plantuml/deploymentDiagram.svg) 
 
 
