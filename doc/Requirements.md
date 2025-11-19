@@ -86,7 +86,7 @@ Consider that the document should be delivered to another team (unknown to you)
 # Context Diagram and interfaces
 
 ## Context Diagram
-![context-diagram-missing](res/plantuml/contextDiagram.svg)
+![missing-context-diagram](../res/plantuml/contextDiagram.svg)
 
 ## Interfaces
 
@@ -529,7 +529,7 @@ Steps
     * A system-generated message or alert that informs the shop owner about important events or conditions, such as changes in order status, low product quantity, batch expiration, or connectivity issues.
 
 
-![](glossaryDiagram.svg) 
+![missing-glossary](../res/plantuml/glossaryDiagram.svg) 
 
 \<use UML class diagram to define important terms, or concepts in the domain of the application, and their relationships>
 
@@ -548,6 +548,6 @@ Steps
 \<describe here the hardware software architecture using UML deployment diagram >
 
 
-![](deploymentDiagram.svg) 
+![missing-deployment](..res/plantuml/deploymentDiagram.svg) 
 
 
