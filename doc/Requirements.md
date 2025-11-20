@@ -312,7 +312,7 @@ Consider that the document should be delivered to another team (unknown to you)
 | FR13.1.3 | Store tokens securely |
 | FR13.1.4 | Validate token with provider |  
 | FR13.2 | Get cash register list |
-| FR13.2.1 | Retrieve list of cash registers from provider API |
+| FR13.2.1 | Retrieve list of cash registers |
 | FR13.2.2 | Update local list of cash registers |
 | FR13.3 | Sync catalogue |
 | FR13.3.1 | Convert catalogue to provider format |
