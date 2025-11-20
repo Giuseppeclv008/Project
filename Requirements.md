@@ -275,7 +275,7 @@ system <-- shipping
 
 \<next describe here each use case in the UCD>
 
-## Use case Manage Inventory, UC1 
+### Use case Manage Inventory, UC1 
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
@@ -285,14 +285,14 @@ system <-- shipping
 |     Exception    | - Owner tries to create a batches of products that is alredy in the system MI1E1 <br> |
 
 
-### Scenario MI1
+#### Scenario MI1
 
 |  Scenario MI1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated && DB services are available                        |
 | Post condition | A new batch is inserted in the inventory                                   |
 
-#### Steps
+##### Steps
 
 | Actor's Action                                  | System Action                                                      | FR needed |
 |--------------------------------------------------|--------------------------------------------------------------------|-----------|
@@ -302,14 +302,14 @@ system <-- shipping
 |                                                  | System creates and inserts a new batch in the DB using the parameters |FR4.1.1   |
                                         
 
-### Scenario MI2 
+#### Scenario MI2 
 
 |  Scenario MI2  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated && DB services are available                                         |
 | Post condition | The selected batch is updated in the inventory                              |
 
-#### Steps
+##### Steps
 
 | Actor's Action                                  | System Action                                                      | FR needed |
 |--------------------------------------------------|--------------------------------------------------------------------|-----------|
@@ -318,28 +318,29 @@ system <-- shipping
 |                                                  | System updates the batch in the DB using the new parameters        |    FR4.1.2       |
 
 
-### Scenario MI3 
+#### Scenario MI3 
 
 |  Scenario MI3  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated && DB services are available                                         |
 | Post condition | The batch is deleted from the inventory                                     |
 
-#### Steps
+##### Steps
 
 | Actor's Action                                  | System Action                                                      | FR needed |
 |--------------------------------------------------|--------------------------------------------------------------------|-----------|
 | Owner requests to delete a batch                 |                                                                    |     FR4.1.3      |
 |                                                  | System deletes the batch from the DB                               |       FR4.1.3    |
 
-### Scenario MI1E1
+
+#### Scenario MI1E1
 
 |  Scenario MI1E1 |                                                                            |
 | :-------------: | :------------------------------------------------------------------------: |
 | Precondition    | Owner is authenticated && DB services are available                        |
 | Post condition  | No new batch is created          |
 
-#### Steps
+##### Steps
 
 | Actor's Action                                  | System Action                                                      | FR needed |
 |--------------------------------------------------|--------------------------------------------------------------------|-----------|
@@ -351,8 +352,7 @@ system <-- shipping
 
 
 
-
-## Use case Manage Supplier, UC2 
+### Use case Manage Supplier, UC2 
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
@@ -361,14 +361,15 @@ system <-- shipping
 | Nominal Scenario | - Owner creates a supplier MS1 <br> - Owner updates a supplier MS2 <br> - Owner deletes a supplier MS3|  
 |     Exception    | - Owner tries to create a supplier that is alredy in the system MS1E1 <br> |
 
-### Scenario MS1  
+
+#### Scenario MS1  
 
 |  Scenario MS1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated && DB services are available                        |
 | Post condition | A new supplier is inserted in the system                                    |
 
-#### Steps
+##### Steps
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
@@ -377,14 +378,15 @@ system <-- shipping
 |                                        | System checks if supplier already exists in the DB                  |       FR6.1.1    |
 |                                        | System creates and inserts a new supplier in the DB                 |        FR6.1.1   |
 
-### Scenario MS2 
+
+#### Scenario MS2 
 
 |  Scenario MS2  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated && DB services are available                                      |
 | Post condition | The selected supplier is updated in the system                             |
 
-#### Steps
+##### Steps
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
@@ -393,28 +395,29 @@ system <-- shipping
 |                                        | System updates the supplier in the DB using the new parameters      |        FR6.1.2   |
 
 
-### Scenario MS3 
+#### Scenario MS3 
 
 |  Scenario MS3  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated && DB services are available                                      |
 | Post condition | The supplier is deleted from the system                                     |
 
-#### Steps
+##### Steps
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
 | Owner requests to delete a supplier    |                                                                     |      FR6.1.3     |
 |                                        | System deletes the supplier from the DB                             |        FR6.1.3   |
 
-### Scenario MS1E1
+
+#### Scenario MS1E1
 
 |  Scenario MS1E1 |                                                                            |
 | :-------------: | :------------------------------------------------------------------------: |
 | Precondition    | Owner is authenticated && DB services are available                        |
 | Post condition  | No new supplier is created |
 
-#### Steps
+##### Steps
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
@@ -426,8 +429,7 @@ system <-- shipping
 
 
 
-
-## Use case Manage Orders, UC3
+### Use case Manage Orders, UC3
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
@@ -436,14 +438,15 @@ system <-- shipping
 | Nominal Scenario | - Owner creates a order MO1 <br> - Owner updates a order MO2 <br> - Owner deletes a order MO3| 
 |     Exception    | - Owner tries to create an order that is alredy in the system MO1E1 <br> |
 
-### Scenario MO1  
+
+#### Scenario MO1  
 
 |  Scenario MO1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated && DB services are available                        |
 | Post condition | A new order is inserted in the inventory                                   |
 
-#### Steps
+##### Steps
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
@@ -453,14 +456,14 @@ system <-- shipping
 |                                        | System creates and inserts a new order in the DB                   |       FR9.1.1    |
 
 
-### Scenario MO2 
+#### Scenario MO2 
 
 |  Scenario MO2  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated && DB services are available                                        |
 | Post condition | The selected order is updated in the inventory                             |
 
-#### Steps
+##### Steps
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
@@ -469,28 +472,29 @@ system <-- shipping
 |                                        | System updates the order in the DB using the new parameters         |        FR9.1.2   |
 
 
-### Scenario MO3 
+#### Scenario MO3 
 
 |  Scenario MO3  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated && DB services are available                                      |
 | Post condition | The order is deleted from the inventory                                     |
 
-#### Steps
+##### Steps
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
 | Owner requests to delete the order     |                                                                     |     FR9.1.3      |
 |                                        | System deletes the order from the DB                                |       FR9.1.3    |
 
-### Scenario MO1E1
+
+#### Scenario MO1E1
 
 |  Scenario MO1E1 |                                                                            |
 | :-------------: | :------------------------------------------------------------------------: |
 | Precondition    | Owner is authenticated && DB services are available                        |
 | Post condition  | No new order is created    |
 
-#### Steps
+##### Steps
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
@@ -501,7 +505,8 @@ system <-- shipping
 |                                        | System rejects the creation and displays an error message           |       FR9.1.1    |
 
 
-## Use case Manage Invoices, UC4
+
+### Use case Manage Invoices, UC4
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
@@ -510,14 +515,15 @@ system <-- shipping
 | Nominal Scenario | - Owner creates a invoice MI1 <br> - Owner updates a invoice MI2 <br> - Owner deletes a invoice MI3| 
 |     Exception    | - Owner tries to create an invoice that is alredy in the system MI1E1 <br> |
 
-### Scenario MI1  
+
+#### Scenario MI1  
 
 |  Scenario MI1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated && DB services are available                        |
 | Post condition | A new invoice is inserted in the inventory                                 |
 
-#### Steps
+##### Steps
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
@@ -526,14 +532,15 @@ system <-- shipping
 |                                          | System checks if the invoice already exists in the DB               |       FR5.1.1    |
 |                                          | System creates and inserts a new invoice in the DB                  |        FR5.1.1   |
 
-### Scenario MI2 
+
+#### Scenario MI2 
 
 |  Scenario MI2  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated && DB services are available                                       |
 | Post condition | The selected invoice is updated in the system                               |
 
-#### Steps
+##### Steps
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
@@ -542,28 +549,29 @@ system <-- shipping
 |                                          | System updates the invoice in the DB using the new parameters       |        FR5.1.2   |
 
 
-### Scenario MI3 
+#### Scenario MI3 
 
 |  Scenario MI3  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   |  Owner is authenticated && DB services are available                                        |
 | Post condition | The invoice is deleted from the system                                      |
 
-#### Steps
+##### Steps
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
 | Owner requests to delete an invoice      |                                                                     |     FR5.1.3      |
 |                                          | System deletes the invoice from the DB                               |      FR5.1.3     |
 
-### Scenario MI1E1
+
+#### Scenario MI1E1
 
 |  Scenario MI1E1 |                                                                            |
 | :-------------: | :------------------------------------------------------------------------: |
 | Precondition    | Owner is authenticated && DB services are available                        |
 | Post condition  | No new invoice is created; system notifies that the invoice already exists |
 
-#### Steps
+##### Steps
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
@@ -573,7 +581,9 @@ system <-- shipping
 |                                          | System detects duplication                                           |      FR5.1.1     |
 |                                          | System rejects creation and displays an error message               |        FR5.1.1   |
 
-## Use case Authenticate Owner, UC5
+
+
+### Use case Authenticate Owner, UC5
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
@@ -582,14 +592,15 @@ system <-- shipping
 | Nominal Scenario | - Authenticate owner AO1 <br> | 
 |     Exception    | - Owner tries to authenticate with a wrong password <br> AOE1    | 
 
-### Scenario AO1  
+
+#### Scenario AO1  
 
 |  Scenario AO1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner knows the correct password                                           |
 | Post condition | Owner is correctly authenticated                                            |
 
-#### Steps
+##### Steps
 
 | Actor's Action                       | System Action                                                       | FR needed |
 |---------------------------------------|---------------------------------------------------------------------|-----------|
@@ -599,14 +610,15 @@ system <-- shipping
 |                                       | System authenticates the Owner                                      |        FR11.3   |
 
 
-### Scenario AO1E 
+
+#### Scenario AO1E 
 
 |  Scenario AOE1 |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner knows an incorrect password                                           |
 | Post condition | Owner is not authenticated                                                  |
 
-#### Steps
+##### Steps
 
 | Actor's Action                       | System Action                                                       | FR needed |
 |---------------------------------------|---------------------------------------------------------------------|-----------|
@@ -618,7 +630,7 @@ system <-- shipping
 
 
 
-## Use case Change Password, UC6
+### Use case Change Password, UC6
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------  |
@@ -627,14 +639,15 @@ system <-- shipping
 | Nominal Scenario | - Authenticate owner CP1 <br>                                        |  
 |     Variants    | - Owner set password for the first time CP1V1 <br>          | 
 
-### Scenario CP1
+
+#### Scenario CP1
 
 |  Scenario CP1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated                                                     |
 | Post condition | Owner sets a new valid password                                            |
 
-#### Steps
+##### Steps
 
 | Actor's Action                       | System Action                                                       | FR needed |
 |---------------------------------------|---------------------------------------------------------------------|-----------|
@@ -642,14 +655,15 @@ system <-- shipping
 | Owner inserts the new password        |                                                                     |      FR11.2     |
 |                                       | System changes the password                                         |        FR11.2   |
 
-### Scenario CP1V1
+
+#### Scenario CP1V1
 
 |  Scenario CP1V1 |                                                                            |
 | :-------------: | :------------------------------------------------------------------------: |
 | Precondition    | Owner doesn't have a password                                             |
 | Post condition  | A new password is set                                                    |
 
-#### Steps
+##### Steps
 
 | Actor's Action                       | System Action                                                       | FR needed |
 |---------------------------------------|---------------------------------------------------------------------|-----------|
@@ -657,7 +671,9 @@ system <-- shipping
 | Owner inserts the new (invalid) password |                                                                   |      FR11.1     |
 |                                       | System sets the password                             |        FR11.1   |
 
-## Use case Manage Product Catalogue, UC7
+
+
+### Use case Manage Product Catalogue, UC7
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
@@ -666,14 +682,15 @@ system <-- shipping
 | Nominal Scenario | - Owner creates a product MP1 <br> - Owner updates a product MP2 <br> - Owner deletes a product MP3| 
 |     Exception    | - Owner tries to create a product that is alredy in the system MP1E1 <br> |
 
-### Scenario MP1  
+
+#### Scenario MP1  
 
 |  Scenario MP1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated && DB services are available                        |
 | Post condition | A new product is inserted in the catalogue                                 |
 
-#### Steps
+##### Steps
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
@@ -683,14 +700,14 @@ system <-- shipping
 |                                          | System creates and inserts a new product in the DB                  |         FR3.1.1  |
                                                    
 
-### Scenario MP2 
+#### Scenario MP2 
 
 |  Scenario MP2  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated && DB services are available                                      |
 | Post condition | The selected product is updated in the catalogue                           |
 
-#### Steps
+##### Steps
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
@@ -699,28 +716,29 @@ system <-- shipping
 |                                          | System updates the product in the DB using the new parameters       |        FR3.1.2   |
 
 
-### Scenario MP3 
+#### Scenario MP3 
 
 |  Scenario MP3  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated && DB services are available                                      |
 | Post condition | The product is deleted from the catalogue                                  |
 
-#### Steps
+##### Steps
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
 | Owner requests to delete a product       |                                                                     |      FR3.1.3     |
 |                                          | System deletes the product from the DB                              |        FR3.1.3   |
 
-### Scenario MP1E1
+
+#### Scenario MP1E1
 
 |  Scenario MP1E1 |                                                                            |
 | :-------------: | :------------------------------------------------------------------------: |
 | Precondition    | Owner is authenticated && product with same identifiers already exists     |
 | Post condition  | No new product is created                     |
 
-#### Steps
+##### Steps
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
@@ -731,7 +749,8 @@ system <-- shipping
 |                                          | System rejects the creation and displays an error message           |         FR3.1.1  |
 
  
-## Use case Receive Notifications, UC8
+
+### Use case Receive Notifications, UC8
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
@@ -740,14 +759,15 @@ system <-- shipping
 | Nominal Scenario | - Owner is notified when an order status changes RN1 <br> - Owner is notified when a batch is expired RN2 <br> - Owner is notified when a cash is not responding RN3 <br> - Owner is notified when a product is going to run out RN4 <br> - Owner is notified when there is no internet connection RN5 <br> - Owner reads the list of notifications RN6 <br> | 
 |     Variants     | - Owner is notified when an order status cannot be updated since API is not responding RN1V1 <br> - Owner reads the list of notification and clean it RN6V1 <br> |
 
-### Scenario RN1
+
+#### Scenario RN1
 
 |  Scenario RN1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Order status changes in the system                                         |
 | Post condition | Owner receives a notification regarding the new status                     |
 
-#### Steps
+##### Steps
 
 | Actor's Action                         | System Action                                                     | FR needed |
 |-----------------------------------------|-------------------------------------------------------------------|-----------|
@@ -758,14 +778,14 @@ system <-- shipping
 | Owner sees the pop-up notification      | System shows the same notification in the notification menu       |     FR12.1      |
 
 
-### Scenario RN2
+#### Scenario RN2
 
 |  Scenario RN2  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | A batch expiration date is reached                                         |
 | Post condition | Owner receives an expiration notification                                  |
 
-#### Steps
+##### Steps
 
 | Actor's Action                         | System Action                                                     | FR needed |
 |-----------------------------------------|-------------------------------------------------------------------|-----------|
@@ -775,14 +795,15 @@ system <-- shipping
 |                                       | System displays the notification in a pop-up                      |     FR12.1      |
 | Owner sees the pop-up notification      | System shows the notification in the notification menu            |     FR12.1      |
 
-### Scenario RN3
+
+#### Scenario RN3
 
 |  Scenario RN3  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | A cash register does not respond to system polling                         |
 | Post condition | Owner receives a notification about the missing response                   |
 
-#### Steps
+##### Steps
 
 | Actor's Action                         | System Action                                                     | FR needed |
 |-----------------------------------------|-------------------------------------------------------------------|-----------|
@@ -793,14 +814,15 @@ system <-- shipping
 |                                        | System displays the notification in a pop-up                      |     FR12.1      |
 | Owner sees the pop-up notification      | System shows the notification in the notification menu            |     FR12.1      |
 
-### Scenario RN4
+
+#### Scenario RN4
 
 |  Scenario RN4  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Product quantity falls below a stock threshold                             |
 | Post condition | Owner receives a low-stock notification                                   |
 
-#### Steps
+##### Steps
 
 | Actor's Action                         | System Action                                                     | FR needed |
 |-----------------------------------------|-------------------------------------------------------------------|-----------|
@@ -811,14 +833,15 @@ system <-- shipping
 |                                        | System displays the notification in a pop-up                      |     FR12.1      |
 | Owner sees the pop-up notification      | System shows the notification in the notification menu            |      FR12.1     |
 
-### Scenario RN5
+
+#### Scenario RN5
 
 |  Scenario RN5  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | System detects loss of internet connection                                 |
 | Post condition | Owner receives a notification about connection loss                        |
 
-#### Steps
+##### Steps
 
 | Actor's Action                         | System Action                                                     | FR needed |
 |-----------------------------------------|-------------------------------------------------------------------|-----------|
@@ -828,14 +851,15 @@ system <-- shipping
 |                                        | System displays the notification in a pop-up                      |     FR12.1      |
 | Owner sees the pop-up notification      | System shows the notification in the notification menu  |   FR12.1    |
 
-### Scenario RN6
+
+#### Scenario RN6
 
 |  Scenario RN6  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | At least one notification exists in the system                             |
 | Post condition | Notifications are displayed or marked as read                               |
 
-#### Steps
+##### Steps
 
 | Actor's Action                         | System Action                                                     | FR needed |
 |-----------------------------------------|-------------------------------------------------------------------|-----------|
@@ -843,15 +867,14 @@ system <-- shipping
 | Owner reads notifications               | System marks notifications as read                                |      FR12.2     |
 
 
-
-### Scenario RN1V1
+#### Scenario RN1V1
 
 |  Scenario RN1V1 |                                                                           |
 | :-------------: | :------------------------------------------------------------------------ |
 | Precondition    | System fails to update the order status due to API timeout/failure        |
 | Post condition  | Owner receives a notification about the failed update                     |
 
-#### Steps
+##### Steps
 
 | Actor's Action                         | System Action                                                     | FR needed |
 |-----------------------------------------|-------------------------------------------------------------------|-----------|
@@ -862,14 +885,15 @@ system <-- shipping
 |                                       | System displays the notification in a pop-up                      |     FR12.1      |
 | Owner sees the pop-up notification      | System shows the notification in the notification menu            |     FR12.1      |
 
-### Scenario RN6V1
+
+#### Scenario RN6V1
 
 |  Scenario RN6V1 |                                                                           |
 | :-------------: | :------------------------------------------------------------------------ |
 | Precondition    | At least one notification exists in the system                                    |
 | Post condition  | All notifications are cleared from the list                               |
 
-#### Steps
+##### Steps
 
 | Actor's Action                         | System Action                                                     | FR needed |
 |-----------------------------------------|-------------------------------------------------------------------|-----------|
@@ -880,7 +904,7 @@ system <-- shipping
 
 
 
-## Use case Import Data, UC9
+### Use case Import Data, UC9
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
@@ -889,14 +913,15 @@ system <-- shipping
 | Nominal Scenario | - Owner imports a set of lists containg products, invoices, suppliers, sales, refunds, shipping companies and orders as .csv file ID1| 
 |     Exception    | - Owner imports .csv files with format error ID1E1|
 
-### Scenario ID1
+
+#### Scenario ID1
 
 |  Scenario ID1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Data in .csv files are in the correct format                               |
 | Post condition | .csv files are imported into the system                                     |
 
-#### Steps
+##### Steps
 
 | Actor's Action                              | System Action                                                       | FR needed |
 |----------------------------------------------|---------------------------------------------------------------------|-----------|
@@ -905,14 +930,15 @@ system <-- shipping
 |                                              | System checks if .csv files are in the correct format               |FR1.2.1.1, FR1.2.1.2, FR2.2.1.1, FR2.2.1.2, FR3.4.1.1, FR3.4.1.2, FR4.3.1.1, FR4.3.1.2, FR5.3.1.1, FR5.3.1.2, FR6.3.1.1, FR6.3.1.2, FR7.3.1.1, FR7.3.1.2, FR9.3.1.1, FR9.3.1.2,  FR10.2.1.1, FR10.2.1.2, FR10.4.1.1, FR10.4.1.2          |
 |                                              | System imports new data into the system                             |FR1.2.1.3, FR2.2.1.3, FR3.4.1.3, FR4.3.1.3, FR5.3.1.3, FR6.3.1.3, FR7.3.1.3, FR9.3.1.3, 10.2.1.3, 10.4.1.3  |
 
-### Scenario ID1E1
+
+#### Scenario ID1E1
 
 |  Scenario IDE1 |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Data in .csv files are not in the correct format                           |
 | Post condition | .csv files are not imported into the system                                |
 
-#### Steps
+##### Steps
 
 | Actor's Action                              | System Action                                                       | FR needed |
 |----------------------------------------------|---------------------------------------------------------------------|-----------|
@@ -924,7 +950,7 @@ system <-- shipping
 |                                              | System does **not** import any new data                              |           FR1.2.1.1, FR1.2.1.2, FR2.2.1.1, FR2.2.1.2, FR3.4.1.1, FR3.4.1.2, FR4.3.1.1, FR4.3.1.2, FR5.3.1.1, FR5.3.1.2, FR6.3.1.1, FR6.3.1.2, FR7.3.1.1, FR7.3.1.2, FR9.3.1.1, FR9.3.1.2,  FR10.2.1.1, FR10.2.1.2, FR10.4.1.1, FR10.4.1.2  |
 
 
-## Use case Export Data, UC10
+### Use case Export Data, UC10
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
@@ -933,14 +959,14 @@ system <-- shipping
 | Nominal Scenario | - Owner exports a set of lists containg products, invoices, suppliers, sales, refunds, shipping companies and orders as .csv file ED1| 
 |     Exception    | - Owner exports corrupted .csv files ED1E1|
 
-### Scenario ED1
+#### Scenario ED1
 
 |  Scenario ED1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Data to be exported exist in the system                                   |
 | Post condition | Data are exported into one or more .csv files                             |
 
-#### Steps
+##### Steps
 
 | Actor's Action                             | System Action                                                       | FR needed |
 |---------------------------------------------|---------------------------------------------------------------------|-----------|
@@ -949,14 +975,14 @@ system <-- shipping
 |                                            | System generates and provides one or more .csv files for download   | FR1.2.2.2, FR2.2.2.2, FR3.4.2.2, FR4.3.2.2, FR5.3.2.2, FR6.3.2.2, FR7.3.2.2, FR9.3.2.2, FR10.2.2.2, FR10.4.2.2 |
 | Owner downloads the .csv files              | System confirms successful export                                   |  FR1.2.2, FR2.2.2, FR3.4.2, FR4.3.2, FR5.3.2, FR6.3.2, FR7.3.2, FR9.3.2, FR10.2.2, FR10.4.2|
 
-### Scenario ED1E1
+#### Scenario ED1E1
 
 |  Scenario ED1E1 |                                                                           |
 | :-------------: | :------------------------------------------------------------------------ |
 | Precondition    | Data to be exported exist in the system                    |
 | Post condition  | Data are NOT correctly exported                 |
 
-#### Steps
+##### Steps
 
 | Actor's Action                             | System Action                                                       | FR needed |
 |---------------------------------------------|---------------------------------------------------------------------|-----------|
@@ -968,7 +994,7 @@ system <-- shipping
 
 
 
-## Use case Retrieve Data, UC11
+### Use case Retrieve Data, UC11
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :----------------------------------------------------------------- |
@@ -978,14 +1004,14 @@ system <-- shipping
 |     Variants     | - Owner generates a list of one selected type: products, invoices, suppliers, sales, refunds, shipping companies or orders.The list is not filtered RD1V1|
 
 
-### Scenario RD1
+#### Scenario RD1
 
 |  Scenario RD1 |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Filterable data exist in the system && Owner is authenticated              |
 | Post condition | Owner receives the filtered list                                           |
 
-#### Steps
+##### Steps
 
 | Actor's Action                                        | System Action                                                       | FR needed |
 |--------------------------------------------------------|---------------------------------------------------------------------|-----------|
@@ -995,14 +1021,14 @@ system <-- shipping
 |                                                        | System returns the filtered list                                    |            FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1 |
 | Owner views the filtered list                          | System displays the filtered data in the UI                          |            FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1 |
 
-### Scenario RD2
+#### Scenario RD2
 
 |  Scenario RD2  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Requested data type exists in the system && Owner is authenticated         |
 | Post condition | Owner receives the full list of the selected data type, ranked by specific attributes |
 
-#### Steps
+##### Steps
 
 | Actor's Action                                        | System Action                                                       | FR needed |
 |--------------------------------------------------------|---------------------------------------------------------------------|-----------|
@@ -1011,14 +1037,14 @@ system <-- shipping
 |                                                        | System returns the retrieved ranked list to the Owner                      |    FR1.1.3, FR1.1.4, FR2.1.3, FR2.1.4, FR6.2.2, FR7.2.2         |
 | Owner views the list                                   | System displays the data in the appropriate UI                      |          FR1.1.3, FR1.1.4, FR2.1.3, FR2.1.4, FR6.2.2, FR7.2.2   |
 
-### Scenario RD1V1
+#### Scenario RD1V1
 
 |  Scenario RDV1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Requested data type exists in the system && Owner is authenticated         |
 | Post condition | Owner receives the full list of the selected data type                     |
 
-#### Steps
+##### Steps
 
 | Actor's Action                                        | System Action                                                       | FR needed |
 |--------------------------------------------------------|---------------------------------------------------------------------|-----------|
@@ -1027,7 +1053,7 @@ system <-- shipping
 | Owner views the list                                   | System displays the data in the appropriate UI                      |          FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1   |
 
 
-## Use case Manage Accounting, UC12
+### Use case Manage Accounting, UC12
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
@@ -1035,14 +1061,14 @@ system <-- shipping
 |  Post condition  | Cash flow is correctly tracked |
 | Nominal Scenario | - Owner retrieves incomes at different time granularities MA1<br> - Owner retrieves expenses at different time granularities MA2<br> - Owner retrieves balance at different time granularities MA3 <br> | 
 
-### Scenario MA1
+#### Scenario MA1
 
 |  Scenario MA1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Every income is correctly tracked                                          |
 | Post condition | Owner retrieves incomes                                                     |
 
-#### Steps
+##### Steps
 
 | Actor's Action                     | System Action                                                                  | FR needed |
 |------------------------------------|--------------------------------------------------------------------------------|-----------|
@@ -1051,14 +1077,14 @@ system <-- shipping
 | Owner chooses the granularity      | System retrieves and returns the incomes for the selected window & granularity |        FR10.1.2   |
 
 
-### Scenario MA2  
+#### Scenario MA2  
 
 |  Scenario MA2  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Every expenses is correctly tracked                                        |
 | Post condition | Owner retrieves expenses                                                  |
 
-#### Steps
+##### Steps
 
 | Actor's Action                     | System Action                                                                  | FR needed |
 |------------------------------------|--------------------------------------------------------------------------------|-----------|
@@ -1067,14 +1093,14 @@ system <-- shipping
 | Owner chooses the granularity      | System retrieves and returns the expenses for the selected window & granularity |       FR10.3.2  |
 
 
-### Scenario MA3  
+#### Scenario MA3  
 
 |  Scenario MA3  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Every outgoing and every income is correctly tracked                       |
 | Post condition | Owner retrieves the balance                                                |
 
-#### Steps
+##### Steps
 
 | Actor's Action                     | System Action                                                                  | FR needed |
 |------------------------------------|--------------------------------------------------------------------------------|-----------|
@@ -1084,7 +1110,7 @@ system <-- shipping
 
 
 
-## Use case Manage Cash Registers, UC13
+### Use case Manage Cash Registers, UC13
 
 | Actors Involved  |                - Main: Owner <br> - Passive: POS provider, Cash Register                                               |
 | :--------------: | :------------------------------------------------------------------ |
@@ -1093,14 +1119,14 @@ system <-- shipping
 | Nominal Scenario |  - Owner add a new cash register to the list CR1 <br> - Owner updates a cash register in the list CR2 <br> - Owner deletes a cash register from the list CR3 | 
 |     Exception    | - Owner tries to add a cash register that is alredy in the list CR1E1 <br> |
 
-### Scenario CR1
+#### Scenario CR1
 
 |  Scenario CR1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated && DB services are available && internet connection is available |
 | Post condition | A new cash register is added to the system                                |
 
-#### Steps
+##### Steps
 
 | Actor's Action                                      | System Action                                                     | FR needed |
 |------------------------------------------------------|-------------------------------------------------------------------|-----------|
@@ -1111,14 +1137,14 @@ system <-- shipping
 |                                                      | System validates the token with the POS provider                  |     FR13.1.4      |
 |                                                      | System inserts the new cash register into the database            |     FR13.2.2      |
 
-### Scenario CR2
+#### Scenario CR2
 
 |  Scenario CR2 |                                                                            |
 | :-----------: | :------------------------------------------------------------------------: |
 | Precondition  | Owner is authenticated && DB services are available && internet connection is available |
 | Post condition| The selected cash register is updated in the system                        |
 
-#### Steps
+##### Steps
 
 | Actor's Action                                      | System Action                                                     | FR needed |
 |------------------------------------------------------|-------------------------------------------------------------------|-----------|
@@ -1127,14 +1153,14 @@ system <-- shipping
 | Owner modifies the cash register attributes          |                                                                   |     FR13.1.2      |
 |                                                      | System updates the cash register in the database                  |     FR13.2.2      |
 
-### Scenario CR3
+#### Scenario CR3
 
 |  Scenario CR3 |                                                                            |
 | :-----------: | :------------------------------------------------------------------------: |
 | Precondition  | Owner is authenticated && DB services are available    |
 | Post condition| The selected cash register is removed from the system                     |
 
-#### Steps
+##### Steps
 
 | Actor's Action                                      | System Action                                                     | FR needed |
 |------------------------------------------------------|-------------------------------------------------------------------|-----------|
@@ -1143,14 +1169,14 @@ system <-- shipping
 | Owner confirms deletion                              |                                                                   |      FR13.1.5     |
 |                                                      | System removes the cash register from the database                |      FR13.1.5, FR13.2.2     |
 
-### Scenario CR1E1
+#### Scenario CR1E1
 
 |  Scenario CR1E2 |                                                                            |
 | :-------------: | :------------------------------------------------------------------------: |
 | Precondition    | Owner is authenticated && DB services are available && internet connection is available |
 | Post condition  | No cash register is added, user is notified                                |
 
-#### Steps
+##### Steps
 
 | Actor's Action                                      | System Action                                                     | FR needed |
 |------------------------------------------------------|-------------------------------------------------------------------|-----------|
@@ -1161,7 +1187,7 @@ system <-- shipping
 
 
 
-## Use case Manage Sales and Refunds, UC14
+### Use case Manage Sales and Refunds, UC14
 
 | Actors Involved  |                 Cash Register                                                |
 | :--------------: | :------------------------------------------------------------------ |
@@ -1171,14 +1197,14 @@ system <-- shipping
 |     Exception    | - The data transfer is corrupted MSE1 <br>|
 
 
-### Scenario MS1
+#### Scenario MS1
 
 |  Scenario MS1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 |  Precondition  | Cash registers are turned on && DB services are available && LAN connection is available |
 | Post condition | The system stores the new sales provided by the cash register              |
 
-#### Steps
+##### Steps
 
 | Actor's Action                                  | System Action                                                  | FR needed |
 |--------------------------------------------------|----------------------------------------------------------------|-----------|
@@ -1188,14 +1214,14 @@ system <-- shipping
 |                                                  | System receives the sales data                                 |     FR13.4.1      |
 |                                                  | System inserts new sales into the database                     |     FR13.4.2      |
 
-### Scenario MS2
+#### Scenario MS2
 
 |  Scenario MS2  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 |  Precondition  | Cash registers are turned on && DB services are available && LAN connection is available |
 | Post condition | The system stores the new refunds provided by the cash register            |
 
-#### Steps
+##### Steps
 
 | Actor's Action                                  | System Action                                                  | FR needed |
 |--------------------------------------------------|----------------------------------------------------------------|-----------|
@@ -1205,14 +1231,14 @@ system <-- shipping
 |                                                  | System receives the refund data                                |    FR13.5.1        |
 |                                                  | System inserts new refunds into the database                   |     FR13.5.2      |
 
-### Scenario MSE1
+#### Scenario MSE1
 
 |  Scenario MSE1 |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 |  Precondition  | Cash registers are turned on && DB services are available && LAN connection is available |
 | Post condition | No new sales/refunds are saved                                             |
 
-#### Steps
+##### Steps
 
 | Actor's Action                                   | System Action                                                    | FR needed |
 |--------------------------------------------------|------------------------------------------------------------------|-----------|
@@ -1222,7 +1248,7 @@ system <-- shipping
 |                                                  | System rejects the data                                          |      FR13.4.1, FR13.51.1     |
 
 
-## Use case Get Catalogue, UC15
+### Use case Get Catalogue, UC15
 
 | Actors Involved  |                 Cash Register                                                |
 | :--------------: | :------------------------------------------------------------------ |
@@ -1231,14 +1257,14 @@ system <-- shipping
 | Nominal Scenario | - The system sends to the cash register the updated catalogue GC1<br>| 
 |     Exception    | - Cash register is unresponsive GCE1 <br>|
 
-### Scenario GC1
+#### Scenario GC1
 
 |  Scenario GC1 |                                                                            |
 | :-----------: | :------------------------------------------------------------------------: |
 | Precondition  | Cash registers are turned on && DB services are available && LAN connection is available |
 | Post condition| Cash register catalogue is aligned with the system catalogue                |
 
-#### Steps
+##### Steps
 
 | Actor's Action                                 | System Action                                                      | FR needed |
 |------------------------------------------------|----------------------------------------------------------------------|-----------|
@@ -1249,14 +1275,14 @@ system <-- shipping
 | Cash register receives the catalogue            |                                                                      |     FR13.3.2      |
 | Cash register updates its internal data         |                                                                      |     FR13.3      |
 
-### Scenario GCE1
+#### Scenario GCE1
 
 |  Scenario GCE1 |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   |  DB services are available && LAN connection is available |
 | Post condition | The cash register catalogue is not up to date                                 |
 
-#### Steps
+##### Steps
 
 | Actor's Action                             | System Action                                                      | FR needed |
 |---------------------------------------------|--------------------------------------------------------------------|-----------|
@@ -1267,7 +1293,7 @@ system <-- shipping
 |                                              |System update cash register status |    FR13.3.3  |
 
 
-## Use case Track Orders, UC16
+### Use case Track Orders, UC16
 
 | Actors Involved  |                 Shipment tracking provider, Owner                                              |
 | :--------------: | :------------------------------------------------------------------ |
@@ -1277,14 +1303,14 @@ system <-- shipping
 |     Exception    | - The traking service is unreachable TOE1 <br> |
 
 
-### Scenario TO1
+#### Scenario TO1
 
 | Scenario TO1 | |
 |--------------|--|
 | **Precondition** | DB services are available & internet connection is available |
 | **Post condition** | The Shipment tracking provider account is successfully linked and tokens are securely stored |
 
-#### Steps
+##### Steps
 
 | Actor's Action | System Action | FR needed |
 |----------------|---------------|-----------|
@@ -1293,14 +1319,14 @@ system <-- shipping
 |  | System securely stores the retrieved tokens | FR8.1.3 |
 
 
-### Scenario TO2
+#### Scenario TO2
 
 |  Scenario TO1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | DB services are available && internet connection is available && shipment tracking provider is correctly linked    |
 | Post condition | The order status is up to date                                             |
 
-#### Steps
+##### Steps
 
 | Actor's Action                                              | System Action                                                         | FR needed |
 |-------------------------------------------------------------|-----------------------------------------------------------------------|-----------|
@@ -1310,14 +1336,14 @@ system <-- shipping
 |                                                            | System sends an acknowledgment (ACK) if required by the protocol      |    FR8.2.1       |
 
 
-### Scenario TOE1 
+#### Scenario TOE1 
 
 |  Scenario TOE1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 |  Precondition  | DB services are available && internet connection is available && shipment tracking provider is correctly linked| 
 | Post condition | The order status is not up to date |
 
-#### Steps
+##### Steps
 
 | Actor's Action                                   | System Action                                                    | FR needed |
 |--------------------------------------------------|------------------------------------------------------------------|-----------|
@@ -1327,7 +1353,7 @@ system <-- shipping
 |                                                | System keeps the current order status unchanged                  |      FR8.2.2     |
 
 
-## Use case Manage shipping companies, UC17 
+### Use case Manage shipping companies, UC17 
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
@@ -1337,14 +1363,14 @@ system <-- shipping
 |     Exception    | - Owner tries to create a shipping company that is alredy in the system MC1E1 <br> |
 
 
-### Scenario MC1
+#### Scenario MC1
 
 |  Scenario MC1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated && DB services are available                        |
 | Post condition | A new shipping company is inserted in the system                                   |
 
-#### Steps
+##### Steps
 
 | Actor's Action                                  | System Action                                                      | FR needed |
 |--------------------------------------------------|--------------------------------------------------------------------|-----------|
@@ -1354,14 +1380,14 @@ system <-- shipping
 |                                                  | System creates and inserts a new shipping company in the DB using the parameters |FR7.1.1   |
                                         
 
-### Scenario MC2 
+#### Scenario MC2 
 
 |  Scenario MC2  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated && DB services are available                                         |
 | Post condition | The selected shipping company is updated in the system                             |
 
-#### Steps
+##### Steps
 
 | Actor's Action                                  | System Action                                                      | FR needed |
 |--------------------------------------------------|--------------------------------------------------------------------|-----------|
@@ -1370,28 +1396,28 @@ system <-- shipping
 |                                                  | System updates the shipping company in the DB using the new parameters        |    FR7.1.2       |
 
 
-### Scenario MC3 
+#### Scenario MC3 
 
 |  Scenario MC3  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated && DB services are available                                         |
 | Post condition | The shipping company is deleted from the system                                    |
 
-#### Steps
+##### Steps
 
 | Actor's Action                                  | System Action                                                      | FR needed |
 |--------------------------------------------------|--------------------------------------------------------------------|-----------|
 | Owner requests to delete a shipping company                 |                                                                    |     FR7.1.3      |
 |                                                  | System deletes the shipping company from the DB                               |       FR7.1.3    |
 
-### Scenario MC1E1
+#### Scenario MC1E1
 
 |  Scenario MC1E1 |                                                                            |
 | :-------------: | :------------------------------------------------------------------------: |
 | Precondition    | Owner is authenticated && DB services are available                        |
 | Post condition  | No new shipping company is created          |
 
-#### Steps
+##### Steps
 
 | Actor's Action                                  | System Action                                                      | FR needed |
 |--------------------------------------------------|--------------------------------------------------------------------|-----------|
