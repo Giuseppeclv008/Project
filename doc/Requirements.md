@@ -308,9 +308,8 @@ Consider that the document should be delivered to another team (unknown to you)
 | FR13 | Manage cash registers |
 | FR13.1 | Link with POS provider’s account |
 | FR13.1.1 | Redirect user to authorization URL |
-| FR13.1.2 | Retrieve access and refresh tokens |
-| FR13.1.3 | Store access and refresh tokens securely |
-| FR13.1.4 | Retrieve new token when expired |
+| FR13.1.2 | Save cash register attributes |
+| FR13.1.3 | Store tokens securely |
 | FR13.2 | Get cash register list |
 | FR13.2.1 | Retrieve list of cash registers from provider API |
 | FR13.2.2 | Update local list of cash registers |
