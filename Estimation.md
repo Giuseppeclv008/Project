@@ -381,7 +381,7 @@ _total estimated calendar time is: 3 weeks_
 ###
 
 ## Gantt chart
-![alt text](<Online Gantt 20251118 (1).png>)
+![alt text](/img/Gantt.png)
 
 ## Summary
 
