@@ -774,7 +774,7 @@ system <-- shipping
 
 | Actor's Action                         | System Action                                                     | FR needed |
 |-----------------------------------------|-------------------------------------------------------------------|-----------|
-|                                        | System detects an expired batch        |     FR      |
+|                                        | System detects an expired batch        |     FR9.4.5      |
 |                                        | System generates an expiration notification                       |     FR12.1      |
 |                                        | System stores the notification in the DB                          |     FR12.1      |
 |                                       | System displays the notification in a pop-up                      |     FR12.1      |
@@ -827,7 +827,7 @@ system <-- shipping
 
 | Actor's Action                         | System Action                                                     | FR needed |
 |-----------------------------------------|-------------------------------------------------------------------|-----------|
-|                                        | System detects internet connectivity failure                      |           |
+|                                        | System detects internet connectivity failure                      |      FR14.1     |
 |                                        | System generates a “no internet connection” notification          |     FR12.1      |
 |                                        | System stores the notification in the DB (lan connected)             |    FR12.1       |
 |                                        | System displays the notification in a pop-up                      |     FR12.1      |
