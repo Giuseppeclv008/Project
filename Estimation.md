@@ -230,7 +230,7 @@ an estimation of about *25 LOC/FP* we can forecast a total of about\
 | &nbsp;&nbsp;  _Notification section_                          |               5                 |
 | &nbsp;&nbsp;  _cash register page_                            |               5                 |
 | &nbsp;&nbsp;&nbsp; filters and user-defined list              |               5                 |
-|_Backend_                                                      |               334               |
+|_Backend_                                                      |               340               |
 | &nbsp;&nbsp; _Authentication_                                 |               15                |
 | &nbsp;&nbsp;&nbsp;  set username-password                     |               3                 |
 | &nbsp;&nbsp;&nbsp;  change username-password                  |               4                 |
@@ -250,13 +250,15 @@ an estimation of about *25 LOC/FP* we can forecast a total of about\
 | &nbsp;&nbsp; _API integration_                                |               10                |
 | &nbsp;&nbsp; _Orders suggestion_                              |               9                 |
 | &nbsp;&nbsp;&nbsp;  retrieve low-stock products               |               2                 |
+| &nbsp;&nbsp;&nbsp;  retrieve expired batches                  |               3                 |
+| &nbsp;&nbsp;&nbsp;  retrieve nearly expired  batches          |               3                 |
 | &nbsp;&nbsp;&nbsp;  retrieve suppliers                        |               3                 |
 | &nbsp;&nbsp;&nbsp;  suggest order                             |               2                 |
 | &nbsp;&nbsp;&nbsp;  add order to suggested ones               |               2                 |
 | &nbsp;&nbsp; _Accounting management_                          |               4                 |
 | &nbsp;&nbsp;&nbsp;  manage invoices                           |               2                 |
 | &nbsp;&nbsp;&nbsp;  perform analysis balance-expences         |               2                 |
-| &nbsp;&nbsp; _Check internet connection_                      |               2                 |
+| &nbsp;&nbsp; _Manage internet connection_                     |               2                 |
 | &nbsp;&nbsp; _Manage  Notifications_                          |               8                 |
 | &nbsp;&nbsp;&nbsp;  generate notification                     |               5                 |
 | &nbsp;&nbsp;&nbsp;  change notifcation status                 |               3                 |                                  
@@ -378,12 +380,13 @@ Report here the results of the three estimation approaches. The estimates may di
 | ---------------------------------- | --------------------- | --------------------------------------------- |
 | estimation by size                 | 500 ph                | 2 weeks and a half (13 days)                  |
 | estimation by FP                   | 517 ph                | 2 weeks and a half (13 days)                  |
-| estimation by product decomposition| 770 ph | about 4 weeks (19 days) |
+| estimation by product decomposition| 776 ph | about 4 weeks (19 days) |
 | estimation by activity decomposition (Gantt) | 826 ph | almost 4 weeks and 3 days (21 days) |
 
 The gap between the estimation made by size and FP with the one found by the PBS and later in the WBS is due to the fact that the given productivity value is really high, hence valuating the project by product decomposition, giving an expected amount of hours per product and then per activity gives a better and realisitical estimation of the time needed.
 
 
 Differences between the Product and the Activity decomposition may be explained by an underestimation of the effort required by the design document. In the PBS it was considered as a unique block, while the WBS decomposed it in several activities. The estimation of every single task in the design document has provided a better estimation of the effort of the project. However, since the gap between PBS and WBS is lower than 10%, both of them are acceptable.
+
 
 
