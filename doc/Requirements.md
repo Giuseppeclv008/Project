@@ -265,6 +265,8 @@ Consider that the document should be delivered to another team (unknown to you)
 | FR9.4.2 | Retrieve possible supplier for products with item count below threshold |
 | FR9.4.3 | Generate order suggestion |
 | FR9.4.4 | Add suggested order to the list of orders |
+| FR9.4.5 | Detect batches past the expiration date  |
+| FR9.4.5 | Detect batches within N days from the expiration date  |
 | FR10 | Manage accounting |
 | FR10.1 | Track incomes |
 | FR10.1.1 | Compute incoming cash flow at different time granularities |
@@ -329,6 +331,10 @@ Consider that the document should be delivered to another team (unknown to you)
 | FR13.6 | Create owner-defined cash register list |
 | FR13.6.1 | Retrieve cash registers filtered by attributes |
 | FR13.6.2 | Retrieve cash registers grouped by provider brand |
+| FR14 | Manage Internet Connection |
+| FR 14.2 | Detect loss of internet connectivity |
+
+
 
 ## Non Functional Requirements
 
