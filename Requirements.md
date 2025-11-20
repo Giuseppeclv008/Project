@@ -521,6 +521,7 @@ system <-- shipping
 |------------------------------------------|---------------------------------------------------------------------|-----------|
 | Owner requests to create a new invoice   | System opens a data-entry dialog requesting invoice parameters      |           |
 | Owner inserts invoice parameters         |                                                                     |           |
+|                                          | System checks if the invoice already exists in the DB               |           |
 |                                          | System creates and inserts a new invoice in the DB                  |           |
 
 ### Scenario MI2 
