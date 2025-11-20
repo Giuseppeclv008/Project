@@ -756,11 +756,11 @@ system <-- shipping
 
 | Actor's Action                         | System Action                                                     | FR needed |
 |-----------------------------------------|-------------------------------------------------------------------|-----------|
-|                                       | System detects order status change                                |           |
-|                                        | System generates a notification entity                            |           |
-|                                        | System stores the notification in the DB                          |           |
-|                                       | System displays the notification in a pop-up                      |           |
-| Owner sees the pop-up notification      | System shows the same notification in the notification menu       |           |
+|                                       | System detects order status change                                |     FR8.2      |
+|                                        | System generates a notification entity                            |    FR12.1       |
+|                                        | System stores the notification in the DB                          |     FR12.1      |
+|                                       | System displays the notification in a pop-up                      |     FR12.1      |
+| Owner sees the pop-up notification      | System shows the same notification in the notification menu       |     FR12.1      |
 
 
 ### Scenario RN2
@@ -774,11 +774,11 @@ system <-- shipping
 
 | Actor's Action                         | System Action                                                     | FR needed |
 |-----------------------------------------|-------------------------------------------------------------------|-----------|
-|                                        | System detects an expired batch        |           |
-|                                        | System generates an expiration notification                       |           |
-|                                        | System stores the notification in the DB                          |           |
-|                                       | System displays the notification in a pop-up                      |           |
-| Owner sees the pop-up notification      | System shows the notification in the notification menu            |           |
+|                                        | System detects an expired batch        |     FR      |
+|                                        | System generates an expiration notification                       |     FR12.1      |
+|                                        | System stores the notification in the DB                          |     FR12.1      |
+|                                       | System displays the notification in a pop-up                      |     FR12.1      |
+| Owner sees the pop-up notification      | System shows the notification in the notification menu            |     FR12.1      |
 
 ### Scenario RN3
 
@@ -791,12 +791,12 @@ system <-- shipping
 
 | Actor's Action                         | System Action                                                     | FR needed |
 |-----------------------------------------|-------------------------------------------------------------------|-----------|
-|                                       | System polls cash registers                                       |           |
-|                                        | System detects no response from a cash register                   |           |
-|                                        | System generates a “cash not responding” notification             |           |
-|                                        | System stores the notification in the DB                          |           |
-|                                        | System displays the notification in a pop-up                      |           |
-| Owner sees the pop-up notification      | System shows the notification in the notification menu            |           |
+|                                       | System polls cash registers                                       |     FR13.4    |
+|                                        | System detects no response from a cash register                   |      FR13.5.3     |
+|                                        | System generates a “cash not responding” notification             |      FR12.1     |
+|                                        | System stores the notification in the DB                          |     FR12.1      |
+|                                        | System displays the notification in a pop-up                      |     FR12.1      |
+| Owner sees the pop-up notification      | System shows the notification in the notification menu            |     FR12.1      |
 
 ### Scenario RN4
 
@@ -809,12 +809,12 @@ system <-- shipping
 
 | Actor's Action                         | System Action                                                     | FR needed |
 |-----------------------------------------|-------------------------------------------------------------------|-----------|
-|                                        | System monitors product stock levels                              |           |
-|                                        | System detects a product is running out                           |           |
-|                                       | System generates a low-stock notification                         |           |
-|                                        | System stores the notification in the DB                          |           |
-|                                        | System displays the notification in a pop-up                      |           |
-| Owner sees the pop-up notification      | System shows the notification in the notification menu            |           |
+|                                        | System monitors product stock levels                              |     FR9.4      |
+|                                        | System detects a product is running out                           |      FR9.4.1     |
+|                                       | System generates a low-stock notification                         |      FR12.1     |
+|                                        | System stores the notification in the DB                          |    FR12.1       |
+|                                        | System displays the notification in a pop-up                      |     FR12.1      |
+| Owner sees the pop-up notification      | System shows the notification in the notification menu            |      FR12.1     |
 
 ### Scenario RN5
 
@@ -828,10 +828,10 @@ system <-- shipping
 | Actor's Action                         | System Action                                                     | FR needed |
 |-----------------------------------------|-------------------------------------------------------------------|-----------|
 |                                        | System detects internet connectivity failure                      |           |
-|                                        | System generates a “no internet connection” notification          |           |
-|                                        | System stores the notification in the DB (lan connected)             |           |
-|                                        | System displays the notification in a pop-up                      |           |
-| Owner sees the pop-up notification      | System shows the notification in the notification menu  |       |
+|                                        | System generates a “no internet connection” notification          |     FR12.1      |
+|                                        | System stores the notification in the DB (lan connected)             |    FR12.1       |
+|                                        | System displays the notification in a pop-up                      |     FR12.1      |
+| Owner sees the pop-up notification      | System shows the notification in the notification menu  |   FR12.1    |
 
 ### Scenario RN6
 
@@ -844,8 +844,8 @@ system <-- shipping
 
 | Actor's Action                         | System Action                                                     | FR needed |
 |-----------------------------------------|-------------------------------------------------------------------|-----------|
-| Owner opens the notification menu       | System retrieves notifications from the DB                        |           |
-| Owner reads notifications               | System marks notifications as read                                |           |
+| Owner opens the notification menu       | System retrieves notifications from the DB                        |     FR12.2      |
+| Owner reads notifications               | System marks notifications as read                                |      FR12.2     |
 
 
 
@@ -860,12 +860,12 @@ system <-- shipping
 
 | Actor's Action                         | System Action                                                     | FR needed |
 |-----------------------------------------|-------------------------------------------------------------------|-----------|
-|                                        | System attempts to update order status                            |           |
+|                                        | System attempts to update order status                            |      FR8.2     |
 |                                        | System detects API timeout / unreachable provider                 |           |
-|                                        | System generates a “status update failed” notification            |           |
-|                                        | System stores the notification in the DB                          |           |
-|                                       | System displays the notification in a pop-up                      |           |
-| Owner sees the pop-up notification      | System shows the notification in the notification menu            |           |
+|                                        | System generates a “status update failed” notification            |       FR12.1    |
+|                                        | System stores the notification in the DB                          |    FR12.1       |
+|                                       | System displays the notification in a pop-up                      |     FR12.1      |
+| Owner sees the pop-up notification      | System shows the notification in the notification menu            |     FR12.1      |
 
 ### Scenario RN6V1
 
@@ -878,10 +878,10 @@ system <-- shipping
 
 | Actor's Action                         | System Action                                                     | FR needed |
 |-----------------------------------------|-------------------------------------------------------------------|-----------|
-| Owner opens the notification menu       | System retrieves notifications from the DB                        |           |
-| Owner selects “Clear notifications”     |                                                                   |           |
-|                                         | System deletes or marks all notifications as cleared in the DB    |           |
-|                                         | System updates the notification menu to show an empty list        |           |
+| Owner opens the notification menu       | System retrieves notifications from the DB                        |      FR12.3     |
+| Owner selects “Clear notifications”     |                                                                   |      FR12.3     |
+|                                         | System deletes or marks all notifications as cleared in the DB    |     FR12.3      |
+|                                         | System updates the notification menu to show an empty list        |      FR12.3     |
 
 
 
