@@ -259,14 +259,15 @@ system <-- shipping
 | **UC6 - Change password**          | Change the password                         | Owner change system's password |
 | **UC7 – Manage Product Catalogue** | Manage the product catalogue                | Owner creates, updates, and deletes products of the catalogue |
 | **UC8 – Receive Notifications**    | Notify the user of relevant events          | The system sends notifications related to product expirations, ongoing orders, status changes, or orders' suggestions|
-| **UC9 - Import Data**              | Import data as .csv                         | Owner imports products, sales, batches or order lists as .csv | 
-| **UC10 - Export Data**              | Export data as .csv                         | Owner exports products, sales, batches or order lists as .csv |
-| **UC11 - Retrieve Data**           | Retrieve data required  by the owner        | Owner retrieves list of products, sales, orders, batches, refunds, cash registers and invoices filtered by one or more fo their attributes |
+| **UC9 - Import Data**              | Import data as .csv                         | Owner imports products, sales, batches, shipping companies or order lists as .csv | 
+| **UC10 - Export Data**              | Export data as .csv                         | Owner exports products, sales, batches, shipping companies or order lists as .csv |
+| **UC11 - Retrieve Data**           | Retrieve data required  by the owner        | Owner retrieves list of products, sales, orders, batches, refunds, cash registers, shipping companies and invoices filtered by one or more fo their attributes |
 | **UC12 - Manage accounting**        | Retrieve incomes, expenses and balance     | Owner retrieves incomes, outogings and balance tracked and computed by the system|     
-| **UC13 - Manage cash registers**   | Add cash registers to the system            | Owner connect cash registers to the system through POS API |
+| **UC13 - Manage cash registers**   | Add cash registers to the system            | Owner connect cash registers to the system throug\h POS API |
 | **UC14 – Manage Sales and Refunds**      | Send sales and refunds                      | The system sends api polling every 2 minutes asking to cash registers to send their stored sales and refunds |
 | **UC15 - Get Catalogue**           | Get catalogue from system                   | The system sends api polling every day at 6.00 a.m. to update the cash register's internal catalogue |
 | **UC16 - Track Orders** |   Get the current status of one or more orders        | The system ask to the shipping company tracking service via api the current status of the order and gets it |
+| **UC17 - Manage shipping companies** |Manage shipping companies                   |  Owner creates, updates and deletes shipping companies |
 ## Use case diagram
 
 \<define here UML Use case diagram UCD summarizing all use cases, and their relationships>
@@ -889,7 +890,7 @@ system <-- shipping
 | :--------------: | :------------------------------------------------------------------ |
 |  Precondition   | Owner is authenticated && DB services are available && internet connection is available && file .csv data are in the correct format|
 |  Post condition  | .csv file's data are correctly imported |
-| Nominal Scenario | - Owner imports a set of lists containg products, invoices, suppliers, sales, refunds, orders as .csv file ID1| 
+| Nominal Scenario | - Owner imports a set of lists containg products, invoices, suppliers, sales, refunds, shipping companies and orders as .csv file ID1| 
 |     Exception    | - Owner imports .csv files with format error ID1E1|
 
 ### Scenario ID1
@@ -933,7 +934,7 @@ system <-- shipping
 | :--------------: | :------------------------------------------------------------------ |
 |  Precondition   | Owner is authenticated && DB services are available && internet connection is available && needed data are in the system|
 |  Post condition  | data are correctly exported as .csv |
-| Nominal Scenario | - Owner exports a set of lists containg products, invoices, suppliers, sales, refunds, orders as .csv file ED1| 
+| Nominal Scenario | - Owner exports a set of lists containg products, invoices, suppliers, sales, refunds, shipping companies and orders as .csv file ED1| 
 |     Exception    | - Owner exports corrupted .csv files ED1E1|
 
 ### Scenario ED1
@@ -977,7 +978,7 @@ system <-- shipping
 | :--------------: | :----------------------------------------------------------------- |
 |   Precondition   | Owner is authenticated && Data are in the system && BD services are available |
 |  Post condition  |  Owner retrieves the desidered list of data |
-| Nominal Scenario | - Owner generates a list of one selected type: products, invoices, suppliers, sales, refunds, or orders RD1 | 
+| Nominal Scenario | - Owner generates a list of one selected type: products, invoices, suppliers, sales, refunds, shipping companies or orders RD1 | 
 |     Variants     | - Owner generates a filtered list of one selected type based on specific attributes RDV1|
 
 ### Scenario RD1
@@ -1300,6 +1301,82 @@ system <-- shipping
 |                                              | System logs the communication error                              |           |
 |                                              | System stops the status update process                           |           |
 |                                                | System keeps the current order status unchanged                  |           |
+
+
+## Use case Manage Inventory, UC17 
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Precondition   | Owner is authenticated && DB services are available    |
+|  Post condition  | CRUD-type shipping companies' operation is performed |
+| Nominal Scenario | - Owner creates a shipping company MI1 <br> - Owner updates a shipping company MI2 <br> - Owner deletes a shipping company MI3| 
+|     Exception    | - Owner tries to create a shipping company of products that is alredy in the system MI1E1 <br> |
+
+
+### Scenario MI1
+
+|  Scenario MI1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available                        |
+| Post condition | A new shipping company is inserted in the inventory                                   |
+
+#### Steps
+
+| Actor's Action                                  | System Action                                                      | FR needed |
+|--------------------------------------------------|--------------------------------------------------------------------|-----------|
+| Owner requests to create a new shipping company             | System opens a data-entry dialog requesting shipping company parameters       |7.1.1      |
+| Owner enters shipping company parameters                    |                                                                    |7.1.1      |
+|                                                  | System checks if a shipping company with the same identifying values exists   | 7.1.1     |
+|                                                  | System creates and inserts a new shipping company in the DB using the parameters |7.1.1   |
+                                        
+
+### Scenario MI2 
+
+|  Scenario MI2  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available                                         |
+| Post condition | The selected shipping company is updated in the inventory                              |
+
+#### Steps
+
+| Actor's Action                                  | System Action                                                      | FR needed |
+|--------------------------------------------------|--------------------------------------------------------------------|-----------|
+| Owner requests to update a shipping company                 | System opens a data-entry dialog requesting updated parameters     | 7.1.2          |
+| Owner modifies shipping company parameters                  |                                                                    |   7.1.2        |
+|                                                  | System updates the shipping company in the DB using the new parameters        |    7.1.2       |
+
+
+### Scenario MI3 
+
+|  Scenario MI3  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available                                         |
+| Post condition | The shipping company is deleted from the inventory                                     |
+
+#### Steps
+
+| Actor's Action                                  | System Action                                                      | FR needed |
+|--------------------------------------------------|--------------------------------------------------------------------|-----------|
+| Owner requests to delete a shipping company                 |                                                                    |     7.1.3      |
+|                                                  | System deletes the shipping company from the DB                               |       7.1.3    |
+
+### Scenario MI1E1
+
+|  Scenario MI1E1 |                                                                            |
+| :-------------: | :------------------------------------------------------------------------: |
+| Precondition    | Owner is authenticated && DB services are available                        |
+| Post condition  | No new shipping company is created          |
+
+#### Steps
+
+| Actor's Action                                  | System Action                                                      | FR needed |
+|--------------------------------------------------|--------------------------------------------------------------------|-----------|
+| Owner requests to create a new shipping company             | System opens a data-entry dialog requesting shipping company parameters       |   7.1.1        |
+| Owner enters shipping company parameters                    |                                                                    |    7.1.1       |
+|                                                  | System checks if a shipping company with the same identifying values exists   |     7.1.1      |
+|                                                  | System detects the shipping company already exists                            |     7.1.1      |
+|                                                  | System rejects the creation and displays an error message          |      7.1.1     |
+
 
 
 
