@@ -161,11 +161,11 @@ class Notification {
 Balance  -- "0..*" Expense: > based on 
 Balance  -- "0..*" Income: > based on
 
-Sale "0.*" -- "1.*" Product : has
-Refund "0.*" -- "1.*" Product: has
-Catalogue  -- "1.*" Product:has
-Batch "0..*" --  Product: related to
-Supplier "1..*" -- "1..*" Product: provides
+Sale "0.*" -- "1.*" Product : > has
+Refund "0.*" -- "1.*" Product: > has
+Catalogue  -- "1.*" Product: > has
+Batch "0..*" --  Product: > related to
+Supplier "1..*" -- "1..*" Product: > provides
 
 
 (Sale, Product) .. SaleOf
