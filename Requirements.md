@@ -296,10 +296,10 @@ system <-- shipping
 
 | Actor's Action                                  | System Action                                                      | FR needed |
 |--------------------------------------------------|--------------------------------------------------------------------|-----------|
-| Owner requests to create a new batch             | System opens a data-entry dialog requesting batch parameters       |4.1.1      |
-| Owner enters batch parameters                    |                                                                    |4.1.1      |
-|                                                  | System checks if a batch with the same identifying values exists   | 4.1.1     |
-|                                                  | System creates and inserts a new batch in the DB using the parameters |4.1.1   |
+| Owner requests to create a new batch             | System opens a data-entry dialog requesting batch parameters       |FR4.1.1      |
+| Owner enters batch parameters                    |                                                                    |FR4.1.1      |
+|                                                  | System checks if a batch with the same identifying values exists   | FR4.1.1     |
+|                                                  | System creates and inserts a new batch in the DB using the parameters |FR4.1.1   |
                                         
 
 ### Scenario MI2 
@@ -313,9 +313,9 @@ system <-- shipping
 
 | Actor's Action                                  | System Action                                                      | FR needed |
 |--------------------------------------------------|--------------------------------------------------------------------|-----------|
-| Owner requests to update a batch                 | System opens a data-entry dialog requesting updated parameters     | 4.1.2          |
-| Owner modifies batch parameters                  |                                                                    |   4.1.2        |
-|                                                  | System updates the batch in the DB using the new parameters        |    4.1.2       |
+| Owner requests to update a batch                 | System opens a data-entry dialog requesting updated parameters     | FR4.1.2          |
+| Owner modifies batch parameters                  |                                                                    |   FR4.1.2        |
+|                                                  | System updates the batch in the DB using the new parameters        |    FR4.1.2       |
 
 
 ### Scenario MI3 
@@ -329,8 +329,8 @@ system <-- shipping
 
 | Actor's Action                                  | System Action                                                      | FR needed |
 |--------------------------------------------------|--------------------------------------------------------------------|-----------|
-| Owner requests to delete a batch                 |                                                                    |     4.1.3      |
-|                                                  | System deletes the batch from the DB                               |       4.1.3    |
+| Owner requests to delete a batch                 |                                                                    |     FR4.1.3      |
+|                                                  | System deletes the batch from the DB                               |       FR4.1.3    |
 
 ### Scenario MI1E1
 
@@ -343,11 +343,11 @@ system <-- shipping
 
 | Actor's Action                                  | System Action                                                      | FR needed |
 |--------------------------------------------------|--------------------------------------------------------------------|-----------|
-| Owner requests to create a new batch             | System opens a data-entry dialog requesting batch parameters       |   4.1.1        |
-| Owner enters batch parameters                    |                                                                    |    4.1.1       |
-|                                                  | System checks if a batch with the same identifying values exists   |     4.1.1      |
-|                                                  | System detects the batch already exists                            |     4.1.1      |
-|                                                  | System rejects the creation and displays an error message          |      4.1.1     |
+| Owner requests to create a new batch             | System opens a data-entry dialog requesting batch parameters       |   FR4.1.1        |
+| Owner enters batch parameters                    |                                                                    |    FR4.1.1       |
+|                                                  | System checks if a batch with the same identifying values exists   |     FR4.1.1      |
+|                                                  | System detects the batch already exists                            |     FR4.1.1      |
+|                                                  | System rejects the creation and displays an error message          |      FR4.1.1     |
 
 
 
@@ -372,10 +372,10 @@ system <-- shipping
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to create a new supplier| System opens a data-entry dialog requesting supplier parameters     |    6.1.1  |
-| Owner inserts supplier parameters      |                                                                     |     6.1.1      |
-|                                        | System checks if supplier already exists in the DB                  |       6.1.1    |
-|                                        | System creates and inserts a new supplier in the DB                 |        6.1.1   |
+| Owner requests to create a new supplier| System opens a data-entry dialog requesting supplier parameters     |    FR6.1.1  |
+| Owner inserts supplier parameters      |                                                                     |     FR6.1.1      |
+|                                        | System checks if supplier already exists in the DB                  |       FR6.1.1    |
+|                                        | System creates and inserts a new supplier in the DB                 |        FR6.1.1   |
 
 ### Scenario MS2 
 
@@ -388,9 +388,9 @@ system <-- shipping
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to update a supplier    | System opens a data-entry dialog requesting new parameters          |      6.1.2     |
-| Owner modifies supplier parameters     |                                                                     |       6.1.2    |
-|                                        | System updates the supplier in the DB using the new parameters      |        6.1.2   |
+| Owner requests to update a supplier    | System opens a data-entry dialog requesting new parameters          |      FR6.1.2     |
+| Owner modifies supplier parameters     |                                                                     |       FR6.1.2    |
+|                                        | System updates the supplier in the DB using the new parameters      |        FR6.1.2   |
 
 
 ### Scenario MS3 
@@ -404,8 +404,8 @@ system <-- shipping
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to delete a supplier    |                                                                     |      6.1.3     |
-|                                        | System deletes the supplier from the DB                             |        6.1.3   |
+| Owner requests to delete a supplier    |                                                                     |      FR6.1.3     |
+|                                        | System deletes the supplier from the DB                             |        FR6.1.3   |
 
 ### Scenario MS1E1
 
@@ -418,11 +418,11 @@ system <-- shipping
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to create a new supplier| System opens a data-entry dialog requesting supplier parameters     |      6.1.1     |
-| Owner inserts supplier parameters      |                                                                     |        6.1.1   |
-|                                        | System checks if supplier already exists in the DB                  |        6.1.1   |
-|                                        | System detects duplication                                           |        6.1.1   |
-|                                        | System rejects the creation and displays an error message            |        6.1.1   |
+| Owner requests to create a new supplier| System opens a data-entry dialog requesting supplier parameters     |      FR6.1.1     |
+| Owner inserts supplier parameters      |                                                                     |        FR6.1.1   |
+|                                        | System checks if supplier already exists in the DB                  |        FR6.1.1   |
+|                                        | System detects duplication                                           |        FR6.1.1   |
+|                                        | System rejects the creation and displays an error message            |        FR6.1.1   |
 
 
 
@@ -447,10 +447,10 @@ system <-- shipping
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to create a new order   | System opens a data-entry dialog requesting order parameters        |     9.1.1      |
-| Owner inserts order parameters         |                                                                     |      9.1.1     |
-|                                        | System checks if the order already exists in the DB                |        9.1.1   |
-|                                        | System creates and inserts a new order in the DB                   |       9.1.1    |
+| Owner requests to create a new order   | System opens a data-entry dialog requesting order parameters        |     FR9.1.1      |
+| Owner inserts order parameters         |                                                                     |      FR9.1.1     |
+|                                        | System checks if the order already exists in the DB                |        FR9.1.1   |
+|                                        | System creates and inserts a new order in the DB                   |       FR9.1.1    |
 
 
 ### Scenario MO2 
@@ -464,9 +464,9 @@ system <-- shipping
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to update an order      | System opens a data-entry dialog requesting updated parameters      |    9.1.2       |
-| Owner modifies the order parameters    |                                                                     |      9.1.2     |
-|                                        | System updates the order in the DB using the new parameters         |        9.1.2   |
+| Owner requests to update an order      | System opens a data-entry dialog requesting updated parameters      |    FR9.1.2       |
+| Owner modifies the order parameters    |                                                                     |      FR9.1.2     |
+|                                        | System updates the order in the DB using the new parameters         |        FR9.1.2   |
 
 
 ### Scenario MO3 
@@ -480,8 +480,8 @@ system <-- shipping
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to delete the order     |                                                                     |     9.1.3      |
-|                                        | System deletes the order from the DB                                |       9.1.3    |
+| Owner requests to delete the order     |                                                                     |     FR9.1.3      |
+|                                        | System deletes the order from the DB                                |       FR9.1.3    |
 
 ### Scenario MO1E1
 
@@ -494,11 +494,11 @@ system <-- shipping
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to create a new order   | System opens a data-entry dialog requesting order parameters        |     9.1.1      |
-| Owner inserts order parameters         |                                                                     |       9.1.1    |
-|                                        | System checks if the order already exists in the DB                |        9.1.1   |
-|                                        | System detects duplication                                           |       9.1.1    |
-|                                        | System rejects the creation and displays an error message           |       9.1.1    |
+| Owner requests to create a new order   | System opens a data-entry dialog requesting order parameters        |     FR9.1.1      |
+| Owner inserts order parameters         |                                                                     |       FR9.1.1    |
+|                                        | System checks if the order already exists in the DB                |        FR9.1.1   |
+|                                        | System detects duplication                                           |       FR9.1.1    |
+|                                        | System rejects the creation and displays an error message           |       FR9.1.1    |
 
 
 ## Use case Manage Invoices, UC4
@@ -521,10 +521,10 @@ system <-- shipping
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to create a new invoice   | System opens a data-entry dialog requesting invoice parameters      |    5.1.1       |
-| Owner inserts invoice parameters         |                                                                     |      5.1.1     |
-|                                          | System checks if the invoice already exists in the DB               |       5.1.1    |
-|                                          | System creates and inserts a new invoice in the DB                  |        5.1.1   |
+| Owner requests to create a new invoice   | System opens a data-entry dialog requesting invoice parameters      |    FR5.1.1       |
+| Owner inserts invoice parameters         |                                                                     |      FR5.1.1     |
+|                                          | System checks if the invoice already exists in the DB               |       FR5.1.1    |
+|                                          | System creates and inserts a new invoice in the DB                  |        FR5.1.1   |
 
 ### Scenario MI2 
 
@@ -537,9 +537,9 @@ system <-- shipping
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to update an invoice      | System opens a data-entry dialog requesting updated parameters      |    5.1.2       |
-| Owner modifies the invoice parameters    |                                                                     |      5.1.2     |
-|                                          | System updates the invoice in the DB using the new parameters       |        5.1.2   |
+| Owner requests to update an invoice      | System opens a data-entry dialog requesting updated parameters      |    FR5.1.2       |
+| Owner modifies the invoice parameters    |                                                                     |      FR5.1.2     |
+|                                          | System updates the invoice in the DB using the new parameters       |        FR5.1.2   |
 
 
 ### Scenario MI3 
@@ -553,8 +553,8 @@ system <-- shipping
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to delete an invoice      |                                                                     |     5.1.3      |
-|                                          | System deletes the invoice from the DB                               |      5.1.3     |
+| Owner requests to delete an invoice      |                                                                     |     FR5.1.3      |
+|                                          | System deletes the invoice from the DB                               |      FR5.1.3     |
 
 ### Scenario MI1E1
 
@@ -567,11 +567,11 @@ system <-- shipping
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to create a new invoice   | System opens a data-entry dialog requesting invoice parameters      |    5.1.1       |
-| Owner inserts invoice parameters         |                                                                     |     5.1.1      |
-|                                          | System checks if the invoice already exists in the DB               |      5.1.1     |
-|                                          | System detects duplication                                           |      5.1.1     |
-|                                          | System rejects creation and displays an error message               |        5.1.1   |
+| Owner requests to create a new invoice   | System opens a data-entry dialog requesting invoice parameters      |    FR5.1.1       |
+| Owner inserts invoice parameters         |                                                                     |     FR5.1.1      |
+|                                          | System checks if the invoice already exists in the DB               |      FR5.1.1     |
+|                                          | System detects duplication                                           |      FR5.1.1     |
+|                                          | System rejects creation and displays an error message               |        FR5.1.1   |
 
 ## Use case Authenticate Owner, UC5
 
@@ -677,10 +677,10 @@ system <-- shipping
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to create a new product   | System opens a data-entry dialog requesting product parameters      |    3.1.1       |
-| Owner inserts product parameters         |                                                                     |      3.1.1     |
-|                                          | System checks if the product already exists in the DB               |        3.1.1   |
-|                                          | System creates and inserts a new product in the DB                  |         3.1.1  |
+| Owner requests to create a new product   | System opens a data-entry dialog requesting product parameters      |    FR3.1.1       |
+| Owner inserts product parameters         |                                                                     |      FR3.1.1     |
+|                                          | System checks if the product already exists in the DB               |        FR3.1.1   |
+|                                          | System creates and inserts a new product in the DB                  |         FR3.1.1  |
                                                    
 
 ### Scenario MP2 
@@ -694,9 +694,9 @@ system <-- shipping
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to update a product       | System opens a data-entry dialog requesting updated parameters      |     3.1.2      |
-| Owner modifies the product parameters    |                                                                     |       3.1.2    |
-|                                          | System updates the product in the DB using the new parameters       |        3.1.2   |
+| Owner requests to update a product       | System opens a data-entry dialog requesting updated parameters      |     FR3.1.2      |
+| Owner modifies the product parameters    |                                                                     |       FR3.1.2    |
+|                                          | System updates the product in the DB using the new parameters       |        FR3.1.2   |
 
 
 ### Scenario MP3 
@@ -710,8 +710,8 @@ system <-- shipping
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to delete a product       |                                                                     |      3.1.3     |
-|                                          | System deletes the product from the DB                              |        3.1.3   |
+| Owner requests to delete a product       |                                                                     |      FR3.1.3     |
+|                                          | System deletes the product from the DB                              |        FR3.1.3   |
 
 ### Scenario MP1E1
 
@@ -724,11 +724,11 @@ system <-- shipping
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to create a new product   | System opens a data-entry dialog requesting product parameters      |     3.1.1      |
-| Owner inserts product parameters         |                                                                     |        3.1.1   |
-|                                          | System checks if the product already exists in the DB               |        3.1.1   |
-|                                          | System detects duplication                                           |        3.1.1   |
-|                                          | System rejects the creation and displays an error message           |         3.1.1  |
+| Owner requests to create a new product   | System opens a data-entry dialog requesting product parameters      |     FR3.1.1      |
+| Owner inserts product parameters         |                                                                     |        FR3.1.1   |
+|                                          | System checks if the product already exists in the DB               |        FR3.1.1   |
+|                                          | System detects duplication                                           |        FR3.1.1   |
+|                                          | System rejects the creation and displays an error message           |         FR3.1.1  |
 
  
 ## Use case Receive Notifications, UC8
@@ -975,22 +975,8 @@ system <-- shipping
 |   Precondition   | Owner is authenticated && Data are in the system && BD services are available |
 |  Post condition  |  Owner retrieves the desidered list of data |
 | Nominal Scenario | - Owner generates a list of one selected type: products, invoices, suppliers, sales, refunds, shipping companies or orders.The list is filtered based on selected type specific attributes RD1 <br> - Owner generates a list of one selected type: sales, refunds, suppliers, and shipping companies ranked by specific attributes RD2| 
-|     Variants     | - Owner generates a list of one selected type: products, invoices, suppliers, sales, refunds, shipping companies or orders.The list is not filtered RDV1|
+|     Variants     | - Owner generates a list of one selected type: products, invoices, suppliers, sales, refunds, shipping companies or orders.The list is not filtered RD1V1|
 
-### Scenario RD1
-
-|  Scenario RD1  |                                                                            |
-| :------------: | :------------------------------------------------------------------------: |
-| Precondition   | Requested data type exists in the system && Owner is authenticated         |
-| Post condition | Owner receives the full list of the selected data type                     |
-
-#### Steps
-
-| Actor's Action                                        | System Action                                                       | FR needed |
-|--------------------------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner selects a data type to retrieve (e.g. products, invoices, etc.) | System retrieves all records of the selected type from the DB       |  FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1         |
-|                                                        | System returns the retrieved list to the Owner                      |          FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1   |
-| Owner views the list                                   | System displays the data in the appropriate UI                      |          FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1   |
 
 ### Scenario RD1
 
@@ -1025,7 +1011,7 @@ system <-- shipping
 |                                                        | System returns the retrieved ranked list to the Owner                      |    FR1.1.3, FR1.1.4, FR2.1.3, FR2.1.4, FR6.2.2, FR7.2.2         |
 | Owner views the list                                   | System displays the data in the appropriate UI                      |          FR1.1.3, FR1.1.4, FR2.1.3, FR2.1.4, FR6.2.2, FR7.2.2   |
 
-### Scenario RDV1
+### Scenario RD1V1
 
 |  Scenario RDV1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
@@ -1037,7 +1023,7 @@ system <-- shipping
 | Actor's Action                                        | System Action                                                       | FR needed |
 |--------------------------------------------------------|---------------------------------------------------------------------|-----------|
 | Owner selects a data type to retrieve (e.g. products, invoices, etc.) |       System open filter parameters dialog    |  FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1         |
-|     Owner don't insert any filter attribute                                                   | System returns the retrieved list to the Owner                      |          FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1   |
+|     Owner don't insert any filter on attributes                                                   | System returns the retrieved list to the Owner                      |          FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1   |
 | Owner views the list                                   | System displays the data in the appropriate UI                      |          FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1   |
 
 
@@ -1118,12 +1104,12 @@ system <-- shipping
 
 | Actor's Action                                      | System Action                                                     | FR needed |
 |------------------------------------------------------|-------------------------------------------------------------------|-----------|
-| Owner opens the cash registers list                  |                                                                   |           |
-| Owner authenticates on the POS provider website      |                                                                   |           |
-| Owner adds a new cash register on the POS provider website |                                                             |           |
-| Owner enters the cash register attributes and API token |                                                                |           |
-|                                                      | System validates the token with the POS provider                  |           |
-|                                                      | System inserts the new cash register into the database            |           |
+| Owner opens the cash registers list                  |                                                                   |     FR13.2      |
+| Owner authenticates on the POS provider website      |                                                                   |     FR13.1.1      |
+| Owner adds a new cash register on the POS provider website |                                                             |     FR13      |
+| Owner enters the cash register attributes and API token |                                                                |     FR13.1.2, FR13.1.3      |
+|                                                      | System validates the token with the POS provider                  |     FR13.1.4      |
+|                                                      | System inserts the new cash register into the database            |     FR13.2.2      |
 
 ### Scenario CR2
 
@@ -1136,10 +1122,10 @@ system <-- shipping
 
 | Actor's Action                                      | System Action                                                     | FR needed |
 |------------------------------------------------------|-------------------------------------------------------------------|-----------|
-| Owner opens the cash registers list                  |                                                                   |           |
-| Owner selects an existing cash register to update    |                                                                   |           |
-| Owner modifies the cash register attributes          |                                                                   |           |
-|                                                      | System updates the cash register in the database                  |           |
+| Owner opens the cash registers list                  |                                                                   |     FR13.2.1      |
+| Owner selects an existing cash register to update    |                                                                   |     FR13.2.2      |
+| Owner modifies the cash register attributes          |                                                                   |     FR13.1.2      |
+|                                                      | System updates the cash register in the database                  |     FR13.2.2      |
 
 ### Scenario CR3
 
@@ -1152,10 +1138,10 @@ system <-- shipping
 
 | Actor's Action                                      | System Action                                                     | FR needed |
 |------------------------------------------------------|-------------------------------------------------------------------|-----------|
-| Owner opens the cash registers list                  |                                                                   |           |
-| Owner selects a cash register to delete              |                                                                   |           |
-| Owner confirms deletion                              |                                                                   |           |
-|                                                      | System removes the cash register from the database                |           |
+| Owner opens the cash registers list                  |                                                                   |     FR13.2.1      |
+| Owner selects a cash register to delete              |                                                                   |     FR13.1.5      |
+| Owner confirms deletion                              |                                                                   |      FR13.1.5     |
+|                                                      | System removes the cash register from the database                |      FR13.1.5, FR13.2.2     |
 
 ### Scenario CR1E1
 
@@ -1168,10 +1154,10 @@ system <-- shipping
 
 | Actor's Action                                      | System Action                                                     | FR needed |
 |------------------------------------------------------|-------------------------------------------------------------------|-----------|
-| Owner attempts to add a new cash register            |                                                                   |           |
-| Owner enters attributes already present in the system|                                                                   |           |
-|                                                      | System checks for duplicates                                      |           |
-|                                                      | System rejects creation and notifies "Cash register already exists" |         |
+| Owner attempts to add a new cash register            |                                                                   |     FR13.2.2      |
+| Owner enters attributes or token already present in the system|                                                                   |      FR13.1.2, FR13.1.3     |
+|                                                      | System checks for duplicates                                      |     FR13.1.2, FR13.1.3      |
+|                                                      | System rejects creation and notifies "Cash register already exists" |    FR12.1     |
 
 
 
@@ -1196,12 +1182,11 @@ system <-- shipping
 
 | Actor's Action                                  | System Action                                                  | FR needed |
 |--------------------------------------------------|----------------------------------------------------------------|-----------|
-|                                                  | System polls the cash register requesting new sales            |           |
-| Cash register receives the polling request        |                                                                |           |
-| Cash register sends sales data to the system     |                                                                |           |
-|                                                  | System receives the sales data                                 |           |
-|                                                  | System validates the sales data                                 |           |
-|                                                  | System inserts new sales into the database                     |           |
+|                                                  | System polls the cash register requesting new sales            |     FR13.4.1      |
+| Cash register receives the polling request        |                                                                |    FR13.4.1       |
+| Cash register sends sales data to the system     |                                                                |     FR13.4.1      |
+|                                                  | System receives the sales data                                 |     FR13.4.1      |
+|                                                  | System inserts new sales into the database                     |     FR13.4.2      |
 
 ### Scenario MS2
 
@@ -1214,12 +1199,11 @@ system <-- shipping
 
 | Actor's Action                                  | System Action                                                  | FR needed |
 |--------------------------------------------------|----------------------------------------------------------------|-----------|
-|                                                  | System polls the cash register requesting new refunds          |           |
-| Cash register receives the polling request        |                                                                |           |
-| Cash register sends refund data to the system    |                                                                |           |
-|                                                  | System receives the refund data                                |           |
-|                                                  | System validates the refund data                               |           |
-|                                                  | System inserts new refunds into the database                   |           |
+|                                                  | System polls the cash register requesting new refunds          |    FR13.5.1       |
+| Cash register receives the polling request        |                                                                |    FR13.5.1        |
+| Cash register sends refund data to the system    |                                                                |       FR13.5.1     |
+|                                                  | System receives the refund data                                |    FR13.5.1        |
+|                                                  | System inserts new refunds into the database                   |     FR13.5.2      |
 
 ### Scenario MSE1
 
@@ -1232,10 +1216,10 @@ system <-- shipping
 
 | Actor's Action                                   | System Action                                                    | FR needed |
 |--------------------------------------------------|------------------------------------------------------------------|-----------|
-|                                                  | System polls the cash register requesting data                   |           |
-| Cash register sends corrupted/invalid data       |                                                                  |           |
-|                                                  | System detects corrupted or unreadable data                      |           |
-|                                                  | System rejects the data                                          |           |
+|                                                  | System polls the cash register requesting data                   |     FR13.4.1, FR13.5.1      |
+| Cash register sends corrupted/invalid data       |                                                                  |     FR13.4.1, FR13.5.1      |
+|                                                  | System detects corrupted or unreadable data                      |      FR13.4.1, FR13.5.1     |
+|                                                  | System rejects the data                                          |      FR13.4.1, FR13.51.1     |
 
 
 ## Use case Get Catalogue, UC15
@@ -1245,7 +1229,7 @@ system <-- shipping
 |  Precondition   |  Cash Registers are turned on && DB services are available && lan connection is available|
 |  Post condition  | The cash register internal catalogue is consistent with the db's|
 | Nominal Scenario | - The system sends to the cash register the updated catalogue GC1<br>| 
-|     Exception    | - The data transfer is corrupted GCE1 <br>|
+|     Exception    | - Cash register is unresponsive GCE1 <br>|
 
 ### Scenario GC1
 
@@ -1258,75 +1242,89 @@ system <-- shipping
 
 | Actor's Action                                 | System Action                                                      | FR needed |
 |------------------------------------------------|----------------------------------------------------------------------|-----------|
-|                                                | System polls the cash register to check catalogue synchronization    |           |
-| Cash register responds to the polling           |                                                                      |           |
-|                                                | System retrieves the latest catalogue from the database              |           |
-|                                                | System sends the updated catalogue to the cash register              |           |
-| Cash register receives the catalogue            |                                                                      |           |
-| Cash register updates its internal data         |                                                                      |           |
+|                                                | System polls the cash register to check catalogue synchronization    |     FR13.3      |
+| Cash register responds to the polling           |                                                                      |      FR13.3     |
+|                                                | System retrieves the latest catalogue from the database              |       FR3.4.2    |
+|                                                | System sends the updated catalogue to the cash register              |       FR13.3.1, FR13.3.2    |
+| Cash register receives the catalogue            |                                                                      |     FR13.3.2      |
+| Cash register updates its internal data         |                                                                      |     FR13.3      |
 
 ### Scenario GCE1
 
 |  Scenario GCE1 |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-| Precondition   | Cash registers are turned on && DB services are available && LAN connection is available |
-| Post condition | The cash register catalogue is not updated                                 |
+| Precondition   |  DB services are available && LAN connection is available |
+| Post condition | The cash register catalogue is not up to date                                 |
 
 #### Steps
 
 | Actor's Action                             | System Action                                                      | FR needed |
 |---------------------------------------------|--------------------------------------------------------------------|-----------|
-|                                             | System polls the cash register to check catalogue synchronization   |           |
-| Cash register responds to the polling        |                                                                    |           |
-|                                             | System sends the catalogue to the cash register                     |           |
-| Cash register receives corrupted data        |                                                                    |           |
-|                                             | System detects corruption (checksum/format error)                   |           |
-|                                             | System aborts the catalogue update                                  |           |
-
+|                                             | System polls the cash register to check catalogue synchronization   |     FR13.3      |
+|   Cash register does not see any polls (maybe turned off)     |                                                                    |     FR13.3      |
+|                                             | System reaches time out for the comunication                 |     FR13.3.3      |
+|                                              | System detect unresponsive cash register | FR13.3.3|
+|                                              |System update cash register status |    FR13.3.3  |
 
 
 ## Use case Track Orders, UC16
 
-| Actors Involved  |                 Shipment tracking provider                                               |
+| Actors Involved  |                 Shipment tracking provider, Owner                                              |
 | :--------------: | :------------------------------------------------------------------ |
-|  Precondition   | DB services are available && internet connection is available|
+|  Precondition   | DB services are available && internet connection is available |
 |  Post condition  | The order status is up to date |
-| Nominal Scenario | - The system ask a status update to the shipping tracking service TO1 <br> | 
+| Nominal Scenario | -The system links with Shipment tracking provider TO1<br> - The system ask a status update to the shipping tracking service TO2 <br> | 
 |     Exception    | - The traking service is unreachable TOE1 <br> |
+
 
 ### Scenario TO1
 
+| Scenario TO1 | |
+|--------------|--|
+| **Precondition** | DB services are available & internet connection is available |
+| **Post condition** | The Shipment tracking provider account is successfully linked and tokens are securely stored |
+
+#### Steps
+
+| Actor's Action | System Action | FR needed |
+|----------------|---------------|-----------|
+| Owner initiates linking with shipment tracking provider | System redirects the owner to the shipment tracking provider authorization URL | FR8.1.1 |
+| Owner authorizes the application | System retrieves access and refresh tokens | FR8.1.2 |
+|  | System securely stores the retrieved tokens | FR8.1.3 |
+
+
+### Scenario TO2
+
 |  Scenario TO1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-| Precondition   | DB services are available && internet connection is available              |
+| Precondition   | DB services are available && internet connection is available && shipment tracking provider is correctly linked    |
 | Post condition | The order status is up to date                                             |
 
 #### Steps
 
 | Actor's Action                                              | System Action                                                         | FR needed |
 |-------------------------------------------------------------|-----------------------------------------------------------------------|-----------|
-|                                                            | System sends an API request to the shipment tracking provider         |           |
-| Shipment tracking provider returns updated status           | System receives, validates, and processes the tracking response       |           |
-|                                                          | System updates the order status in the database                       |           |
-|                                                            | System sends an acknowledgment (ACK) if required by the protocol      |           |
+|                                                            | System sends an API request to the shipment tracking provider         |     FR8.2      |
+| Shipment tracking provider returns updated status           | System receives, validates, and processes the tracking response       |     FR8.2.1     |
+|                                                          | System updates the order status in the database                       |      FR8.2.2     |
+|                                                            | System sends an acknowledgment (ACK) if required by the protocol      |    FR8.2.1       |
 
 
 ### Scenario TOE1 
 
 |  Scenario TOE1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | DB services are available && internet connection is available | 
+|  Precondition  | DB services are available && internet connection is available && shipment tracking provider is correctly linked| 
 | Post condition | The order status is not up to date |
 
 #### Steps
 
 | Actor's Action                                   | System Action                                                    | FR needed |
 |--------------------------------------------------|------------------------------------------------------------------|-----------|
-|                                               | System sends a request to the shipment tracking provider         |           |
-| Shipment tracking provider is unreachable         | System fails to receive a response (timeout / network error)     |           |
-|                                              | System logs the communication error                              |           |
-|                                              | System stops the status update process                           |           |
-|                                                | System keeps the current order status unchanged                  |           |
+|                                               | System sends a request to the shipment tracking provider         |     FR8.2      |
+| Shipment tracking provider is unreachable         | System fails to receive a response (timeout / network error)     |     FR8.2      |
+|                                              | System stops the status update process                           |      FR8.2.2     |
+|                                                | System keeps the current order status unchanged                  |      FR8.2.2     |
 
 
 ## Use case Manage shipping companies, UC17 
@@ -1350,10 +1348,10 @@ system <-- shipping
 
 | Actor's Action                                  | System Action                                                      | FR needed |
 |--------------------------------------------------|--------------------------------------------------------------------|-----------|
-| Owner requests to create a new shipping company             | System opens a data-entry dialog requesting shipping company parameters       |7.1.1      |
-| Owner enters shipping company parameters                    |                                                                    |7.1.1      |
-|                                                  | System checks if a shipping company with the same identifying values exists   | 7.1.1     |
-|                                                  | System creates and inserts a new shipping company in the DB using the parameters |7.1.1   |
+| Owner requests to create a new shipping company             | System opens a data-entry dialog requesting shipping company parameters       |FR7.1.1      |
+| Owner enters shipping company parameters                    |                                                                    |FR7.1.1      |
+|                                                  | System checks if a shipping company with the same identifying values exists   | FR7.1.1     |
+|                                                  | System creates and inserts a new shipping company in the DB using the parameters |FR7.1.1   |
                                         
 
 ### Scenario MC2 
@@ -1367,9 +1365,9 @@ system <-- shipping
 
 | Actor's Action                                  | System Action                                                      | FR needed |
 |--------------------------------------------------|--------------------------------------------------------------------|-----------|
-| Owner requests to update a shipping company                 | System opens a data-entry dialog requesting updated parameters     | 7.1.2          |
-| Owner modifies shipping company parameters                  |                                                                    |   7.1.2        |
-|                                                  | System updates the shipping company in the DB using the new parameters        |    7.1.2       |
+| Owner requests to update a shipping company                 | System opens a data-entry dialog requesting updated parameters     | FR7.1.2          |
+| Owner modifies shipping company parameters                  |                                                                    |   FR7.1.2        |
+|                                                  | System updates the shipping company in the DB using the new parameters        |    FR7.1.2       |
 
 
 ### Scenario MC3 
@@ -1383,8 +1381,8 @@ system <-- shipping
 
 | Actor's Action                                  | System Action                                                      | FR needed |
 |--------------------------------------------------|--------------------------------------------------------------------|-----------|
-| Owner requests to delete a shipping company                 |                                                                    |     7.1.3      |
-|                                                  | System deletes the shipping company from the DB                               |       7.1.3    |
+| Owner requests to delete a shipping company                 |                                                                    |     FR7.1.3      |
+|                                                  | System deletes the shipping company from the DB                               |       FR7.1.3    |
 
 ### Scenario MC1E1
 
@@ -1397,11 +1395,11 @@ system <-- shipping
 
 | Actor's Action                                  | System Action                                                      | FR needed |
 |--------------------------------------------------|--------------------------------------------------------------------|-----------|
-| Owner requests to create a new shipping company             | System opens a data-entry dialog requesting shipping company parameters       |   7.1.1        |
-| Owner enters shipping company parameters                    |                                                                    |    7.1.1       |
-|                                                  | System checks if a shipping company with the same identifying values exists   |     7.1.1      |
-|                                                  | System detects the shipping company already exists                            |     7.1.1      |
-|                                                  | System rejects the creation and displays an error message          |      7.1.1     |
+| Owner requests to create a new shipping company             | System opens a data-entry dialog requesting shipping company parameters       |   FR7.1.1        |
+| Owner enters shipping company parameters                    |                                                                    |    FR7.1.1       |
+|                                                  | System checks if a shipping company with the same identifying values exists   |     FR7.1.1      |
+|                                                  | System detects the shipping company already exists                            |     FR7.1.1      |
+|                                                  | System rejects the creation         |      FR7.1.1     |
 
 
 
