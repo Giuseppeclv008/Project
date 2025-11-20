@@ -59,9 +59,13 @@ class Item {
 }
 
 class Sale {
+    + receiptId
+    + paymentMethod
 }
 
 class Refund {
+    + receiptId
+    + reason
 }
 
 class Catalogue {
