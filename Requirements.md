@@ -268,6 +268,7 @@ system <-- shipping
 | **UC15 - Get Catalogue**           | Get catalogue from system                   | The system sends api polling every day at 6.00 a.m. to update the cash register's internal catalogue |
 | **UC16 - Track Orders** |   Get the current status of one or more orders        | The system ask to the shipping company tracking service via api the current status of the order and gets it |
 | **UC17 - Manage shipping companies** |Manage shipping companies                   |  Owner creates, updates and deletes shipping companies |
+
 ## Use case diagram
 
 \<define here UML Use case diagram UCD summarizing all use cases, and their relationships>
@@ -1303,22 +1304,22 @@ system <-- shipping
 |                                                | System keeps the current order status unchanged                  |           |
 
 
-## Use case Manage Inventory, UC17 
+## Use case Manage shipping companies, UC17 
 
 | Actors Involved  |                 Owner                                                |
 | :--------------: | :------------------------------------------------------------------ |
 |  Precondition   | Owner is authenticated && DB services are available    |
 |  Post condition  | CRUD-type shipping companies' operation is performed |
-| Nominal Scenario | - Owner creates a shipping company MI1 <br> - Owner updates a shipping company MI2 <br> - Owner deletes a shipping company MI3| 
-|     Exception    | - Owner tries to create a shipping company of products that is alredy in the system MI1E1 <br> |
+| Nominal Scenario | - Owner creates a shipping company MC1 <br> - Owner updates a shipping company MC2 <br> - Owner deletes a shipping company MC3| 
+|     Exception    | - Owner tries to create a shipping company that is alredy in the system MC1E1 <br> |
 
 
-### Scenario MI1
+### Scenario MC1
 
-|  Scenario MI1  |                                                                            |
+|  Scenario MC1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated && DB services are available                        |
-| Post condition | A new shipping company is inserted in the inventory                                   |
+| Post condition | A new shipping company is inserted in the system                                   |
 
 #### Steps
 
@@ -1330,12 +1331,12 @@ system <-- shipping
 |                                                  | System creates and inserts a new shipping company in the DB using the parameters |7.1.1   |
                                         
 
-### Scenario MI2 
+### Scenario MC2 
 
-|  Scenario MI2  |                                                                            |
+|  Scenario MC2  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated && DB services are available                                         |
-| Post condition | The selected shipping company is updated in the inventory                              |
+| Post condition | The selected shipping company is updated in the system                             |
 
 #### Steps
 
@@ -1346,12 +1347,12 @@ system <-- shipping
 |                                                  | System updates the shipping company in the DB using the new parameters        |    7.1.2       |
 
 
-### Scenario MI3 
+### Scenario MC3 
 
-|  Scenario MI3  |                                                                            |
+|  Scenario MC3  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated && DB services are available                                         |
-| Post condition | The shipping company is deleted from the inventory                                     |
+| Post condition | The shipping company is deleted from the system                                    |
 
 #### Steps
 
@@ -1360,9 +1361,9 @@ system <-- shipping
 | Owner requests to delete a shipping company                 |                                                                    |     7.1.3      |
 |                                                  | System deletes the shipping company from the DB                               |       7.1.3    |
 
-### Scenario MI1E1
+### Scenario MC1E1
 
-|  Scenario MI1E1 |                                                                            |
+|  Scenario MC1E1 |                                                                            |
 | :-------------: | :------------------------------------------------------------------------: |
 | Precondition    | Owner is authenticated && DB services are available                        |
 | Post condition  | No new shipping company is created          |
