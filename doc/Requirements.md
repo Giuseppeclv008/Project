@@ -156,7 +156,7 @@ Consider that the document should be delivered to another team (unknown to you)
 | FR3.4.1.1 | Detect import errors |
 | FR3.4.1.2 | Detect schema mismatch |
 | FR3.4.1.3 | Update products list |
-| FR3.4.2 | Export products list as `.csv` |
+| FR3.4.2 | Export list of products as `.csv` |
 | FR3.4.2.1 | Retrieve products list |
 | FR3.4.2.2 | Create `.csv` file |
 | FR3.4.2.3 | Detect export errors |
