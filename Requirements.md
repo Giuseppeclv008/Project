@@ -593,10 +593,10 @@ system <-- shipping
 
 | Actor's Action                       | System Action                                                       | FR needed |
 |---------------------------------------|---------------------------------------------------------------------|-----------|
-|                                       | System asks the Owner to insert the password (data-entry dialog)    |           |
-| Owner inserts the password            |                                                                     |           |
-|                                       | System checks the password                                          |           |
-|                                       | System authenticates the Owner                                      |           |
+|                                       | System asks the Owner to insert the password (data-entry dialog)    |      FR11.3     |
+| Owner inserts the password            |                                                                     |        FR11.3   |
+|                                       | System checks the password                                          |        FR11.3   |
+|                                       | System authenticates the Owner                                      |        FR11.3   |
 
 
 ### Scenario AO1E 
@@ -610,11 +610,11 @@ system <-- shipping
 
 | Actor's Action                       | System Action                                                       | FR needed |
 |---------------------------------------|---------------------------------------------------------------------|-----------|
-| —                                     | System asks the Owner to insert the password (data-entry dialog)    |           |
-| Owner inserts the password            |                                                                     |           |
-|                                       | System checks the password                                          |           |
-|                                       | System informs the Owner that the password is incorrect             |           |
-|                                       | System does **not** authenticate the Owner                          |           |
+| —                                     | System asks the Owner to insert the password (data-entry dialog)    |    FR11.1       |
+| Owner inserts the password            |                                                                     |    FR11.1       |
+|                                       | System checks the password                                          |      FR11.3     |
+|                                       | System informs the Owner that the password is incorrect             |        FR11.3   |
+|                                       | System does **not** authenticate the Owner                          |         FR11.3  |
 
 
 
@@ -625,7 +625,7 @@ system <-- shipping
 |  Pre condition   |  Owner  is authenticated                                             |  
 |  Post condition  |  Owner set a new password                                            |
 | Nominal Scenario | - Authenticate owner CP1 <br>                                        |  
-|     Exception    | - Owner tries to set an invalid type of password CP1E1 <br>          | 
+|     Variants    | - Owner set password for the first time CP1V1 <br>          | 
 
 ### Scenario CP1
 
@@ -638,29 +638,24 @@ system <-- shipping
 
 | Actor's Action                       | System Action                                                       | FR needed |
 |---------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to change password     | System opens a data-entry dialog                                    |           |
-| Owner inserts the new password        |                                                                     |           |
-|                                       | System validates the password                                       |           |
-|                                       | System changes the password                                         |           |
+| Owner requests to change password     | System opens a data-entry dialog                                    |    FR11.2       |
+| Owner inserts the new password        |                                                                     |      FR11.2     |
+|                                       | System changes the password                                         |        FR11.2   |
 
-### Scenario CP1E1
+### Scenario CP1V1
 
-|  Scenario CP1E1 |                                                                            |
+|  Scenario CP1V1 |                                                                            |
 | :-------------: | :------------------------------------------------------------------------: |
-| Precondition    | Owner is authenticated && Owner inserts an invalid password                |
-| Post condition  | Password is not changed                                                    |
+| Precondition    | Owner doesn't have a password                                             |
+| Post condition  | A new password is set                                                    |
 
 #### Steps
 
 | Actor's Action                       | System Action                                                       | FR needed |
 |---------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to change password     | System opens a data-entry dialog                                    |           |
-| Owner inserts the new (invalid) password |                                                                   |           |
-|                                       | System validates the password                                       |           |
-|                                       | System informs the Owner that the password is invalid               |           |
-|                                       | System does **not** change the password                             |           |
-
-
+| Owner requests to set password     | System opens a data-entry dialog                                    |     FR11.1      |
+| Owner inserts the new (invalid) password |                                                                   |      FR11.1     |
+|                                       | System sets the password                             |        FR11.1   |
 
 ## Use case Manage Product Catalogue, UC7
 
@@ -861,7 +856,7 @@ system <-- shipping
 | Actor's Action                         | System Action                                                     | FR needed |
 |-----------------------------------------|-------------------------------------------------------------------|-----------|
 |                                        | System attempts to update order status                            |      FR8.2     |
-|                                        | System detects API timeout / unreachable provider                 |           |
+|                                        | System detects API timeout / unreachable provider                 |        FR12.1   |
 |                                        | System generates a “status update failed” notification            |       FR12.1    |
 |                                        | System stores the notification in the DB                          |    FR12.1       |
 |                                       | System displays the notification in a pop-up                      |     FR12.1      |
@@ -905,10 +900,10 @@ system <-- shipping
 
 | Actor's Action                              | System Action                                                       | FR needed |
 |----------------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to import .csv files          | System opens file-import dialog                                     |           |
-| Owner adds all .csv files                    |                                                                     |           |
-|                                              | System checks if .csv files are in the correct format               |           |
-|                                              | System imports new data into the system                             |           |
+| Owner requests to import .csv files          | System opens file-import dialog                                     | FR1.2.1, FR2.2.1, FR3.4.1, FR4.3.1, FR5.3.1, FR6.3.1, FR7.3.1, , FR9.3.1, FR10.2.1, FR10.4.1 |
+| Owner adds all .csv files                    |                                                                     | FR1.2.1, FR2.2.1, FR3.4.1, FR4.3.1, FR5.3.1, FR6.3.1, FR7.3.1, , FR9.3.1, FR10.2.1, FR10.4.1           |
+|                                              | System checks if .csv files are in the correct format               |FR1.2.1.1, FR1.2.1.2, FR2.2.1.1, FR2.2.1.2, FR3.4.1.1, FR3.4.1.2, FR4.3.1.1, FR4.3.1.2, FR5.3.1.1, FR5.3.1.2, FR6.3.1.1, FR6.3.1.2, FR7.3.1.1, FR7.3.1.2, FR9.3.1.1, FR9.3.1.2,  FR10.2.1.1, FR10.2.1.2, FR10.4.1.1, FR10.4.1.2          |
+|                                              | System imports new data into the system                             |FR1.2.1.3, FR2.2.1.3, FR3.4.1.3, FR4.3.1.3, FR5.3.1.3, FR6.3.1.3, FR7.3.1.3, FR9.3.1.3, 10.2.1.3, 10.4.1.3  |
 
 ### Scenario ID1E1
 
@@ -921,12 +916,12 @@ system <-- shipping
 
 | Actor's Action                              | System Action                                                       | FR needed |
 |----------------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to import .csv files          | System opens file-import dialog                                     |           |
-| Owner adds all .csv files                     |                                                                     |           |
-|                                              | System checks if .csv files are in the correct format               |           |
-|                                              | System detects format errors                                        |           |
-|                                              | System informs the Owner that some data is not in the correct form  |           |
-|                                              | System does **not** import any new data                              |           |
+| Owner requests to import .csv files          | System opens file-import dialog                                     |  FR1.2.1, FR2.2.1, FR3.4.1, FR4.3.1, FR5.3.1, FR6.3.1, FR7.3.1, FR9.3.1, FR10.2.1, FR10.4.1          |
+| Owner adds all .csv files                     |                                                                     | FR1.2.1, FR2.2.1, FR3.4.1, FR4.3.1, FR5.3.1, FR6.3.1, FR7.3.1   FR9.3.1, FR10.2.1, FR10.4.1         |
+|                                              | System checks if .csv files are in the correct format               | FR1.2.1.1, FR1.2.1.2, FR2.2.1.1, FR2.2.1.2, FR3.4.1.1, FR3.4.1.2, FR4.3.1.1, FR4.3.1.2, FR5.3.1.1, FR5.3.1.2, FR6.3.1.1, FR6.3.1.2, FR7.3.1.1, FR7.3.1.2   FR9.3.1.1, FR9.3.1.2,  FR10.2.1.1, FR10.2.1.2, FR10.4.1.1, FR10.4.1.2         |
+|                                              | System detects format errors                                        |         FR1.2.1.1, FR1.2.1.2, FR2.2.1.1, FR2.2.1.2, FR3.4.1.1, FR3.4.1.2, FR4.3.1.1, FR4.3.1.2, FR5.3.1.1, FR5.3.1.2, FR6.3.1.1, FR6.3.1.2, FR7.3.1.1, FR7.3.1.2, FR9.3.1.1, FR9.3.1.2,  FR10.2.1.1, FR10.2.1.2, FR10.4.1.1, FR10.4.1.2    |
+|                                              | System informs the Owner that some data is not in the correct form  |         FR1.2.1.1, FR1.2.1.2, FR2.2.1.1, FR2.2.1.2, FR3.4.1.1, FR3.4.1.2, FR4.3.1.1, FR4.3.1.2, FR5.3.1.1, FR5.3.1.2, FR6.3.1.1, FR6.3.1.2, FR7.3.1.1, FR7.3.1.2, FR9.3.1.1, FR9.3.1.2,  FR10.2.1.1, FR10.2.1.2, FR10.4.1.1, FR10.4.1.2    |
+|                                              | System does **not** import any new data                              |           FR1.2.1.1, FR1.2.1.2, FR2.2.1.1, FR2.2.1.2, FR3.4.1.1, FR3.4.1.2, FR4.3.1.1, FR4.3.1.2, FR5.3.1.1, FR5.3.1.2, FR6.3.1.1, FR6.3.1.2, FR7.3.1.1, FR7.3.1.2, FR9.3.1.1, FR9.3.1.2,  FR10.2.1.1, FR10.2.1.2, FR10.4.1.1, FR10.4.1.2  |
 
 
 ## Use case Export Data, UC10
@@ -949,10 +944,10 @@ system <-- shipping
 
 | Actor's Action                             | System Action                                                       | FR needed |
 |---------------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to export data as .csv       | System retrieves the requested data from the DB                     |           |
-|                                            | System formats the retrieved data in .csv format                    |           |
-|                                            | System generates and provides one or more .csv files for download   |           |
-| Owner downloads the .csv files              | System confirms successful export                                   |           |
+| Owner requests to export data as .csv       | System retrieves the requested data from the DB                     | FR1.2.2.1, FR2.2.2.1, FR3.4.2.1, FR4.3.2.1, FR5.3.2.1, FR6.3.2.1, FR7.3.2.1, FR9.3.2.1, FR10.2.2.1, FR10.4.2.1  |
+|                                            | System formats the retrieved data in .csv format                    |   FR1.2.2.2, FR2.2.2.2, FR3.4.2.2, FR4.3.2.2, FR5.3.2.2, FR6.3.2.2, FR7.3.2.2, FR9.3.2.2, FR10.2.2.2, FR10.4.2.2 |
+|                                            | System generates and provides one or more .csv files for download   | FR1.2.2.2, FR2.2.2.2, FR3.4.2.2, FR4.3.2.2, FR5.3.2.2, FR6.3.2.2, FR7.3.2.2, FR9.3.2.2, FR10.2.2.2, FR10.4.2.2 |
+| Owner downloads the .csv files              | System confirms successful export                                   |  FR1.2.2, FR2.2.2, FR3.4.2, FR4.3.2, FR5.3.2, FR6.3.2, FR7.3.2, FR9.3.2, FR10.2.2, FR10.4.2|
 
 ### Scenario ED1E1
 
@@ -965,11 +960,11 @@ system <-- shipping
 
 | Actor's Action                             | System Action                                                       | FR needed |
 |---------------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to export data as .csv       | System retrieves data from the DB                                    |           |
-|                                            | System attempts to format data into .csv files                      |           |
-|                                            | System detects an error during file generation (corrupted output)   |           |
-|                                           | System does **not** complete the export process                      |           |
-|                                            | System informs the Owner that export has failed due to corrupted output |        |
+| Owner requests to export data as .csv       | System retrieves data from the DB                                    | FR1.2.2.1, FR2.2.2.1, FR3.4.2.1, FR4.3.2.1, FR5.3.2.1, FR6.3.2.1, FR7.3.2.1, FR9.3.2.1, FR10.2.2.1, FR10.4.2.1           |
+|                                            | System attempts to format data into .csv files                      |    FR1.2.2.2, FR2.2.2.2, FR3.4.2.2, FR4.3.2.2, FR5.3.2.2, FR6.3.2.2, FR7.3.2.2, FR9.3.2.2, FR10.2.2.2, FR10.4.2.2        |
+|                                            | System detects an error during file generation (corrupted output)   |     FR1.2.2.3, FR2.2.2.3, FR3.4.2.3, FR4.3.2.3, FR5.3.2.3, FR6.3.2.3, FR7.3.2.3, FR9.3.2.3, FR10.2.2.3, FR10.4.2.3      |
+|                                           | System does **not** complete the export process                      |      FR1.2.2.3, FR2.2.2.3, FR3.4.2.3, FR4.3.2.3, FR5.3.2.3, FR6.3.2.3, FR7.3.2.3, FR9.3.2.3, FR10.2.2.3, FR10.4.2.3      |
+|                                            | System informs the Owner that export has failed due to corrupted output |      FR1.2.2.3, FR2.2.2.3, FR3.4.2.3, FR4.3.2.3, FR5.3.2.3, FR6.3.2.3, FR7.3.2.3, FR9.3.2.3, FR10.2.2.3, FR10.4.2.3   |
 
 
 
@@ -979,8 +974,8 @@ system <-- shipping
 | :--------------: | :----------------------------------------------------------------- |
 |   Precondition   | Owner is authenticated && Data are in the system && BD services are available |
 |  Post condition  |  Owner retrieves the desidered list of data |
-| Nominal Scenario | - Owner generates a list of one selected type: products, invoices, suppliers, sales, refunds, shipping companies or orders RD1 | 
-|     Variants     | - Owner generates a filtered list of one selected type based on specific attributes RDV1|
+| Nominal Scenario | - Owner generates a list of one selected type: products, invoices, suppliers, sales, refunds, shipping companies or orders.The list is filtered based on selected type specific attributes RD1 <br> - Owner generates a list of one selected type: sales, refunds, suppliers, and shipping companies ranked by specific attributes RD2| 
+|     Variants     | - Owner generates a list of one selected type: products, invoices, suppliers, sales, refunds, shipping companies or orders.The list is not filtered RDV1|
 
 ### Scenario RD1
 
@@ -993,13 +988,13 @@ system <-- shipping
 
 | Actor's Action                                        | System Action                                                       | FR needed |
 |--------------------------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner selects a data type to retrieve (e.g. products, invoices, etc.) | System retrieves all records of the selected type from the DB       |           |
-|                                                        | System returns the retrieved list to the Owner                      |           |
-| Owner views the list                                   | System displays the data in the appropriate UI                      |           |
+| Owner selects a data type to retrieve (e.g. products, invoices, etc.) | System retrieves all records of the selected type from the DB       |  FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1         |
+|                                                        | System returns the retrieved list to the Owner                      |          FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1   |
+| Owner views the list                                   | System displays the data in the appropriate UI                      |          FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1   |
 
-### Scenario RDV1
+### Scenario RD1
 
-|  Scenario RDV1 |                                                                            |
+|  Scenario RD1 |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Filterable data exist in the system && Owner is authenticated              |
 | Post condition | Owner receives the filtered list                                           |
@@ -1008,12 +1003,42 @@ system <-- shipping
 
 | Actor's Action                                        | System Action                                                       | FR needed |
 |--------------------------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner selects a data type to retrieve                  | System opens a filter parameters dialog                             |           |
-| Owner inserts filter attributes                        |                                                                     |           |
-|                                                        | System retrieves only the records matching the filters from the DB  |           |
-|                                                        | System returns the filtered list                                    |           |
-| Owner views the filtered list                          | System displays the filtered data in the UI                          |           |
+| Owner selects a data type to retrieve                  | System opens a filter parameters dialog                             |       FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1      |
+| Owner inserts filter attributes                        |                                                                     |          FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1   |
+|                                                        | System retrieves only the records matching the filters from the DB  |            FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1 |
+|                                                        | System returns the filtered list                                    |            FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1 |
+| Owner views the filtered list                          | System displays the filtered data in the UI                          |            FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1 |
 
+### Scenario RD2
+
+|  Scenario RD2  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Requested data type exists in the system && Owner is authenticated         |
+| Post condition | Owner receives the full list of the selected data type, ranked by specific attributes |
+
+#### Steps
+
+| Actor's Action                                        | System Action                                                       | FR needed |
+|--------------------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner selects a data type to retrieve (e.g. products, invoices, etc.) | System retrieve a list of rank attributes            |  FR1.1.3, FR1.1.4, FR2.1.3, FR2.1.4, FR6.2.2, FR7.2.2         |
+| Owner selects a rank attributes                                         |
+|                                                        | System returns the retrieved ranked list to the Owner                      |    FR1.1.3, FR1.1.4, FR2.1.3, FR2.1.4, FR6.2.2, FR7.2.2         |
+| Owner views the list                                   | System displays the data in the appropriate UI                      |          FR1.1.3, FR1.1.4, FR2.1.3, FR2.1.4, FR6.2.2, FR7.2.2   |
+
+### Scenario RDV1
+
+|  Scenario RDV1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Requested data type exists in the system && Owner is authenticated         |
+| Post condition | Owner receives the full list of the selected data type                     |
+
+#### Steps
+
+| Actor's Action                                        | System Action                                                       | FR needed |
+|--------------------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner selects a data type to retrieve (e.g. products, invoices, etc.) |       System open filter parameters dialog    |  FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1         |
+|     Owner don't insert any filter attribute                                                   | System returns the retrieved list to the Owner                      |          FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1   |
+| Owner views the list                                   | System displays the data in the appropriate UI                      |          FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1   |
 
 
 ## Use case Manage Accounting, UC12
@@ -1035,9 +1060,9 @@ system <-- shipping
 
 | Actor's Action                     | System Action                                                                  | FR needed |
 |------------------------------------|--------------------------------------------------------------------------------|-----------|
-| Owner requests the incomes         | System asks for the time window (year)                                         |           |
-| Owner chooses the time window      | System asks for the time granularity (day, week, month, quarter, semester, year) |         |
-| Owner chooses the granularity      | System retrieves and returns the incomes for the selected window & granularity |           |
+| Owner requests the incomes         | System asks for the time window (year)                                         |   FR10.1.2        |
+| Owner chooses the time window      | System asks for the time granularity (day, week, month, quarter, semester, year) |     FR10.1.2    |
+| Owner chooses the granularity      | System retrieves and returns the incomes for the selected window & granularity |        FR10.1.2   |
 
 
 ### Scenario MA2  
@@ -1051,9 +1076,9 @@ system <-- shipping
 
 | Actor's Action                     | System Action                                                                  | FR needed |
 |------------------------------------|--------------------------------------------------------------------------------|-----------|
-| Owner requests the expenses       | System asks for the time window (year)                                         |           |
-| Owner chooses the time window      | System asks for the time granularity (day, week, month, quarter, semester, year) |         |
-| Owner chooses the granularity      | System retrieves and returns the expenses for the selected window & granularity |         |
+| Owner requests the expenses       | System asks for the time window (year)                                         |        FR10.3.2   |
+| Owner chooses the time window      | System asks for the time granularity (day, week, month, quarter, semester, year) |      FR10.3.2   |
+| Owner chooses the granularity      | System retrieves and returns the expenses for the selected window & granularity |       FR10.3.2  |
 
 
 ### Scenario MA3  
@@ -1067,9 +1092,9 @@ system <-- shipping
 
 | Actor's Action                     | System Action                                                                  | FR needed |
 |------------------------------------|--------------------------------------------------------------------------------|-----------|
-| Owner requests the balance         | System asks for the time window (year)                                         |           |
-| Owner chooses the time window      | System asks for the time granularity (day, week, month, quarter, semester, year) |         |
-| Owner chooses the granularity      | System retrieves and returns the balance (incomes – expenses)                  |           |
+| Owner requests the balance         | System asks for the time window (year)                                         |       FR10.5.2   |
+| Owner chooses the time window      | System asks for the time granularity (day, week, month, quarter, semester, year) |      FR10.5.2   |
+| Owner chooses the granularity      | System retrieves and returns the balance (incomes – expenses)                  |        FR10.5.1   |
 
 
 
@@ -1120,7 +1145,7 @@ system <-- shipping
 
 |  Scenario CR3 |                                                                            |
 | :-----------: | :------------------------------------------------------------------------: |
-| Precondition  | Owner is authenticated && DB services are available |
+| Precondition  | Owner is authenticated && DB services are available    |
 | Post condition| The selected cash register is removed from the system                     |
 
 #### Steps
