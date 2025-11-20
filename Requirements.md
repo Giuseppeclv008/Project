@@ -387,6 +387,7 @@ system <-- shipping
 |----------------------------------------|---------------------------------------------------------------------|-----------|
 | Owner requests to update a supplier    | System opens a data-entry dialog requesting new parameters          |           |
 | Owner modifies supplier parameters     |                                                                     |           |
+|                                        | System checks if supplier already exists in the DB                  |           |
 |                                        | System updates the supplier in the DB using the new parameters      |           |
 
 
