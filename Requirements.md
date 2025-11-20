@@ -372,6 +372,7 @@ system <-- shipping
 |----------------------------------------|---------------------------------------------------------------------|-----------|
 | Owner requests to create a new supplier| System opens a data-entry dialog requesting supplier parameters     |           |
 | Owner inserts supplier parameters      |                                                                     |           |
+|                                        | System checks if supplier already exists in the DB                  |           |
 |                                        | System creates and inserts a new supplier in the DB                 |           |
 
 ### Scenario MS2 
@@ -387,7 +388,6 @@ system <-- shipping
 |----------------------------------------|---------------------------------------------------------------------|-----------|
 | Owner requests to update a supplier    | System opens a data-entry dialog requesting new parameters          |           |
 | Owner modifies supplier parameters     |                                                                     |           |
-|                                        | System checks if supplier already exists in the DB                  |           |
 |                                        | System updates the supplier in the DB using the new parameters      |           |
 
 
@@ -447,6 +447,7 @@ system <-- shipping
 |----------------------------------------|---------------------------------------------------------------------|-----------|
 | Owner requests to create a new order   | System opens a data-entry dialog requesting order parameters        |           |
 | Owner inserts order parameters         |                                                                     |           |
+|                                        | System checks if the order already exists in the DB                |           |
 |                                        | System creates and inserts a new order in the DB                   |           |
 
 
