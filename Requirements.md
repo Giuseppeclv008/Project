@@ -370,10 +370,10 @@ system <-- shipping
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to create a new supplier| System opens a data-entry dialog requesting supplier parameters     |           |
-| Owner inserts supplier parameters      |                                                                     |           |
-|                                        | System checks if supplier already exists in the DB                  |           |
-|                                        | System creates and inserts a new supplier in the DB                 |           |
+| Owner requests to create a new supplier| System opens a data-entry dialog requesting supplier parameters     |    6.1.1  |
+| Owner inserts supplier parameters      |                                                                     |     6.1.1      |
+|                                        | System checks if supplier already exists in the DB                  |       6.1.1    |
+|                                        | System creates and inserts a new supplier in the DB                 |        6.1.1   |
 
 ### Scenario MS2 
 
@@ -386,9 +386,9 @@ system <-- shipping
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to update a supplier    | System opens a data-entry dialog requesting new parameters          |           |
-| Owner modifies supplier parameters     |                                                                     |           |
-|                                        | System updates the supplier in the DB using the new parameters      |           |
+| Owner requests to update a supplier    | System opens a data-entry dialog requesting new parameters          |      6.1.2     |
+| Owner modifies supplier parameters     |                                                                     |       6.1.2    |
+|                                        | System updates the supplier in the DB using the new parameters      |        6.1.2   |
 
 
 ### Scenario MS3 
@@ -402,8 +402,8 @@ system <-- shipping
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to delete a supplier    |                                                                     |           |
-|                                        | System deletes the supplier from the DB                             |           |
+| Owner requests to delete a supplier    |                                                                     |      6.1.3     |
+|                                        | System deletes the supplier from the DB                             |        6.1.3   |
 
 ### Scenario MS1E1
 
@@ -416,11 +416,11 @@ system <-- shipping
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to create a new supplier| System opens a data-entry dialog requesting supplier parameters     |           |
-| Owner inserts supplier parameters      |                                                                     |           |
-|                                        | System checks if supplier already exists in the DB                  |           |
-|                                        | System detects duplication                                           |           |
-|                                        | System rejects the creation and displays an error message            |           |
+| Owner requests to create a new supplier| System opens a data-entry dialog requesting supplier parameters     |      6.1.1     |
+| Owner inserts supplier parameters      |                                                                     |        6.1.1   |
+|                                        | System checks if supplier already exists in the DB                  |        6.1.1   |
+|                                        | System detects duplication                                           |        6.1.1   |
+|                                        | System rejects the creation and displays an error message            |        6.1.1   |
 
 
 
@@ -445,10 +445,10 @@ system <-- shipping
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to create a new order   | System opens a data-entry dialog requesting order parameters        |           |
-| Owner inserts order parameters         |                                                                     |           |
-|                                        | System checks if the order already exists in the DB                |           |
-|                                        | System creates and inserts a new order in the DB                   |           |
+| Owner requests to create a new order   | System opens a data-entry dialog requesting order parameters        |     9.1.1      |
+| Owner inserts order parameters         |                                                                     |      9.1.1     |
+|                                        | System checks if the order already exists in the DB                |        9.1.1   |
+|                                        | System creates and inserts a new order in the DB                   |       9.1.1    |
 
 
 ### Scenario MO2 
@@ -462,9 +462,9 @@ system <-- shipping
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to update an order      | System opens a data-entry dialog requesting updated parameters      |           |
-| Owner modifies the order parameters    |                                                                     |           |
-|                                        | System updates the order in the DB using the new parameters         |           |
+| Owner requests to update an order      | System opens a data-entry dialog requesting updated parameters      |    9.1.2       |
+| Owner modifies the order parameters    |                                                                     |      9.1.2     |
+|                                        | System updates the order in the DB using the new parameters         |        9.1.2   |
 
 
 ### Scenario MO3 
@@ -478,8 +478,8 @@ system <-- shipping
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to delete the order     |                                                                     |           |
-|                                        | System deletes the order from the DB                                |           |
+| Owner requests to delete the order     |                                                                     |     9.1.3      |
+|                                        | System deletes the order from the DB                                |       9.1.3    |
 
 ### Scenario MO1E1
 
@@ -492,11 +492,11 @@ system <-- shipping
 
 | Actor's Action                        | System Action                                                       | FR needed |
 |----------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to create a new order   | System opens a data-entry dialog requesting order parameters        |           |
-| Owner inserts order parameters         |                                                                     |           |
-|                                        | System checks if the order already exists in the DB                |           |
-|                                        | System detects duplication                                           |           |
-|                                        | System rejects the creation and displays an error message           |           |
+| Owner requests to create a new order   | System opens a data-entry dialog requesting order parameters        |     9.1.1      |
+| Owner inserts order parameters         |                                                                     |       9.1.1    |
+|                                        | System checks if the order already exists in the DB                |        9.1.1   |
+|                                        | System detects duplication                                           |       9.1.1    |
+|                                        | System rejects the creation and displays an error message           |       9.1.1    |
 
 
 ## Use case Manage Invoices, UC4
@@ -519,10 +519,10 @@ system <-- shipping
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to create a new invoice   | System opens a data-entry dialog requesting invoice parameters      |           |
-| Owner inserts invoice parameters         |                                                                     |           |
-|                                          | System checks if the invoice already exists in the DB               |           |
-|                                          | System creates and inserts a new invoice in the DB                  |           |
+| Owner requests to create a new invoice   | System opens a data-entry dialog requesting invoice parameters      |    5.1.1       |
+| Owner inserts invoice parameters         |                                                                     |      5.1.1     |
+|                                          | System checks if the invoice already exists in the DB               |       5.1.1    |
+|                                          | System creates and inserts a new invoice in the DB                  |        5.1.1   |
 
 ### Scenario MI2 
 
@@ -535,9 +535,9 @@ system <-- shipping
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to update an invoice      | System opens a data-entry dialog requesting updated parameters      |           |
-| Owner modifies the invoice parameters    |                                                                     |           |
-|                                          | System updates the invoice in the DB using the new parameters       |           |
+| Owner requests to update an invoice      | System opens a data-entry dialog requesting updated parameters      |    5.1.2       |
+| Owner modifies the invoice parameters    |                                                                     |      5.1.2     |
+|                                          | System updates the invoice in the DB using the new parameters       |        5.1.2   |
 
 
 ### Scenario MI3 
@@ -551,8 +551,8 @@ system <-- shipping
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to delete an invoice      |                                                                     |           |
-|                                          | System deletes the invoice from the DB                               |           |
+| Owner requests to delete an invoice      |                                                                     |     5.1.3      |
+|                                          | System deletes the invoice from the DB                               |      5.1.3     |
 
 ### Scenario MI1E1
 
@@ -565,11 +565,11 @@ system <-- shipping
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to create a new invoice   | System opens a data-entry dialog requesting invoice parameters      |           |
-| Owner inserts invoice parameters         |                                                                     |           |
-|                                          | System checks if the invoice already exists in the DB               |           |
-|                                          | System detects duplication                                           |           |
-|                                          | System rejects creation and displays an error message               |           |
+| Owner requests to create a new invoice   | System opens a data-entry dialog requesting invoice parameters      |    5.1.1       |
+| Owner inserts invoice parameters         |                                                                     |     5.1.1      |
+|                                          | System checks if the invoice already exists in the DB               |      5.1.1     |
+|                                          | System detects duplication                                           |      5.1.1     |
+|                                          | System rejects creation and displays an error message               |        5.1.1   |
 
 ## Use case Authenticate Owner, UC5
 
@@ -680,10 +680,10 @@ system <-- shipping
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to create a new product   | System opens a data-entry dialog requesting product parameters      |           |
-| Owner inserts product parameters         |                                                                     |           |
-|                                          | System checks if the product already exists in the DB               |           |
-|                                          | System creates and inserts a new product in the DB                  |           |
+| Owner requests to create a new product   | System opens a data-entry dialog requesting product parameters      |    3.1.1       |
+| Owner inserts product parameters         |                                                                     |      3.1.1     |
+|                                          | System checks if the product already exists in the DB               |        3.1.1   |
+|                                          | System creates and inserts a new product in the DB                  |         3.1.1  |
                                                    
 
 ### Scenario MP2 
@@ -697,9 +697,9 @@ system <-- shipping
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to update a product       | System opens a data-entry dialog requesting updated parameters      |           |
-| Owner modifies the product parameters    |                                                                     |           |
-|                                          | System updates the product in the DB using the new parameters       |           |
+| Owner requests to update a product       | System opens a data-entry dialog requesting updated parameters      |     3.1.2      |
+| Owner modifies the product parameters    |                                                                     |       3.1.2    |
+|                                          | System updates the product in the DB using the new parameters       |        3.1.2   |
 
 
 ### Scenario MP3 
@@ -713,8 +713,8 @@ system <-- shipping
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to delete a product       |                                                                     |           |
-|                                          | System deletes the product from the DB                              |           |
+| Owner requests to delete a product       |                                                                     |      3.1.3     |
+|                                          | System deletes the product from the DB                              |        3.1.3   |
 
 ### Scenario MP1E1
 
@@ -727,11 +727,11 @@ system <-- shipping
 
 | Actor's Action                          | System Action                                                       | FR needed |
 |------------------------------------------|---------------------------------------------------------------------|-----------|
-| Owner requests to create a new product   | System opens a data-entry dialog requesting product parameters      |           |
-| Owner inserts product parameters         |                                                                     |           |
-|                                          | System checks if the product already exists in the DB               |           |
-|                                          | System detects duplication                                           |           |
-|                                          | System rejects the creation and displays an error message           |           |
+| Owner requests to create a new product   | System opens a data-entry dialog requesting product parameters      |     3.1.1      |
+| Owner inserts product parameters         |                                                                     |        3.1.1   |
+|                                          | System checks if the product already exists in the DB               |        3.1.1   |
+|                                          | System detects duplication                                           |        3.1.1   |
+|                                          | System rejects the creation and displays an error message           |         3.1.1  |
 
  
 ## Use case Receive Notifications, UC8
