@@ -34,10 +34,15 @@ class Shop {
 class Product {
     + id
     + name
-    + description
-    + price
     + category
     + brand
+    + unit
+    + price
+    + threshold
+    + noStock
+    + noBatches
+    + tags
+    + source
     + discount
     + IVA
 }
@@ -60,9 +65,18 @@ class Refund {
 }
 
 class Catalogue {
+    + totalItems
+    + itemsInStock
+    + batchesInStock
+    + stockValue
 }
 
 class Inventory {
+    + totalProducts
+    + totalBatches
+    + totalItems
+    + totalValue
+    + lowStockProductsNmb
 }
 
 class Supplier {
@@ -88,13 +102,18 @@ class Income {
     + amount
     + date
     + source
+    + category
 }
 
 class Expense {
     + id
     + amount
-    + date
+    + issueDate
+    + payedDate
+    + dueDate
     + source
+    + category
+    + status
 }
 
 class Balance {
@@ -109,10 +128,14 @@ class Owner {
 
 class CashRegister {
     + id
-    + location
-    + provider
+    + name
+    + brand
     + accessToken
     + refreshToken
+    + status
+    + connection
+    + linkedDate
+    + lastActive
 }
 
 class ShippingCompany {
