@@ -158,7 +158,7 @@ Order "0..*" -- "1..*" ShippingCompany: > delivered by
 
 Invoice --  Order:> associated with
 
-CashRegister  -- "0..*" Refund: > sent by
+CashRegister  -- "0..*" Refund: > sends
 CashRegister  -- "0..*" Sale: > sends
 CashRegister "0..*" -- "0,1" Catalogue: > receives
 
