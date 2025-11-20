@@ -370,10 +370,7 @@ _total estimated calendar time is: 3 weeks_
 ###
 
 ## Gantt chart
-![alt text](<img width="1845" height="445" alt="image" src="https://github.com/user-attachments/assets/f90f4d67-474d-4d53-a71c-84b56f7f4211" />
-)
-
-## Summary
+![alt text](Online Gantt 20251118 (1).png)
 
 Report here the results of the three estimation approaches. The estimates may differ. Discuss here the possible reasons for the difference
 
@@ -388,4 +385,5 @@ The gap between the estimation made by size and FP with the one found by the PBS
 
 
 Differences between the Product and the Activity decomposition may be explained by an underestimation of the effort required by the design document. In the PBS it was considered as a unique block, while the WBS decomposed it in several activities. The estimation of every single task in the design document has provided a better estimation of the effort of the project. However, since the gap between PBS and WBS is lower than 10%, both of them are acceptable.
+
 
