@@ -119,11 +119,11 @@ Consider that the document should be delivered to another team (unknown to you)
 | FR1.1.3 | Retrieve sales ranked by number of items sold per specific product |
 | FR1.1.4 | Retrieve sales ranked by the sum of its item's prices |
 | FR1.2 | Manage `.csv` |
-| FR1.2.1 | Import batches list from `.csv` |
+| FR1.2.1 | Import sales list from `.csv` |
 | FR1.2.1.1 | Detect import errors |
 | FR1.2.1.2 | Detect schema mismatch |
 | FR1.2.1.3 | Update sales |
-| FR1.2.2 | Export list of batches as `.csv` |
+| FR1.2.2 | Export list of sales as `.csv` |
 | FR1.2.2.1 | Retrieve sales |
 | FR1.2.2.2 | Create `.csv` file |
 | FR1.2.2.3 | Detect export errors |
@@ -134,11 +134,11 @@ Consider that the document should be delivered to another team (unknown to you)
 | FR2.1.3 | Retrieve refunds ranked by number of items given back per specific product |
 | FR2.1.4 | Retrieve refunds ranked by the sum of its item's prices |
 | FR2.2 | Manage `.csv` |
-| FR2.2.1 | Import batches list from `.csv` |
+| FR2.2.1 | Import refunds list from `.csv` |
 | FR2.2.1.1 | Detect import errors |
 | FR2.2.1.2 | Detect schema mismatch |
 | FR2.2.1.3 | Update refunds |
-| FR2.2.2 | Export list of batches as `.csv` |
+| FR2.2.2 | Export list of refunds as `.csv` |
 | FR2.2.2.1 | Retrieve refunds |
 | FR2.2.2.2 | Create `.csv` file |
 | FR2.2.2.3 | Detect export errors |
