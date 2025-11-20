@@ -257,7 +257,7 @@ Consider that the document should be delivered to another team (unknown to you)
 | FR9.3.1.2 | Detect schema mismatch |
 | FR9.3.1.3 | Update orders |
 | FR9.3.2 | Export list of orders as `.csv` |
-| FR9.3.2.1 | Retrieve invoices |
+| FR9.3.2.1 | Retrieve orders |
 | FR9.3.2.2 | Create `.csv` file |
 | FR9.3.2.3 | Detect export errors |
 | FR9.4 | Suggest order |
