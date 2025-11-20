@@ -294,9 +294,10 @@ system <-- shipping
 
 | Actor's Action                                  | System Action                                                      | FR needed |
 |--------------------------------------------------|--------------------------------------------------------------------|-----------|
-| Owner requests to create a new batch             | System opens a data-entry dialog requesting batch parameters       |           |
-| Owner enters batch parameters                    |                                                                    |           |
-|                                                  | System creates and inserts a new batch in the DB using the parameters |        |
+| Owner requests to create a new batch             | System opens a data-entry dialog requesting batch parameters       |4.1.1      |
+| Owner enters batch parameters                    |                                                                    |4.1.1      |
+|                                                  | System checks if a batch with the same identifying values exists   | 4.1.1     |
+|                                                  | System creates and inserts a new batch in the DB using the parameters |4.1.1   |
                                         
 
 ### Scenario MI2 
@@ -310,9 +311,9 @@ system <-- shipping
 
 | Actor's Action                                  | System Action                                                      | FR needed |
 |--------------------------------------------------|--------------------------------------------------------------------|-----------|
-| Owner requests to update a batch                 | System opens a data-entry dialog requesting updated parameters     |           |
-| Owner modifies batch parameters                  |                                                                    |           |
-|                                                  | System updates the batch in the DB using the new parameters        |           |
+| Owner requests to update a batch                 | System opens a data-entry dialog requesting updated parameters     | 4.1.2          |
+| Owner modifies batch parameters                  |                                                                    |   4.1.2        |
+|                                                  | System updates the batch in the DB using the new parameters        |    4.1.2       |
 
 
 ### Scenario MI3 
@@ -326,8 +327,8 @@ system <-- shipping
 
 | Actor's Action                                  | System Action                                                      | FR needed |
 |--------------------------------------------------|--------------------------------------------------------------------|-----------|
-| Owner requests to delete a batch                 |                                                                    |           |
-|                                                  | System deletes the batch from the DB                               |           |
+| Owner requests to delete a batch                 |                                                                    |     4.1.3      |
+|                                                  | System deletes the batch from the DB                               |       4.1.3    |
 
 ### Scenario MI1E1
 
@@ -340,11 +341,11 @@ system <-- shipping
 
 | Actor's Action                                  | System Action                                                      | FR needed |
 |--------------------------------------------------|--------------------------------------------------------------------|-----------|
-| Owner requests to create a new batch             | System opens a data-entry dialog requesting batch parameters       |           |
-| Owner enters batch parameters                    |                                                                    |           |
-|                                                  | System checks if a batch with the same identifying values exists   |           |
-|                                                  | System detects the batch already exists                            |           |
-|                                                  | System rejects the creation and displays an error message          |           |
+| Owner requests to create a new batch             | System opens a data-entry dialog requesting batch parameters       |   4.1.1        |
+| Owner enters batch parameters                    |                                                                    |    4.1.1       |
+|                                                  | System checks if a batch with the same identifying values exists   |     4.1.1      |
+|                                                  | System detects the batch already exists                            |     4.1.1      |
+|                                                  | System rejects the creation and displays an error message          |      4.1.1     |
 
 
 
