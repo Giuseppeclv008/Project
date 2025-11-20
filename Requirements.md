@@ -682,6 +682,7 @@ system <-- shipping
 |------------------------------------------|---------------------------------------------------------------------|-----------|
 | Owner requests to create a new product   | System opens a data-entry dialog requesting product parameters      |           |
 | Owner inserts product parameters         |                                                                     |           |
+|                                          | System checks if the product already exists in the DB               |           |
 |                                          | System creates and inserts a new product in the DB                  |           |
                                                    
 
