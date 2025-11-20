@@ -332,7 +332,7 @@ Consider that the document should be delivered to another team (unknown to you)
 | FR13.6.1 | Retrieve cash registers filtered by attributes |
 | FR13.6.2 | Retrieve cash registers grouped by provider brand |
 | FR14 | Manage Internet Connection |
-| FR 14.2 | Detect loss of internet connectivity |
+| FR 14.1 | Detect loss of internet connectivity |
 
 
 
