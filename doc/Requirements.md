@@ -276,8 +276,8 @@ Consider that the document should be delivered to another team (unknown to you)
 |   Actor   | Logical Interface | Physical Interface |
 | :-------: | :---------------: | :----------------: |
 | Owner | GUI | Desktop computer |
-| Cash register | Square, lightspeed, nexi or clover API | Lan connection |
-| POS provider | Square, lightspeed, nexi or clover API | Internet connection |
+| Cash register | Square API | Lan connection |
+| POS provider | Square API | Internet connection |
 | Shipment tracking provider | easy post API | Internet connection |
 
 
