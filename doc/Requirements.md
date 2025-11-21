@@ -445,7 +445,7 @@ Steps
 - **Income**
     * The amount of money earned from completed sales.
 - **Expenses** 
-    * The amount of money spent by the shop to maintain it operation such as electrical bills, renting fees, wages, and products purchases.
+    * The amount of money spent by the shop to maintain it operation such as refunds and invoices. 
 - **Balance**
     * The overall financial position of the shop, calculated as the difference between total incomes and total expenses within a given period.
 - **Owner**
