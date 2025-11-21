@@ -1,20 +1,56 @@
 
 
-# Requirements Document - EZShop
+# Requirements Document – EZShop
 
-Date: 24/10/2025
-Version: 1.0.0
+## Document Status Notice
 
-| Version number | Change |
-| :------------: | :----: |
-|                |        |
+This document has been developed through a structured, multi-stage process.  
+The first few iterations focused on defining the **business model**, identifying all **stakeholders**, and understanding the system’s operational context.
+
+Subsequent revisions progressively introduced the remaining components of the document:
+
+- **Context Diagram and Interfaces** to describe interactions between the system and external actors
+- **Functional Requirements (FR)** and **Non-Functional Requirements (NFR)** to describe the system's functions and constraints on its operation
+- **Table of Rights** to describe user–system interactions  
+- **Use Case Diagram** and complete **Use Case descriptions** to describe the main modes of interaction between the user and the system
+- **Glossary** to establish a clear and consistent terminology as well as to highlight the relationships between the different entities listed within
+- **System Design** to develop a high-level description of the system's core components
+- **Hardware/Software Architecture** to model the interactions between the hardware and software components of the system
+
+The current version represents a **Baseline Requirements Preview** and includes all required artifacts.  
+Some prototype-level assumptions have been intentionally left in (e.g., **limited input validation and simplified error-handling logic**) to reflect the early stage of development assumed in this document. A more detailed implementation will be provided during the next stage in the development process. 
+
+
+
+---
+
+Date: 23/11/2025  
+Version: **0.9 – Baseline Requirements Preview**
+
+### Version History
+
+| Version | Stage | Description |
+|:------:|:-----:|-------------|
+| 0.1 | Internal Draft | Initial analysis of business model and stakeholder identification |
+| 0.2 | Internal Draft |Added Context Diagram|
+| 0.3 | Internal Draft | Added first draft of Functional Requirements |
+| 0.4 | Alpha | Introduced Non-Functional Requirements; added Table of Rights structure |
+| 0.5 | Alpha |Interfaces, and early System Design notes |
+| 0.6 | Beta | Completed Functional & Non-Functional Requirements; added Glossary |
+| 0.7 | Beta | Added full Use Case Diagram and structured Use Case descriptions with scenarios |
+| 0.8 | Release Candidate | Completed System Design and Hardware/Software Architecture; refined all diagrams and cross-references |
+| **0.9** | **Baseline Requirements Preview** | Full coverage of all document sections: FR, NFR, Glossary, Use Cases, Interfaces, System Architecture. Considered complete for initial development. |
+
+
 
 # Contents
 
-- [Requirements Document - EzShop](#requirements-document)
+- [Requirements Document – EZShop](#requirements-document--ezshop)
+  - [Document Status Notice](#document-status-notice)
+    - [Version History](#version-history)
 - [Contents](#contents)
 - [Informal description](#informal-description)
-- [Business model](#business-model)
+- [Business Model](#business-model)
 - [Stakeholders](#stakeholders)
 - [Context Diagram and interfaces](#context-diagram-and-interfaces)
   - [Context Diagram](#context-diagram)
@@ -22,18 +58,146 @@ Version: 1.0.0
 - [Functional and non functional requirements](#functional-and-non-functional-requirements)
   - [Functional Requirements](#functional-requirements)
   - [Non Functional Requirements](#non-functional-requirements)
-- [Table of Rights](#table-of-rights)
-- [Use case diagram and use cases](#use-case-diagram-and-use-cases)
+- [Table of rights](#table-of-rights)
   - [Use case diagram](#use-case-diagram)
-    - [Use case 1, UC1](#use-case-1-uc1)
-      - [Scenario 1.1](#scenario-11)
-      - [Scenario 1.2](#scenario-12)
-      - [Scenario 1.x](#scenario-1x)
-    - [Use case 2, UC2](#use-case-2-uc2)
-    - [Use case x, UCx](#use-case-x-ucx)
+    - [Use case Manage Inventory, UC1](#use-case-manage-inventory-uc1)
+      - [Scenario MI1](#scenario-mi1)
+        - [Steps](#steps)
+      - [Scenario MI2](#scenario-mi2)
+        - [Steps](#steps)
+      - [Scenario MI3](#scenario-mi3)
+        - [Steps](#steps)
+      - [Scenario MI1E1](#scenario-mi1e1)
+        - [Steps](#steps)
+    - [Use case Manage Supplier, UC2](#use-case-manage-supplier-uc2)
+      - [Scenario MS1](#scenario-ms1)
+        - [Steps](#steps)
+      - [Scenario MS2](#scenario-ms2)
+        - [Steps](#steps)
+      - [Scenario MS3](#scenario-ms3)
+        - [Steps](#steps)
+      - [Scenario MS1E1](#scenario-ms1e1)
+        - [Steps](#steps)
+    - [Use case Manage Orders, UC3](#use-case-manage-orders-uc3)
+      - [Scenario MO1](#scenario-mo1)
+        - [Steps](#steps)
+      - [Scenario MO2](#scenario-mo2)
+        - [Steps](#steps)
+      - [Scenario MO3](#scenario-mo3)
+        - [Steps](#steps)
+      - [Scenario MO1E1](#scenario-mo1e1)
+        - [Steps](#steps)
+    - [Use case Manage Invoices, UC4](#use-case-manage-invoices-uc4)
+      - [Scenario MV1](#scenario-mv1)
+        - [Steps](#steps)
+      - [Scenario MV2](#scenario-mv2)
+        - [Steps](#steps)
+      - [Scenario MV3](#scenario-mv3)
+        - [Steps](#steps)
+      - [Scenario MV1E1](#scenario-mv1e1)
+        - [Steps](#steps)
+    - [Use case Authenticate Owner, UC5](#use-case-authenticate-owner-uc5)
+      - [Scenario AO1](#scenario-ao1)
+        - [Steps](#steps)
+      - [Scenario AO1E](#scenario-ao1e)
+        - [Steps](#steps)
+    - [Use case Change Password, UC6](#use-case-change-password-uc6)
+      - [Scenario CP1](#scenario-cp1)
+        - [Steps](#steps)
+      - [Scenario CP1V1](#scenario-cp1v1)
+        - [Steps](#steps)
+    - [Use case Manage Product Catalogue, UC7](#use-case-manage-product-catalogue-uc7)
+      - [Scenario MP1](#scenario-mp1)
+        - [Steps](#steps)
+      - [Scenario MP2](#scenario-mp2)
+        - [Steps](#steps)
+      - [Scenario MP3](#scenario-mp3)
+        - [Steps](#steps)
+      - [Scenario MP1E1](#scenario-mp1e1)
+        - [Steps](#steps)
+    - [Use case Receive Notifications, UC8](#use-case-receive-notifications-uc8)
+      - [Scenario RN1](#scenario-rn1)
+        - [Steps](#steps)
+      - [Scenario RN2](#scenario-rn2)
+        - [Steps](#steps)
+      - [Scenario RN3](#scenario-rn3)
+        - [Steps](#steps)
+      - [Scenario RN4](#scenario-rn4)
+        - [Steps](#steps)
+      - [Scenario RN5](#scenario-rn5)
+        - [Steps](#steps)
+      - [Scenario RN6](#scenario-rn6)
+        - [Steps](#steps)
+      - [Scenario RN1V1](#scenario-rn1v1)
+        - [Steps](#steps)
+      - [Scenario RN6V1](#scenario-rn6v1)
+        - [Steps](#steps)
+    - [Use case Import Data, UC9](#use-case-import-data-uc9)
+      - [Scenario ID1](#scenario-id1)
+        - [Steps](#steps)
+      - [Scenario ID1E1](#scenario-id1e1)
+        - [Steps](#steps)
+    - [Use case Export Data, UC10](#use-case-export-data-uc10)
+      - [Scenario ED1](#scenario-ed1)
+        - [Steps](#steps)
+      - [Scenario ED1E1](#scenario-ed1e1)
+        - [Steps](#steps)
+    - [Use case Retrieve Data, UC11](#use-case-retrieve-data-uc11)
+      - [Scenario RD1](#scenario-rd1)
+        - [Steps](#steps)
+      - [Scenario RD2](#scenario-rd2)
+        - [Steps](#steps)
+      - [Scenario RD1V1](#scenario-rd1v1)
+        - [Steps](#steps)
+    - [Use case Manage Accounting, UC12](#use-case-manage-accounting-uc12)
+      - [Scenario MA1](#scenario-ma1)
+        - [Steps](#steps)
+      - [Scenario MA2](#scenario-ma2)
+        - [Steps](#steps)
+      - [Scenario MA3](#scenario-ma3)
+        - [Steps](#steps)
+    - [Use case Manage Cash Registers, UC13](#use-case-manage-cash-registers-uc13)
+      - [Scenario CR1](#scenario-cr1)
+        - [Steps](#steps)
+      - [Scenario CR2](#scenario-cr2)
+        - [Steps](#steps)
+      - [Scenario CR3](#scenario-cr3)
+        - [Steps](#steps)
+      - [Scenario CR1E1](#scenario-cr1e1)
+        - [Steps](#steps)
+    - [Use case Manage Sales and Refunds, UC14](#use-case-manage-sales-and-refunds-uc14)
+      - [Scenario MR1](#scenario-mr1)
+        - [Steps](#steps)
+      - [Scenario MR2](#scenario-mr2)
+        - [Steps](#steps)
+      - [Scenario MRE1](#scenario-mre1)
+        - [Steps](#steps)
+    - [Use case Get Catalogue, UC15](#use-case-get-catalogue-uc15)
+      - [Scenario GC1](#scenario-gc1)
+        - [Steps](#steps)
+      - [Scenario GCE1](#scenario-gce1)
+        - [Steps](#steps)
+    - [Use case Track Orders, UC16](#use-case-track-orders-uc16)
+      - [Scenario TO1](#scenario-to1)
+        - [Steps](#steps)
+      - [Scenario TO2](#scenario-to2)
+        - [Steps](#steps)
+      - [Scenario TOE1](#scenario-toe1)
+        - [Steps](#steps)
+    - [Use case Manage shipping companies, UC17](#use-case-manage-shipping-companies-uc17)
+      - [Scenario MC1](#scenario-mc1)
+        - [Steps](#steps)
+      - [Scenario MC2](#scenario-mc2)
+        - [Steps](#steps)
+      - [Scenario MC3](#scenario-mc3)
+        - [Steps](#steps)
+      - [Scenario MC1E1](#scenario-mc1e1)
+        - [Steps](#steps)
+        - [Scenario 1.1](#scenario-11)
 - [Glossary](#glossary)
 - [System Design](#system-design)
-- [Hardware Software architecture](#Hardware-software-architecture)
+- [Hardware Software architecture](#hardware-software-architecture)
+
 
 # Informal description
 
@@ -53,17 +217,36 @@ Consider that the document should be delivered to another team (unknown to you)
 
 # Business Model
 - Customer segment
-    * Shop manager / owner
+    * Small shop owners and managers with poor or limited internet connection or that prefer the reliability and privacy associated with local system 
 - Value proposition
-    * Statistics reports
-    * Accounting (revenue, costs, debts, ...)
-    * Decision support
-    * Assistance with logistics
-    * Order management to suppliers
+    * **Statistical reports**
+        + Daily, weekly, monthly reports on sales, refunds, and inventory to help the owner understand the business' performance
+        + Fully customizable reports on sales, refunds, catalogue, and batches to help the owner get a clear picture of their business 
+        + Graphical reports of the most critical areas, to help the owner focus on what really matters 
+    * **Accounting**
+        + Real time tracking of incomes, expenses, and current balance to immediatly get a clear picture on how the business is performing
+        + Easy tracking of invoices to never lose a payment that's due
+    * **Automation**
+        + Order's shipment status is automatically tracked so that the owner may keep it off its mind
+        + Cash registers' catalogues are automatically updated so that no one has to do it manually to each one of them
+        + Sales and refunds are automatically transferred to the application to avoid losing transactions along the way
+        + Inventory item quantities and expiration date is automatically tracked to avoid not knowing when a shelf is empty
+    * **Decision support**
+        + Orders are automatically suggested based on what is currently lacking in the inventory or is close to its expiration date so that no shelf remains unstocked
+        + Easily track what was bought when and where so that no order may be lost
+    * **Privacy focused**
+        + The system requires minimum connectivity with the internet in order to function properly so that the system can be always online when it matters
+        + All information is stored securely and locally on owner's provided hardware so that the owner may own its own data
 - Revenue Stream
-    * Yearly fee
-    * Privately founded
+    * **Yearly fee**
+        + The application will be subscription-based with a yearly fee to ensure recurring revenue
+    * **Privately founded**
+        + The application will be developed by a third-party software company, the initial development and ongoing maintenance costs will be funded privately, whereas long terms profit will be ensured by the yearly fee.
 
+> **Business' context** 
+>
+> In order to make our business model feasible we imagined being part of a third party software development business.
+> Our company has been commissioned with the development of a software application, EzShop, that would work along-side Square POS, their existing API and hardware, to offer a "local" and "offline" version of their services. 
 
 
 # Stakeholders
@@ -102,9 +285,9 @@ Consider that the document should be delivered to another team (unknown to you)
 
 ## Functional Requirements
 
-\<In the form DO SOMETHING, or VERB NOUN, describe high level capabilities of the system>
 
-\<they match to high level use cases>
+
+
 
 | ID | Description |
 |:--:|:-------------|
@@ -257,7 +440,7 @@ Consider that the document should be delivered to another team (unknown to you)
 | FR9.3.1.2 | Detect schema mismatch |
 | FR9.3.1.3 | Update orders |
 | FR9.3.2 | Export list of orders as `.csv` |
-| FR9.3.2.1 | Retrieve invoices |
+| FR9.3.2.1 | Retrieve orders |
 | FR9.3.2.2 | Create `.csv` file |
 | FR9.3.2.3 | Detect export errors |
 | FR9.4 | Suggest order |
@@ -308,11 +491,12 @@ Consider that the document should be delivered to another team (unknown to you)
 | FR13 | Manage cash registers |
 | FR13.1 | Link with POS provider’s account |
 | FR13.1.1 | Redirect user to authorization URL |
-| FR13.1.2 | Retrieve access and refresh tokens |
-| FR13.1.3 | Store access and refresh tokens securely |
-| FR13.1.4 | Retrieve new token when expired |
+| FR13.1.2 | Save cash register attributes |
+| FR13.1.3 | Store tokens securely |
+| FR13.1.4 | Validate token with provider |  
+| FR13.1.5 | Delete Cash Register |
 | FR13.2 | Get cash register list |
-| FR13.2.1 | Retrieve list of cash registers from provider API |
+| FR13.2.1 | Retrieve list of cash registers |
 | FR13.2.2 | Update local list of cash registers |
 | FR13.3 | Sync catalogue |
 | FR13.3.1 | Convert catalogue to provider format |
@@ -338,7 +522,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 ## Non Functional Requirements
 
-\<Describe constraints on functional requirements>
+
 
 |   ID    | Type (efficiency, reliability, ..) | Description | Refers to |
 | :-----: | :--------------------------------: | :--------- | :-------: |
@@ -346,12 +530,12 @@ Consider that the document should be delivered to another team (unknown to you)
 
 | ID   | Type          | Description | Refers to |
 |------|---------------|-------------|-----------|
-| NFR1 | Functionality | **Suitability**<br>• All owner needs identified in the use cases should map to at least one functional requirement<br><br>**Accuracy**<br>• Catalogue updates, order-status updates, sales, refunds and similar synchronization operations must achieve a guaranteed delivery rate greater than 99.999 %<br>• Exported `.csv` files should have less than 1 mistaken row every 100'000<br>• Importing `.csv` files should generate less than 1 mistaken row every 100'000<br>• CRUD operations should have less than 1 error every 100'000 operations<br>• Notification should fail to trigger less than 1 every 100'000 expected notifications<br>• Order status should fail to update properly less than 1 time every 100'000 updates<br><br>**Interoperability**<br>• The application should use the square API to pull/push data to square POS<br>• The application should use the lightspeed API to pull/push data to lightspeed POS<br>• The application should use the clover API to pull/push data to clover POS<br>• The application should use the nexi API to pull/push data to nexi POS<br>• The application should use the easy post API to interact with shipping companies and automatically track order status<br>• All functions that may access data concurrently, must be thread-safe<br><br>**Security**<br>• Passwords must be encrypted using AES-256<br>• The application must pass Gitlab SATS without high severity issues (CSVV > 7) being highlighted | FR1–FR14 |
+| NFR1 | Functionality | **Suitability**<br>• All owner needs identified in the use cases should map to at least one functional requirement<br><br>**Accuracy**<br>• Catalogue updates, order-status updates, sales, refunds and similar synchronization operations must achieve a guaranteed delivery rate greater than 99.999 %<br>• Exported `.csv` files should have less than 1 mistaken row every 100'000<br>• Importing `.csv` files should generate less than 1 mistaken row every 100'000<br>• CRUD operations should have less than 1 error every 100'000 operations<br>• Notification should fail to trigger less than 1 every 100'000 expected notifications<br>• Order status should fail to update properly less than 1 time every 100'000 updates<br><br>**Interoperability**<br>• The application should use the square API to pull/push data to square POS<br>• The application should use the easy post API to interact with shipping companies and automatically track order status<br>• All functions that may access data concurrently, must be thread-safe<br><br>**Security**<br>• Passwords must be encrypted using AES-256<br>• The application must pass Gitlab SATS without high severity issues (CSVV > 7) being highlighted | FR1–FR14 |
 | NFR2 | Reliability | **Maturity**<br>• The application should crash less than 1 time every 200 hours of operation<br>• The application should suffer less than 1 minor visual glitch (solved by changing/refreshing the current tab) every 50 hours of operation<br><br>**Fault Tolerance**<br>• The application should not crash when Importing `.csv` files without the right format<br>• The application should be able to perform all its operations, beside syncing with cash registers and shipping companies, even without an internet connection<br>• The application should be able to work without crashing even when data read from the cash registers is corrupted, malformed or absent<br>• The application should be able to work without crashing even when data read from the shipping companies' APIs is corrupted, malformed or absent<br>• The application should queue failed API calls and retry every 5 minutes<br>• All multi-steps functions must be atomic; partial updates should be rolled back or notified to the owner | FR1.2, FR2.2, FR3.4, FR4.3, FR5.3, FR6.3, FR7.3, FR9.3, FR10.2, FR10.4, FR8, FR13, FR14 |
 | NFR3 | Usability | **Understandability**<br>• The application should display tooltips when hovering over buttons which can be pressed<br>• The application should use consistent design elements and language<br>• The application should follow industry standard practices and conventions<br>• All GUI elements should have a contrast rating greater than 4.5<br><br>**Learnability**<br>• A user with low to moderate digital literacy should be able to learn how to:<br>– navigate the main interface within 5 minutes<br>– correctly import a `.csv` file within 10 minutes<br>– modify how the data is displayed within 10 minutes<br>– add a new product, batch, order, invoice, supplier, shipping company or cash register within 30 minutes<br><br>**Operability**<br>• All CRUD operations should be accessible within 2 clicks<br>• The GUI should be able to respond to user input within 500 ms<br><br>**Usability compliance**<br>• The application should follow WCAG guidelines | FR1–FR7, FR9, FR10, FR11, FR12, FR13 |
 | NFR4 | Efficiency | **Time Behavior**<br>• All CRUD operations operating on single entities should be completed within 1000 ms<br>• Retrieving ≈ 100 MB of data filtered, sorted or ranked by a specific set of rules should be completed within 10'000 ms<br>• Importing and exporting `.csv` files should take within 10'000 ms every 1000 rows<br>• Order status for supported suppliers should be updated within 3 h from the actual reported change<br>• Sales and refunds should be updated at least every 2 minutes<br>• Catalogue updates should be propagated to all cash registers every day at 6.00 a.m.<br>• Startup time should be within 5'000 ms<br><br>**Resource Utilization**<br>• The application should use no more than 500 MB of disk storage space (excluding data such as orders, sales, refunds, ...)<br>• The application should use no more than 2 GB of RAM memory under expected load<br>• The application should use no more than 50 % of the available CPU resources under normal load on tested hardware (Intel Core i5-8000 or i5-9000 series, 8 G of RAM) | FR1.1, FR2.1, FR3.3, FR4.2, FR5.2, FR6.2, FR7.2, FR9.2, FR1.2, FR2.2, FR3.4, FR4.3, FR5.3, FR6.3, FR7.3, FR9.3, FR10.2, FR10.4, FR8, FR13, FR9.4 |
 | NFR5 | Maintainability | **Analyzability**<br>• 95 % of code functions should be documented<br>• New functions should be documented within 1 week<br>• Mean time to diagnose a defect should be within 1 day<br>• All API errors, sync errors, and critical errors must be logged and persisted<br><br>**Changeability**<br>• Mean time to implement a minor feature should be within 1 working week<br>• Mean time to implement major features should be within 1 months<br>• The cyclomatic complexity of functions should be on average less than 15; no single function should exceed a cyclomatic complexity of 20<br><br>**Stability**<br>• A new release should introduce less than 1 regression defect<br><br>**Testability**<br>• Unit tests should cover 90 % of the codebase<br>• Integration tests should cover 80 % of the codebase | FR1–FR14 |
-| NFR6 | Portability | **Adaptability**<br>• The application should run on Windows 10 and 11 without code modification<br><br>**Installability**<br>• The application should complete installation within 10 minutes on tested hardware<br>• The application should complete installation with a success rate greater than 95 % on tested hardware (Intel Core i5-8000 or i5-9000 series, 8 G of RAM)<br><br>**Co-existence**<br>• The application should be able to run alongside the common antivirus applications (Windows Defender, Avast, McAfee, Norton, BitDefender, Kaspersky, AVG, ESET, Trend Micro, Sophos) without conflicts<br>• The application should be able to perform its functionalities without requiring exclusive system resources access<br>• The application should be able to work alongside firewalls<br><br>**Interoperability**<br>• Future version of the EzShop application should be able to import data in `.csv` format exported from previous version of the application | FR1–FR13, FR11, FR14 |
+| NFR6 | Portability | **Adaptability**<br>• The application should run on Windows 10 and 11 without code modification<br><br>**Installability**<br>• The application should complete installation within 10 minutes on tested hardware<br>• The application should complete installation with a success rate greater than 95 % on tested hardware (Intel Core i5-8000 or i5-9000 series, 8 G of RAM)<br><br>**Co-existence**<br>• The application should be able to run alongside the common antivirus applications (Windows Defender, Avast, McAfee, Norton, BitDefender, Kaspersky, AVG, ESET, Trend Micro, Sophos) without conflicts<br>• The application should be able to perform its functionalities without requiring exclusive system resources access<br>• The application should be able to work alongside firewalls<br><br>**Interoperability**<br>• Future version of the EzShop application should be able to import data in `.csv` format exported from previous version of the application | FR1–FR14 |
 
 
 
@@ -363,61 +547,1202 @@ Consider that the document should be delivered to another team (unknown to you)
 | user     |             | :---: |
 |          |             |       |
 
+
 # Use case diagram and use cases
 
-## Use case brief
-|  UC name   | Goal         | Description |
-| :---:    | :---------: | :---: |
-|          |             |       |
-
-
+| **UC Name**                        | **Goal**                                   | **Description**|
+| ---------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| **UC1 – Manage Inventory**         | Track products                              | Owner creates, updates and deletes batches of products| 
+| **UC2 - Manage Supplier**          | Manage supplier                             | Owner creates, updates and deletes supplier |  
+| **UC3 – Manage Orders**            | Manage supplier orders                      | Owner creates, updates, and deletes orders |
+| **UC4 – Manage Invoices**          | Record and manage invoices                  | Owner creates, updates and deletes invoices |
+| **UC5 – Authenticate Owner**       | Ensure secure access                        | Owner authenticates through a password |
+| **UC6 - Change password**          | Change the password                         | Owner change system's password |
+| **UC7 – Manage Product Catalogue** | Manage the product catalogue                | Owner creates, updates, and deletes products of the catalogue |
+| **UC8 – Receive Notifications**    | Notify the user of relevant events          | The system sends notifications related to product expirations, ongoing orders, status changes, or orders' suggestions|
+| **UC9 - Import Data**              | Import data as .csv                         | Owner imports products, sales, batches, shipping companies or order lists as .csv | 
+| **UC10 - Export Data**              | Export data as .csv                         | Owner exports products, sales, batches, shipping companies or order lists as .csv |
+| **UC11 - Retrieve Data**           | Retrieve data required  by the owner        | Owner retrieves list of products, sales, orders, batches, refunds, cash registers, shipping companies and invoices filtered by one or more fo their attributes |
+| **UC12 - Manage accounting**        | Retrieve incomes, expenses and balance     | Owner retrieves incomes, outogings and balance tracked and computed by the system|     
+| **UC13 - Manage cash registers**   | Add cash registers to the system            | Owner connect cash registers to the system throug\h POS API |
+| **UC14 – Manage Sales and Refunds**      | Send sales and refunds                      | The system sends api polling every 2 minutes asking to cash registers to send their stored sales and refunds |
+| **UC15 - Get Catalogue**           | Get catalogue from system                   | The system sends api polling every day at 6.00 a.m. to update the cash register's internal catalogue |
+| **UC16 - Track Orders** |   Get the current status of one or more orders        | The system ask to the shipping company tracking service via api the current status of the order and gets it |
+| **UC17 - Manage shipping companies** |Manage shipping companies                   |  Owner creates, updates and deletes shipping companies |
 
 ## Use case diagram
 
-\<define here UML Use case diagram UCD summarizing all use cases, and their relationships>
 
-\<next describe here each use case in the UCD>
 
-### Use case 1, UC1
 
-| Actors Involved  |                                                                      |
-| :--------------: | :------------------------------------------------------------------: |
-|   Precondition   | \<Boolean expression, must evaluate to true before the UC can start> |
-|  Post condition  |  \<Boolean expression, must evaluate to true after UC is finished>   |
-| Nominal Scenario |         \<Textual description of actions executed by the UC>         |
-|     Variants     |                      \<other normal executions>                      |
-|    Exceptions    |                        \<exceptions, errors >                        |
+
+### Use case Manage Inventory, UC1 
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Precondition   | Owner is authenticated && DB services are available    |
+|  Post condition  | CRUD-type batches of products's operation is performed |
+| Nominal Scenario | - Owner creates a batches of products MI1 <br> - Owner updates a batches of products MI2 <br> - Owner deletes a batches of products MI3| 
+|     Exception    | - Owner tries to create a batches of products that is alredy in the system MI1E1 <br> |
+
+
+#### Scenario MI1
+
+|  Scenario MI1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available                        |
+| Post condition | A new batch is inserted in the inventory                                   |
+
+##### Steps
+
+| Actor's Action                                  | System Action                                                      | FR needed |
+|--------------------------------------------------|--------------------------------------------------------------------|-----------|
+| Owner requests to create a new batch             | System opens a data-entry dialog requesting batch parameters       |FR4.1.1      |
+| Owner enters batch parameters                    |                                                                    |FR4.1.1      |
+|                                                  | System checks if a batch with the same identifying values exists   | FR4.1.1     |
+|                                                  | System creates and inserts a new batch in the DB using the parameters |FR4.1.1   |
+                                        
+
+#### Scenario MI2 
+
+|  Scenario MI2  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available                                         |
+| Post condition | The selected batch is updated in the inventory                              |
+
+##### Steps
+
+| Actor's Action                                  | System Action                                                      | FR needed |
+|--------------------------------------------------|--------------------------------------------------------------------|-----------|
+| Owner requests to update a batch                 | System opens a data-entry dialog requesting updated parameters     | FR4.1.2          |
+| Owner modifies batch parameters                  |                                                                    |   FR4.1.2        |
+|                                                  | System updates the batch in the DB using the new parameters        |    FR4.1.2       |
+
+
+#### Scenario MI3 
+
+|  Scenario MI3  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available                                         |
+| Post condition | The batch is deleted from the inventory                                     |
+
+##### Steps
+
+| Actor's Action                                  | System Action                                                      | FR needed |
+|--------------------------------------------------|--------------------------------------------------------------------|-----------|
+| Owner requests to delete a batch                 |                                                                    |     FR4.1.3      |
+|                                                  | System deletes the batch from the DB                               |       FR4.1.3    |
+
+
+#### Scenario MI1E1
+
+|  Scenario MI1E1 |                                                                            |
+| :-------------: | :------------------------------------------------------------------------: |
+| Precondition    | Owner is authenticated && DB services are available                        |
+| Post condition  | No new batch is created          |
+
+##### Steps
+
+| Actor's Action                                  | System Action                                                      | FR needed |
+|--------------------------------------------------|--------------------------------------------------------------------|-----------|
+| Owner requests to create a new batch             | System opens a data-entry dialog requesting batch parameters       |   FR4.1.1        |
+| Owner enters batch parameters                    |                                                                    |    FR4.1.1       |
+|                                                  | System checks if a batch with the same identifying values exists   |     FR4.1.1      |
+|                                                  | System detects the batch already exists                            |     FR4.1.1      |
+|                                                  | System rejects the creation and displays an error message          |      FR4.1.1     |
+
+
+
+### Use case Manage Supplier, UC2 
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Precondition   | Owner is authenticated && DB services are available    |
+|  Post condition  | CRUD-type suppliers's operation is performed |
+| Nominal Scenario | - Owner creates a supplier MS1 <br> - Owner updates a supplier MS2 <br> - Owner deletes a supplier MS3|  
+|     Exception    | - Owner tries to create a supplier that is alredy in the system MS1E1 <br> |
+
+
+#### Scenario MS1  
+
+|  Scenario MS1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available                        |
+| Post condition | A new supplier is inserted in the system                                    |
+
+##### Steps
+
+| Actor's Action                        | System Action                                                       | FR needed |
+|----------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to create a new supplier| System opens a data-entry dialog requesting supplier parameters     |    FR6.1.1  |
+| Owner inserts supplier parameters      |                                                                     |     FR6.1.1      |
+|                                        | System checks if supplier already exists in the DB                  |       FR6.1.1    |
+|                                        | System creates and inserts a new supplier in the DB                 |        FR6.1.1   |
+
+
+#### Scenario MS2 
+
+|  Scenario MS2  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available                                      |
+| Post condition | The selected supplier is updated in the system                             |
+
+##### Steps
+
+| Actor's Action                        | System Action                                                       | FR needed |
+|----------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to update a supplier    | System opens a data-entry dialog requesting new parameters          |      FR6.1.2     |
+| Owner modifies supplier parameters     |                                                                     |       FR6.1.2    |
+|                                        | System updates the supplier in the DB using the new parameters      |        FR6.1.2   |
+
+
+#### Scenario MS3 
+
+|  Scenario MS3  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available                                      |
+| Post condition | The supplier is deleted from the system                                     |
+
+##### Steps
+
+| Actor's Action                        | System Action                                                       | FR needed |
+|----------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to delete a supplier    |                                                                     |      FR6.1.3     |
+|                                        | System deletes the supplier from the DB                             |        FR6.1.3   |
+
+
+#### Scenario MS1E1
+
+|  Scenario MS1E1 |                                                                            |
+| :-------------: | :------------------------------------------------------------------------: |
+| Precondition    | Owner is authenticated && DB services are available                        |
+| Post condition  | No new supplier is created |
+
+##### Steps
+
+| Actor's Action                        | System Action                                                       | FR needed |
+|----------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to create a new supplier| System opens a data-entry dialog requesting supplier parameters     |      FR6.1.1     |
+| Owner inserts supplier parameters      |                                                                     |        FR6.1.1   |
+|                                        | System checks if supplier already exists in the DB                  |        FR6.1.1   |
+|                                        | System detects duplication                                           |        FR6.1.1   |
+|                                        | System rejects the creation and displays an error message            |        FR6.1.1   |
+
+
+
+### Use case Manage Orders, UC3
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Precondition   | Owner is authenticated && DB services are available    |
+|  Post condition  | CRUD-type order's operation is performed |
+| Nominal Scenario | - Owner creates a order MO1 <br> - Owner updates a order MO2 <br> - Owner deletes a order MO3| 
+|     Exception    | - Owner tries to create an order that is alredy in the system MO1E1 <br> |
+
+
+#### Scenario MO1  
+
+|  Scenario MO1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available                        |
+| Post condition | A new order is inserted in the inventory                                   |
+
+##### Steps
+
+| Actor's Action                        | System Action                                                       | FR needed |
+|----------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to create a new order   | System opens a data-entry dialog requesting order parameters        |     FR9.1.1      |
+| Owner inserts order parameters         |                                                                     |      FR9.1.1     |
+|                                        | System checks if the order already exists in the DB                |        FR9.1.1   |
+|                                        | System creates and inserts a new order in the DB                   |       FR9.1.1    |
+
+
+#### Scenario MO2 
+
+|  Scenario MO2  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available                                        |
+| Post condition | The selected order is updated in the inventory                             |
+
+##### Steps
+
+| Actor's Action                        | System Action                                                       | FR needed |
+|----------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to update an order      | System opens a data-entry dialog requesting updated parameters      |    FR9.1.2       |
+| Owner modifies the order parameters    |                                                                     |      FR9.1.2     |
+|                                        | System updates the order in the DB using the new parameters         |        FR9.1.2   |
+
+
+#### Scenario MO3 
+
+|  Scenario MO3  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available                                      |
+| Post condition | The order is deleted from the inventory                                     |
+
+##### Steps
+
+| Actor's Action                        | System Action                                                       | FR needed |
+|----------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to delete the order     |                                                                     |     FR9.1.3      |
+|                                        | System deletes the order from the DB                                |       FR9.1.3    |
+
+
+#### Scenario MO1E1
+
+|  Scenario MO1E1 |                                                                            |
+| :-------------: | :------------------------------------------------------------------------: |
+| Precondition    | Owner is authenticated && DB services are available                        |
+| Post condition  | No new order is created    |
+
+##### Steps
+
+| Actor's Action                        | System Action                                                       | FR needed |
+|----------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to create a new order   | System opens a data-entry dialog requesting order parameters        |     FR9.1.1      |
+| Owner inserts order parameters         |                                                                     |       FR9.1.1    |
+|                                        | System checks if the order already exists in the DB                |        FR9.1.1   |
+|                                        | System detects duplication                                           |       FR9.1.1    |
+|                                        | System rejects the creation and displays an error message           |       FR9.1.1    |
+
+
+
+### Use case Manage Invoices, UC4
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Precondition   | Owner is authenticated && DB services are available && internet connection is available |
+|  Post condition  | CRUD-type invoice's operation is performed |
+| Nominal Scenario | - Owner creates a invoice MV1 <br> - Owner updates a invoice MV2 <br> - Owner deletes a invoice MV3| 
+|     Exception    | - Owner tries to create an invoice that is alredy in the system MV1E1 <br> |
+
+
+#### Scenario MV1  
+
+|  Scenario MI1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available                        |
+| Post condition | A new invoice is inserted in the inventory                                 |
+
+##### Steps
+
+| Actor's Action                          | System Action                                                       | FR needed |
+|------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to create a new invoice   | System opens a data-entry dialog requesting invoice parameters      |    FR5.1.1       |
+| Owner inserts invoice parameters         |                                                                     |      FR5.1.1     |
+|                                          | System checks if the invoice already exists in the DB               |       FR5.1.1    |
+|                                          | System creates and inserts a new invoice in the DB                  |        FR5.1.1   |
+
+
+#### Scenario MV2 
+
+|  Scenario MV2  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available                                       |
+| Post condition | The selected invoice is updated in the system                               |
+
+##### Steps
+
+| Actor's Action                          | System Action                                                       | FR needed |
+|------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to update an invoice      | System opens a data-entry dialog requesting updated parameters      |    FR5.1.2       |
+| Owner modifies the invoice parameters    |                                                                     |      FR5.1.2     |
+|                                          | System updates the invoice in the DB using the new parameters       |        FR5.1.2   |
+
+
+#### Scenario MV3 
+
+|  Scenario MV3  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   |  Owner is authenticated && DB services are available                                        |
+| Post condition | The invoice is deleted from the system                                      |
+
+##### Steps
+
+| Actor's Action                          | System Action                                                       | FR needed |
+|------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to delete an invoice      |                                                                     |     FR5.1.3      |
+|                                          | System deletes the invoice from the DB                               |      FR5.1.3     |
+
+
+#### Scenario MV1E1
+
+|  Scenario MV1E1 |                                                                            |
+| :-------------: | :------------------------------------------------------------------------: |
+| Precondition    | Owner is authenticated && DB services are available                        |
+| Post condition  | No new invoice is created; system notifies that the invoice already exists |
+
+##### Steps
+
+| Actor's Action                          | System Action                                                       | FR needed |
+|------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to create a new invoice   | System opens a data-entry dialog requesting invoice parameters      |    FR5.1.1       |
+| Owner inserts invoice parameters         |                                                                     |     FR5.1.1      |
+|                                          | System checks if the invoice already exists in the DB               |      FR5.1.1     |
+|                                          | System detects duplication                                           |      FR5.1.1     |
+|                                          | System rejects creation and displays an error message               |        FR5.1.1   |
+
+
+
+### Use case Authenticate Owner, UC5
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Precondition   |  Owner knows a password          |
+|  Post condition  |  Owner is correctly authenticated |
+| Nominal Scenario | - Authenticate owner AO1 <br> | 
+|     Exception    | - Owner tries to authenticate with a wrong password <br> AOE1    | 
+
+
+#### Scenario AO1  
+
+|  Scenario AO1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner knows the correct password                                           |
+| Post condition | Owner is correctly authenticated                                            |
+
+##### Steps
+
+| Actor's Action                       | System Action                                                       | FR needed |
+|---------------------------------------|---------------------------------------------------------------------|-----------|
+|                                       | System asks the Owner to insert the password (data-entry dialog)    |      FR11.3     |
+| Owner inserts the password            |                                                                     |        FR11.3   |
+|                                       | System checks the password                                          |        FR11.3   |
+|                                       | System authenticates the Owner                                      |        FR11.3   |
+
+
+
+#### Scenario AO1E 
+
+|  Scenario AOE1 |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner knows an incorrect password                                           |
+| Post condition | Owner is not authenticated                                                  |
+
+##### Steps
+
+| Actor's Action                       | System Action                                                       | FR needed |
+|---------------------------------------|---------------------------------------------------------------------|-----------|
+| —                                     | System asks the Owner to insert the password (data-entry dialog)    |    FR11.1       |
+| Owner inserts the password            |                                                                     |    FR11.1       |
+|                                       | System checks the password                                          |      FR11.3     |
+|                                       | System informs the Owner that the password is incorrect             |        FR11.3   |
+|                                       | System does **not** authenticate the Owner                          |         FR11.3  |
+
+
+
+### Use case Change Password, UC6
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------  |
+|  Pre condition   |  Owner  is authenticated                                             |  
+|  Post condition  |  Owner set a new password                                            |
+| Nominal Scenario | - Authenticate owner CP1 <br>                                        |  
+|     Variants    | - Owner set password for the first time CP1V1 <br>          | 
+
+
+#### Scenario CP1
+
+|  Scenario CP1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated                                                     |
+| Post condition | Owner sets a new valid password                                            |
+
+##### Steps
+
+| Actor's Action                       | System Action                                                       | FR needed |
+|---------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to change password     | System opens a data-entry dialog                                    |    FR11.2       |
+| Owner inserts the new password        |                                                                     |      FR11.2     |
+|                                       | System changes the password                                         |        FR11.2   |
+
+
+#### Scenario CP1V1
+
+|  Scenario CP1V1 |                                                                            |
+| :-------------: | :------------------------------------------------------------------------: |
+| Precondition    | Owner doesn't have a password                                             |
+| Post condition  | A new password is set                                                    |
+
+##### Steps
+
+| Actor's Action                       | System Action                                                       | FR needed |
+|---------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to set password     | System opens a data-entry dialog                                    |     FR11.1      |
+| Owner inserts the new (invalid) password |                                                                   |      FR11.1     |
+|                                       | System sets the password                             |        FR11.1   |
+
+
+
+### Use case Manage Product Catalogue, UC7
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Precondition   | Owner is authenticated && DB services are available && internet connection is available |
+|  Post condition  | CRUD-type operation is performed in the catalogue  |
+| Nominal Scenario | - Owner creates a product MP1 <br> - Owner updates a product MP2 <br> - Owner deletes a product MP3| 
+|     Exception    | - Owner tries to create a product that is alredy in the system MP1E1 <br> |
+
+
+#### Scenario MP1  
+
+|  Scenario MP1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available                        |
+| Post condition | A new product is inserted in the catalogue                                 |
+
+##### Steps
+
+| Actor's Action                          | System Action                                                       | FR needed |
+|------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to create a new product   | System opens a data-entry dialog requesting product parameters      |    FR3.1.1       |
+| Owner inserts product parameters         |                                                                     |      FR3.1.1     |
+|                                          | System checks if the product already exists in the DB               |        FR3.1.1   |
+|                                          | System creates and inserts a new product in the DB                  |         FR3.1.1  |
+                                                   
+
+#### Scenario MP2 
+
+|  Scenario MP2  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available                                      |
+| Post condition | The selected product is updated in the catalogue                           |
+
+##### Steps
+
+| Actor's Action                          | System Action                                                       | FR needed |
+|------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to update a product       | System opens a data-entry dialog requesting updated parameters      |     FR3.1.2      |
+| Owner modifies the product parameters    |                                                                     |       FR3.1.2    |
+|                                          | System updates the product in the DB using the new parameters       |        FR3.1.2   |
+
+
+#### Scenario MP3 
+
+|  Scenario MP3  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available                                      |
+| Post condition | The product is deleted from the catalogue                                  |
+
+##### Steps
+
+| Actor's Action                          | System Action                                                       | FR needed |
+|------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to delete a product       |                                                                     |      FR3.1.3     |
+|                                          | System deletes the product from the DB                              |        FR3.1.3   |
+
+
+#### Scenario MP1E1
+
+|  Scenario MP1E1 |                                                                            |
+| :-------------: | :------------------------------------------------------------------------: |
+| Precondition    | Owner is authenticated && product with same identifiers already exists     |
+| Post condition  | No new product is created                     |
+
+##### Steps
+
+| Actor's Action                          | System Action                                                       | FR needed |
+|------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to create a new product   | System opens a data-entry dialog requesting product parameters      |     FR3.1.1      |
+| Owner inserts product parameters         |                                                                     |        FR3.1.1   |
+|                                          | System checks if the product already exists in the DB               |        FR3.1.1   |
+|                                          | System detects duplication                                           |        FR3.1.1   |
+|                                          | System rejects the creation and displays an error message           |         FR3.1.1  |
+
+ 
+
+### Use case Receive Notifications, UC8
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Precondition   | Owner is authenticated && DB services are available &&  internet connection is available |
+|  Post condition  | Owner receive the notification  |
+| Nominal Scenario | - Owner is notified when an order status changes RN1 <br> - Owner is notified when a batch is expired RN2 <br> - Owner is notified when a cash is not responding RN3 <br> - Owner is notified when a product is going to run out RN4 <br> - Owner is notified when there is no internet connection RN5 <br> - Owner reads the list of notifications RN6 <br> | 
+|     Variants     | - Owner is notified when an order status cannot be updated since API is not responding RN1V1 <br> - Owner reads the list of notification and clean it RN6V1 <br> |
+
+
+#### Scenario RN1
+
+|  Scenario RN1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Order status changes in the system                                         |
+| Post condition | Owner receives a notification regarding the new status                     |
+
+##### Steps
+
+| Actor's Action                         | System Action                                                     | FR needed |
+|-----------------------------------------|-------------------------------------------------------------------|-----------|
+|                                       | System detects order status change                                |     FR8.2      |
+|                                        | System generates a notification entity                            |    FR12.1       |
+|                                        | System stores the notification in the DB                          |     FR12.1      |
+|                                       | System displays the notification in a pop-up                      |     FR12.1      |
+| Owner sees the pop-up notification      | System shows the same notification in the notification menu       |     FR12.1      |
+
+
+#### Scenario RN2
+
+|  Scenario RN2  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | A batch expiration date is reached                                         |
+| Post condition | Owner receives an expiration notification                                  |
+
+##### Steps
+
+| Actor's Action                         | System Action                                                     | FR needed |
+|-----------------------------------------|-------------------------------------------------------------------|-----------|
+|                                        | System detects an expired batch        |     FR9.4.5      |
+|                                        | System generates an expiration notification                       |     FR12.1      |
+|                                        | System stores the notification in the DB                          |     FR12.1      |
+|                                       | System displays the notification in a pop-up                      |     FR12.1      |
+| Owner sees the pop-up notification      | System shows the notification in the notification menu            |     FR12.1      |
+
+
+#### Scenario RN3
+
+|  Scenario RN3  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | A cash register does not respond to system polling                         |
+| Post condition | Owner receives a notification about the missing response                   |
+
+##### Steps
+
+| Actor's Action                         | System Action                                                     | FR needed |
+|-----------------------------------------|-------------------------------------------------------------------|-----------|
+|                                       | System polls cash registers                                       |     FR13.4    |
+|                                        | System detects no response from a cash register                   |      FR13.5.3     |
+|                                        | System generates a “cash not responding” notification             |      FR12.1     |
+|                                        | System stores the notification in the DB                          |     FR12.1      |
+|                                        | System displays the notification in a pop-up                      |     FR12.1      |
+| Owner sees the pop-up notification      | System shows the notification in the notification menu            |     FR12.1      |
+
+
+#### Scenario RN4
+
+|  Scenario RN4  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Product quantity falls below a stock threshold                             |
+| Post condition | Owner receives a low-stock notification                                   |
+
+##### Steps
+
+| Actor's Action                         | System Action                                                     | FR needed |
+|-----------------------------------------|-------------------------------------------------------------------|-----------|
+|                                        | System monitors product stock levels                              |     FR9.4      |
+|                                        | System detects a product is running out                           |      FR9.4.1     |
+|                                       | System generates a low-stock notification                         |      FR12.1     |
+|                                        | System stores the notification in the DB                          |    FR12.1       |
+|                                        | System displays the notification in a pop-up                      |     FR12.1      |
+| Owner sees the pop-up notification      | System shows the notification in the notification menu            |      FR12.1     |
+
+
+#### Scenario RN5
+
+|  Scenario RN5  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | System detects loss of internet connection                                 |
+| Post condition | Owner receives a notification about connection loss                        |
+
+##### Steps
+
+| Actor's Action                         | System Action                                                     | FR needed |
+|-----------------------------------------|-------------------------------------------------------------------|-----------|
+|                                        | System detects internet connectivity failure                      |      FR14.1     |
+|                                        | System generates a “no internet connection” notification          |     FR12.1      |
+|                                        | System stores the notification in the DB (lan connected)             |    FR12.1       |
+|                                        | System displays the notification in a pop-up                      |     FR12.1      |
+| Owner sees the pop-up notification      | System shows the notification in the notification menu  |   FR12.1    |
+
+
+#### Scenario RN6
+
+|  Scenario RN6  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | At least one notification exists in the system                             |
+| Post condition | Notifications are displayed or marked as read                               |
+
+##### Steps
+
+| Actor's Action                         | System Action                                                     | FR needed |
+|-----------------------------------------|-------------------------------------------------------------------|-----------|
+| Owner opens the notification menu       | System retrieves notifications from the DB                        |     FR12.2      |
+| Owner reads notifications               | System marks notifications as read                                |      FR12.2     |
+
+
+#### Scenario RN1V1
+
+|  Scenario RN1V1 |                                                                           |
+| :-------------: | :------------------------------------------------------------------------ |
+| Precondition    | System fails to update the order status due to API timeout/failure        |
+| Post condition  | Owner receives a notification about the failed update                     |
+
+##### Steps
+
+| Actor's Action                         | System Action                                                     | FR needed |
+|-----------------------------------------|-------------------------------------------------------------------|-----------|
+|                                        | System attempts to update order status                            |      FR8.2     |
+|                                        | System detects API timeout / unreachable provider                 |        FR12.1   |
+|                                        | System generates a “status update failed” notification            |       FR12.1    |
+|                                        | System stores the notification in the DB                          |    FR12.1       |
+|                                       | System displays the notification in a pop-up                      |     FR12.1      |
+| Owner sees the pop-up notification      | System shows the notification in the notification menu            |     FR12.1      |
+
+
+#### Scenario RN6V1
+
+|  Scenario RN6V1 |                                                                           |
+| :-------------: | :------------------------------------------------------------------------ |
+| Precondition    | At least one notification exists in the system                                    |
+| Post condition  | All notifications are cleared from the list                               |
+
+##### Steps
+
+| Actor's Action                         | System Action                                                     | FR needed |
+|-----------------------------------------|-------------------------------------------------------------------|-----------|
+| Owner opens the notification menu       | System retrieves notifications from the DB                        |      FR12.3     |
+| Owner selects “Clear notifications”     |                                                                   |      FR12.3     |
+|                                         | System deletes or marks all notifications as cleared in the DB    |     FR12.3      |
+|                                         | System updates the notification menu to show an empty list        |      FR12.3     |
+
+
+
+### Use case Import Data, UC9
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Precondition   | Owner is authenticated && DB services are available && internet connection is available && file .csv data are in the correct format|
+|  Post condition  | .csv file's data are correctly imported |
+| Nominal Scenario | - Owner imports a set of lists containg products, invoices, suppliers, sales, refunds, shipping companies and orders as .csv file ID1| 
+|     Exception    | - Owner imports .csv files with format error ID1E1|
+
+
+#### Scenario ID1
+
+|  Scenario ID1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Data in .csv files are in the correct format                               |
+| Post condition | .csv files are imported into the system                                     |
+
+##### Steps
+
+| Actor's Action                              | System Action                                                       | FR needed |
+|----------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to import .csv files          | System opens file-import dialog                                     | FR1.2.1, FR2.2.1, FR3.4.1, FR4.3.1, FR5.3.1, FR6.3.1, FR7.3.1, , FR9.3.1, FR10.2.1, FR10.4.1 |
+| Owner adds all .csv files                    |                                                                     | FR1.2.1, FR2.2.1, FR3.4.1, FR4.3.1, FR5.3.1, FR6.3.1, FR7.3.1, , FR9.3.1, FR10.2.1, FR10.4.1           |
+|                                              | System checks if .csv files are in the correct format               |FR1.2.1.1, FR1.2.1.2, FR2.2.1.1, FR2.2.1.2, FR3.4.1.1, FR3.4.1.2, FR4.3.1.1, FR4.3.1.2, FR5.3.1.1, FR5.3.1.2, FR6.3.1.1, FR6.3.1.2, FR7.3.1.1, FR7.3.1.2, FR9.3.1.1, FR9.3.1.2,  FR10.2.1.1, FR10.2.1.2, FR10.4.1.1, FR10.4.1.2          |
+|                                              | System imports new data into the system                             |FR1.2.1.3, FR2.2.1.3, FR3.4.1.3, FR4.3.1.3, FR5.3.1.3, FR6.3.1.3, FR7.3.1.3, FR9.3.1.3, 10.2.1.3, 10.4.1.3  |
+
+
+#### Scenario ID1E1
+
+|  Scenario IDE1 |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Data in .csv files are not in the correct format                           |
+| Post condition | .csv files are not imported into the system                                |
+
+##### Steps
+
+| Actor's Action                              | System Action                                                       | FR needed |
+|----------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to import .csv files          | System opens file-import dialog                                     |  FR1.2.1, FR2.2.1, FR3.4.1, FR4.3.1, FR5.3.1, FR6.3.1, FR7.3.1, FR9.3.1, FR10.2.1, FR10.4.1          |
+| Owner adds all .csv files                     |                                                                     | FR1.2.1, FR2.2.1, FR3.4.1, FR4.3.1, FR5.3.1, FR6.3.1, FR7.3.1   FR9.3.1, FR10.2.1, FR10.4.1         |
+|                                              | System checks if .csv files are in the correct format               | FR1.2.1.1, FR1.2.1.2, FR2.2.1.1, FR2.2.1.2, FR3.4.1.1, FR3.4.1.2, FR4.3.1.1, FR4.3.1.2, FR5.3.1.1, FR5.3.1.2, FR6.3.1.1, FR6.3.1.2, FR7.3.1.1, FR7.3.1.2   FR9.3.1.1, FR9.3.1.2,  FR10.2.1.1, FR10.2.1.2, FR10.4.1.1, FR10.4.1.2         |
+|                                              | System detects format errors                                        |         FR1.2.1.1, FR1.2.1.2, FR2.2.1.1, FR2.2.1.2, FR3.4.1.1, FR3.4.1.2, FR4.3.1.1, FR4.3.1.2, FR5.3.1.1, FR5.3.1.2, FR6.3.1.1, FR6.3.1.2, FR7.3.1.1, FR7.3.1.2, FR9.3.1.1, FR9.3.1.2,  FR10.2.1.1, FR10.2.1.2, FR10.4.1.1, FR10.4.1.2    |
+|                                              | System informs the Owner that some data is not in the correct form  |         FR1.2.1.1, FR1.2.1.2, FR2.2.1.1, FR2.2.1.2, FR3.4.1.1, FR3.4.1.2, FR4.3.1.1, FR4.3.1.2, FR5.3.1.1, FR5.3.1.2, FR6.3.1.1, FR6.3.1.2, FR7.3.1.1, FR7.3.1.2, FR9.3.1.1, FR9.3.1.2,  FR10.2.1.1, FR10.2.1.2, FR10.4.1.1, FR10.4.1.2    |
+|                                              | System does **not** import any new data                              |           FR1.2.1.1, FR1.2.1.2, FR2.2.1.1, FR2.2.1.2, FR3.4.1.1, FR3.4.1.2, FR4.3.1.1, FR4.3.1.2, FR5.3.1.1, FR5.3.1.2, FR6.3.1.1, FR6.3.1.2, FR7.3.1.1, FR7.3.1.2, FR9.3.1.1, FR9.3.1.2,  FR10.2.1.1, FR10.2.1.2, FR10.4.1.1, FR10.4.1.2  |
+
+
+### Use case Export Data, UC10
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Precondition   | Owner is authenticated && DB services are available && internet connection is available && needed data are in the system|
+|  Post condition  | data are correctly exported as .csv |
+| Nominal Scenario | - Owner exports a set of lists containg products, invoices, suppliers, sales, refunds, shipping companies and orders as .csv file ED1| 
+|     Exception    | - Owner exports corrupted .csv files ED1E1|
+
+#### Scenario ED1
+
+|  Scenario ED1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Data to be exported exist in the system                                   |
+| Post condition | Data are exported into one or more .csv files                             |
+
+##### Steps
+
+| Actor's Action                             | System Action                                                       | FR needed |
+|---------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to export data as .csv       | System retrieves the requested data from the DB                     | FR1.2.2.1, FR2.2.2.1, FR3.4.2.1, FR4.3.2.1, FR5.3.2.1, FR6.3.2.1, FR7.3.2.1, FR9.3.2.1, FR10.2.2.1, FR10.4.2.1  |
+|                                            | System formats the retrieved data in .csv format                    |   FR1.2.2.2, FR2.2.2.2, FR3.4.2.2, FR4.3.2.2, FR5.3.2.2, FR6.3.2.2, FR7.3.2.2, FR9.3.2.2, FR10.2.2.2, FR10.4.2.2 |
+|                                            | System generates and provides one or more .csv files for download   | FR1.2.2.2, FR2.2.2.2, FR3.4.2.2, FR4.3.2.2, FR5.3.2.2, FR6.3.2.2, FR7.3.2.2, FR9.3.2.2, FR10.2.2.2, FR10.4.2.2 |
+| Owner downloads the .csv files              | System confirms successful export                                   |  FR1.2.2, FR2.2.2, FR3.4.2, FR4.3.2, FR5.3.2, FR6.3.2, FR7.3.2, FR9.3.2, FR10.2.2, FR10.4.2|
+
+#### Scenario ED1E1
+
+|  Scenario ED1E1 |                                                                           |
+| :-------------: | :------------------------------------------------------------------------ |
+| Precondition    | Data to be exported exist in the system                    |
+| Post condition  | Data are NOT correctly exported                 |
+
+##### Steps
+
+| Actor's Action                             | System Action                                                       | FR needed |
+|---------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner requests to export data as .csv       | System retrieves data from the DB                                    | FR1.2.2.1, FR2.2.2.1, FR3.4.2.1, FR4.3.2.1, FR5.3.2.1, FR6.3.2.1, FR7.3.2.1, FR9.3.2.1, FR10.2.2.1, FR10.4.2.1           |
+|                                            | System attempts to format data into .csv files                      |    FR1.2.2.2, FR2.2.2.2, FR3.4.2.2, FR4.3.2.2, FR5.3.2.2, FR6.3.2.2, FR7.3.2.2, FR9.3.2.2, FR10.2.2.2, FR10.4.2.2        |
+|                                            | System detects an error during file generation (corrupted output)   |     FR1.2.2.3, FR2.2.2.3, FR3.4.2.3, FR4.3.2.3, FR5.3.2.3, FR6.3.2.3, FR7.3.2.3, FR9.3.2.3, FR10.2.2.3, FR10.4.2.3      |
+|                                           | System does **not** complete the export process                      |      FR1.2.2.3, FR2.2.2.3, FR3.4.2.3, FR4.3.2.3, FR5.3.2.3, FR6.3.2.3, FR7.3.2.3, FR9.3.2.3, FR10.2.2.3, FR10.4.2.3      |
+|                                            | System informs the Owner that export has failed due to corrupted output |      FR1.2.2.3, FR2.2.2.3, FR3.4.2.3, FR4.3.2.3, FR5.3.2.3, FR6.3.2.3, FR7.3.2.3, FR9.3.2.3, FR10.2.2.3, FR10.4.2.3   |
+
+
+
+### Use case Retrieve Data, UC11
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :----------------------------------------------------------------- |
+|   Precondition   | Owner is authenticated && Data are in the system && BD services are available |
+|  Post condition  |  Owner retrieves the desidered list of data |
+| Nominal Scenario | - Owner generates a list of one selected type: products, invoices, suppliers, sales, refunds, shipping companies or orders.The list is filtered based on selected type specific attributes RD1 <br> - Owner generates a list of one selected type: sales, refunds, suppliers, and shipping companies ranked by specific attributes RD2| 
+|     Variants     | - Owner generates a list of one selected type: products, invoices, suppliers, sales, refunds, shipping companies or orders.The list is not filtered RD1V1|
+
+
+#### Scenario RD1
+
+|  Scenario RD1 |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Filterable data exist in the system && Owner is authenticated              |
+| Post condition | Owner receives the filtered list                                           |
+
+##### Steps
+
+| Actor's Action                                        | System Action                                                       | FR needed |
+|--------------------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner selects a data type to retrieve                  | System opens a filter parameters dialog                             |       FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1      |
+| Owner inserts filter attributes                        |                                                                     |          FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1   |
+|                                                        | System retrieves only the records matching the filters from the DB  |            FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1 |
+|                                                        | System returns the filtered list                                    |            FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1 |
+| Owner views the filtered list                          | System displays the filtered data in the UI                          |            FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1 |
+
+#### Scenario RD2
+
+|  Scenario RD2  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Requested data type exists in the system && Owner is authenticated         |
+| Post condition | Owner receives the full list of the selected data type, ranked by specific attributes |
+
+##### Steps
+
+| Actor's Action                                        | System Action                                                       | FR needed |
+|--------------------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner selects a data type to retrieve (e.g. products, invoices, etc.) | System retrieve a list of rank attributes            |  FR1.1.3, FR1.1.4, FR2.1.3, FR2.1.4, FR6.2.2, FR7.2.2         |
+| Owner selects a rank attributes                                         |
+|                                                        | System returns the retrieved ranked list to the Owner                      |    FR1.1.3, FR1.1.4, FR2.1.3, FR2.1.4, FR6.2.2, FR7.2.2         |
+| Owner views the list                                   | System displays the data in the appropriate UI                      |          FR1.1.3, FR1.1.4, FR2.1.3, FR2.1.4, FR6.2.2, FR7.2.2   |
+
+#### Scenario RD1V1
+
+|  Scenario RDV1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Requested data type exists in the system && Owner is authenticated         |
+| Post condition | Owner receives the full list of the selected data type                     |
+
+##### Steps
+
+| Actor's Action                                        | System Action                                                       | FR needed |
+|--------------------------------------------------------|---------------------------------------------------------------------|-----------|
+| Owner selects a data type to retrieve (e.g. products, invoices, etc.) |       System open filter parameters dialog    |  FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1         |
+|     Owner don't insert any filter on attributes                                                   | System returns the retrieved list to the Owner                      |          FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1   |
+| Owner views the list                                   | System displays the data in the appropriate UI                      |          FR1.1.2, FR2.1.1, FR2.1.2, , FR3.3.1, FR3.3.2, FR3.3.3.1, FR3.3.2, FR4.2.1, FR5.2.1, FR6.2.1, , FR9.2.1   |
+
+
+### Use case Manage Accounting, UC12
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Precondition   | Owner is authenticated && DB services are available && internet connection is available|
+|  Post condition  | Cash flow is correctly tracked |
+| Nominal Scenario | - Owner retrieves incomes at different time granularities MA1<br> - Owner retrieves expenses at different time granularities MA2<br> - Owner retrieves balance at different time granularities MA3 <br> | 
+
+#### Scenario MA1
+
+|  Scenario MA1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Every income is correctly tracked                                          |
+| Post condition | Owner retrieves incomes                                                     |
+
+##### Steps
+
+| Actor's Action                     | System Action                                                                  | FR needed |
+|------------------------------------|--------------------------------------------------------------------------------|-----------|
+| Owner requests the incomes         | System asks for the time window (year)                                         |   FR10.1.2        |
+| Owner chooses the time window      | System asks for the time granularity (day, week, month, quarter, semester, year) |     FR10.1.2    |
+| Owner chooses the granularity      | System retrieves and returns the incomes for the selected window & granularity |        FR10.1.2   |
+
+
+#### Scenario MA2  
+
+|  Scenario MA2  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Every expenses is correctly tracked                                        |
+| Post condition | Owner retrieves expenses                                                  |
+
+##### Steps
+
+| Actor's Action                     | System Action                                                                  | FR needed |
+|------------------------------------|--------------------------------------------------------------------------------|-----------|
+| Owner requests the expenses       | System asks for the time window (year)                                         |        FR10.3.2   |
+| Owner chooses the time window      | System asks for the time granularity (day, week, month, quarter, semester, year) |      FR10.3.2   |
+| Owner chooses the granularity      | System retrieves and returns the expenses for the selected window & granularity |       FR10.3.2  |
+
+
+#### Scenario MA3  
+
+|  Scenario MA3  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Every outgoing and every income is correctly tracked                       |
+| Post condition | Owner retrieves the balance                                                |
+
+##### Steps
+
+| Actor's Action                     | System Action                                                                  | FR needed |
+|------------------------------------|--------------------------------------------------------------------------------|-----------|
+| Owner requests the balance         | System asks for the time window (year)                                         |       FR10.5.2   |
+| Owner chooses the time window      | System asks for the time granularity (day, week, month, quarter, semester, year) |      FR10.5.2   |
+| Owner chooses the granularity      | System retrieves and returns the balance (incomes – expenses)                  |        FR10.5.1   |
+
+
+
+### Use case Manage Cash Registers, UC13
+
+| Actors Involved  |                - Main: Owner <br> - Passive: POS provider, Cash Register                                               |
+| :--------------: | :------------------------------------------------------------------ |
+|  Precondition   | Owner is authenticated && DB services are available && internet connection is available|
+|  Post condition  | Cash register's list is up to date |
+| Nominal Scenario |  - Owner add a new cash register to the list CR1 <br> - Owner updates a cash register in the list CR2 <br> - Owner deletes a cash register from the list CR3 | 
+|     Exception    | - Owner tries to add a cash register that is alredy in the list CR1E1 <br> |
+
+#### Scenario CR1
+
+|  Scenario CR1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available && internet connection is available |
+| Post condition | A new cash register is added to the system                                |
+
+##### Steps
+
+| Actor's Action                                      | System Action                                                     | FR needed |
+|------------------------------------------------------|-------------------------------------------------------------------|-----------|
+| Owner opens the cash registers list                  |                                                                   |     FR13.2      |
+| Owner authenticates on the POS provider website      |                                                                   |     FR13.1.1      |
+| Owner adds a new cash register on the POS provider website |                                                             |     FR13      |
+| Owner enters the cash register attributes and API token |                                                                |     FR13.1.2, FR13.1.3      |
+|                                                      | System validates the token with the POS provider                  |     FR13.1.4      |
+|                                                      | System inserts the new cash register into the database            |     FR13.2.2      |
+
+#### Scenario CR2
+
+|  Scenario CR2 |                                                                            |
+| :-----------: | :------------------------------------------------------------------------: |
+| Precondition  | Owner is authenticated && DB services are available && internet connection is available |
+| Post condition| The selected cash register is updated in the system                        |
+
+##### Steps
+
+| Actor's Action                                      | System Action                                                     | FR needed |
+|------------------------------------------------------|-------------------------------------------------------------------|-----------|
+| Owner opens the cash registers list                  |                                                                   |     FR13.2.1      |
+| Owner selects an existing cash register to update    |                                                                   |     FR13.2.2      |
+| Owner modifies the cash register attributes          |                                                                   |     FR13.1.2      |
+|                                                      | System updates the cash register in the database                  |     FR13.2.2      |
+
+#### Scenario CR3
+
+|  Scenario CR3 |                                                                            |
+| :-----------: | :------------------------------------------------------------------------: |
+| Precondition  | Owner is authenticated && DB services are available    |
+| Post condition| The selected cash register is removed from the system                     |
+
+##### Steps
+
+| Actor's Action                                      | System Action                                                     | FR needed |
+|------------------------------------------------------|-------------------------------------------------------------------|-----------|
+| Owner opens the cash registers list                  |                                                                   |     FR13.2.1      |
+| Owner selects a cash register to delete              |                                                                   |     FR13.1.5      |
+| Owner confirms deletion                              |                                                                   |      FR13.1.5     |
+|                                                      | System removes the cash register from the database                |      FR13.1.5, FR13.2.2     |
+
+#### Scenario CR1E1
+
+|  Scenario CR1E2 |                                                                            |
+| :-------------: | :------------------------------------------------------------------------: |
+| Precondition    | Owner is authenticated && DB services are available && internet connection is available |
+| Post condition  | No cash register is added, user is notified                                |
+
+##### Steps
+
+| Actor's Action                                      | System Action                                                     | FR needed |
+|------------------------------------------------------|-------------------------------------------------------------------|-----------|
+| Owner attempts to add a new cash register            |                                                                   |     FR13.2.2      |
+| Owner enters attributes or token already present in the system|                                                                   |      FR13.1.2, FR13.1.3     |
+|                                                      | System checks for duplicates                                      |     FR13.1.2, FR13.1.3      |
+|                                                      | System rejects creation and notifies "Cash register already exists" |    FR12.1     |
+
+
+
+### Use case Manage Sales and Refunds, UC14
+
+| Actors Involved  |                 Cash Register                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Precondition   | Cash Registers are turned on && DB services are available && lan connection is available|
+|  Post condition  | The system received new sales and refunds from the cash register|
+| Nominal Scenario |  - The system ask to the cash register sales MR1 <br> - The system ask to the cash register refunds MR2 <br> | 
+|     Exception    | - The data transfer is corrupted MRE1 <br>|
+
+
+#### Scenario MR1
+
+|  Scenario MR1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Cash registers are turned on && DB services are available && LAN connection is available |
+| Post condition | The system stores the new sales provided by the cash register              |
+
+##### Steps
+
+| Actor's Action                                  | System Action                                                  | FR needed |
+|--------------------------------------------------|----------------------------------------------------------------|-----------|
+|                                                  | System polls the cash register requesting new sales            |     FR13.4.1      |
+| Cash register receives the polling request        |                                                                |    FR13.4.1       |
+| Cash register sends sales data to the system     |                                                                |     FR13.4.1      |
+|                                                  | System receives the sales data                                 |     FR13.4.1      |
+|                                                  | System inserts new sales into the database                     |     FR13.4.2      |
+
+#### Scenario MR2
+
+|  Scenario MR2  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Cash registers are turned on && DB services are available && LAN connection is available |
+| Post condition | The system stores the new refunds provided by the cash register            |
+
+##### Steps
+
+| Actor's Action                                  | System Action                                                  | FR needed |
+|--------------------------------------------------|----------------------------------------------------------------|-----------|
+|                                                  | System polls the cash register requesting new refunds          |    FR13.5.1       |
+| Cash register receives the polling request        |                                                                |    FR13.5.1        |
+| Cash register sends refund data to the system    |                                                                |       FR13.5.1     |
+|                                                  | System receives the refund data                                |    FR13.5.1        |
+|                                                  | System inserts new refunds into the database                   |     FR13.5.2      |
+
+#### Scenario MRE1
+
+|  Scenario MRE1 |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | Cash registers are turned on && DB services are available && LAN connection is available |
+| Post condition | No new sales/refunds are saved                                             |
+
+##### Steps
+
+| Actor's Action                                   | System Action                                                    | FR needed |
+|--------------------------------------------------|------------------------------------------------------------------|-----------|
+|                                                  | System polls the cash register requesting data                   |     FR13.4.1, FR13.5.1      |
+| Cash register sends corrupted/invalid data       |                                                                  |     FR13.4.1, FR13.5.1      |
+|                                                  | System detects corrupted or unreadable data                      |      FR13.4.1, FR13.5.1     |
+|                                                  | System rejects the data                                          |      FR13.4.1, FR13.51.1     |
+
+
+### Use case Get Catalogue, UC15
+
+| Actors Involved  |                 Cash Register                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Precondition   |  Cash Registers are turned on && DB services are available && lan connection is available|
+|  Post condition  | The cash register internal catalogue is consistent with the db's|
+| Nominal Scenario | - The system sends to the cash register the updated catalogue GC1<br>| 
+|     Exception    | - Cash register is unresponsive GCE1 <br>|
+
+#### Scenario GC1
+
+|  Scenario GC1 |                                                                            |
+| :-----------: | :------------------------------------------------------------------------: |
+| Precondition  | Cash registers are turned on && DB services are available && LAN connection is available |
+| Post condition| Cash register catalogue is aligned with the system catalogue                |
+
+##### Steps
+
+| Actor's Action                                 | System Action                                                      | FR needed |
+|------------------------------------------------|----------------------------------------------------------------------|-----------|
+|                                                | System polls the cash register to check catalogue synchronization    |     FR13.3      |
+| Cash register responds to the polling           |                                                                      |      FR13.3     |
+|                                                | System retrieves the latest catalogue from the database              |       FR3.4.2    |
+|                                                | System sends the updated catalogue to the cash register              |       FR13.3.1, FR13.3.2    |
+| Cash register receives the catalogue            |                                                                      |     FR13.3.2      |
+| Cash register updates its internal data         |                                                                      |     FR13.3      |
+
+#### Scenario GCE1
+
+|  Scenario GCE1 |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   |  DB services are available && LAN connection is available |
+| Post condition | The cash register catalogue is not up to date                                 |
+
+##### Steps
+
+| Actor's Action                             | System Action                                                      | FR needed |
+|---------------------------------------------|--------------------------------------------------------------------|-----------|
+|                                             | System polls the cash register to check catalogue synchronization   |     FR13.3      |
+|   Cash register does not see any polls (maybe turned off)     |                                                                    |     FR13.3      |
+|                                             | System reaches time out for the comunication                 |     FR13.3.3      |
+|                                              | System detect unresponsive cash register | FR13.3.3|
+|                                              |System update cash register status |    FR13.3.3  |
+
+
+### Use case Track Orders, UC16
+
+| Actors Involved  |                 Shipment tracking provider, Owner                                              |
+| :--------------: | :------------------------------------------------------------------ |
+|  Precondition   | DB services are available && internet connection is available |
+|  Post condition  | The order status is up to date |
+| Nominal Scenario | -The system links with Shipment tracking provider TO1<br> - The system ask a status update to the shipping tracking service TO2 <br> | 
+|     Exception    | - The traking service is unreachable TOE1 <br> |
+
+
+#### Scenario TO1
+
+| Scenario TO1 | |
+|--------------|--|
+| **Precondition** | DB services are available & internet connection is available |
+| **Post condition** | The Shipment tracking provider account is successfully linked and tokens are securely stored |
+
+##### Steps
+
+| Actor's Action | System Action | FR needed |
+|----------------|---------------|-----------|
+| Owner initiates linking with shipment tracking provider | System redirects the owner to the shipment tracking provider authorization URL | FR8.1.1 |
+| Owner authorizes the application | System retrieves access and refresh tokens | FR8.1.2 |
+|  | System securely stores the retrieved tokens | FR8.1.3 |
+
+
+#### Scenario TO2
+
+|  Scenario TO1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | DB services are available && internet connection is available && shipment tracking provider is correctly linked    |
+| Post condition | The order status is up to date                                             |
+
+##### Steps
+
+| Actor's Action                                              | System Action                                                         | FR needed |
+|-------------------------------------------------------------|-----------------------------------------------------------------------|-----------|
+|                                                            | System sends an API request to the shipment tracking provider         |     FR8.2      |
+| Shipment tracking provider returns updated status           | System receives, validates, and processes the tracking response       |     FR8.2.1     |
+|                                                          | System updates the order status in the database                       |      FR8.2.2     |
+|                                                            | System sends an acknowledgment (ACK) if required by the protocol      |    FR8.2.1       |
+
+
+#### Scenario TOE1 
+
+|  Scenario TOE1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+|  Precondition  | DB services are available && internet connection is available && shipment tracking provider is correctly linked| 
+| Post condition | The order status is not up to date |
+
+##### Steps
+
+| Actor's Action                                   | System Action                                                    | FR needed |
+|--------------------------------------------------|------------------------------------------------------------------|-----------|
+|                                               | System sends a request to the shipment tracking provider         |     FR8.2      |
+| Shipment tracking provider is unreachable         | System fails to receive a response (timeout / network error)     |     FR8.2      |
+|                                              | System stops the status update process                           |      FR8.2.2     |
+|                                                | System keeps the current order status unchanged                  |      FR8.2.2     |
+
+
+### Use case Manage shipping companies, UC17 
+
+| Actors Involved  |                 Owner                                                |
+| :--------------: | :------------------------------------------------------------------ |
+|  Precondition   | Owner is authenticated && DB services are available    |
+|  Post condition  | CRUD-type shipping companies' operation is performed |
+| Nominal Scenario | - Owner creates a shipping company MC1 <br> - Owner updates a shipping company MC2 <br> - Owner deletes a shipping company MC3| 
+|     Exception    | - Owner tries to create a shipping company that is alredy in the system MC1E1 <br> |
+
+
+#### Scenario MC1
+
+|  Scenario MC1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available                        |
+| Post condition | A new shipping company is inserted in the system                                   |
+
+##### Steps
+
+| Actor's Action                                  | System Action                                                      | FR needed |
+|--------------------------------------------------|--------------------------------------------------------------------|-----------|
+| Owner requests to create a new shipping company             | System opens a data-entry dialog requesting shipping company parameters       |FR7.1.1      |
+| Owner enters shipping company parameters                    |                                                                    |FR7.1.1      |
+|                                                  | System checks if a shipping company with the same identifying values exists   | FR7.1.1     |
+|                                                  | System creates and inserts a new shipping company in the DB using the parameters |FR7.1.1   |
+                                        
+
+#### Scenario MC2 
+
+|  Scenario MC2  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available                                         |
+| Post condition | The selected shipping company is updated in the system                             |
+
+##### Steps
+
+| Actor's Action                                  | System Action                                                      | FR needed |
+|--------------------------------------------------|--------------------------------------------------------------------|-----------|
+| Owner requests to update a shipping company                 | System opens a data-entry dialog requesting updated parameters     | FR7.1.2          |
+| Owner modifies shipping company parameters                  |                                                                    |   FR7.1.2        |
+|                                                  | System updates the shipping company in the DB using the new parameters        |    FR7.1.2       |
+
+
+#### Scenario MC3 
+
+|  Scenario MC3  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available                                         |
+| Post condition | The shipping company is deleted from the system                                    |
+
+##### Steps
+
+| Actor's Action                                  | System Action                                                      | FR needed |
+|--------------------------------------------------|--------------------------------------------------------------------|-----------|
+| Owner requests to delete a shipping company                 |                                                                    |     FR7.1.3      |
+|                                                  | System deletes the shipping company from the DB                               |       FR7.1.3    |
+
+#### Scenario MC1E1
+
+|  Scenario MC1E1 |                                                                            |
+| :-------------: | :------------------------------------------------------------------------: |
+| Precondition    | Owner is authenticated && DB services are available                        |
+| Post condition  | No new shipping company is created          |
+
+##### Steps
+
+| Actor's Action                                  | System Action                                                      | FR needed |
+|--------------------------------------------------|--------------------------------------------------------------------|-----------|
+| Owner requests to create a new shipping company             | System opens a data-entry dialog requesting shipping company parameters       |   FR7.1.1        |
+| Owner enters shipping company parameters                    |                                                                    |    FR7.1.1       |
+|                                                  | System checks if a shipping company with the same identifying values exists   |     FR7.1.1      |
+|                                                  | System detects the shipping company already exists                            |     FR7.1.1      |
+|                                                  | System rejects the creation         |      FR7.1.1     |
+
 
 ##### Scenario 1.1
 
-\<describe here scenarios instances of UC1>
 
-\<a scenario is a sequence of steps that corresponds to a particular execution of one use case>
 
-\<a scenario is a more formal description of a story>
 
-\<only relevant scenarios should be described>
+
+
+
+
 
 |  Scenario 1.1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | \<Boolean expression, must evaluate to true before the scenario can start> |
-| Post condition |  \<Boolean expression, must evaluate to true after scenario is finished>   |
-
-
-Steps
-
-|     Actor's action      |  System action                                                                    | FR needed |
-| :------------: | :------------------------------------------------------------------------: |:---:|
-|               |                                                                 |  |
-|   |  |  |
-##### Scenario 1.2
-
-##### Scenario 1.x
-
-### Use case 2, UC2
-
-### Use case x, UCx
-
+|  Precondition  |  |
+| Post condition |     |
 
 # Glossary
 - **Shop**
@@ -462,22 +1787,13 @@ Steps
 
 > *The entities' description has been removed from the diagram for legibility purposes.*
 
-\<use UML class diagram to define important terms, or concepts in the domain of the application, and their relationships>
-
-\<concepts must be used consistently all over the document, ex in use cases, requirements etc>
-
 # System Design
-
-\<describe here system design>
 - EzShop Back end (cash registers comunication)
 - Windows EzShop app (business logic + front end)
 
-\<must be consistent with Context diagram>
+
 
 # Hardware Software architecture
-
-\<describe here the hardware software architecture using UML deployment diagram >
-
 
 ![missing-deployment](../res/plantuml/deploymentDiagram.svg) 
 
