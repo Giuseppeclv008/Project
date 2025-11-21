@@ -179,7 +179,7 @@ class RefundOf{
 
 Batch  -- "1..*" Item: > has
 
-Order  -- "1..*" Batch: > has
+Order  -- "1..*" Item: > has
 Order "0..*" -- "1..*" Supplier: > made to 
 Order "0..*" -- "1..*" ShippingCompany: > delivered by 
 
