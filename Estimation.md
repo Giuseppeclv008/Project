@@ -333,55 +333,37 @@ _total estimated calendar time is: 3 weeks_
 | **1. Requirements Engineering**                    | **100** |
 | 1.1 Functional requirements gathering              | 40 |
 | 1.2 Non-functional requirements gathering          | 20 |
-| 1.3 Stakeholder analysis and use case definition   | 20 |
-| 1.4 Requirements validation and document review    | 20 |
+| 1.3 Stakeholder analysis   | 10 |
+| 1.4 Use case definition   | 10 |
+| 1.5 Requirements validation and document review    | 20 |
 | **2. System & Software Design**                    | **150** |
 | 2.1 System architecture definition                 | 40 |
 | 2.2 Database design                                | 30 |
 | 2.3 Front-end design (UX/UI framework)             | 40 |
 | 2.4 Back-end design (services & data flows)        | 40 |
-| **3. Front-End Development (Desktop App)**         | **142** |
-| 3.1 Application layout and main routing            | 10 |
-| 3.2 Login and dashboard implementation             | 15 |
-| 3.3 Catalogue: UI, filters, threshold management   | 24 |
-| 3.4 Inventory: UI, filters, stock status           | 12 |
-| 3.5 Sales & Refunds: UI, filters, item handling    | 30 |
-| 3.6 Orders: UI, filters, suggestions, tracking     | 37 |
-| 3.7 Accounting: UI, filters, multiple granularities| 17 |
-| 3.8 User profile & notifications                   | 10 |
-| 3.9 Cash register: UI and filters                  | 10 |
-| **4. Back-End Development**                        | **334** |
-| 4.1 Authentication & security                      | 15 |
-| 4.2 CSV processing (read/write/validation)         | 30 |
-| 4.3 Order management (CRUD + status + imports)     | 20 |
-| 4.4 External API integration                       | 10 |
-| 4.5 Order suggestion module                         | 9 |
-| 4.6 Accounting module (invoices + balance analysis)| 4 |
-| 4.7 Network connection check                       | 2 |
-| 4.8 Notification system                            | 8 |
-| 4.9 Sales management (CSV + DB merge)              | 11 |
-| 4.10 Refunds management (CSV + DB merge)           | 13 |
-| 4.11 Inventory management (CRUD + merge)           | 22 |
-| 4.12 Catalogue management (CRUD + thresholds + merge) | 24 |
-| 4.13 Invoice management (CRUD + linking)           | 21 |
-| 4.14 Supplier management (CRUD + linking to orders/batches) | 23 |
-| 4.15 Extended order management (tracking + suggestions) | 66 |
-| 4.16 Income & expenses management (CSV + DB merge) | 32 |
-| 4.17 Cash register management (POS sync + updates) | 34 |
-| **5. Database Engineering**                        | **30** |
+| **3. Front-End Development (Desktop App)**         | **165** |
+| 3.1 Core UI and Navigation routing       | 35 |
+| 3.2 Catalogue and Inventory UI             | 36 |
+| 3.3 Sales, Refunds and Cash Register UI  | 40 |
+| 3.4 Orders and Accounting UI               | 54 |
+| **4. Back-End Development**                        | **344** |
+| 4.1 Core Platform and Infrastructure               | 65 |
+| 4.2  Sales and Refunds Management                  | 58 |
+| 4.3  Catalogue and Inventory                       | 46 |
+| 4.4  Orders and Supplier Management                  | 118 |
+| 4.5  Accounting and Financial                        | 57 |
+| **5. Database Developement**                        | **30** |
 | 5.1 Logical modeling                               | 10 |
 | 5.2 Physical modeling                              | 10 |
 | 5.3 Initial configuration and data seeding         | 10 |
 | **6. Testing**                                  | **70** |
 | 6.1 Unit testing                                | 40 |
 | 6.2 Integration testing                          | 30 |
-| **6. Testing**                                  | **70** |
-| 6.1 Unit testing                                | 40 |
-| 6.2 Integration testing                          | 30 |
+
 ###
 
 ## Gantt chart
-![alt text](/img/Gantt.png)
+![alt text](img/Gantt.png)
 
 ## Summary
 
@@ -392,7 +374,7 @@ Report here the results of the three estimation approaches. The estimates may di
 | estimation by size                 | 500 ph                | 2 weeks and a half (13 days)                  |
 | estimation by FP                   | 517 ph                | 2 weeks and a half (13 days)                  |
 | estimation by product decomposition| 770 ph | about 4 weeks (19 days) |
-| estimation by activity decomposition (Gantt) | 826 ph | almost 4 weeks and 3 days (21 days) |
+| estimation by activity decomposition (Gantt) | 859 ph | almost 4 weeks and 3 days (21 days) |
 
 The gap between the estimation made by size and FP with the one found by the PBS and later in the WBS is due to the fact that the given productivity value is really high, hence valuating the project by product decomposition, giving an expected amount of hours per product and then per activity gives a better and realisitical estimation of the time needed.
 
