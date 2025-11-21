@@ -1766,9 +1766,21 @@ Consider that the document should be delivered to another team (unknown to you)
 > *The entities' description has been removed from the diagram for legibility purposes.*
 
 # System Design
-- EzShop Back end (cash registers comunication)
-- Windows EzShop app (business logic + front end)
+The EzShop application is divided into two primary components:
+- **EzShop backend** 
+- **Windows EzShop application** 
 
+**The EzShop backend** is the core of the application, it is responsible for ensuring data persistence, communication with cash registers and integration with external services.
+It is design to run on a local server so that it may provide services to many instances of the Windows EzShop application. 
+
+**The Windows EzShop application** consists of two main submodules:
+- **Business logic Layer** 
+- **Graphical User Interface** 
+
+**The Business Logic Layer** is responsible for all internal operations and workflows that power the application. It acts as a bridge between the GUI and the backend data providing all the necessary calculations, logic and decision-making required to manage the business effectively.
+This layer is also responsible for handling the interaction between our system and external services, such as the ability to track the order status and the list of registered cash registers, through an internet connection.
+
+**The Graphical User Interface** is the front-end component that allows the user to interact with the system. The user has the ability to retrieve a large amount of information about their business and filter, sort it or group it as they see fit.
 
 
 # Hardware Software architecture
