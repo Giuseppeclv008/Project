@@ -34,10 +34,15 @@ class Shop {
 class Product {
     + id
     + name
-    + description
-    + price
     + category
     + brand
+    + unit
+    + price
+    + threshold
+    + noStock
+    + noBatches
+    + tags
+    + source
     + discount
     + IVA
 }
@@ -54,15 +59,28 @@ class Item {
 }
 
 class Sale {
+    + receiptId
+    + paymentMethod
 }
 
 class Refund {
+    + receiptId
+    + reason
 }
 
 class Catalogue {
+    + totalItems
+    + itemsInStock
+    + batchesInStock
+    + stockValue
 }
 
 class Inventory {
+    + totalProducts
+    + totalBatches
+    + totalItems
+    + totalValue
+    + lowStockProductsNmb
 }
 
 class Supplier {
@@ -80,7 +98,7 @@ class Order {
     + id
     + status
     + orderDate
-    + deliveryDate
+    + expectedDeliveryDate
 }
 
 class Income {
@@ -88,13 +106,18 @@ class Income {
     + amount
     + date
     + source
+    + category
 }
 
 class Expense {
     + id
     + amount
-    + date
+    + issueDate
+    + payedDate
+    + dueDate
     + source
+    + category
+    + status
 }
 
 class Balance {
@@ -109,10 +132,14 @@ class Owner {
 
 class CashRegister {
     + id
-    + location
-    + provider
+    + name
+    + brand
     + accessToken
     + refreshToken
+    + status
+    + connection
+    + linkedDate
+    + lastActive
 }
 
 class ShippingCompany {
@@ -134,11 +161,11 @@ class Notification {
 Balance  -- "0..*" Expense: > based on 
 Balance  -- "0..*" Income: > based on
 
-Sale "0.*" -- "1.*" Product : has
-Refund "0.*" -- "1.*" Product: has
-Catalogue  -- "1.*" Product:has
-Batch "0..*" --  Product: related to
-Supplier "1..*" -- "1..*" Product: provides
+Sale "0.*" -- "1.*" Product : > has
+Refund "0.*" -- "1.*" Product: > has
+Catalogue  -- "1.*" Product: > has
+Batch "0..*" --  Product: > related to
+Supplier "1..*" -- "1..*" Product: > provides
 
 
 (Sale, Product) .. SaleOf
@@ -152,7 +179,7 @@ class RefundOf{
 
 Batch  -- "1..*" Item: > has
 
-Order  -- "1..*" Batch: > has
+Order  -- "1..*" Item: > has
 Order "0..*" -- "1..*" Supplier: > made to 
 Order "0..*" -- "1..*" ShippingCompany: > delivered by 
 

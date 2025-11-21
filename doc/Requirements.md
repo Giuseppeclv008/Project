@@ -1742,11 +1742,11 @@ Consider that the document should be delivered to another team (unknown to you)
 - **Invoice**
     * A formal document that records a financial transaction between the shop and a supplier or customer, serving as proof of purchase or sale.
 - **Order** 
-    * The purchase of a collection of batches from a supplier. Orders have a defined structure and status, typically one of: processing, shipped, in transit, delivered and cancelled.
+    * The purchase of a collection of batches from a supplier. Orders have a defined structure and status, typically one of: processing, shipped, in transit, delivered, no information and cancelled.
 - **Income**
     * The amount of money earned from completed sales.
 - **Expenses** 
-    * The amount of money spent by the shop to maintain it operation such as electrical bills, renting fees, wages, and products purchases.
+    * The amount of money spent by the shop to maintain it operation such as refunds and invoices. 
 - **Balance**
     * The overall financial position of the shop, calculated as the difference between total incomes and total expenses within a given period.
 - **Owner**
@@ -1761,6 +1761,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 ![missing-glossary](../res/plantuml/glossaryDiagram.svg) 
 
+> *The entities' description has been removed from the diagram for legibility purposes.*
 
 # System Design
 - EzShop Back end (cash registers comunication)
