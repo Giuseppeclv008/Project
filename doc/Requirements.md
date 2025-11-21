@@ -86,17 +86,36 @@ Consider that the document should be delivered to another team (unknown to you)
 
 # Business Model
 - Customer segment
-    * Shop manager / owner
+    * Small shop owners and managers with poor or limited internet connection or that prefer the reliability and privacy associated with local system 
 - Value proposition
-    * Statistics reports
-    * Accounting (revenue, costs, debts, ...)
-    * Decision support
-    * Assistance with logistics
-    * Order management to suppliers
+    * **Statistical reports**
+        + Daily, weekly, monthly reports on sales, refunds, and inventory to help the owner understand the business' performance
+        + Fully customizable reports on sales, refunds, catalogue, and batches to help the owner get a clear picture of their business 
+        + Graphical reports of the most critical areas, to help the owner focus on what really matters 
+    * **Accounting**
+        + Real time tracking of incomes, expenses, and current balance to immediatly get a clear picture on how the business is performing
+        + Easy tracking of invoices to never lose a payment that's due
+    * **Automation**
+        + Order's shipment status is automatically tracked so that the owner may keep it off its mind
+        + Cash registers' catalogues are automatically updated so that no one has to do it manually to each one of them
+        + Sales and refunds are automatically transferred to the application to avoid losing transactions along the way
+        + Inventory item quantities and expiration date is automatically tracked to avoid not knowing when a shelf is empty
+    * **Decision support**
+        + Orders are automatically suggested based on what is currently lacking in the inventory or is close to its expiration date so that no shelf remains unstocked
+        + Easily track what was bought when and where so that no order may be lost
+    * **Privacy focused**
+        + The system requires minimum connectivity with the internet in order to function properly so that the system can be always online when it matters
+        + All information is stored securely and locally on owner's provided hardware so that the owner may own its own data
 - Revenue Stream
-    * Yearly fee
-    * Privately founded
+    * **Yearly fee**
+        + The application will be subscription-based with a yearly fee to ensure recurring revenue
+    * **Privately founded**
+        + The application will be developed by a third-party software company, the initial development and ongoing maintenance costs will be funded privately, whereas long terms profit will be ensured by the yearly fee.
 
+> **Business' context** 
+>
+> In order to make our business model feasible we imagined being part of a third party software development business.
+> Our company has been commissioned with the development of a software application, EzShop, that would work along-side Square POS, their existing API and hardware, to offer a "local" and "offline" version of their services. 
 
 
 # Stakeholders
