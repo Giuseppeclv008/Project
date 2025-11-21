@@ -135,9 +135,9 @@ Consider that the document should be delivered to another team (unknown to you)
 
 ## Functional Requirements
 
-\<In the form DO SOMETHING, or VERB NOUN, describe high level capabilities of the system>
 
-\<they match to high level use cases>
+
+
 
 | ID | Description |
 |:--:|:-------------|
@@ -372,7 +372,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 ## Non Functional Requirements
 
-\<Describe constraints on functional requirements>
+
 
 |   ID    | Type (efficiency, reliability, ..) | Description | Refers to |
 | :-----: | :--------------------------------: | :--------- | :-------: |
@@ -422,9 +422,9 @@ Consider that the document should be delivered to another team (unknown to you)
 
 ## Use case diagram
 
-\<define here UML Use case diagram UCD summarizing all use cases, and their relationships>
 
-\<next describe here each use case in the UCD>
+
+
 
 ### Use case Manage Inventory, UC1 
 
@@ -1581,18 +1581,18 @@ Consider that the document should be delivered to another team (unknown to you)
 
 ##### Scenario 1.1
 
-\<describe here scenarios instances of UC1>
 
-\<a scenario is a sequence of steps that corresponds to a particular execution of one use case>
 
-\<a scenario is a more formal description of a story>
 
-\<only relevant scenarios should be described>
+
+
+
+
 
 |  Scenario 1.1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-|  Precondition  | \<Boolean expression, must evaluate to true before the scenario can start> |
-| Post condition |  \<Boolean expression, must evaluate to true after scenario is finished>   |
+|  Precondition  |  |
+| Post condition |     |
 
 # Glossary
 - **Shop**
@@ -1635,22 +1635,14 @@ Consider that the document should be delivered to another team (unknown to you)
 
 ![missing-glossary](../res/plantuml/glossaryDiagram.svg) 
 
-\<use UML class diagram to define important terms, or concepts in the domain of the application, and their relationships>
-
-\<concepts must be used consistently all over the document, ex in use cases, requirements etc>
 
 # System Design
-
-\<describe here system design>
 - EzShop Back end (cash registers comunication)
 - Windows EzShop app (business logic + front end)
 
-\<must be consistent with Context diagram>
+
 
 # Hardware Software architecture
-
-\<describe here the hardware software architecture using UML deployment diagram >
-
 
 ![missing-deployment](../res/plantuml/deploymentDiagram.svg) 
 
