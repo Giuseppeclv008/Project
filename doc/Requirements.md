@@ -275,7 +275,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 |   Actor   | Logical Interface | Physical Interface |
 | :-------: | :---------------: | :----------------: |
-| Shop manager | GUI | Desktop computer |
+| Owner | GUI | Desktop computer |
 | Cash register | Square, lightspeed, nexi or clover API | Lan connection |
 | POS provider | Square, lightspeed, nexi or clover API | Internet connection |
 | Shipment tracking provider | easy post API | Internet connection |
@@ -543,9 +543,12 @@ Consider that the document should be delivered to another team (unknown to you)
 
 # Table of rights
 
-|  Actor   | FR1         | FRx |
-| user     |             | :---: |
-|          |             |       |
+| Actor | FR1 – Sales | FR2 – Refunds | FR3 – Catalogue | FR4 – Inventory | FR5 – Invoices | FR6 – Suppliers | FR7 – Shipping Companies | FR8 – Track Order | FR9 – Orders | FR10 – Accounting | FR11 – Auth | FR12 – Notifications | FR13 – Cash Registers | FR14 - Manage Internet Connection |
+|-------|-------------|---------------|------------------|------------------|-----------------|------------------|---------------------------|--------------------|---------------|---------------------|---------------|------------------------|------------------------|-------------------------|
+| **User (Owner)** | FR1.1 Y<br>FR1.1.1 Y<br>FR1.1.2 Y<br>FR1.1.3 Y<br>FR1.1.4 Y<br>FR1.2 Y<br>FR1.2.1 Y<br>FR1.2.1.1 N<br>FR1.2.1.2 N<br>FR1.2.1.3 N<br>FR1.2.2 Y<br>FR1.2.2.1 N<br>FR1.2.2.2 N<br>FR1.2.2.3 N | FR2.1 Y<br>FR2.1.1 Y<br>FR2.1.2 Y<br>FR2.1.3 Y<br>FR2.1.4 Y<br>FR2.2 Y<br>FR2.2.1 Y<br>FR2.2.1.1 N<br>FR2.2.1.2 N<br>FR2.2.1.3 N<br>FR2.2.2 Y<br>FR2.2.2.1 N<br>FR2.2.2.2 N<br>FR2.2.2.3 N | FR3.1 Y<br>FR3.1.1 Y<br>FR3.1.2 Y<br>FR3.1.3 Y<br>FR3.2 Y<br>FR3.3 Y<br>FR3.3.1 Y<br>FR3.3.2 Y<br>FR3.4 Y<br>FR3.4.1 Y<br>FR3.4.1.1 N<br>FR3.4.1.2 N<br>FR3.4.1.3 N<br>FR3.4.2 Y<br>FR3.4.2.1 N<br>FR3.4.2.2 N<br>FR3.4.2.3 N | FR4.1 Y<br>FR4.1.1 Y<br>FR4.1.2 Y<br>FR4.1.3 Y<br>FR4.2 Y<br>FR4.2.1 Y<br>FR4.3 Y<br>FR4.3.1 Y<br>FR4.3.1.1 N<br>FR4.3.1.2 N<br>FR4.3.1.3 N<br>FR4.3.2 Y<br>FR4.3.2.1 N<br>FR4.3.2.2 N<br>FR4.3.2.3 N | FR5.1 Y<br>FR5.1.1 Y<br>FR5.1.2 Y<br>FR5.1.3 Y<br>FR5.1.4 Y<br>FR5.2 Y<br>FR5.2.1 Y<br>FR5.3 Y<br>FR5.3.1 Y<br>FR5.3.1.1 N<br>FR5.3.1.2 N<br>FR5.3.1.3 N<br>FR5.3.2 Y<br>FR5.3.2.1 N<br>FR5.3.2.2 N<br>FR5.3.2.3 N | FR6.1 Y<br>FR6.1.1 Y<br>FR6.1.2 Y<br>FR6.1.3 Y<br>FR6.1.4 N<br>FR6.1.5 N<br>FR6.1.6 N<br>FR6.1.7 N<br>FR6.2 Y<br>FR6.2.1 Y<br>FR6.2.2 Y<br>FR6.3 Y<br>FR6.3.1 Y<br>FR6.3.1.1 N<br>FR6.3.1.2 N<br>FR6.3.1.3 N<br>FR6.3.2 Y<br> FR6.3.2.1 N <br> 6.3.2.2 N <br> 6.3.2.3 N | FR7.1 Y<br>FR7.1.1 Y<br>FR7.1.2 Y<br>FR7.1.3 Y<br>FR7.1.4 N<br>FR7.1.5 N<br>FR7.2 Y<br>FR7.2.1 Y<br>FR7.2.2 Y<br>FR7.3 Y<br>FR7.3.1 Y<br>FR7.3.1.1 N<br>FR7.3.1.2 N<br>FR7.3.1.3 N<br>FR7.3.2 Y<br>FR7.3.2.1 N<br>FR7.3.2.2 N<br>FR7.3.2.3 N | FR8.1 N<br>FR8.1.1 N<br>FR8.1.2 N<br>FR8.1.3 N<br>FR8.1.4 N<br>FR8.2 Y<br>FR8.2.1 N<br>FR8.2.2 N | FR9.1 Y<br>FR9.1.1 Y<br>FR9.1.2 Y<br>FR9.1.3 Y<br>FR9.1.4 N<br>FR9.1.5 N<br>FR9.2 Y<br>FR9.2.1 Y<br>FR9.3 Y<br>FR9.3.1 Y<br>FR9.3.1.1 N<br>FR9.3.1.2 N<br>FR9.3.1.3 N<br>FR9.3.2 Y<br>FR9.3.2.1 N<br>FR9.3.2.2 N<br>FR9.3.2.3 N<br>FR9.4 N<br>FR9.4.1 N<br>FR9.4.2 N<br>FR9.4.3 N<br>FR9.4.4 N<br>FR9.4.5 N<br>FR9.4.6 N | FR10.1 Y<br>FR10.1.1 N<br>FR10.1.2 N<br>FR10.2 N<br>FR10.2.1 Y<br>FR10.2.1.1 N<br>FR10.2.1.2 N<br>FR10.2.1.N Y<br>FR10.2.2 Y<br>FR10.2.2.1 N<br>FR10.2.2.2 N<br>FR10.2.2.3 N<br>FR10.3 N<br>FR10.3.1 N<br>FR10.3.2 N<br>FR10.4 Y<br>FR10.4.1 Y<br>FR10.4.1.1 N<br>FR10.4.1.2 N<br>FR10.4.1.3 N<br>FR10.4.2 Y<br>FR10.4.2.1 N<br>FR10.4.2.2 N<br>FR10.4.2.3 N<br>FR10.5 N<br>FR10.5.1 N<br>FR10.5.2 Y<br>FR10.5.3 Y | FR11.1 Y<br>FR11.2 Y<br>FR11.3 N<br>FR11.4 N | N | FR13.1 Y<br>FR13.1.1 N<br>FR13.1.2 N<br>FR13.1.3 N<br>FR13.1.4 N<br>FR13.1.5 Y<br>FR13.2 Y<br>FR13.2.1 Y<br>FR13.2.2 Y<br>FR13.3 N<br>FR13.3.1 N<br>FR13.3.2 N<br>FR13.3.3 N<br>FR13.N <br>FR13.4.1 N<br>FR13.4.2 N<br>FR13.4.3 N<br>FR13.4.4 N<br>FR13.5 N<br>FR13.5.1 N<br>FR13.5.2 N<br>FR13.5.3 N<br>FR13.5.4 Y<br>FR13.6 Y<br>FR13.6.1 Y<br>FR13.6.2 Y | N |
+| **POS Provider** | N | N | N | N | N | N | N | N | N | N | N | N | N | N|
+| **Shipment Tracking Provider** | N | N | N | N | N | N | N | N | N | N | N | N | N |N|
+| **Cash Register** | N | N | N | N | N | N | N | N | N | N | N | N | N |N|
 
 
 # Use case diagram and use cases
