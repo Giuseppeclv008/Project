@@ -663,11 +663,11 @@ Consider that the document should be delivered to another team (unknown to you)
 | :--------------: | :------------------------------------------------------------------ |
 |  Precondition   | Owner is authenticated && DB services are available && internet connection is available |
 |  Post condition  | CRUD-type invoice's operation is performed |
-| Nominal Scenario | - Owner creates a invoice MI1 <br> - Owner updates a invoice MI2 <br> - Owner deletes a invoice MI3| 
-|     Exception    | - Owner tries to create an invoice that is alredy in the system MI1E1 <br> |
+| Nominal Scenario | - Owner creates a invoice MV1 <br> - Owner updates a invoice MV2 <br> - Owner deletes a invoice MV3| 
+|     Exception    | - Owner tries to create an invoice that is alredy in the system MV1E1 <br> |
 
 
-#### Scenario MI1  
+#### Scenario MV1  
 
 |  Scenario MI1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
@@ -684,9 +684,9 @@ Consider that the document should be delivered to another team (unknown to you)
 |                                          | System creates and inserts a new invoice in the DB                  |        FR5.1.1   |
 
 
-#### Scenario MI2 
+#### Scenario MV2 
 
-|  Scenario MI2  |                                                                            |
+|  Scenario MV2  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated && DB services are available                                       |
 | Post condition | The selected invoice is updated in the system                               |
@@ -700,9 +700,9 @@ Consider that the document should be delivered to another team (unknown to you)
 |                                          | System updates the invoice in the DB using the new parameters       |        FR5.1.2   |
 
 
-#### Scenario MI3 
+#### Scenario MV3 
 
-|  Scenario MI3  |                                                                            |
+|  Scenario MV3  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   |  Owner is authenticated && DB services are available                                        |
 | Post condition | The invoice is deleted from the system                                      |
@@ -715,9 +715,9 @@ Consider that the document should be delivered to another team (unknown to you)
 |                                          | System deletes the invoice from the DB                               |      FR5.1.3     |
 
 
-#### Scenario MI1E1
+#### Scenario MV1E1
 
-|  Scenario MI1E1 |                                                                            |
+|  Scenario MV1E1 |                                                                            |
 | :-------------: | :------------------------------------------------------------------------: |
 | Precondition    | Owner is authenticated && DB services are available                        |
 | Post condition  | No new invoice is created; system notifies that the invoice already exists |
@@ -1344,13 +1344,13 @@ Consider that the document should be delivered to another team (unknown to you)
 | :--------------: | :------------------------------------------------------------------ |
 |  Precondition   | Cash Registers are turned on && DB services are available && lan connection is available|
 |  Post condition  | The system received new sales and refunds from the cash register|
-| Nominal Scenario |  - The system ask to the cash register sales MS1 <br> - The system ask to the cash register refunds MS2 <br> | 
-|     Exception    | - The data transfer is corrupted MSE1 <br>|
+| Nominal Scenario |  - The system ask to the cash register sales MR1 <br> - The system ask to the cash register refunds MR2 <br> | 
+|     Exception    | - The data transfer is corrupted MRE1 <br>|
 
 
-#### Scenario MS1
+#### Scenario MR1
 
-|  Scenario MS1  |                                                                            |
+|  Scenario MR1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 |  Precondition  | Cash registers are turned on && DB services are available && LAN connection is available |
 | Post condition | The system stores the new sales provided by the cash register              |
@@ -1365,9 +1365,9 @@ Consider that the document should be delivered to another team (unknown to you)
 |                                                  | System receives the sales data                                 |     FR13.4.1      |
 |                                                  | System inserts new sales into the database                     |     FR13.4.2      |
 
-#### Scenario MS2
+#### Scenario MR2
 
-|  Scenario MS2  |                                                                            |
+|  Scenario MR2  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 |  Precondition  | Cash registers are turned on && DB services are available && LAN connection is available |
 | Post condition | The system stores the new refunds provided by the cash register            |
@@ -1382,9 +1382,9 @@ Consider that the document should be delivered to another team (unknown to you)
 |                                                  | System receives the refund data                                |    FR13.5.1        |
 |                                                  | System inserts new refunds into the database                   |     FR13.5.2      |
 
-#### Scenario MSE1
+#### Scenario MRE1
 
-|  Scenario MSE1 |                                                                            |
+|  Scenario MRE1 |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 |  Precondition  | Cash registers are turned on && DB services are available && LAN connection is available |
 | Post condition | No new sales/refunds are saved                                             |
