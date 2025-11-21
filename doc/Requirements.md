@@ -290,10 +290,6 @@ Consider that the document should be delivered to another team (unknown to you)
 
 
 | ID | Description |
-|:--:|:-------------|
-|| |
-
-| ID | Description |
 |:--:|:------------|
 | FR1 | Manage sales |
 | FR1.1 | Create owner-defined sale list |
@@ -524,9 +520,6 @@ Consider that the document should be delivered to another team (unknown to you)
 
 
 
-|   ID    | Type (efficiency, reliability, ..) | Description | Refers to |
-| :-----: | :--------------------------------: | :--------- | :-------: |
-| || |
 
 | ID   | Type          | Description | Refers to |
 |------|---------------|-------------|-----------|
@@ -536,10 +529,6 @@ Consider that the document should be delivered to another team (unknown to you)
 | NFR4 | Efficiency | **Time Behavior**<br>• All CRUD operations operating on single entities should be completed within 1000 ms<br>• Retrieving ≈ 100 MB of data filtered, sorted or ranked by a specific set of rules should be completed within 10'000 ms<br>• Importing and exporting `.csv` files should take within 10'000 ms every 1000 rows<br>• Order status for supported suppliers should be updated within 3 h from the actual reported change<br>• Sales and refunds should be updated at least every 2 minutes<br>• Catalogue updates should be propagated to all cash registers every day at 6.00 a.m.<br>• Startup time should be within 5'000 ms<br><br>**Resource Utilization**<br>• The application should use no more than 500 MB of disk storage space (excluding data such as orders, sales, refunds, ...)<br>• The application should use no more than 2 GB of RAM memory under expected load<br>• The application should use no more than 50 % of the available CPU resources under normal load on tested hardware (Intel Core i5-8000 or i5-9000 series, 8 G of RAM) | FR1.1, FR2.1, FR3.3, FR4.2, FR5.2, FR6.2, FR7.2, FR9.2, FR1.2, FR2.2, FR3.4, FR4.3, FR5.3, FR6.3, FR7.3, FR9.3, FR10.2, FR10.4, FR8, FR13, FR9.4 |
 | NFR5 | Maintainability | **Analyzability**<br>• 95 % of code functions should be documented<br>• New functions should be documented within 1 week<br>• Mean time to diagnose a defect should be within 1 day<br>• All API errors, sync errors, and critical errors must be logged and persisted<br><br>**Changeability**<br>• Mean time to implement a minor feature should be within 1 working week<br>• Mean time to implement major features should be within 1 months<br>• The cyclomatic complexity of functions should be on average less than 15; no single function should exceed a cyclomatic complexity of 20<br><br>**Stability**<br>• A new release should introduce less than 1 regression defect<br><br>**Testability**<br>• Unit tests should cover 90 % of the codebase<br>• Integration tests should cover 80 % of the codebase | FR1–FR14 |
 | NFR6 | Portability | **Adaptability**<br>• The application should run on Windows 10 and 11 without code modification<br><br>**Installability**<br>• The application should complete installation within 10 minutes on tested hardware<br>• The application should complete installation with a success rate greater than 95 % on tested hardware (Intel Core i5-8000 or i5-9000 series, 8 G of RAM)<br><br>**Co-existence**<br>• The application should be able to run alongside the common antivirus applications (Windows Defender, Avast, McAfee, Norton, BitDefender, Kaspersky, AVG, ESET, Trend Micro, Sophos) without conflicts<br>• The application should be able to perform its functionalities without requiring exclusive system resources access<br>• The application should be able to work alongside firewalls<br><br>**Interoperability**<br>• Future version of the EzShop application should be able to import data in `.csv` format exported from previous version of the application | FR1–FR14 |
-
-
-
-
 
 # Table of rights
 
@@ -1730,22 +1719,6 @@ Consider that the document should be delivered to another team (unknown to you)
 |                                                  | System checks if a shipping company with the same identifying values exists   |     FR7.1.1      |
 |                                                  | System detects the shipping company already exists                            |     FR7.1.1      |
 |                                                  | System rejects the creation         |      FR7.1.1     |
-
-
-##### Scenario 1.1
-
-
-
-
-
-
-
-
-
-|  Scenario 1.1  |                                                                            |
-| :------------: | :------------------------------------------------------------------------: |
-|  Precondition  |  |
-| Post condition |     |
 
 # Glossary
 - **Shop**
