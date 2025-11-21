@@ -4,22 +4,23 @@
 
 ## Document Status Notice
 
-This Requirements Document has been developed through a structured, multi-stage process.  
-The earliest iterations concentrated on defining the **business model**, identifying all **stakeholders**, and understanding the system’s operational context.
+This document has been developed through a structured, multi-stage process.  
+The first few iterations focused on defining the **business model**, identifying all **stakeholders**, and understanding the system’s operational context.
 
 Subsequent revisions progressively introduced the remaining components of the document:
 
+- **Context Diagram and Interfaces** to describe interactions between the system and external actors
+- **Functional Requirements (FR)** and **Non-Functional Requirements (NFR)** to describe the system's functions and constraints on its operation
+- **Table of Rights** to describe user–system interactions  
+- **Use Case Diagram** and complete **Use Case descriptions** to describe the main modes of interaction between the user and the system
+- **Glossary** to establish a clear and consistent terminology as well as to highlight the relationships between the different entities listed within
+- **System Design** to develop a high-level description of the system's core components
+- **Hardware/Software Architecture** to model the interactions between the hardware and software components of the system
 
-- **Context Diagram and Interfaces** to describe external interactions  
-- **Functional Requirements (FR)** and **Non-Functional Requirements (NFR)**  
-- the **Table of Rights** derived from user–system interactions  
-- the **Use Case Diagram** and complete **Use Case descriptions**, including relevant scenarios  
-- the **Glossary** consolidating domain terminology  
-- **System Design** with architectural considerations  
-- **Hardware/Software Architecture** represented via deployment diagrams  
+The current version represents a **Baseline Requirements Preview** and includes all required artifacts.  
+Some prototype-level assumptions have been intentionally left in (e.g., **limited input validation and simplified error-handling logic**) to reflect the early stage of development assumed in this document. A more detailed implementation will be provided during the next stage in the development process. 
 
-The current version represents a **Baseline Requirements Preview**, including all required artefacts.  
-Some prototype-level assumptions remain intentionally (e.g., **limited input validation and simplified error-handling logic**), reflecting the planned development approach for the early implementation stages.
+
 
 ---
 
@@ -44,10 +45,12 @@ Version: **0.9 – Baseline Requirements Preview**
 
 # Contents
 
-- [Requirements Document - EzShop](#requirements-document)
+- [Requirements Document – EZShop](#requirements-document--ezshop)
+  - [Document Status Notice](#document-status-notice)
+    - [Version History](#version-history)
 - [Contents](#contents)
 - [Informal description](#informal-description)
-- [Business model](#business-model)
+- [Business Model](#business-model)
 - [Stakeholders](#stakeholders)
 - [Context Diagram and interfaces](#context-diagram-and-interfaces)
   - [Context Diagram](#context-diagram)
@@ -55,18 +58,146 @@ Version: **0.9 – Baseline Requirements Preview**
 - [Functional and non functional requirements](#functional-and-non-functional-requirements)
   - [Functional Requirements](#functional-requirements)
   - [Non Functional Requirements](#non-functional-requirements)
-- [Table of Rights](#table-of-rights)
-- [Use case diagram and use cases](#use-case-diagram-and-use-cases)
+- [Table of rights](#table-of-rights)
   - [Use case diagram](#use-case-diagram)
-    - [Use case 1, UC1](#use-case-1-uc1)
-      - [Scenario 1.1](#scenario-11)
-      - [Scenario 1.2](#scenario-12)
-      - [Scenario 1.x](#scenario-1x)
-    - [Use case 2, UC2](#use-case-2-uc2)
-    - [Use case x, UCx](#use-case-x-ucx)
+    - [Use case Manage Inventory, UC1](#use-case-manage-inventory-uc1)
+      - [Scenario MI1](#scenario-mi1)
+        - [Steps](#steps)
+      - [Scenario MI2](#scenario-mi2)
+        - [Steps](#steps)
+      - [Scenario MI3](#scenario-mi3)
+        - [Steps](#steps)
+      - [Scenario MI1E1](#scenario-mi1e1)
+        - [Steps](#steps)
+    - [Use case Manage Supplier, UC2](#use-case-manage-supplier-uc2)
+      - [Scenario MS1](#scenario-ms1)
+        - [Steps](#steps)
+      - [Scenario MS2](#scenario-ms2)
+        - [Steps](#steps)
+      - [Scenario MS3](#scenario-ms3)
+        - [Steps](#steps)
+      - [Scenario MS1E1](#scenario-ms1e1)
+        - [Steps](#steps)
+    - [Use case Manage Orders, UC3](#use-case-manage-orders-uc3)
+      - [Scenario MO1](#scenario-mo1)
+        - [Steps](#steps)
+      - [Scenario MO2](#scenario-mo2)
+        - [Steps](#steps)
+      - [Scenario MO3](#scenario-mo3)
+        - [Steps](#steps)
+      - [Scenario MO1E1](#scenario-mo1e1)
+        - [Steps](#steps)
+    - [Use case Manage Invoices, UC4](#use-case-manage-invoices-uc4)
+      - [Scenario MV1](#scenario-mv1)
+        - [Steps](#steps)
+      - [Scenario MV2](#scenario-mv2)
+        - [Steps](#steps)
+      - [Scenario MV3](#scenario-mv3)
+        - [Steps](#steps)
+      - [Scenario MV1E1](#scenario-mv1e1)
+        - [Steps](#steps)
+    - [Use case Authenticate Owner, UC5](#use-case-authenticate-owner-uc5)
+      - [Scenario AO1](#scenario-ao1)
+        - [Steps](#steps)
+      - [Scenario AO1E](#scenario-ao1e)
+        - [Steps](#steps)
+    - [Use case Change Password, UC6](#use-case-change-password-uc6)
+      - [Scenario CP1](#scenario-cp1)
+        - [Steps](#steps)
+      - [Scenario CP1V1](#scenario-cp1v1)
+        - [Steps](#steps)
+    - [Use case Manage Product Catalogue, UC7](#use-case-manage-product-catalogue-uc7)
+      - [Scenario MP1](#scenario-mp1)
+        - [Steps](#steps)
+      - [Scenario MP2](#scenario-mp2)
+        - [Steps](#steps)
+      - [Scenario MP3](#scenario-mp3)
+        - [Steps](#steps)
+      - [Scenario MP1E1](#scenario-mp1e1)
+        - [Steps](#steps)
+    - [Use case Receive Notifications, UC8](#use-case-receive-notifications-uc8)
+      - [Scenario RN1](#scenario-rn1)
+        - [Steps](#steps)
+      - [Scenario RN2](#scenario-rn2)
+        - [Steps](#steps)
+      - [Scenario RN3](#scenario-rn3)
+        - [Steps](#steps)
+      - [Scenario RN4](#scenario-rn4)
+        - [Steps](#steps)
+      - [Scenario RN5](#scenario-rn5)
+        - [Steps](#steps)
+      - [Scenario RN6](#scenario-rn6)
+        - [Steps](#steps)
+      - [Scenario RN1V1](#scenario-rn1v1)
+        - [Steps](#steps)
+      - [Scenario RN6V1](#scenario-rn6v1)
+        - [Steps](#steps)
+    - [Use case Import Data, UC9](#use-case-import-data-uc9)
+      - [Scenario ID1](#scenario-id1)
+        - [Steps](#steps)
+      - [Scenario ID1E1](#scenario-id1e1)
+        - [Steps](#steps)
+    - [Use case Export Data, UC10](#use-case-export-data-uc10)
+      - [Scenario ED1](#scenario-ed1)
+        - [Steps](#steps)
+      - [Scenario ED1E1](#scenario-ed1e1)
+        - [Steps](#steps)
+    - [Use case Retrieve Data, UC11](#use-case-retrieve-data-uc11)
+      - [Scenario RD1](#scenario-rd1)
+        - [Steps](#steps)
+      - [Scenario RD2](#scenario-rd2)
+        - [Steps](#steps)
+      - [Scenario RD1V1](#scenario-rd1v1)
+        - [Steps](#steps)
+    - [Use case Manage Accounting, UC12](#use-case-manage-accounting-uc12)
+      - [Scenario MA1](#scenario-ma1)
+        - [Steps](#steps)
+      - [Scenario MA2](#scenario-ma2)
+        - [Steps](#steps)
+      - [Scenario MA3](#scenario-ma3)
+        - [Steps](#steps)
+    - [Use case Manage Cash Registers, UC13](#use-case-manage-cash-registers-uc13)
+      - [Scenario CR1](#scenario-cr1)
+        - [Steps](#steps)
+      - [Scenario CR2](#scenario-cr2)
+        - [Steps](#steps)
+      - [Scenario CR3](#scenario-cr3)
+        - [Steps](#steps)
+      - [Scenario CR1E1](#scenario-cr1e1)
+        - [Steps](#steps)
+    - [Use case Manage Sales and Refunds, UC14](#use-case-manage-sales-and-refunds-uc14)
+      - [Scenario MR1](#scenario-mr1)
+        - [Steps](#steps)
+      - [Scenario MR2](#scenario-mr2)
+        - [Steps](#steps)
+      - [Scenario MRE1](#scenario-mre1)
+        - [Steps](#steps)
+    - [Use case Get Catalogue, UC15](#use-case-get-catalogue-uc15)
+      - [Scenario GC1](#scenario-gc1)
+        - [Steps](#steps)
+      - [Scenario GCE1](#scenario-gce1)
+        - [Steps](#steps)
+    - [Use case Track Orders, UC16](#use-case-track-orders-uc16)
+      - [Scenario TO1](#scenario-to1)
+        - [Steps](#steps)
+      - [Scenario TO2](#scenario-to2)
+        - [Steps](#steps)
+      - [Scenario TOE1](#scenario-toe1)
+        - [Steps](#steps)
+    - [Use case Manage shipping companies, UC17](#use-case-manage-shipping-companies-uc17)
+      - [Scenario MC1](#scenario-mc1)
+        - [Steps](#steps)
+      - [Scenario MC2](#scenario-mc2)
+        - [Steps](#steps)
+      - [Scenario MC3](#scenario-mc3)
+        - [Steps](#steps)
+      - [Scenario MC1E1](#scenario-mc1e1)
+        - [Steps](#steps)
+        - [Scenario 1.1](#scenario-11)
 - [Glossary](#glossary)
 - [System Design](#system-design)
-- [Hardware Software architecture](#Hardware-software-architecture)
+- [Hardware Software architecture](#hardware-software-architecture)
+
 
 # Informal description
 
@@ -86,17 +217,36 @@ Consider that the document should be delivered to another team (unknown to you)
 
 # Business Model
 - Customer segment
-    * Shop manager / owner
+    * Small shop owners and managers with poor or limited internet connection or that prefer the reliability and privacy associated with local system 
 - Value proposition
-    * Statistics reports
-    * Accounting (revenue, costs, debts, ...)
-    * Decision support
-    * Assistance with logistics
-    * Order management to suppliers
+    * **Statistical reports**
+        + Daily, weekly, monthly reports on sales, refunds, and inventory to help the owner understand the business' performance
+        + Fully customizable reports on sales, refunds, catalogue, and batches to help the owner get a clear picture of their business 
+        + Graphical reports of the most critical areas, to help the owner focus on what really matters 
+    * **Accounting**
+        + Real time tracking of incomes, expenses, and current balance to immediatly get a clear picture on how the business is performing
+        + Easy tracking of invoices to never lose a payment that's due
+    * **Automation**
+        + Order's shipment status is automatically tracked so that the owner may keep it off its mind
+        + Cash registers' catalogues are automatically updated so that no one has to do it manually to each one of them
+        + Sales and refunds are automatically transferred to the application to avoid losing transactions along the way
+        + Inventory item quantities and expiration date is automatically tracked to avoid not knowing when a shelf is empty
+    * **Decision support**
+        + Orders are automatically suggested based on what is currently lacking in the inventory or is close to its expiration date so that no shelf remains unstocked
+        + Easily track what was bought when and where so that no order may be lost
+    * **Privacy focused**
+        + The system requires minimum connectivity with the internet in order to function properly so that the system can be always online when it matters
+        + All information is stored securely and locally on owner's provided hardware so that the owner may own its own data
 - Revenue Stream
-    * Yearly fee
-    * Privately founded
+    * **Yearly fee**
+        + The application will be subscription-based with a yearly fee to ensure recurring revenue
+    * **Privately founded**
+        + The application will be developed by a third-party software company, the initial development and ongoing maintenance costs will be funded privately, whereas long terms profit will be ensured by the yearly fee.
 
+> **Business' context** 
+>
+> In order to make our business model feasible we imagined being part of a third party software development business.
+> Our company has been commissioned with the development of a software application, EzShop, that would work along-side Square POS, their existing API and hardware, to offer a "local" and "offline" version of their services. 
 
 
 # Stakeholders
@@ -135,9 +285,9 @@ Consider that the document should be delivered to another team (unknown to you)
 
 ## Functional Requirements
 
-\<In the form DO SOMETHING, or VERB NOUN, describe high level capabilities of the system>
 
-\<they match to high level use cases>
+
+
 
 | ID | Description |
 |:--:|:------------|
@@ -368,7 +518,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 ## Non Functional Requirements
 
-\<Describe constraints on functional requirements>
+
 
 
 | ID   | Type          | Description | Refers to |
@@ -411,9 +561,9 @@ Consider that the document should be delivered to another team (unknown to you)
 
 ## Use case diagram
 
-\<define here UML Use case diagram UCD summarizing all use cases, and their relationships>
 
-\<next describe here each use case in the UCD>
+
+
 
 ### Use case Manage Inventory, UC1 
 
@@ -1567,14 +1717,6 @@ Consider that the document should be delivered to another team (unknown to you)
 |                                                  | System detects the shipping company already exists                            |     FR7.1.1      |
 |                                                  | System rejects the creation         |      FR7.1.1     |
 
-\<describe here scenarios instances of UC1>
-
-\<a scenario is a sequence of steps that corresponds to a particular execution of one use case>
-
-\<a scenario is a more formal description of a story>
-
-\<only relevant scenarios should be described>
-
 # Glossary
 - **Shop**
     * The small business entity that uses the EzShop software to manage its operations, including sales, inventory, orders, and accounting. A shop typically has one owner, two or more cash registers, and several suppliers. In the current scope, EzShop manages a single shop.
@@ -1616,22 +1758,14 @@ Consider that the document should be delivered to another team (unknown to you)
 
 ![missing-glossary](../res/plantuml/glossaryDiagram.svg) 
 
-\<use UML class diagram to define important terms, or concepts in the domain of the application, and their relationships>
-
-\<concepts must be used consistently all over the document, ex in use cases, requirements etc>
 
 # System Design
-
-\<describe here system design>
 - EzShop Back end (cash registers comunication)
 - Windows EzShop app (business logic + front end)
 
-\<must be consistent with Context diagram>
+
 
 # Hardware Software architecture
-
-\<describe here the hardware software architecture using UML deployment diagram >
-
 
 ![missing-deployment](../res/plantuml/deploymentDiagram.svg) 
 
