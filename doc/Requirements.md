@@ -1413,7 +1413,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 ### Use case Manage Cash Registers, UC13
 
-| Actors Involved  |                - Main: Owner <br> - Passive: POS provider, Cash Register                                               |
+| Actors Involved  |                - Main: Owner <br> - Passive: POS provider                                               |
 | :--------------: | :------------------------------------------------------------------ |
 |  Precondition   | Owner is authenticated && DB services are available && internet connection is available|
 |  Post condition  | Cash register's list is up to date |
