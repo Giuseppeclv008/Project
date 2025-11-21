@@ -1,13 +1,46 @@
 
 
-# Requirements Document - EZShop
+# Requirements Document – EZShop
 
-Date: 24/10/2025
-Version: 1.0.0
+## Document Status Notice
 
-| Version number | Change |
-| :------------: | :----: |
-|                |        |
+This Requirements Document has been developed through a structured, multi-stage process.  
+The earliest iterations concentrated on defining the **business model**, identifying all **stakeholders**, and understanding the system’s operational context.
+
+Subsequent revisions progressively introduced the remaining components of the document:
+
+
+- **Context Diagram and Interfaces** to describe external interactions  
+- **Functional Requirements (FR)** and **Non-Functional Requirements (NFR)**  
+- the **Table of Rights** derived from user–system interactions  
+- the **Use Case Diagram** and complete **Use Case descriptions**, including relevant scenarios  
+- the **Glossary** consolidating domain terminology  
+- **System Design** with architectural considerations  
+- **Hardware/Software Architecture** represented via deployment diagrams  
+
+The current version represents a **Baseline Requirements Preview**, including all required artefacts.  
+Some prototype-level assumptions remain intentionally (e.g., **limited input validation and simplified error-handling logic**), reflecting the planned development approach for the early implementation stages.
+
+---
+
+Date: 23/11/2025  
+Version: **0.9 – Baseline Requirements Preview**
+
+### Version History
+
+| Version | Stage | Description |
+|:------:|:-----:|-------------|
+| 0.1 | Internal Draft | Initial analysis of business model and stakeholder identification |
+| 0.2 | Internal Draft |Added Context Diagram|
+| 0.3 | Internal Draft | Added first draft of Functional Requirements |
+| 0.4 | Alpha | Introduced Non-Functional Requirements; added Table of Rights structure |
+| 0.5 | Alpha |Interfaces, and early System Design notes |
+| 0.6 | Beta | Completed Functional & Non-Functional Requirements; added Glossary |
+| 0.7 | Beta | Added full Use Case Diagram and structured Use Case descriptions with scenarios |
+| 0.8 | Release Candidate | Completed System Design and Hardware/Software Architecture; refined all diagrams and cross-references |
+| **0.9** | **Baseline Requirements Preview** | Full coverage of all document sections: FR, NFR, Glossary, Use Cases, Interfaces, System Architecture. Considered complete for initial development. |
+
+
 
 # Contents
 
