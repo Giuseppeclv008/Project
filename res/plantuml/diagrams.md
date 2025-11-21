@@ -244,7 +244,6 @@ mngcs --> auth : <<include>>
 mngiv --> auth : <<include>>
 mngio --> auth : <<include>>
 mngsc --> auth : <<include>>
-mngsr --> auth : <<include>>
 export --> auth : <<include>>
 import --> auth : <<include>>
 password --> auth : <<include>>
@@ -253,7 +252,6 @@ retrieve --> auth : <<include>>
 
 
 cs --> mngsr
-cs <-- getc
 
 stp <-- tracko
 
