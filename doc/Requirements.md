@@ -4,22 +4,23 @@
 
 ## Document Status Notice
 
-This Requirements Document has been developed through a structured, multi-stage process.  
-The earliest iterations concentrated on defining the **business model**, identifying all **stakeholders**, and understanding the system’s operational context.
+This document has been developed through a structured, multi-stage process.  
+The first few iterations focused on defining the **business model**, identifying all **stakeholders**, and understanding the system’s operational context.
 
 Subsequent revisions progressively introduced the remaining components of the document:
 
+- **Context Diagram and Interfaces** to describe interactions between the system and external actors
+- **Functional Requirements (FR)** and **Non-Functional Requirements (NFR)** to describe the system's functions and constraints on its operation
+- **Table of Rights** to describe user–system interactions  
+- **Use Case Diagram** and complete **Use Case descriptions** to describe the main modes of interaction between the user and the system
+- **Glossary** to establish a clear and consistent terminology as well as to highlight the relationships between the different entities listed within
+- **System Design** to develop a high-level description of the system's core components
+- **Hardware/Software Architecture** to model the interactions between the hardware and software components of the system
 
-- **Context Diagram and Interfaces** to describe external interactions  
-- **Functional Requirements (FR)** and **Non-Functional Requirements (NFR)**  
-- the **Table of Rights** derived from user–system interactions  
-- the **Use Case Diagram** and complete **Use Case descriptions**, including relevant scenarios  
-- the **Glossary** consolidating domain terminology  
-- **System Design** with architectural considerations  
-- **Hardware/Software Architecture** represented via deployment diagrams  
+The current version represents a **Baseline Requirements Preview** and includes all required artifacts.  
+Some prototype-level assumptions have been intentionally left in (e.g., **limited input validation and simplified error-handling logic**) to reflect the early stage of development assumed in this document. A more detailed implementation will be provided during the next stage in the development process. 
 
-The current version represents a **Baseline Requirements Preview**, including all required artefacts.  
-Some prototype-level assumptions remain intentionally (e.g., **limited input validation and simplified error-handling logic**), reflecting the planned development approach for the early implementation stages.
+
 
 ---
 
