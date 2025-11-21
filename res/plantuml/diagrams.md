@@ -98,7 +98,7 @@ class Order {
     + id
     + status
     + orderDate
-    + deliveryDate
+    + expectedDeliveryDate
 }
 
 class Income {

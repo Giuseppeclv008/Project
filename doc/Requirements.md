@@ -441,7 +441,7 @@ Steps
 - **Invoice**
     * A formal document that records a financial transaction between the shop and a supplier or customer, serving as proof of purchase or sale.
 - **Order** 
-    * The purchase of a collection of batches from a supplier. Orders have a defined structure and status, typically one of: processing, shipped, in transit, delivered and cancelled.
+    * The purchase of a collection of batches from a supplier. Orders have a defined structure and status, typically one of: processing, shipped, in transit, delivered, no information and cancelled.
 - **Income**
     * The amount of money earned from completed sales.
 - **Expenses** 
