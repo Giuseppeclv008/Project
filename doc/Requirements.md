@@ -460,6 +460,8 @@ Steps
 
 ![missing-glossary](../res/plantuml/glossaryDiagram.svg) 
 
+> *The entities' description has been removed from the diagram for legibility purposes.*
+
 \<use UML class diagram to define important terms, or concepts in the domain of the application, and their relationships>
 
 \<concepts must be used consistently all over the document, ex in use cases, requirements etc>
