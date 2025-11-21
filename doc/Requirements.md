@@ -572,7 +572,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 ## Use case diagram
 
-
+![missing-usecase-diagram](../res/plantuml/usecaseDiagram.svg)
 
 
 
