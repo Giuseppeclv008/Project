@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="188px" preserveAspectRatio="none" style="width:526px;height:188px;background:#FCF7F2;" version="1.1" viewBox="0 0 526 188" width="526px" zoomAndPan="magnify"><defs><filter height="300%" id="fwlima527394d" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><ellipse cx="219.4767" cy="22.5236" fill="#FEFECE" filter="url(#fwlima527394d)" rx="40.4767" ry="14.5236" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="53" x="192.9767" y="27.1721">EzShop</text><!--MD5=[55f2968de154b8cc740615bf6e5af92f]
+entity owner--><ellipse cx="28.5" cy="106.5" fill="#FEFECE" filter="url(#fwlima527394d)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;"/><path d="M28.5,114.5 L28.5,141.5 M15.5,122.5 L41.5,122.5 M28.5,141.5 L15.5,156.5 M28.5,141.5 L41.5,156.5 " fill="none" filter="url(#fwlima527394d)" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="45" x="6" y="174.9951">Owner</text><!--MD5=[d5096230de5c7e9b5a3d1997ba7f37f3]
+entity cs--><ellipse cx="132.5" cy="106.5" fill="#FEFECE" filter="url(#fwlima527394d)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;"/><path d="M132.5,114.5 L132.5,141.5 M119.5,122.5 L145.5,122.5 M132.5,141.5 L119.5,156.5 M132.5,141.5 L145.5,156.5 " fill="none" filter="url(#fwlima527394d)" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="92" x="86.5" y="174.9951">Cash register</text><!--MD5=[bcb06b6d3c69a8cc25a1eea99eeb0433]
+entity stp--><ellipse cx="306.5" cy="106.5" fill="#FEFECE" filter="url(#fwlima527394d)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;"/><path d="M306.5,114.5 L306.5,141.5 M293.5,122.5 L319.5,122.5 M306.5,141.5 L293.5,156.5 M306.5,141.5 L319.5,156.5 " fill="none" filter="url(#fwlima527394d)" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="185" x="214" y="174.9951">Shipment tracking provider</text><!--MD5=[e0ce3f04a84c4e9839cbbe02ae2dfcd5]
+entity pos--><ellipse cx="474.5" cy="106.5" fill="#FEFECE" filter="url(#fwlima527394d)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;"/><path d="M474.5,114.5 L474.5,141.5 M461.5,122.5 L487.5,122.5 M474.5,141.5 L461.5,156.5 M474.5,141.5 L487.5,156.5 " fill="none" filter="url(#fwlima527394d)" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="80" x="434.5" y="174.9951">POS provier</text><!--MD5=[7cf27b0eb5ed7f6581099561294ff33d]
+link shop to owner--><path d="M187.75,35.4 C156,48.09 106.56,70.05 68.5,97 C63.87,100.28 59.27,104.11 54.94,108.07 " fill="none" id="shop-owner" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="51.04,111.73,60.342,108.4939,54.6881,108.3108,54.8713,102.6569,51.04,111.73" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="192.69,33.44,182.8492,33.0425,188.0427,35.2846,185.8006,40.4782,192.69,33.44" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[860ff9304119a01ee127dbee08432350]
+reverse link shop to cs--><path d="M206.1,40.91 C194.63,55.8 177.7,77.79 162.96,96.93 " fill="none" id="shop&lt;-cs" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="209.18,36.91,200.5123,41.5867,206.1232,40.8667,206.8431,46.4776,209.18,36.91" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[b8c5d2c18c2c134c44d0c9387702c5ff]
+reverse link shop to stp--><path d="M232.9,40.91 C244.37,55.8 261.3,77.79 276.04,96.93 " fill="none" id="shop&lt;-stp" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="229.82,36.91,232.1569,46.4776,232.8768,40.8667,238.4877,41.5867,229.82,36.91" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[a3f55c8f2ca2b9e92d0ba7027c56b935]
+reverse link shop to pos--><path d="M255.09,33.92 C295.4,46.37 362.51,69.06 416.5,97 C422.45,100.08 428.52,103.66 434.39,107.38 " fill="none" id="shop&lt;-pos" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="249.82,32.31,257.247,38.7783,254.5992,33.7794,259.5981,31.1316,249.82,32.31" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[c13232201fdd5a5e64ae2d0af1b94502]
+@startuml contextDiagram
+skinparam backgroundColor #fcf7f2
+skinparam actorStyle Hollow
+
+usecase "EzShop" as shop
+actor "Owner" as owner
+actor "Cash register" as cs
+actor "Shipment tracking provider" as stp
+actor "POS provier" as pos
+
+shop <- -> owner 
+shop <- - cs
+shop <- - stp
+shop <- - pos
+
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 11:22:07 CET 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 21.0.8+9-Ubuntu-0ubuntu122.04.1
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>
