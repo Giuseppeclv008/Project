@@ -227,12 +227,10 @@ owner --> mngcs
 owner --> mngiv
 owner --> mngio
 owner --> mngsc
-owner --> mngsr
 
 owner --> password
 owner --> import
 owner --> export
-owner --> getc
 owner <-- notification
 owner <-- retrieve
 
@@ -252,6 +250,7 @@ retrieve --> auth : <<include>>
 
 
 cs --> mngsr
+cs <-- getc
 
 stp <-- tracko
 
