@@ -183,6 +183,89 @@ Catalogue .r[hidden]. Sale
 ```
 
 ---
+## UseCase diagram
+```plantuml
+@startuml usecaseDiagram
+left to right direction 
+!pragma layout smetana
+skinparam backgroundColor #fcf7f2
+
+usecase "manage accounting" as mnga
+usecase "manage product catalogue" as mngc
+usecase "manage orders" as mngo
+usecase "manage suppliers" as mngs
+usecase "manage cash register" as mngcs
+usecase "manage inventory" as mngiv
+usecase "manage invoices" as mngio
+usecase "manage shipping companies" as mngsc
+usecase "manage sales and refunds" as mngsr
+
+usecase "get catalogue" as getc
+usecase "track orders" as tracko
+
+usecase "authenticate owner" as auth
+usecase "change password" as password
+
+usecase "import data" as import
+usecase "export data" as export
+usecase "retrieve data data" as retrieve
+
+usecase "receive notification" as notification
+
+
+actor owner
+actor "POS provider" as pos
+actor "cash register" as cs
+actor "shipment tracking provider" as stp
+
+
+owner --> mnga
+owner --> mngc
+owner --> mngo
+owner --> mngs
+owner --> mngcs
+owner --> mngiv
+owner --> mngio
+owner --> mngsc
+owner --> mngsr
+
+owner --> password
+owner --> import
+owner --> export
+owner --> getc
+owner <-- notification
+owner <-- retrieve
+
+mnga --> auth : <<include>>
+mngc --> auth : <<include>>
+mngo --> auth : <<include>>
+mngs --> auth : <<include>>
+mngcs --> auth : <<include>>
+mngiv --> auth : <<include>>
+mngio --> auth : <<include>>
+mngsc --> auth : <<include>>
+mngsr --> auth : <<include>>
+export --> auth : <<include>>
+import --> auth : <<include>>
+password --> auth : <<include>>
+notification --> auth : <<include>>
+retrieve --> auth : <<include>>
+
+
+cs --> mngsr
+cs <-- getc
+
+stp <-- tracko
+
+pos <-- mngcs
+
+@enduml
+
+```
+
+
+
+---
 ## Deployment diagram
 ```plantuml
 @startuml deploymentDiagram
