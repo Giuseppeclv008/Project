@@ -730,7 +730,7 @@ Consider that the document should be delivered to another team (unknown to you)
 | :--------------: | :------------------------------------------------------------------ |
 |  Precondition   | Owner is authenticated && DB services are available    |
 |  Post condition  | CRUD-type order's operation is performed |
-| Nominal Scenario | - Owner creates a order MO1 <br> - Owner updates a order MO2 <br> - Owner deletes a order MO3| 
+| Nominal Scenario | - Owner creates a order MO1 <br> - Owner updates a order MO2 <br> - Owner deletes a order MO3 <br> -System suggests an order MO4| 
 |     Exception    | - Owner tries to create an order that is alredy in the system MO1E1 <br> |
 
 
@@ -780,6 +780,24 @@ Consider that the document should be delivered to another team (unknown to you)
 |----------------------------------------|---------------------------------------------------------------------|-----------|
 | Owner requests to delete the order     |                                                                     |     FR9.1.3      |
 |                                        | System deletes the order from the DB                                |       FR9.1.3    |
+
+### Scenario MO4
+|  Scenario MO4  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available && there are products with item quantity below a certain threshold |
+| Post condition | The system suggest an order                                     |
+
+##### Steps
+
+| Actor's Action                        | System Action                                                       | FR needed |
+|----------------------------------------|---------------------------------------------------------------------|-----------|
+|                                        |  System retrieves product with item quantity below a certain threshold|     FR9.4.1      |
+|                                        |  System retrieves possible suppleirs for that product |       FR9.4.2    |
+|                                        |  System suggests the order                           | 9.4.3  |
+|                                        |  System add suggested order to the list of orders  | 9.4.4 |
+|                                        |  System notifies the owner                         |  12.1     |
+| Owner read the suggested order         |                                                    |  9.4   | 
+
 
 
 #### Scenario MO1E1
