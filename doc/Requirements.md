@@ -1077,7 +1077,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 |  Scenario RN1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-| Precondition   | Order status changes in the system                                         |
+| Precondition   | Owner is authenticated && DB services are available && order status changes in the system                                         |
 | Post condition | Owner receives a notification regarding the new status                     |
 
 ##### Steps
@@ -1095,7 +1095,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 |  Scenario RN2  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-| Precondition   | A batch expiration date is reached                                         |
+| Precondition   | Owner is authenticated && DB services are available && A batch expiration date is reached                                         |
 | Post condition | Owner receives an expiration notification                                  |
 
 ##### Steps
@@ -1113,7 +1113,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 |  Scenario RN3  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-| Precondition   | A cash register does not respond to system polling                         |
+| Precondition   | Owner is authenticated && DB services are available && A cash register does not respond to system polling                         |
 | Post condition | Owner receives a notification about the missing response                   |
 
 ##### Steps
@@ -1132,7 +1132,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 |  Scenario RN4  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-| Precondition   | Product quantity falls below a stock threshold                             |
+| Precondition   | Owner is authenticated && DB services are available && Product quantity falls below a stock threshold                             |
 | Post condition | Owner receives a low-stock notification                                   |
 
 ##### Steps
@@ -1151,7 +1151,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 |  Scenario RN5  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-| Precondition   | System detects loss of internet connection                                 |
+| Precondition   | Owner is authenticated && DB services are available && System detects loss of internet connection                                 |
 | Post condition | Owner receives a notification about connection loss                        |
 
 ##### Steps
@@ -1169,7 +1169,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 |  Scenario RN6  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-| Precondition   | At least one notification exists in the system                             |
+| Precondition   | Owner is authenticated && DB services are available && At least one notification exists in the system                             |
 | Post condition | Notifications are displayed or marked as read                               |
 
 ##### Steps
@@ -1183,7 +1183,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 |  Scenario RN7  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-| Precondition   | System suggests a new order                                                 |
+| Precondition   | Owner is authenticated && DB services are available && System suggests a new order                                                 |
 | Post condition | Owner receives a notification regarding the new status                     |
 
 ##### Steps
@@ -1199,7 +1199,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 |  Scenario RN1V1 |                                                                           |
 | :-------------: | :------------------------------------------------------------------------ |
-| Precondition    | System fails to update the order status due to API timeout/failure        |
+| Precondition    |Owner is authenticated && DB services are available &&  System fails to update the order status due to API timeout/failure        |
 | Post condition  | Owner receives a notification about the failed update                     |
 
 ##### Steps
@@ -1218,7 +1218,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 |  Scenario RN6V1 |                                                                           |
 | :-------------: | :------------------------------------------------------------------------ |
-| Precondition    | At least one notification exists in the system                                    |
+| Precondition    |Owner is authenticated && DB services are available &&  At least one notification exists in the system                                    |
 | Post condition  | All notifications are cleared from the list                               |
 
 ##### Steps
