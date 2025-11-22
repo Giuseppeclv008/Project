@@ -285,241 +285,233 @@ Consider that the document should be delivered to another team (unknown to you)
 
 ## Functional Requirements
 
-
-
-
-
 | ID | Description |
 |:--:|:------------|
-| FR1 | Manage sales |
+| **FR1** | **Manage sales **|
 | FR1.1 | Create owner-defined sale list |
-| FR1.1.1 | For each owner-defined list filter sales by a specified date (ISO 8601) or time window |
-| FR1.1.2 | Retrieve sales filtered by products sold |
-| FR1.1.3 | Retrieve sales ranked by number of items sold per specific product |
-| FR1.1.4 | Retrieve sales ranked by the sum of its item's prices |
+| FR1.1.1 | -- For each owner-defined list filter sales by a specified date (ISO 8601) or time window 
+| FR1.1.2 | -- Retrieve sales filtered by products sold 
+| FR1.1.3 | -- Retrieve sales ranked by number of items sold per specific product 
+| FR1.1.4 | -- Retrieve sales ranked by the sum of its item's prices 
 | FR1.2 | Manage `.csv` |
-| FR1.2.1 | Import sales list from `.csv` |
-| FR1.2.1.1 | Detect import errors |
-| FR1.2.1.2 | Detect schema mismatch |
-| FR1.2.1.3 | Update sales |
-| FR1.2.2 | Export list of sales as `.csv` |
-| FR1.2.2.1 | Retrieve sales |
-| FR1.2.2.2 | Create `.csv` file |
-| FR1.2.2.3 | Detect export errors |
-| FR2 | Manage refunds |
+| FR1.2.1 | -- Import sales list from `.csv` 
+| FR1.2.1.1 | ---- Detect import errors 
+| FR1.2.1.2 | ---- Detect schema mismatch 
+| FR1.2.1.3 | ---- Update sales 
+| FR1.2.2 | -- Export list of sales as `.csv` 
+| FR1.2.2.1 | ---- Retrieve sales 
+| FR1.2.2.2 | ---- Create `.csv` file 
+| FR1.2.2.3 | ---- Detect export errors 
+| **FR2** | **Manage refunds **|
 | FR2.1 | Create owner-defined refund list |
-| FR2.1.1 | For each owner-defined list filter refunds by a specified date (ISO 8601) or time window |
-| FR2.1.2 | Retrieve refunds filtered by products returned |
-| FR2.1.3 | Retrieve refunds ranked by number of items given back per specific product |
-| FR2.1.4 | Retrieve refunds ranked by the sum of its item's prices |
+| FR2.1.1 | -- For each owner-defined list filter refunds by a specified date (ISO 8601) or time window 
+| FR2.1.2 | -- Retrieve refunds filtered by products returned 
+| FR2.1.3 | -- Retrieve refunds ranked by number of items given back per specific product 
+| FR2.1.4 | -- Retrieve refunds ranked by the sum of its item's prices 
 | FR2.2 | Manage `.csv` |
-| FR2.2.1 | Import refunds list from `.csv`|
-| FR2.2.1.1 | Detect import errors |
-| FR2.2.1.2 | Detect schema mismatch |
-| FR2.2.1.3 | Update refunds |
-| FR2.2.2 | Export list of refunds as `.csv`|
-| FR2.2.2.1 | Retrieve refunds |
-| FR2.2.2.2 | Create `.csv` file |
-| FR2.2.2.3 | Detect export errors |
-| FR3 | Manage catalogue |
+| FR2.2.1 | -- Import refunds list from `.csv`
+| FR2.2.1.1 | ---- Detect import errors 
+| FR2.2.1.2 | ---- Detect schema mismatch 
+| FR2.2.1.3 | ---- Update refunds 
+| FR2.2.2 | -- Export list of refunds as `.csv`
+| FR2.2.2.1 | ---- Retrieve refunds 
+| FR2.2.2.2 | ---- Create `.csv` file 
+| FR2.2.2.3 | ---- Detect export errors 
+| **FR3** | **Manage catalogue **|
 | FR3.1 | Manage CRUD operations |
-| FR3.1.1 | Create new product in the catalogue |
-| FR3.1.2 | Update product from the catalogue |
-| FR3.1.3 | Delete product from the catalogue |
+| FR3.1.1 | -- Create new product in the catalogue 
+| FR3.1.2 | -- Update product from the catalogue 
+| FR3.1.3 | -- Delete product from the catalogue 
 | FR3.2 | Set product item quantity warning threshold |
 | FR3.3 | Create owner-defined product list |
-| FR3.3.1 | Retrieve list of products filtered by one or more of their attributes |
-| FR3.3.2 | Retrieve number of items available for a selected product |
+| FR3.3.1 | -- Retrieve list of products filtered by one or more of their attributes 
+| FR3.3.2 | -- Retrieve number of items available for a selected product 
 | FR3.4 | Manage `.csv` |
-| FR3.4.1 | Import products list from `.csv` |
-| FR3.4.1.1 | Detect import errors |
-| FR3.4.1.2 | Detect schema mismatch |
-| FR3.4.1.3 | Update products list |
-| FR3.4.2 | Export list of products as `.csv` |
-| FR3.4.2.1 | Retrieve products list |
-| FR3.4.2.2 | Create `.csv` file |
-| FR3.4.2.3 | Detect export errors |
-| FR4 | Manage inventory |
+| FR3.4.1 | -- Import products list from `.csv` 
+| FR3.4.1.1 | ---- Detect import errors 
+| FR3.4.1.2 | ---- Detect schema mismatch 
+| FR3.4.1.3 | ---- Update products list 
+| FR3.4.2 | -- Export list of products as `.csv` 
+| FR3.4.2.1 | ---- Retrieve products list 
+| FR3.4.2.2 | ---- Create `.csv` file 
+| FR3.4.2.3 | ---- Detect export errors 
+| **FR4** | **Manage inventory **|
 | FR4.1 | Manage CRUD operations |
-| FR4.1.1 | Create new batch in the inventory |
-| FR4.1.2 | Update batch from the inventory |
-| FR4.1.3 | Delete batch from the inventory |
+| FR4.1.1 | -- Create new batch in the inventory 
+| FR4.1.2 | -- Update batch from the inventory 
+| FR4.1.3 | -- Delete batch from the inventory 
 | FR4.2 | Create owner-defined batch list |
-| FR4.2.1 | Retrieve batches filtered by one or more product/batch attributes |
+| FR4.2.1 | -- Retrieve batches filtered by one or more product/batch attributes 
 | FR4.3 | Manage `.csv` |
-| FR4.3.1 | Import batches list from `.csv` |
-| FR4.3.1.1 | Detect import errors |
-| FR4.3.1.2 | Detect schema mismatch |
-| FR4.3.1.3 | Update inventory |
-| FR4.3.2 | Export list of batches as `.csv` |
-| FR4.3.2.1 | Retrieve batches list |
-| FR4.3.2.2 | Create `.csv` file |
-| FR4.3.2.3 | Detect export errors |
-| FR5 | Manage invoices |
+| FR4.3.1 | -- Import batches list from `.csv` 
+| FR4.3.1.1 | ---- Detect import errors 
+| FR4.3.1.2 | ---- Detect schema mismatch 
+| FR4.3.1.3 | ---- Update inventory 
+| FR4.3.2 | -- Export list of batches as `.csv` 
+| FR4.3.2.1 | ---- Retrieve batches list 
+| FR4.3.2.2 | ---- Create `.csv` file 
+| FR4.3.2.3 | ---- Detect export errors 
+| **FR5** | **Manage invoices **|
 | FR5.1 | Manage CRUD operations |
-| FR5.1.1 | Create new invoice |
-| FR5.1.2 | Update invoice |
-| FR5.1.3 | Delete invoice |
-| FR5.1.4 | Link invoice to a specific order |
+| FR5.1.1 | -- Create new invoice 
+| FR5.1.2 | -- Update invoice 
+| FR5.1.3 | -- Delete invoice 
+| FR5.1.4 | -- Link invoice to a specific order 
 | FR5.2 | Create owner-defined invoice list |
-| FR5.2.1 | Retrieve list of invoices filtered by one or more of their attributes |
+| FR5.2.1 | -- Retrieve list of invoices filtered by one or more of their attributes 
 | FR5.3 | Manage `.csv` |
-| FR5.3.1 | Import invoices list from `.csv` |
-| FR5.3.1.1 | Detect import errors |
-| FR5.3.1.2 | Detect schema mismatch |
-| FR5.3.1.3 | Update invoices |
-| FR5.3.2 | Export list of invoices as `.csv` |
-| FR5.3.2.1 | Retrieve invoices |
-| FR5.3.2.2 | Create `.csv` file |
-| FR5.3.2.3 | Detect export errors |
-| FR6 | Manage suppliers |
+| FR5.3.1 | -- Import invoices list from `.csv` 
+| FR5.3.1.1 | ---- Detect import errors 
+| FR5.3.1.2 | ---- Detect schema mismatch 
+| FR5.3.1.3 | ---- Update invoices 
+| FR5.3.2 | -- Export list of invoices as `.csv` 
+| FR5.3.2.1 | ---- Retrieve invoices 
+| FR5.3.2.2 | ---- Create `.csv` file 
+| FR5.3.2.3 | ---- Detect export errors 
+| **FR6** | **Manage suppliers **|
 | FR6.1 | Manage CRUD operations |
-| FR6.1.1 | Create new supplier |
-| FR6.1.2 | Update supplier |
-| FR6.1.3 | Delete supplier |
-| FR6.1.4 | Link supplier to one or more products |
-| FR6.1.5 | Unlink supplier from one or more products |
-| FR6.1.6 | Link supplier to one or more batches |
-| FR6.1.7 | Unlink supplier from one or more batches |
+| FR6.1.1 | -- Create new supplier 
+| FR6.1.2 | -- Update supplier 
+| FR6.1.3 | -- Delete supplier 
+| FR6.1.4 | -- Link supplier to one or more products 
+| FR6.1.5 | -- Unlink supplier from one or more products 
+| FR6.1.6 | -- Link supplier to one or more batches 
+| FR6.1.7 | -- Unlink supplier from one or more batches 
 | FR6.2 | Create owner-defined supplier list |
-| FR6.2.1 | Retrieve suppliers list filtered by one or more product they provide |
-| FR6.2.2 | Retrieve suppliers list ranked by number of associated purchase orders |
+| FR6.2.1 | -- Retrieve suppliers list filtered by one or more product they provide 
+| FR6.2.2 | -- Retrieve suppliers list ranked by number of associated purchase orders 
 | FR6.3 | Manage `.csv` |
-| FR6.3.1 | Import supplier list from `.csv` |
-| FR6.3.1.1 | Detect import errors |
-| FR6.3.1.2 | Detect schema mismatch |
-| FR6.3.1.3 | Update suppliers |
-| FR6.3.2 | Export list of suppliers as `.csv` |
-| FR6.3.2.1 | Retrieve suppliers |
-| FR6.3.2.2 | Create `.csv` file |
-| FR6.3.2.3 | Detect export errors |
-| FR7 | Manage Shipping companies |
+| FR6.3.1 | -- Import supplier list from `.csv` 
+| FR6.3.1.1 | ---- Detect import errors 
+| FR6.3.1.2 | ---- Detect schema mismatch 
+| FR6.3.1.3 | ---- Update suppliers 
+| FR6.3.2 | -- Export list of suppliers as `.csv` 
+| FR6.3.2.1 | ---- Retrieve suppliers 
+| FR6.3.2.2 | ---- Create `.csv` file 
+| FR6.3.2.3 | ---- Detect export errors 
+| **FR7** | **Manage Shipping companies **|
 | FR7.1 | Manage CRUD operations |
-| FR7.1.1 | Create new shipping company |
-| FR7.1.2 | Update shipping company |
-| FR7.1.3 | Delete shipping company |
-| FR7.1.4 | Link shipping company to one or more orders |
-| FR7.1.5 | Unlink shipping company from one or more orders |
+| FR7.1.1 | -- Create new shipping company 
+| FR7.1.2 | -- Update shipping company 
+| FR7.1.3 | -- Delete shipping company 
+| FR7.1.4 | -- Link shipping company to one or more orders 
+| FR7.1.5 | -- Unlink shipping company from one or more orders 
 | FR7.2 | Create owner-defined shipping companies list |
-| FR7.2.1 | Retrieve shipping companies list filtered by one or more of their attributes |
-| FR7.2.2 | Retrieve shipping companies list ranked by number of associated shipments with a selected status |
+| FR7.2.1 | -- Retrieve shipping companies list filtered by one or more of their attributes 
+| FR7.2.2 | -- Retrieve shipping companies list ranked by number of associated shipments with a selected status 
 | FR7.3 | Manage `.csv` |
-| FR7.3.1 | Import shipping companies list from `.csv` |
-| FR7.3.1.1 | Detect import errors |
-| FR7.3.1.2 | Detect schema mismatch |
-| FR7.3.1.3 | Update shipping companies list |
-| FR7.3.2 | Export list of shipping companies as `.csv` |
-| FR7.3.2.1 | Retrieve shipping companies list |
-| FR7.3.2.2 | Create `.csv` file |
-| FR7.3.2.3 | Detect export errors |
-| FR8 | Track order |
+| FR7.3.1 | -- Import shipping companies list from `.csv` 
+| FR7.3.1.1 | ---- Detect import errors 
+| FR7.3.1.2 | ---- Detect schema mismatch 
+| FR7.3.1.3 | ---- Update shipping companies list 
+| FR7.3.2 | -- Export list of shipping companies as `.csv` 
+| FR7.3.2.1 | ---- Retrieve shipping companies list 
+| FR7.3.2.2 | ---- Create `.csv` file 
+| FR7.3.2.3 | ---- Detect export errors 
+| **FR8** | **Track order **|
 | FR8.1 | Link with easy post account |
-| FR8.1.1 | Redirect user to authorization URL |
-| FR8.1.2 | Retrieve access and refresh tokens |
-| FR8.1.3 | Store access and refresh tokens securely |
-| FR8.1.4 | Retrieve new token when expired |
+| FR8.1.1 | -- Redirect user to authorization URL 
+| FR8.1.2 | -- Retrieve access and refresh tokens 
+| FR8.1.3 | -- Store access and refresh tokens securely 
+| FR8.1.4 | -- Retrieve new token when expired 
 | FR8.2 | Retrieve shipment status |
-| FR8.2.1 | Retrieve tracking updates from provider API |
-| FR8.2.2 | Update order's status accordingly |
-| FR9 | Manage orders |
+| FR8.2.1 | -- Retrieve tracking updates from provider API 
+| FR8.2.2 | -- Update order's status accordingly 
+| **FR9** | **Manage orders **|
 | FR9.1 | Manage CRUD operations |
-| FR9.1.1 | Create new order |
-| FR9.1.2 | Update order |
-| FR9.1.3 | Delete order |
-| FR9.1.4 | Link order to a supplier |
-| FR9.1.5 | Unlink order from a supplier |
+| FR9.1.1 | -- Create new order 
+| FR9.1.2 | -- Update order 
+| FR9.1.3 | -- Delete order 
+| FR9.1.4 | -- Link order to a supplier 
+| FR9.1.5 | -- Unlink order from a supplier 
 | FR9.2 | Create owner-defined orders list |
-| FR9.2.1 | Retrieve list of orders filtered by one or more attributes |
+| FR9.2.1 | -- Retrieve list of orders filtered by one or more attributes 
 | FR9.3 | Manage `.csv` |
-| FR9.3.1 | Import orders list from `.csv` |
-| FR9.3.1.1 | Detect import errors |
-| FR9.3.1.2 | Detect schema mismatch |
-| FR9.3.1.3 | Update orders |
-| FR9.3.2 | Export list of orders as `.csv` |
-| FR9.3.2.1 | Retrieve orders |
-| FR9.3.2.2 | Create `.csv` file |
-| FR9.3.2.3 | Detect export errors |
+| FR9.3.1 | -- Import orders list from `.csv` 
+| FR9.3.1.1 | ---- Detect import errors 
+| FR9.3.1.2 | ---- Detect schema mismatch 
+| FR9.3.1.3 | ---- Update orders 
+| FR9.3.2 | -- Export list of orders as `.csv` 
+| FR9.3.2.1 | ---- Retrieve orders 
+| FR9.3.2.2 | ---- Create `.csv` file 
+| FR9.3.2.3 | ---- Detect export errors 
 | FR9.4 | Suggest order |
-| FR9.4.1 | Retrieve products with item count below threshold |
-| FR9.4.2 | Retrieve possible supplier for products with item count below threshold |
-| FR9.4.3 | Generate order suggestion |
-| FR9.4.4 | Add suggested order to the list of orders |
-| FR9.4.5 | Detect batches past the expiration date  |
-| FR9.4.5 | Detect batches within N days from the expiration date  |
-| FR10 | Manage accounting |
+| FR9.4.1 | -- Retrieve products with item count below threshold 
+| FR9.4.2 | -- Retrieve possible supplier for products with item count below threshold 
+| FR9.4.3 | -- Generate order suggestion 
+| FR9.4.4 | -- Add suggested order to the list of orders 
+| FR9.4.5 | -- Detect batches past the expiration date  
+| FR9.4.5 | -- Detect batches within N days from the expiration date  
+| **FR10** | **Manage accounting **|
 | FR10.1 | Track incomes |
-| FR10.1.1 | Compute incoming cash flow at different time granularities |
-| FR10.1.2 | Retrieve incoming cash flow at different time granularities |
+| FR10.1.1 | -- Compute incoming cash flow at different time granularities 
+| FR10.1.2 | -- Retrieve incoming cash flow at different time granularities 
 | FR10.2 | Manage incomes `.csv` |
-| FR10.2.1 | Import incomes list from `.csv` |
-| FR10.2.1.1 | Detect import errors |
-| FR10.2.1.2 | Detect schema mismatch |
-| FR10.2.1.3 | Update incomes |
-| FR10.2.2 | Export list of incomes as `.csv` |
-| FR10.2.2.1 | Retrieve incomes |
-| FR10.2.2.2 | Create `.csv` file |
-| FR10.2.2.3 | Detect export errors |
+| FR10.2.1 | -- Import incomes list from `.csv` 
+| FR10.2.1.1 | ---- Detect import errors 
+| FR10.2.1.2 | ---- Detect schema mismatch 
+| FR10.2.1.3 | ---- Update incomes 
+| FR10.2.2 | -- Export list of incomes as `.csv` 
+| FR10.2.2.1 | ---- Retrieve incomes 
+| FR10.2.2.2 | ---- Create `.csv` file 
+| FR10.2.2.3 | ---- Detect export errors 
 | FR10.3 | Track expenses |
-| FR10.3.1 | Compute outgoing cash flow at different time granularities |
-| FR10.3.2 | Retrieve outgoing cash flow at different time granularities |
+| FR10.3.1 | -- Compute outgoing cash flow at different time granularities 
+| FR10.3.2 | -- Retrieve outgoing cash flow at different time granularities 
 | FR10.4 | Manage expenses `.csv` |
-| FR10.4.1 | Import expenses list from `.csv` |
-| FR10.4.1.1 | Detect import errors |
-| FR10.4.1.2 | Detect schema mismatch |
-| FR10.4.1.3 | Update expenses |
-| FR10.4.2 | Export list of expenses as `.csv` |
-| FR10.4.2.1 | Retrieve expenses |
-| FR10.4.2.2 | Create `.csv` file |
-| FR10.4.2.3 | Detect export errors |
+| FR10.4.1 | -- Import expenses list from `.csv` 
+| FR10.4.1.1 | ---- Detect import errors 
+| FR10.4.1.2 | ---- Detect schema mismatch 
+| FR10.4.1.3 | ---- Update expenses 
+| FR10.4.2 | -- Export list of expenses as `.csv` 
+| FR10.4.2.1 | ---- Retrieve expenses 
+| FR10.4.2.2 | ---- Create `.csv` file 
+| FR10.4.2.3 | ---- Detect export errors 
 | FR10.5 | Track balance |
-| FR10.5.1 | Compute total balance at different time granularities |
-| FR10.5.2 | Retrieve balance at different time granularities |
-| FR10.5.3 | Retrieve current balance |
-| FR11 | Authenticate owner |
+| FR10.5.1 | -- Compute total balance at different time granularities 
+| FR10.5.2 | -- Retrieve balance at different time granularities 
+| FR10.5.3 | -- Retrieve current balance 
+| **FR11** | **Authenticate owner **|
 | FR11.1 | Set password |
 | FR11.2 | Change password |
 | FR11.3 | Verify password |
 | FR11.4 | Encrypt password |
-| FR12 | Manage notifications |
+| **FR12** | **Manage notifications **|
 | FR12.1 | Create notification |
 | FR12.2 | Change notification's status |
 | FR12.3 | Delete notification |
-| FR13 | Manage cash registers |
+| **FR13** | **Manage cash registers **|
 | FR13.1 | Link with POS provider’s account |
-| FR13.1.1 | Redirect user to authorization URL |
-| FR13.1.2 | Save cash register attributes |
-| FR13.1.3 | Store tokens securely |
-| FR13.1.4 | Validate token with provider |  
-| FR13.1.5 | Delete Cash Register |
+| FR13.1.1 | -- Redirect user to authorization URL 
+| FR13.1.2 | -- Save cash register attributes 
+| FR13.1.3 | -- Store tokens securely 
+| FR13.1.4 | -- Validate token with provider   
+| FR13.1.5 | -- Delete Cash Register 
 | FR13.2 | Get cash register list |
-| FR13.2.1 | Retrieve list of cash registers |
-| FR13.2.2 | Update local list of cash registers |
+| FR13.2.1 | -- Retrieve list of cash registers 
+| FR13.2.2 | -- Update local list of cash registers 
 | FR13.3 | Sync catalogue |
-| FR13.3.1 | Convert catalogue to provider format |
-| FR13.3.2 | Push new catalogue to cash registers |
-| FR13.3.3 | Detect unresponsive cash registers and update status |
+| FR13.3.1 | -- Convert catalogue to provider format 
+| FR13.3.2 | -- Push new catalogue to cash registers 
+| FR13.3.3 | -- Detect unresponsive cash registers and update status 
 | FR13.4 | Retrieve sales |
-| FR13.4.1 | Retrieve sales list from cash register |
-| FR13.4.2 | Update inventory quantities |
-| FR13.4.3 | Add sale to sales list |
-| FR13.4.4 | Detect unresponsive cash registers |
+| FR13.4.1 | -- Retrieve sales list from cash register 
+| FR13.4.2 | -- Update inventory quantities 
+| FR13.4.3 | -- Add sale to sales list 
+| FR13.4.4 | -- Detect unresponsive cash registers 
 | FR13.5 | Retrieve refunds |
-| FR13.5.1 | Retrieve refunds list from cash register |
-| FR13.5.2 | Update item quantities |
-| FR13.5.3 | Add refund to refunds list |
-| FR13.5.4 | Detect unresponsive cash registers |
+| FR13.5.1 | -- Retrieve refunds list from cash register 
+| FR13.5.2 | -- Update item quantities 
+| FR13.5.3 | -- Add refund to refunds list 
+| FR13.5.4 | -- Detect unresponsive cash registers 
 | FR13.6 | Create owner-defined cash register list |
-| FR13.6.1 | Retrieve cash registers filtered by attributes |
-| FR13.6.2 | Retrieve cash registers grouped by provider brand |
-| FR14 | Manage Internet Connection |
+| FR13.6.1 | -- Retrieve cash registers filtered by attributes 
+| FR13.6.2 | -- Retrieve cash registers grouped by provider brand 
+| **FR14** | **Manage Internet Connection **|
 | FR 14.1 | Detect loss of internet connectivity |
 
 
-
 ## Non Functional Requirements
-
-
-
 
 | ID   | Type          | Description | Refers to |
 |------|---------------|-------------|-----------|
