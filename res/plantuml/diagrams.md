@@ -236,11 +236,13 @@ OrderTracking --> ShippingService : <<deploy>>
 DBService --> EzShopServer : <<deploy>>
 EzShopBackEnd --> EzShopServer : <<deploy>>
 
-' Network links (solid lines with labels)
+' Network links (LAN)
 CashRegister -r- EzShopServer : LAN link
 ClientPC -l- EzShopServer : LAN link
+
+' Network links (internet)
 ClientPC -r- ShippingService : internet link
-EzShopServer -- pos: internet link
+ClientPC -- pos: internet link
 @enduml
 
 ```
