@@ -204,13 +204,13 @@ an estimation of about *25 LOC/FP* we can forecast a total of about\
 | ------------------------------------------------------------  | ------------------------------- |
 | _requirement document_                                        |              100                |
 | _design document_                                             |              150                |
-| _Desktop front-end_                                           |               85                |
+| _Desktop front-end_                                           |               82                |
 | &nbsp;&nbsp;  _UI Login-page_                                 |               3                 |
 | &nbsp;&nbsp;  _Dashboard page_                                |               12                |
 | &nbsp;&nbsp;  _Catalogue page_                                |               8                 |
 | &nbsp;&nbsp;&nbsp; catalogue filters and user-defined list    |               4                 |
 | &nbsp;&nbsp;&nbsp; manual insertion of the product threshold  |               4                 |
-| &nbsp;&nbsp;  _Inventory page_                                |               6                 |
+| &nbsp;&nbsp;  _Inventory page_                                |               3                 |
 | &nbsp;&nbsp;&nbsp; inventory filters and user-defined list    |               3                 |
 | &nbsp;&nbsp;  _Sales page_                                    |               10                |
 | &nbsp;&nbsp;&nbsp; Sales filters and user-defined list        |               5                 |
@@ -251,7 +251,7 @@ an estimation of about *25 LOC/FP* we can forecast a total of about\
 | &nbsp;&nbsp; _Orders suggestion_                              |               9                 |
 | &nbsp;&nbsp;&nbsp;  retrieve low-stock products               |               2                 |
 | &nbsp;&nbsp;&nbsp;  retrieve expired batches                  |               3                 |
-| &nbsp;&nbsp;&nbsp;  retrieve nearly expired  batches          |               3                 |
+| &nbsp;&nbsp;&nbsp;  retrieve nearly expired batches           |               3                 |
 | &nbsp;&nbsp;&nbsp;  retrieve suppliers                        |               3                 |
 | &nbsp;&nbsp;&nbsp;  suggest order                             |               2                 |
 | &nbsp;&nbsp;&nbsp;  add order to suggested ones               |               2                 |
@@ -319,7 +319,7 @@ _total amount of estimated person hours is: 776_
 | _Testing_                                                      |   77  |
 | &nbsp;&nbsp; Unit testing                                      |   40  |
 | &nbsp;&nbsp; Integration testing                               |   37  |
-_total amount of estimated person hours is: 776_ 
+_total amount of estimated person hours is: 773_ 
 _total estimated calendar time is: 3 weeks_
 
 
@@ -373,7 +373,7 @@ Report here the results of the three estimation approaches. The estimates may di
 | ---------------------------------- | --------------------- | --------------------------------------------- |
 | estimation by size                 | 500 ph                | 2 weeks and a half (13 days)                  |
 | estimation by FP                   | 517 ph                | 2 weeks and a half (13 days)                  |
-| estimation by product decomposition| 770 ph | about 4 weeks (19 days) |
+| estimation by product decomposition| 773 ph | about 4 weeks (19 days) |
 | estimation by activity decomposition (Gantt) | 859 ph | almost 4 weeks and 3 days (21 days) |
 
 The gap between the estimation made by size and FP with the one found by the PBS and later in the WBS is due to the fact that the given productivity value is really high, hence valuating the project by product decomposition, giving an expected amount of hours per product and then per activity gives a better and realisitical estimation of the time needed.
