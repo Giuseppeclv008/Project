@@ -1680,7 +1680,7 @@ Consider that the document should be delivered to another team (unknown to you)
 |  Precondition   | Owner is authenticated && DB services are available    |
 |  Post condition  | CRUD-type shipping companies' operation is performed |
 | Nominal Scenario | - Owner creates a shipping company MC1 <br> - Owner updates a shipping company MC2 <br> - Owner deletes a shipping company MC3| 
-|     Exception    | - Owner tries to create a shipping company that is alredy in the system MC1E1 <br> |
+|     Exception    | - Owner tries to create a shipping company that is alredy in the system MC1E1 <br> - Owner tries to delete a shipping company that is shipping an order MC3E1<br> |
 
 
 #### Scenario MC1
@@ -1728,6 +1728,8 @@ Consider that the document should be delivered to another team (unknown to you)
 | Actor's Action                                  | System Action                                                      | FR needed |
 |--------------------------------------------------|--------------------------------------------------------------------|-----------|
 | Owner requests to delete a shipping company                 |                                                                    |     FR7.1.3      |
+|                                             | System checks whether the shipping company is assigned to an order  | FR7.1.3   |
+|                                             | System detects that the shipping company is shipping any order  | FR7.1.3   |
 |                                                  | System deletes the shipping company from the DB                               |       FR7.1.3    |
 
 #### Scenario MC1E1
@@ -1746,6 +1748,24 @@ Consider that the document should be delivered to another team (unknown to you)
 |                                                  | System checks if a shipping company with the same identifying values exists   |     FR7.1.1      |
 |                                                  | System detects the shipping company already exists                            |     FR7.1.1      |
 |                                                  | System rejects the creation         |      FR7.1.1     |
+
+#### Scenario MC3E1
+
+| Scenario MC3E1 |                                                 |
+|:--------------:|:-----------------------------------------------:|
+| Precondition   | Owner is authenticated && DB services are available |
+| Post condition | The shipping company is not deleted from the system |
+
+##### Steps
+
+| Actor's Action                             | System Action                                                        | FR needed |
+|---------------------------------------------|----------------------------------------------------------------------|-----------|
+| Owner requests to delete a shipping company |                                                                      | FR7.1.3   |
+|                                             | System checks whether the shipping company is assigned to an order  | FR7.1.3   |
+|                                             | System detects the shipping company is shipping at least one order  | FR7.1.3   |
+|                                             | System rejects the deletion and notifies the Owner                  | FR7.1.3   |
+
+
 
 # Glossary
 - **Shop**
