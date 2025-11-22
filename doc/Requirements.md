@@ -1176,7 +1176,7 @@ Consider that the document should be delivered to another team (unknown to you)
 |  Scenario RN7  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
 | Precondition   | Owner is authenticated && DB services are available && System suggests a new order                                                 |
-| Post condition | Owner receives a notification regarding the new status                     |
+| Post condition | Owner receives a notification regarding the suggestion                     |
 
 ##### Steps
 
