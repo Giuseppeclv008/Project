@@ -722,7 +722,8 @@ Consider that the document should be delivered to another team (unknown to you)
 | :--------------: | :------------------------------------------------------------------ |
 |  Precondition   | Owner is authenticated && DB services are available    |
 |  Post condition  | CRUD-type order's operation is performed |
-| Nominal Scenario | - Owner creates a order MO1 <br> - Owner updates a order MO2 <br> - Owner deletes a order MO3| 
+| Nominal Scenario | - Owner creates an order MO1 <br> - Owner updates an order MO2 <br> - Owner deletes an order MO3 <br>| 
+| Variants | - Owner create an order after system suggestion MO1V1 <br> |
 |     Exception    | - Owner tries to create an order that is alredy in the system MO1E1 <br> |
 
 
@@ -772,6 +773,23 @@ Consider that the document should be delivered to another team (unknown to you)
 |----------------------------------------|---------------------------------------------------------------------|-----------|
 | Owner requests to delete the order     |                                                                     |     FR9.1.3      |
 |                                        | System deletes the order from the DB                                |       FR9.1.3    |
+
+### Scenario MO1V1
+|  Scenario MO1V1  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available && there are products with item quantity below a certain threshold |
+| Post condition | A new order is inserted in the inventory                                       |
+
+##### Steps
+
+| Actor's Action                        | System Action                                                       | FR needed |
+|----------------------------------------|---------------------------------------------------------------------|-----------|
+|                                        |  System retrieves product with item quantity below a certain threshold|     FR9.4.1      |
+|                                        |  System retrieves possible suppleirs for that product |       FR9.4.2    |
+|                                        |  System suggests the order                           | 9.4.3  |
+|                                        |  System notifies the owner                         |  12.1     |
+| Owner create the suggested order        |                                                    |  FR9.1.1   | 
+
 
 
 #### Scenario MO1E1
@@ -1043,7 +1061,7 @@ Consider that the document should be delivered to another team (unknown to you)
 | :--------------: | :------------------------------------------------------------------ |
 |  Precondition   | Owner is authenticated && DB services are available &&  internet connection is available |
 |  Post condition  | Owner receive the notification  |
-| Nominal Scenario | - Owner is notified when an order status changes RN1 <br> - Owner is notified when a batch is expired RN2 <br> - Owner is notified when a cash is not responding RN3 <br> - Owner is notified when a product is going to run out RN4 <br> - Owner is notified when there is no internet connection RN5 <br> - Owner reads the list of notifications RN6 <br> | 
+| Nominal Scenario | - Owner is notified when an order status changes RN1 <br> - Owner is notified when a batch is expired RN2 <br> - Owner is notified when a cash is not responding RN3 <br> - Owner is notified when a product is going to run out RN4 <br> - Owner is notified when there is no internet connection RN5 <br> - Owner reads the list of notifications RN6 <br> - Owner is notified when there is a new suggested order RN7| 
 |     Variants     | - Owner is notified when an order status cannot be updated since API is not responding RN1V1 <br> - Owner reads the list of notification and clean it RN6V1 <br> |
 
 
@@ -1051,7 +1069,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 |  Scenario RN1  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-| Precondition   | Order status changes in the system                                         |
+| Precondition   | Owner is authenticated && DB services are available && order status changes in the system                                         |
 | Post condition | Owner receives a notification regarding the new status                     |
 
 ##### Steps
@@ -1069,7 +1087,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 |  Scenario RN2  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-| Precondition   | A batch expiration date is reached                                         |
+| Precondition   | Owner is authenticated && DB services are available && A batch expiration date is reached                                         |
 | Post condition | Owner receives an expiration notification                                  |
 
 ##### Steps
@@ -1087,7 +1105,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 |  Scenario RN3  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-| Precondition   | A cash register does not respond to system polling                         |
+| Precondition   | Owner is authenticated && DB services are available && A cash register does not respond to system polling                         |
 | Post condition | Owner receives a notification about the missing response                   |
 
 ##### Steps
@@ -1106,7 +1124,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 |  Scenario RN4  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-| Precondition   | Product quantity falls below a stock threshold                             |
+| Precondition   | Owner is authenticated && DB services are available && Product quantity falls below a stock threshold                             |
 | Post condition | Owner receives a low-stock notification                                   |
 
 ##### Steps
@@ -1125,7 +1143,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 |  Scenario RN5  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-| Precondition   | System detects loss of internet connection                                 |
+| Precondition   | Owner is authenticated && DB services are available && System detects loss of internet connection                                 |
 | Post condition | Owner receives a notification about connection loss                        |
 
 ##### Steps
@@ -1143,7 +1161,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 |  Scenario RN6  |                                                                            |
 | :------------: | :------------------------------------------------------------------------: |
-| Precondition   | At least one notification exists in the system                             |
+| Precondition   | Owner is authenticated && DB services are available && At least one notification exists in the system                             |
 | Post condition | Notifications are displayed or marked as read                               |
 
 ##### Steps
@@ -1153,12 +1171,27 @@ Consider that the document should be delivered to another team (unknown to you)
 | Owner opens the notification menu       | System retrieves notifications from the DB                        |     FR12.2      |
 | Owner reads notifications               | System marks notifications as read                                |      FR12.2     |
 
+#### Scenario RN7
+
+|  Scenario RN7  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | Owner is authenticated && DB services are available && System suggests a new order                                                 |
+| Post condition | Owner receives a notification regarding the new status                     |
+
+##### Steps
+
+| Actor's Action                         | System Action                                                     | FR needed |
+|-----------------------------------------|-------------------------------------------------------------------|-----------|
+|                                         | System creates a new order suggestion                             |    FR9.4   |
+|                                        | System stores the notification in the DB                          |     FR12.1      |
+|                                       | System displays the notification in a pop-up                      |     FR12.1      |
+| Owner sees the pop-up notification      | System shows the same notification in the notification menu       |     FR12.1      |
 
 #### Scenario RN1V1
 
 |  Scenario RN1V1 |                                                                           |
 | :-------------: | :------------------------------------------------------------------------ |
-| Precondition    | System fails to update the order status due to API timeout/failure        |
+| Precondition    |Owner is authenticated && DB services are available &&  System fails to update the order status due to API timeout/failure        |
 | Post condition  | Owner receives a notification about the failed update                     |
 
 ##### Steps
@@ -1177,7 +1210,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 |  Scenario RN6V1 |                                                                           |
 | :-------------: | :------------------------------------------------------------------------ |
-| Precondition    | At least one notification exists in the system                                    |
+| Precondition    |Owner is authenticated && DB services are available &&  At least one notification exists in the system                                    |
 | Post condition  | All notifications are cleared from the list                               |
 
 ##### Steps
