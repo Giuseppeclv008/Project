@@ -287,7 +287,7 @@ Consider that the document should be delivered to another team (unknown to you)
 
 | ID | Description |
 |:--:|:------------|
-| **FR1** | **Manage sales **|
+| **FR1** | **Manage sales** |
 | FR1.1 | Create owner-defined sale list |
 | FR1.1.1 | -- For each owner-defined list filter sales by a specified date (ISO 8601) or time window 
 | FR1.1.2 | -- Retrieve sales filtered by products sold 
@@ -302,7 +302,7 @@ Consider that the document should be delivered to another team (unknown to you)
 | FR1.2.2.1 | ---- Retrieve sales 
 | FR1.2.2.2 | ---- Create `.csv` file 
 | FR1.2.2.3 | ---- Detect export errors 
-| **FR2** | **Manage refunds **|
+| **FR2** | **Manage refunds** |
 | FR2.1 | Create owner-defined refund list |
 | FR2.1.1 | -- For each owner-defined list filter refunds by a specified date (ISO 8601) or time window 
 | FR2.1.2 | -- Retrieve refunds filtered by products returned 
@@ -317,7 +317,7 @@ Consider that the document should be delivered to another team (unknown to you)
 | FR2.2.2.1 | ---- Retrieve refunds 
 | FR2.2.2.2 | ---- Create `.csv` file 
 | FR2.2.2.3 | ---- Detect export errors 
-| **FR3** | **Manage catalogue **|
+| **FR3** | **Manage catalogue** |
 | FR3.1 | Manage CRUD operations |
 | FR3.1.1 | -- Create new product in the catalogue 
 | FR3.1.2 | -- Update product from the catalogue 
@@ -335,7 +335,7 @@ Consider that the document should be delivered to another team (unknown to you)
 | FR3.4.2.1 | ---- Retrieve products list 
 | FR3.4.2.2 | ---- Create `.csv` file 
 | FR3.4.2.3 | ---- Detect export errors 
-| **FR4** | **Manage inventory **|
+| **FR4** | **Manage inventory** |
 | FR4.1 | Manage CRUD operations |
 | FR4.1.1 | -- Create new batch in the inventory 
 | FR4.1.2 | -- Update batch from the inventory 
@@ -351,7 +351,7 @@ Consider that the document should be delivered to another team (unknown to you)
 | FR4.3.2.1 | ---- Retrieve batches list 
 | FR4.3.2.2 | ---- Create `.csv` file 
 | FR4.3.2.3 | ---- Detect export errors 
-| **FR5** | **Manage invoices **|
+| **FR5** | **Manage invoices** |
 | FR5.1 | Manage CRUD operations |
 | FR5.1.1 | -- Create new invoice 
 | FR5.1.2 | -- Update invoice 
@@ -368,7 +368,7 @@ Consider that the document should be delivered to another team (unknown to you)
 | FR5.3.2.1 | ---- Retrieve invoices 
 | FR5.3.2.2 | ---- Create `.csv` file 
 | FR5.3.2.3 | ---- Detect export errors 
-| **FR6** | **Manage suppliers **|
+| **FR6** | **Manage suppliers** |
 | FR6.1 | Manage CRUD operations |
 | FR6.1.1 | -- Create new supplier 
 | FR6.1.2 | -- Update supplier 
@@ -389,7 +389,7 @@ Consider that the document should be delivered to another team (unknown to you)
 | FR6.3.2.1 | ---- Retrieve suppliers 
 | FR6.3.2.2 | ---- Create `.csv` file 
 | FR6.3.2.3 | ---- Detect export errors 
-| **FR7** | **Manage Shipping companies **|
+| **FR7** | **Manage Shipping companies** |
 | FR7.1 | Manage CRUD operations |
 | FR7.1.1 | -- Create new shipping company 
 | FR7.1.2 | -- Update shipping company 
@@ -408,7 +408,7 @@ Consider that the document should be delivered to another team (unknown to you)
 | FR7.3.2.1 | ---- Retrieve shipping companies list 
 | FR7.3.2.2 | ---- Create `.csv` file 
 | FR7.3.2.3 | ---- Detect export errors 
-| **FR8** | **Track order **|
+| **FR8** | **Track order** |
 | FR8.1 | Link with easy post account |
 | FR8.1.1 | -- Redirect user to authorization URL 
 | FR8.1.2 | -- Retrieve access and refresh tokens 
@@ -417,7 +417,7 @@ Consider that the document should be delivered to another team (unknown to you)
 | FR8.2 | Retrieve shipment status |
 | FR8.2.1 | -- Retrieve tracking updates from provider API 
 | FR8.2.2 | -- Update order's status accordingly 
-| **FR9** | **Manage orders **|
+| **FR9** | **Manage orders** |
 | FR9.1 | Manage CRUD operations |
 | FR9.1.1 | -- Create new order 
 | FR9.1.2 | -- Update order 
@@ -442,7 +442,7 @@ Consider that the document should be delivered to another team (unknown to you)
 | FR9.4.4 | -- Add suggested order to the list of orders 
 | FR9.4.5 | -- Detect batches past the expiration date  
 | FR9.4.5 | -- Detect batches within N days from the expiration date  
-| **FR10** | **Manage accounting **|
+| **FR10** | **Manage accounting** |
 | FR10.1 | Track incomes |
 | FR10.1.1 | -- Compute incoming cash flow at different time granularities 
 | FR10.1.2 | -- Retrieve incoming cash flow at different time granularities 
@@ -471,16 +471,16 @@ Consider that the document should be delivered to another team (unknown to you)
 | FR10.5.1 | -- Compute total balance at different time granularities 
 | FR10.5.2 | -- Retrieve balance at different time granularities 
 | FR10.5.3 | -- Retrieve current balance 
-| **FR11** | **Authenticate owner **|
+| **FR11** | **Authenticate owner** |
 | FR11.1 | Set password |
 | FR11.2 | Change password |
 | FR11.3 | Verify password |
 | FR11.4 | Encrypt password |
-| **FR12** | **Manage notifications **|
+| **FR12** | **Manage notifications** |
 | FR12.1 | Create notification |
 | FR12.2 | Change notification's status |
 | FR12.3 | Delete notification |
-| **FR13** | **Manage cash registers **|
+| **FR13** | **Manage cash registers** |
 | FR13.1 | Link with POS provider’s account |
 | FR13.1.1 | -- Redirect user to authorization URL 
 | FR13.1.2 | -- Save cash register attributes 
@@ -507,7 +507,7 @@ Consider that the document should be delivered to another team (unknown to you)
 | FR13.6 | Create owner-defined cash register list |
 | FR13.6.1 | -- Retrieve cash registers filtered by attributes 
 | FR13.6.2 | -- Retrieve cash registers grouped by provider brand 
-| **FR14** | **Manage Internet Connection **|
+| **FR14** | **Manage Internet Connection** |
 | FR 14.1 | Detect loss of internet connectivity |
 
 
