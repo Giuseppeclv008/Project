@@ -1069,7 +1069,7 @@ Consider that the document should be delivered to another team (unknown to you)
 | :--------------: | :------------------------------------------------------------------ |
 |  Precondition   | Owner is authenticated && DB services are available &&  internet connection is available |
 |  Post condition  | Owner receive the notification  |
-| Nominal Scenario | - Owner is notified when an order status changes RN1 <br> - Owner is notified when a batch is expired RN2 <br> - Owner is notified when a cash is not responding RN3 <br> - Owner is notified when a product is going to run out RN4 <br> - Owner is notified when there is no internet connection RN5 <br> - Owner reads the list of notifications RN6 <br> | 
+| Nominal Scenario | - Owner is notified when an order status changes RN1 <br> - Owner is notified when a batch is expired RN2 <br> - Owner is notified when a cash is not responding RN3 <br> - Owner is notified when a product is going to run out RN4 <br> - Owner is notified when there is no internet connection RN5 <br> - Owner reads the list of notifications RN6 <br> - Owner is notified when there is a new suggested order RN7| 
 |     Variants     | - Owner is notified when an order status cannot be updated since API is not responding RN1V1 <br> - Owner reads the list of notification and clean it RN6V1 <br> |
 
 
@@ -1179,6 +1179,21 @@ Consider that the document should be delivered to another team (unknown to you)
 | Owner opens the notification menu       | System retrieves notifications from the DB                        |     FR12.2      |
 | Owner reads notifications               | System marks notifications as read                                |      FR12.2     |
 
+#### Scenario RN7
+
+|  Scenario RN7  |                                                                            |
+| :------------: | :------------------------------------------------------------------------: |
+| Precondition   | System suggests a new order                                                 |
+| Post condition | Owner receives a notification regarding the new status                     |
+
+##### Steps
+
+| Actor's Action                         | System Action                                                     | FR needed |
+|-----------------------------------------|-------------------------------------------------------------------|-----------|
+|                                         | System creates a new order suggestion                             |    FR9.4   |
+|                                        | System stores the notification in the DB                          |     FR12.1      |
+|                                       | System displays the notification in a pop-up                      |     FR12.1      |
+| Owner sees the pop-up notification      | System shows the same notification in the notification menu       |     FR12.1      |
 
 #### Scenario RN1V1
 
