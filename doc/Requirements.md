@@ -1170,21 +1170,6 @@ Consider that the document should be delivered to another team (unknown to you)
 | Owner opens the notification menu       | System retrieves notifications from the DB                        |     FR12.2      |
 | Owner reads notifications               | System marks notifications as read                                |      FR12.2     |
 
-#### Scenario RN7
-
-|  Scenario RN7  |                                                                            |
-| :------------: | :------------------------------------------------------------------------: |
-| Precondition   | Owner is authenticated && DB services are available && System suggests a new order                                                 |
-| Post condition | Owner receives a notification regarding the suggestion                     |
-
-##### Steps
-
-| Actor's Action                         | System Action                                                     | FR needed |
-|-----------------------------------------|-------------------------------------------------------------------|-----------|
-|                                         | System creates a new order suggestion                             |    FR9.4   |
-|                                        | System stores the notification in the DB                          |     FR12.1      |
-|                                       | System displays the notification in a pop-up                      |     FR12.1      |
-| Owner sees the pop-up notification      | System shows the same notification in the notification menu       |     FR12.1      |
 
 #### Scenario RN1V1
 
