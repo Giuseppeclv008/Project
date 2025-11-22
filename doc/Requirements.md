@@ -787,7 +787,6 @@ Consider that the document should be delivered to another team (unknown to you)
 |                                        |  System retrieves product with item quantity below a certain threshold|     FR9.4.1      |
 |                                        |  System retrieves possible suppleirs for that product |       FR9.4.2    |
 |                                        |  System suggests the order                           | 9.4.3  |
-|                                        |  System notifies the owner                         |  12.1     |
 | Owner create the suggested order        |                                                    |  FR9.1.1   | 
 
 
